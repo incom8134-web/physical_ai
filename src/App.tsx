@@ -151,7 +151,7 @@ export default function App() {
           style={{ textDecoration: 'none', color: 'inherit' }}
         >
           <img src="/logo-mark.png" alt={t.contact.company} style={{ height: 30, width: 'auto' }} />
-          <span style={{ fontWeight: 600, fontSize: '0.95rem', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>{lang === 'ko' ? '지니에듀테크' : 'JINIE EDUTECH'}</span>
+          <span style={{ fontWeight: 600, fontSize: '0.95rem', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>{lang === 'ko' ? '지니에듀테크(주)' : 'JINIE EDUTECH'}</span>
         </a>
         <div className="hidden md:flex items-center gap-7" style={{ fontSize: '0.86rem', color: 'var(--dim)' }}>
           {t.nav.items.map(item => (
