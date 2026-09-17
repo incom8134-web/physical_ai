@@ -1,0 +1,18 @@
+{
+  "title": "피지컬 AI | 지니에듀테크(주)",
+  "description": "로봇·장비·센서로 현실을 인지하고 판단하고 움직이는 피지컬 AI — 교육, 컨설팅, 로봇 대여까지 지니에듀테크가 함께합니다.",
+  "language": "ko",
+  "robots": {
+    "index": true
+  },
+  "icons": {
+    "icon": "/logo-mark.png"
+  },
+  "openGraph": {
+    "image": "/og-image.jpg"
+  },
+  "accessibility": {
+    "addBypassLinks": true,
+    "ignoreReducedMotion": false
+  }
+}

@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-void: #05080f;
+  --color-deck: #0b1220;
+  --color-panel: #101a2b;
+  --color-rail: #1c2941;
+  --color-beam: #5c8bff;
+  --color-amp: #ffc24b;
+  --color-lock: #45e0a8;
+  --color-text: #dce4f0;
+  --color-dim: #7c8ba3;
+  --font-sans: 'IBM Plex Sans KR', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+:root {
+  --void: #05080f;
+  --deck: #0b1220;
+  --panel: #101a2b;
+  --panel-2: #142238;
+  --rail: #1c2941;
+  --rail-soft: #152033;
+  --beam: #5c8bff;
+  --beam-soft: rgba(92, 139, 255, 0.14);
+  --beam-glow: rgba(92, 139, 255, 0.35);
+  --amp: #ffc24b;
+  --lock: #45e0a8;
+  --text: #dce4f0;
+  --dim: #7c8ba3;
+  --faint: #4a5a72;
+  --shadow-card: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -12px rgba(0,0,0,0.55);
+  --shadow-hover: 0 4px 10px rgba(0,0,0,0.45), 0 24px 48px -16px rgba(92,139,255,0.28);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background-color: var(--void);
+  color: var(--text);
+  font-family: 'IBM Plex Sans KR', system-ui, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sheet {
+  background-image:
+    linear-gradient(rgba(92, 139, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(92, 139, 255, 0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: center top;
+}
+.sheet-soft {
+  background-image:
+    linear-gradient(rgba(92, 139, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(92, 139, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+::selection { background: var(--beam); color: #04070d; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--deck); }
+::-webkit-scrollbar-thumb { background: var(--rail); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--beam); }
+:focus-visible { outline: 2px solid var(--beam); outline-offset: 2px; border-radius: 2px; }
+
+a { color: inherit; }
+
+/* Elevation card — MUI-style resting/hover elevation, tuned for a dark surface */
+.card {
+  background: var(--deck);
+  border: 1px solid var(--rail);
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1), border-color 0.35s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--beam);
+}
+/* Service cards carry their own accent, so the hover border follows it. */
+.service-card.card-hover:hover {
+  border-color: var(--accent, var(--beam));
+  box-shadow: 0 4px 10px rgba(0,0,0,0.45), 0 24px 48px -16px color-mix(in srgb, var(--accent, #5c8bff) 28%, transparent);
+}
+
+/* Poster carousel rail — a thin scrollbar that matches the dark surface. */
+.poster-rail {
+  scrollbar-width: thin;
+  scrollbar-color: var(--rail) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+.poster-rail::-webkit-scrollbar { height: 6px; }
+.poster-rail::-webkit-scrollbar-track { background: transparent; }
+.poster-rail::-webkit-scrollbar-thumb { background: var(--rail); border-radius: 3px; }
+.poster-rail::-webkit-scrollbar-thumb:hover { background: var(--beam); }
+.poster-card:hover { border-color: var(--lock); }
+
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 100%; bottom: -3px;
+  height: 1.5px;
+  background: var(--beam);
+  transition: right 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+.link-underline:hover::after,
+.link-underline.active::after {
+  right: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  text-decoration: none;
+}
+.btn:active { transform: scale(0.97); }
+.btn-primary {
+  background: var(--beam);
+  color: #04070d;
+  border: 1px solid var(--beam);
+}
+.btn-primary:hover {
+  box-shadow: 0 8px 24px -6px var(--beam-glow);
+  transform: translateY(-2px);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--rail);
+}
+.btn-ghost:hover {
+  border-color: var(--beam);
+  background: var(--beam-soft);
+  transform: translateY(-2px);
+}
+
+/* The header CTA would crowd the logo on a phone; the drawer carries it there.
+   A plain `hidden` utility loses to `.btn`'s own display rule, so scope it. */
+@media (max-width: 639px) {
+  .nav-cta { display: none; }
+}
+
+.step-btn {
+  transition: background 0.3s cubic-bezier(0.16,1,0.3,1), color 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+.step-btn:hover:not([aria-selected="true"]) {
+  border-color: var(--beam);
+  transform: translateY(-2px);
+}
+
+::-moz-selection { background: var(--beam); color: #04070d; }
+
+@keyframes blip {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.82); }
+}
+.blip { animation: blip 2.4s ease-in-out infinite; }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-inner { animation: marquee 32s linear infinite; display: flex; width: max-content; }
+
+@keyframes latch {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.latch { animation: latch 0.35s cubic-bezier(0.16,1,0.3,1) both; }
+
+@keyframes sweep {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.sweep { animation: sweep 0.6s cubic-bezier(0.16,1,0.3,1) both; transform-origin: left; }
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin-slow { animation: spin-slow 30s linear infinite; }
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.hero-float { animation: hero-float 5.5s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee-inner, .blip, .latch, .sweep, .spin-slow, .hero-float { animation: none !important; }
+  * { transition-duration: 0.01ms !important; }
+}
