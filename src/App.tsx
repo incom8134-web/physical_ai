@@ -24,7 +24,7 @@ const mono = (size = '0.7rem'): React.CSSProperties => ({
   letterSpacing: '0.06em',
 });
 
-// Haebot AI — one robot shown three ways, in the same order as t.robots.items.
+// Haebot — one robot shown three ways, in the same order as t.robots.items.
 const robotMedia: { src: string; position: string }[] = [
   { src: '/images/haebot-full.jpg', position: 'center center' },
   { src: '/images/haebot-mecanum.jpg', position: 'center center' },
@@ -352,7 +352,7 @@ export default function App() {
                     <source srcSet={asset('images/haebot-cutout.webp')} type="image/webp" />
                     <img
                       src={asset('images/haebot-cutout.png')}
-                      alt="해봇 AI (Haebot AI) — 지니에듀테크가 자체 개발한 메카넘 휠 양팔 이동형 로봇"
+                      alt="해봇 (Haebot) — 지니에듀테크가 자체 개발한 메카넘 휠 양팔 이동형 로봇"
                       width={554}
                       height={921}
                       style={{
@@ -374,8 +374,8 @@ export default function App() {
                     className="inline-flex items-center gap-2 mt-3"
                     style={{ border: '1px solid var(--rail)', background: 'rgba(11,18,32,0.7)', padding: '0.3rem 0.8rem', borderRadius: 999, backdropFilter: 'blur(6px)' }}
                   >
-                    <span style={{ fontSize: '0.82rem', fontWeight: 600 }}>{lang === 'ko' ? '해봇 AI' : 'Haebot AI'}</span>
-                    <span style={{ ...mono('0.6rem'), color: 'var(--lock)' }}>{lang === 'ko' ? 'Haebot AI' : '해봇 AI'}</span>
+                    <span style={{ fontSize: '0.82rem', fontWeight: 600 }}>{lang === 'ko' ? '해봇' : 'Haebot'}</span>
+                    <span style={{ ...mono('0.6rem'), color: 'var(--lock)' }}>{lang === 'ko' ? 'Haebot' : '해봇'}</span>
                   </div>
                 </div>
               </Reveal>
@@ -389,7 +389,7 @@ export default function App() {
         <div className="marquee-inner">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center">
-              {['해봇 AI', 'HAEBOT AI', 'PHYSICAL AI', 'MECANUM WHEELS', 'DUAL-ARM MOBILE', 'SALES · RENTAL', 'EDUCATION', 'CONSULTING', 'VLA', 'SENSE · DECIDE · ACT', 'OMNIDIRECTIONAL'].map((tx, j) => (
+              {['해봇', 'HAEBOT', 'PHYSICAL AI', 'MECANUM WHEELS', 'DUAL-ARM MOBILE', 'SALES · RENTAL', 'EDUCATION', 'CONSULTING', 'VLA', 'SENSE · DECIDE · ACT', 'OMNIDIRECTIONAL'].map((tx, j) => (
                 <span key={j} style={{ ...mono('0.72rem'), color: 'var(--faint)', whiteSpace: 'nowrap', padding: '0 1.8rem' }}>
                   {tx}<span style={{ color: 'var(--beam)', marginLeft: '1.8rem', opacity: 0.5 }}>/</span>
                 </span>
