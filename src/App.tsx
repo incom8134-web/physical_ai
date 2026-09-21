@@ -386,7 +386,7 @@ export default function App() {
         <div className="marquee-inner">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center">
-              {['해봇', 'HAEBOT AI', 'PHYSICAL AI', 'MECANUM WHEELS', 'DUAL-ARM MOBILE', 'SALES · RENTAL', 'EDUCATION', 'CONSULTING', 'VLA', 'SENSE · DECIDE · ACT', 'MODULAR BUILD'].map((tx, j) => (
+              {['해봇', 'HAEBOT', 'PHYSICAL AI', 'MECANUM WHEELS', 'DUAL-ARM MOBILE', 'SALES · RENTAL', 'EDUCATION', 'CONSULTING', 'VLA', 'SENSE · DECIDE · ACT', 'MODULAR BUILD'].map((tx, j) => (
                 <span key={j} style={{ ...mono('0.72rem'), color: 'var(--faint)', whiteSpace: 'nowrap', padding: '0 1.8rem' }}>
                   {tx}<span style={{ color: 'var(--beam)', marginLeft: '1.8rem', opacity: 0.5 }}>/</span>
                 </span>
