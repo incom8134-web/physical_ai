@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { Lang } from './i18n';
 import { consultingAudiences, consultingProcess, consultingTopics } from './data';
 import { Reveal } from './useReveal';
+import { asset } from './asset';
 import { Breadcrumb, PageHero, SectionHeading, StepRail, FinalCta, mono } from './pageUtils';
 
 export default function ConsultingPage({ lang, t, onContact }: { lang: Lang; t: any; onContact: () => void }) {
@@ -129,7 +130,7 @@ export default function ConsultingPage({ lang, t, onContact }: { lang: Lang; t: 
                 style={{ padding: '0.75rem', background: 'var(--panel)', overflow: 'hidden' }}
               >
                 <img
-                  src="/images/consulting-poster.jpg"
+                  src={asset('images/consulting-poster.jpg')}
                   alt={p.posterAlt}
                   loading="lazy"
                   style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 6 }}

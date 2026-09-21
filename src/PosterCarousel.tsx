@@ -3,6 +3,7 @@ import type { Lang } from './i18n';
 import { posterCards, type PosterCard } from './data';
 import { useOutsideClick } from './useOutsideClick';
 import { mono } from './pageUtils';
+import { asset } from './asset';
 
 /**
  * Horizontally scrolling poster strip. Tapping a card expands it into a
@@ -86,7 +87,7 @@ export default function PosterCarousel({
           >
             <div style={{ position: 'relative', aspectRatio: '3 / 4', overflow: 'hidden', background: 'var(--panel)' }}>
               <img
-                src={card.image}
+                src={asset(card.image)}
                 alt=""
                 loading="lazy"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' }}
@@ -142,7 +143,7 @@ export default function PosterCarousel({
                 style={{ background: 'var(--panel)', padding: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               >
                 <img
-                  src={active.image}
+                  src={asset(active.image)}
                   alt={lang === 'ko' ? active.title : active.titleEn}
                   style={{ width: '100%', maxHeight: '62vh', objectFit: 'contain', display: 'block', borderRadius: 6 }}
                 />

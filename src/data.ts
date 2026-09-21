@@ -301,8 +301,8 @@ export type RentalRobot = {
 export const rentalRobots: RentalRobot[] = [
   {
     key: 'field',
-    name: 'Heabot AI · 듀얼암 모바일',
-    nameEn: 'Heabot AI · Dual-arm Mobile',
+    name: '해봇 AI · 듀얼암 모바일',
+    nameEn: 'Haebot AI · Dual-arm Mobile',
     tagline: '양팔 매니퓰레이터 + 이동형 베이스',
     taglineEn: 'Dual-arm manipulator on a mobile base',
     image: '/images/heabot-field.jpg',
@@ -311,20 +311,20 @@ export const rentalRobots: RentalRobot[] = [
     specs: [
       { label: '조작', labelEn: 'Manipulation', value: '양팔 · 그리퍼', valueEn: 'Dual arms with grippers' },
       { label: '비전', labelEn: 'Vision', value: '뎁스 카메라 · 손목 카메라', valueEn: 'Depth camera · wrist cameras' },
-      { label: '이동', labelEn: 'Locomotion', value: '캐스터 구동 베이스', valueEn: 'Castor-driven base' },
+      { label: '이동', labelEn: 'Locomotion', value: '메카넘 휠 · 전방향 주행', valueEn: 'Mecanum wheels · omnidirectional' },
       { label: '전원', labelEn: 'Power', value: '탑재형 배터리 모듈', valueEn: 'On-board battery module' },
     ],
-    desc: '양팔 조작과 자율 이동을 한 대에서 시연하는 지니에듀테크 자체 개발 플랫폼입니다. 물건을 집어 옮기고 지정 위치로 이동하는 시나리오를 통해, 인지–판단–행동 사이클이 실제로 어떻게 이어지는지 눈앞에서 확인할 수 있습니다.',
-    descEn: 'JINIE EDUTECH’s own platform, demonstrating dual-arm manipulation and autonomous movement in a single machine. Pick-and-place and go-to-position scenarios show the sense-decide-act cycle playing out in front of you.',
-    bestFor: ['대학 실습·캡스톤 수업', '전시·박람회 체험 부스', '기업 쇼케이스·제품 런칭', '방송·콘텐츠 촬영'],
-    bestForEn: ['University labs & capstone courses', 'Exhibition & trade show booths', 'Corporate showcases & product launches', 'Broadcast & content shoots'],
-    includes: ['전담 오퍼레이터 현장 지원', '시나리오 기획 및 리허설', '운반·설치·안전관리', '행사 특성에 맞춘 데모 구성'],
-    includesEn: ['On-site support from a dedicated operator', 'Scenario planning & rehearsal', 'Transport, setup & safety management', 'Demo tailored to your event'],
+    desc: '양팔 조작과 자율 이동을 한 대에서 수행하는 지니에듀테크 자체 개발 플랫폼입니다. 메카넘 휠이라 전후좌우 이동과 제자리 회전이 가능해, 좁은 통로나 부스처럼 선회 반경이 부족한 공간에서도 그대로 씁니다. 주력 판매 구성입니다.',
+    descEn: 'JINIE EDUTECH’s own platform, combining dual-arm manipulation and autonomous movement in one machine. Mecanum wheels let it travel in any direction and rotate in place, so it works in tight aisles and booths where there is no room to turn. This is the main configuration we sell.',
+    bestFor: ['기업 도입·현장 실증', '대학 실습·캡스톤 수업', '전시·박람회 체험 부스', '기업 쇼케이스·제품 런칭'],
+    bestForEn: ['Corporate adoption & on-site validation', 'University labs & capstone courses', 'Exhibition & trade show booths', 'Corporate showcases & product launches'],
+    includes: ['구매 시 설치·운용 교육 제공', '대여 시 전담 오퍼레이터 현장 지원', '운반·설치·안전관리', '용도에 맞춘 구성·시나리오 협의'],
+    includesEn: ['Installation and operator training on purchase', 'A dedicated operator on site for rentals', 'Transport, setup & safety management', 'Configuration and scenario worked out with you'],
   },
   {
     key: 'modular',
-    name: 'Heabot AI · 모듈러 구성',
-    nameEn: 'Heabot AI · Modular Build',
+    name: '해봇 AI · 모듈러 구성',
+    nameEn: 'Haebot AI · Modular Build',
     tagline: '분해·조립이 가능한 모듈 구조',
     taglineEn: 'A build that comes apart and goes back together',
     image: '/images/heabot-modular.jpg',
@@ -340,13 +340,13 @@ export const rentalRobots: RentalRobot[] = [
     descEn: 'The main frame, motor mounts, wheel brackets, and base plate each come apart as separate modules. Instead of watching a finished machine, students take it apart and rebuild it — learning mechanical design and drivetrain layout by hand. A strong fit for lab courses and workshops.',
     bestFor: ['기구 설계 실습 수업', '조립·분해 워크숍', '메이커 교육 프로그램', '연구실 플랫폼 개조'],
     bestForEn: ['Mechanical design lab courses', 'Assembly & teardown workshops', 'Maker education programs', 'Lab platform customization'],
-    includes: ['모듈 세트 및 조립 도구', '조립 순서 가이드', '안전 교육 및 현장 지도', '분실·파손 대응 예비 부품'],
-    includesEn: ['Module set and assembly tools', 'Step-by-step build guide', 'Safety briefing and on-site guidance', 'Spare parts for loss or damage'],
+    includes: ['모듈 세트 및 조립 도구', '조립 순서 가이드 · 도면', '안전 교육 및 현장 지도', '예비 부품 · 추가 모듈 별도 구매 가능'],
+    includesEn: ['Module set and assembly tools', 'Step-by-step build guide and drawings', 'Safety briefing and on-site guidance', 'Spare parts and extra modules available separately'],
   },
   {
     key: 'kit',
-    name: 'Heabot AI · 개발 키트',
-    nameEn: 'Heabot AI · Developer Kit',
+    name: '해봇 AI · 개발 키트',
+    nameEn: 'Haebot AI · Developer Kit',
     tagline: 'CAD 설계와 실물을 나란히',
     taglineEn: 'CAD model and hardware, side by side',
     image: '/images/heabot-kit.jpg',
@@ -362,8 +362,8 @@ export const rentalRobots: RentalRobot[] = [
     descEn: 'A development kit sized for a desk. With the CAD model on screen beside the physical build, you can run short cycles of edit, print, assemble, and verify — suited to labs and courses that need to iterate on prototypes quickly.',
     bestFor: ['연구실 프로토타이핑', '교육 과정 실습 장비', '아이디어 검증(PoC)', '사내 기술 스터디'],
     bestForEn: ['Lab prototyping', 'Course lab equipment', 'Idea validation (PoC)', 'Internal technical study groups'],
-    includes: ['키트 본체 및 부품 일체', 'CAD 파일 및 조립 문서', '초기 세팅 원격 지원', '대여 기간 중 기술 문의 대응'],
-    includesEn: ['Kit body and full parts set', 'CAD files and build documentation', 'Remote support for initial setup', 'Technical Q&A throughout the rental'],
+    includes: ['키트 본체 및 부품 일체', 'CAD 파일 및 조립 문서', '초기 세팅 원격 지원', '구매 시 기술 문의 상시 대응 · 수량 할인'],
+    includesEn: ['Kit body and full parts set', 'CAD files and build documentation', 'Remote support for initial setup', 'Ongoing technical Q&A and volume pricing on purchase'],
   },
 ];
 
@@ -447,17 +447,17 @@ export const posterCards: PosterCard[] = [
 ];
 
 export const rentalUseCases: RentalUseCase[] = [
-  { title: '대학·연구', titleEn: 'Universities & research', desc: '실습 수업, 캡스톤 프로젝트, 연구용 대여 — 구매 없이 실물 로봇으로 학습합니다.', descEn: 'Lab courses, capstone projects, research rentals — learn with real robots without buying one.' },
-  { title: '전시·박람회', titleEn: 'Exhibitions & trade shows', desc: '부스 체험 콘텐츠로 관람객의 발길을 잡고, 브랜드 메시지를 로봇 데모로 전달합니다.', descEn: 'Draw visitors in with hands-on booth content and deliver your brand message through a robot demo.' },
-  { title: '기업 행사', titleEn: 'Corporate events', desc: '제품 런칭, 컨퍼런스, 사내 행사에서 피지컬 AI를 직접 보여주는 쇼케이스를 구성합니다.', descEn: 'Build a showcase that puts physical AI on display at product launches, conferences, and internal events.' },
+  { title: '기업 도입', titleEn: 'Corporate adoption', desc: '현장 실증부터 상시 운용까지 — 먼저 대여로 검증하고 구매로 이어가는 방식이 가장 흔합니다.', descEn: 'From on-site validation to full-time operation — most customers rent to validate, then buy.' },
+  { title: '대학·연구', titleEn: 'Universities & research', desc: '실습 수업, 캡스톤 프로젝트, 연구 장비 — 학과 예산에 맞춰 구매와 학기 단위 대여 중 선택합니다.', descEn: 'Lab courses, capstone projects, research equipment — buy it or rent by the semester, whichever fits the budget.' },
+  { title: '전시·행사', titleEn: 'Exhibitions & events', desc: '박람회 부스, 제품 런칭, 컨퍼런스 — 단기 대여로 관람객의 발길을 잡는 체험 콘텐츠를 만듭니다.', descEn: 'Trade show booths, product launches, conferences — short-term rentals that draw visitors in.' },
   { title: '방송·콘텐츠', titleEn: 'Broadcast & content', desc: '촬영·유튜브·광고 등 미디어 제작을 위한 로봇 섭외와 현장 연출을 지원합니다.', descEn: 'We support robot booking and on-site direction for filming, YouTube, ads, and other media production.' },
 ];
 
 export const rentalProcess = [
-  { step: '01', title: '문의 접수', titleEn: 'Inquiry', desc: '행사 일정, 장소, 목적을 알려주시면 담당자가 24시간 내 연락드립니다.', descEn: 'Tell us your event date, location, and goal, and we\'ll get back to you within 24 hours.' },
-  { step: '02', title: '시나리오 상담', titleEn: 'Scenario consultation', desc: '어떤 로봇이, 어떤 데모를, 얼마나 필요한지 함께 설계합니다.', descEn: 'We work with you to plan which robot, which demo, and how much you need.' },
-  { step: '03', title: '견적·일정 확정', titleEn: 'Quote & schedule', desc: '대여 기간, 운반·설치 범위를 반영한 견적서를 전달드립니다.', descEn: 'We send a quote reflecting the rental period and the scope of transport and setup.' },
-  { step: '04', title: '현장 설치·시연', titleEn: 'On-site setup & demo', desc: '전담 오퍼레이터가 동행해 설치부터 시연, 철수까지 함께합니다.', descEn: 'A dedicated operator accompanies you from setup through the demo and teardown.' },
+  { step: '01', title: '문의 접수', titleEn: 'Inquiry', desc: '구매인지 대여인지, 용도와 기간을 알려주시면 담당자가 24시간 내 연락드립니다.', descEn: 'Tell us whether you are buying or renting, plus the use and duration — we reply within 24 hours.' },
+  { step: '02', title: '구성 상담', titleEn: 'Configuration', desc: '어떤 구성이 필요한지, 추가 모듈이나 커스터마이징이 필요한지 함께 정합니다.', descEn: 'We settle which configuration you need, and whether extra modules or customization are involved.' },
+  { step: '03', title: '견적·계약', titleEn: 'Quote & contract', desc: '구매가 또는 대여료, 운반·설치 범위를 반영한 견적서를 전달드립니다. 기관 조달 서류도 지원합니다.', descEn: 'We send a quote covering purchase price or rental fee plus transport and setup, and support procurement paperwork.' },
+  { step: '04', title: '납품·설치·교육', titleEn: 'Delivery, setup & training', desc: '현장에 설치하고 운용 교육까지 진행합니다. 대여는 철수까지, 구매는 이후 유지보수까지 이어집니다.', descEn: 'We install on site and train your operators. Rentals run through teardown; purchases continue into maintenance.' },
 ];
 
 // ---------------------------------------------------------------------------

@@ -1,6 +1,7 @@
 import type { Lang } from './i18n';
 import { rentalRobots, rentalUseCases, rentalProcess } from './data';
 import { Reveal } from './useReveal';
+import { asset } from './asset';
 import { Breadcrumb, PageHero, SectionHeading, StepRail, FinalCta, Chip, mono } from './pageUtils';
 import PosterCarousel from './PosterCarousel';
 
@@ -52,7 +53,7 @@ export default function RentalPage({ lang, t, onContact }: { lang: Lang; t: any;
                     <div className="md:col-span-4" style={{ padding: '0.75rem', background: 'radial-gradient(60% 70% at 50% 55%, rgba(69,224,168,0.08), transparent 70%)' }}>
                       <div style={{ aspectRatio: '4 / 3', width: '100%', overflow: 'hidden', borderRadius: 8 }}>
                         <img
-                          src={r.image}
+                          src={asset(r.image)}
                           alt={lang === 'ko' ? r.name : r.nameEn}
                           loading="lazy"
                           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
@@ -94,9 +95,14 @@ export default function RentalPage({ lang, t, onContact }: { lang: Lang; t: any;
                         </div>
                       </div>
 
-                      <button onClick={onContact} className="btn btn-primary" style={{ marginTop: '1.6rem', padding: '0.7rem 1.4rem', fontSize: '0.85rem', border: 'none' }}>
-                        {lang === 'ko' ? `${r.name} 대여 문의` : `Ask about renting the ${r.nameEn.replace('Heabot AI · ', '')}`}
-                      </button>
+                      <div className="flex flex-wrap gap-2.5" style={{ marginTop: '1.6rem' }}>
+                        <button onClick={onContact} className="btn btn-primary" style={{ padding: '0.7rem 1.4rem', fontSize: '0.85rem', border: 'none' }}>
+                          {p.buyCta}
+                        </button>
+                        <button onClick={onContact} className="btn btn-ghost" style={{ padding: '0.7rem 1.4rem', fontSize: '0.85rem' }}>
+                          {p.rentCta}
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

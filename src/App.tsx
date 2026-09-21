@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { useLang, type Lang } from './i18n';
 import { sendInquiry, mailtoFallback, CONTACT_EMAIL, type InquiryPayload } from './inquiry';
 import { Reveal } from './useReveal';
+import { asset } from './asset';
+import { absoluteUrl } from './siteMeta';
 import EducationPage from './EducationPage';
 import ConsultingPage from './ConsultingPage';
 import RentalPage from './RentalPage';
@@ -60,7 +62,7 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pendingScroll = useRef<string | null>(null);
 
-  const sectionIds = ['what-is', 'how-it-works', 'services', 'robots', 'contact'];
+  const sectionIds = ['services', 'robots', 'physical-ai', 'contact'];
 
   const goToPage = (p: Page) => {
     setPage(p);
@@ -80,6 +82,27 @@ export default function App() {
 
   useEffect(() => {
     setMenuOpen(false);
+  }, [page]);
+
+  // Canonical and og:url have to be absolute, and site.json has no field for
+  // them, so they are set here from the single SITE_URL constant.
+  useEffect(() => {
+    const href = absoluteUrl(page === 'home' ? '' : `#/${page}`);
+    const set = (sel: string, attr: string, make: () => HTMLElement) => {
+      let el = document.head.querySelector(sel) as HTMLElement | null;
+      if (!el) { el = make(); document.head.appendChild(el); }
+      el.setAttribute(attr, href);
+    };
+    set('link[rel="canonical"]', 'href', () => {
+      const l = document.createElement('link');
+      l.setAttribute('rel', 'canonical');
+      return l;
+    });
+    set('meta[property="og:url"]', 'content', () => {
+      const m = document.createElement('meta');
+      m.setAttribute('property', 'og:url');
+      return m;
+    });
   }, [page]);
 
   useEffect(() => {
@@ -150,8 +173,8 @@ export default function App() {
           className="flex items-center gap-3"
           style={{ textDecoration: 'none', color: 'inherit' }}
         >
-          <img src="/logo-mark.png" alt={t.contact.company} style={{ height: 30, width: 'auto' }} />
-          <span style={{ fontWeight: 600, fontSize: '0.95rem', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>{lang === 'ko' ? '지니에듀테크(주)' : 'JINIE EDUTECH'}</span>
+          <img src={asset('logo-mark.png')} alt={t.contact.company} style={{ height: 30, width: 'auto' }} />
+          <span style={{ fontWeight: 600, fontSize: '0.95rem', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>{lang === 'ko' ? '지니에듀테크' : 'JINIE EDUTECH'}</span>
         </a>
         <div className="hidden md:flex items-center gap-7" style={{ fontSize: '0.86rem', color: 'var(--dim)' }}>
           {t.nav.items.map(item => (
@@ -256,7 +279,7 @@ export default function App() {
           aria-hidden
           style={{
             position: 'absolute', inset: 0, pointerEvents: 'none',
-            backgroundImage: 'url(/images/hero-bg.jpg)',
+            backgroundImage: `url(${asset('images/hero-bg.jpg')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center 68%',
             opacity: 0.38,
@@ -341,14 +364,14 @@ export default function App() {
                   >
                     <div style={{ aspectRatio: '4 / 5', overflow: 'hidden', borderRadius: 7, background: 'var(--panel)' }}>
                       <img
-                        src="/images/heabot-field.jpg"
-                        alt="Heabot AI (해봇 AI) — 지니에듀테크 자체 개발 양팔 이동형 로봇"
+                        src={asset('images/heabot-field.jpg')}
+                        alt="해봇 AI (Haebot AI) — 지니에듀테크가 자체 개발한 메카넘 휠 양팔 이동형 로봇"
                         style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%', display: 'block' }}
                       />
                     </div>
                     <div className="flex items-center justify-between gap-3 px-2 pt-3 pb-1">
-                      <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>Heabot AI</span>
-                      <span style={{ ...mono('0.6rem'), color: 'var(--lock)' }}>해봇 AI</span>
+                      <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>{lang === 'ko' ? '해봇 AI' : 'Haebot AI'}</span>
+                      <span style={{ ...mono('0.6rem'), color: 'var(--lock)' }}>{lang === 'ko' ? 'Haebot AI' : '해봇 AI'}</span>
                     </div>
                   </div>
                 </div>
@@ -363,7 +386,7 @@ export default function App() {
         <div className="marquee-inner">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center">
-              {['PHYSICAL AI', 'VLA', 'SENSE · DECIDE · ACT', 'EDUCATION', 'CONSULTING', 'ROBOT RENTAL', 'HEABOT AI', '해봇 AI', 'DUAL-ARM MOBILE', 'MODULAR BUILD', 'DEVELOPER KIT'].map((tx, j) => (
+              {['해봇 AI', 'HAEBOT AI', 'PHYSICAL AI', 'MECANUM WHEELS', 'DUAL-ARM MOBILE', 'SALES · RENTAL', 'EDUCATION', 'CONSULTING', 'VLA', 'SENSE · DECIDE · ACT', 'MODULAR BUILD'].map((tx, j) => (
                 <span key={j} style={{ ...mono('0.72rem'), color: 'var(--faint)', whiteSpace: 'nowrap', padding: '0 1.8rem' }}>
                   {tx}<span style={{ color: 'var(--beam)', marginLeft: '1.8rem', opacity: 0.5 }}>/</span>
                 </span>
@@ -372,144 +395,6 @@ export default function App() {
           ))}
         </div>
       </div>
-
-      {/* WHAT IS PHYSICAL AI */}
-      <section id="what-is" className="px-5 md:px-10 py-20 md:py-28" style={{ borderBottom: '1px solid var(--rail)' }}>
-        <div className="max-w-screen-xl mx-auto">
-          <Reveal>
-            <span style={{ ...mono('0.7rem'), color: 'var(--beam)' }}>{t.whatIs.eyebrow}</span>
-          </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start mt-4">
-            <div>
-              <Reveal>
-                <h2 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', lineHeight: 1.2, fontWeight: 700, letterSpacing: '-0.025em', margin: 0, whiteSpace: 'pre-line' }}>
-                  {t.whatIs.title}
-                </h2>
-              </Reveal>
-              <Reveal delay={100}>
-                <p style={{ fontSize: '1rem', lineHeight: 1.85, color: 'var(--dim)', fontWeight: 300, marginTop: '1.4rem', maxWidth: '46ch' }}>
-                  {t.whatIs.body1}
-                </p>
-              </Reveal>
-              <Reveal delay={180}>
-                <p style={{ fontSize: '1rem', lineHeight: 1.85, color: 'var(--text)', fontWeight: 400, marginTop: '1.1rem', maxWidth: '46ch' }}>
-                  {t.whatIs.body2}
-                </p>
-              </Reveal>
-
-              <Reveal delay={260}>
-                <div className="mt-10">
-                  <div style={{ ...mono('0.68rem'), color: 'var(--faint)', marginBottom: '0.8rem' }}>{t.whatIs.compareTitle}</div>
-                  <div className="card" style={{ overflow: 'hidden' }}>
-                    <div className="grid grid-cols-3" style={{ background: 'var(--panel)', borderBottom: '1px solid var(--rail)' }}>
-                      <div style={{ padding: '0.7rem 0.9rem' }} />
-                      <div style={{ padding: '0.7rem 0.9rem', ...mono('0.62rem'), color: 'var(--faint)' }}>SOFTWARE AI</div>
-                      <div style={{ padding: '0.7rem 0.9rem', ...mono('0.62rem'), color: 'var(--beam)' }}>PHYSICAL AI</div>
-                    </div>
-                    {t.whatIs.compare.map((row, i) => (
-                      <div key={i} className="grid grid-cols-3" style={{ borderTop: i ? '1px solid var(--rail-soft)' : 'none' }}>
-                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.8rem', color: 'var(--dim)', fontWeight: 500 }}>{row.label}</div>
-                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.82rem', color: 'var(--faint)', fontWeight: 300 }}>{row.software}</div>
-                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.82rem', color: 'var(--text)', fontWeight: 400 }}>{row.physical}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </Reveal>
-            </div>
-
-            <Reveal delay={140}>
-              <div className="card" style={{ padding: 0 }}>
-                <div className="px-5 py-3" style={{ borderBottom: '1px solid var(--rail)' }}>
-                  <span style={{ ...mono('0.68rem'), color: 'var(--dim)' }}>{t.whatIs.statsTitle}</span>
-                </div>
-                <div className="p-5">
-                  {t.whatIs.stats.map((r, i) => (
-                    <div key={i} style={{ marginTop: i ? '1.3rem' : 0 }}>
-                      <div className="flex justify-between items-baseline mb-2">
-                        <span style={{ fontSize: '0.88rem', color: 'var(--text)', fontWeight: 300 }}>{r.l}</span>
-                        <span style={{ ...mono('0.95rem'), fontWeight: 700, color: i === 1 ? 'var(--amp)' : 'var(--beam)' }}>{r.v}%</span>
-                      </div>
-                      <div style={{ height: 4, background: 'var(--panel)', borderRadius: 2, overflow: 'hidden' }}>
-                        <div className="sweep" style={{ width: `${r.v}%`, height: '100%', background: i === 1 ? 'var(--amp)' : 'var(--beam)', borderRadius: 2 }} />
-                      </div>
-                    </div>
-                  ))}
-                  <p style={{ ...mono('0.6rem'), color: 'var(--faint)', marginTop: '1.6rem', marginBottom: 0, lineHeight: 1.6 }}>{t.whatIs.source}</p>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* HOW IT WORKS */}
-      <section id="how-it-works" className="sheet-soft px-5 md:px-10 py-20 md:py-28" style={{ borderBottom: '1px solid var(--rail)' }}>
-        <div className="max-w-screen-xl mx-auto">
-          <Reveal><span style={{ ...mono('0.7rem'), color: 'var(--beam)' }}>{t.howItWorks.eyebrow}</span></Reveal>
-          <Reveal delay={60}>
-            <h2 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', lineHeight: 1.2, fontWeight: 700, letterSpacing: '-0.025em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
-              {t.howItWorks.title}
-            </h2>
-          </Reveal>
-          <Reveal delay={120}>
-            <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 300, marginTop: '1rem', marginBottom: '2.8rem', maxWidth: '52ch' }}>
-              {t.howItWorks.subtitle}
-            </p>
-          </Reveal>
-
-          <Reveal delay={180}>
-            <div className="card" style={{ overflow: 'hidden' }}>
-              {/* loop rail */}
-              <div className="flex" style={{ borderBottom: '1px solid var(--rail)' }}>
-                {t.howItWorks.steps.map((s, i) => {
-                  const on = i === activeStep;
-                  return (
-                    <button
-                      key={s.key}
-                      role="tab"
-                      aria-selected={on}
-                      className="step-btn"
-                      onClick={() => { setStepPlaying(false); setActiveStep(i); }}
-                      style={{
-                        flex: 1,
-                        border: 'none',
-                        borderRight: i < t.howItWorks.steps.length - 1 ? '1px solid var(--rail)' : 'none',
-                        padding: '1rem 0.5rem',
-                        cursor: 'pointer',
-                        background: on ? 'var(--beam)' : 'var(--panel)',
-                        color: on ? '#04070d' : 'var(--dim)',
-                        textAlign: 'center',
-                      }}
-                    >
-                      <div style={{ ...mono('0.62rem'), opacity: 0.75 }}>{String(i + 1).padStart(2, '0')}</div>
-                      <div style={{ fontSize: '0.86rem', fontWeight: 600, marginTop: '0.2rem' }}>{s.title}</div>
-                    </button>
-                  );
-                })}
-              </div>
-
-              <div key={activeStep} className="latch grid grid-cols-1 md:grid-cols-12 gap-8 p-6 md:p-10">
-                <div className="md:col-span-7">
-                  <p style={{ fontSize: '1.1rem', lineHeight: 1.85, color: 'var(--text)', fontWeight: 300, margin: 0, maxWidth: '48ch' }}>
-                    {t.howItWorks.steps[activeStep].desc}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    {t.howItWorks.steps[activeStep].tech.map((tx, i) => (
-                      <span key={i} style={{ fontSize: '0.8rem', padding: '0.32rem 0.7rem', border: '1px solid var(--rail)', borderRadius: 4, color: 'var(--text)' }}>
-                        {tx}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className="md:col-span-5 flex items-center justify-center">
-                  <LoopDiagram active={activeStep} total={t.howItWorks.steps.length} />
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
 
       {/* SERVICES */}
       <section id="services" className="px-5 md:px-10 py-20 md:py-28" style={{ borderBottom: '1px solid var(--rail)' }}>
@@ -567,7 +452,7 @@ export default function App() {
                           fontWeight: 700,
                         }}
                       >
-                        {s.tag}
+                        {s.tagLabel}
                       </span>
                       <span style={{ ...mono('0.65rem'), color: accent.color }}>{String(i + 1).padStart(2, '0')}</span>
                     </div>
@@ -633,7 +518,7 @@ export default function App() {
               <Reveal key={i} delay={i * 90}>
                 <div className="card card-hover" style={{ overflow: 'hidden', height: '100%' }}>
                   <div style={{ padding: '0.6rem' }}>
-                    <RobotMedia src={robotMedia[i].src} position={robotMedia[i].position} alt={`${r.name} — ${r.type}`} />
+                    <RobotMedia src={asset(robotMedia[i].src)} position={robotMedia[i].position} alt={`${r.name} — ${r.type}`} />
                   </div>
                   <div className="p-5" style={{ borderTop: '1px solid var(--rail)' }}>
                     <div style={{ fontWeight: 600, fontSize: '1.02rem', letterSpacing: '-0.01em' }}>{r.name}</div>
@@ -658,7 +543,7 @@ export default function App() {
       <section style={{ position: 'relative', borderBottom: '1px solid var(--rail)', overflow: 'hidden' }}>
         <div style={{ position: 'relative', minHeight: 340 }}>
           <img
-            src="/images/platforms-bg.jpg"
+            src={asset('images/platforms-bg.jpg')}
             alt=""
             loading="lazy"
             style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
@@ -684,6 +569,158 @@ export default function App() {
             </Reveal>
           </div>
         </div>
+      </section>
+
+      {/* PHYSICAL AI — what it is + how it works, merged and moved to the back */}
+      <section id="physical-ai" className="px-5 md:px-10 py-20 md:py-28" style={{ borderBottom: '1px solid var(--rail)' }}>
+        <div className="max-w-screen-xl mx-auto mb-12 md:mb-16">
+          <Reveal><span style={{ ...mono('0.7rem'), color: 'var(--beam)' }}>{t.physicalAi.eyebrow}</span></Reveal>
+          <Reveal delay={60}>
+            <h2 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', lineHeight: 1.2, fontWeight: 700, letterSpacing: '-0.025em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
+              {t.physicalAi.title}
+            </h2>
+          </Reveal>
+          <Reveal delay={120}>
+            <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 300, marginTop: '1rem', maxWidth: '56ch' }}>
+              {t.physicalAi.subtitle}
+            </p>
+          </Reveal>
+        </div>
+      {/* WHAT IS PHYSICAL AI */}
+      <div className="max-w-screen-xl mx-auto">
+        <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+            <div>
+              <Reveal>
+                <h3 style={{ fontSize: 'clamp(1.4rem, 2.8vw, 1.9rem)', lineHeight: 1.3, fontWeight: 700, letterSpacing: '-0.02em', margin: 0, whiteSpace: 'pre-line' }}>
+                  {t.whatIs.title}
+                </h3>
+              </Reveal>
+              <Reveal delay={100}>
+                <p style={{ fontSize: '1rem', lineHeight: 1.85, color: 'var(--dim)', fontWeight: 300, marginTop: '1.4rem', maxWidth: '46ch' }}>
+                  {t.whatIs.body1}
+                </p>
+              </Reveal>
+              <Reveal delay={180}>
+                <p style={{ fontSize: '1rem', lineHeight: 1.85, color: 'var(--text)', fontWeight: 400, marginTop: '1.1rem', maxWidth: '46ch' }}>
+                  {t.whatIs.body2}
+                </p>
+              </Reveal>
+
+              <Reveal delay={260}>
+                <div className="mt-10">
+                  <div style={{ ...mono('0.68rem'), color: 'var(--faint)', marginBottom: '0.8rem' }}>{t.whatIs.compareTitle}</div>
+                  <div className="card" style={{ overflow: 'hidden' }}>
+                    <div className="grid grid-cols-3" style={{ background: 'var(--panel)', borderBottom: '1px solid var(--rail)' }}>
+                      <div style={{ padding: '0.7rem 0.9rem' }} />
+                      <div style={{ padding: '0.7rem 0.9rem', ...mono('0.62rem'), color: 'var(--faint)' }}>SOFTWARE AI</div>
+                      <div style={{ padding: '0.7rem 0.9rem', ...mono('0.62rem'), color: 'var(--beam)' }}>PHYSICAL AI</div>
+                    </div>
+                    {t.whatIs.compare.map((row, i) => (
+                      <div key={i} className="grid grid-cols-3" style={{ borderTop: i ? '1px solid var(--rail-soft)' : 'none' }}>
+                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.8rem', color: 'var(--dim)', fontWeight: 500 }}>{row.label}</div>
+                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.82rem', color: 'var(--faint)', fontWeight: 300 }}>{row.software}</div>
+                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.82rem', color: 'var(--text)', fontWeight: 400 }}>{row.physical}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+
+            <Reveal delay={140}>
+              <div className="card" style={{ padding: 0 }}>
+                <div className="px-5 py-3" style={{ borderBottom: '1px solid var(--rail)' }}>
+                  <span style={{ ...mono('0.68rem'), color: 'var(--dim)' }}>{t.whatIs.statsTitle}</span>
+                </div>
+                <div className="p-5">
+                  {t.whatIs.stats.map((r, i) => (
+                    <div key={i} style={{ marginTop: i ? '1.3rem' : 0 }}>
+                      <div className="flex justify-between items-baseline mb-2">
+                        <span style={{ fontSize: '0.88rem', color: 'var(--text)', fontWeight: 300 }}>{r.l}</span>
+                        <span style={{ ...mono('0.95rem'), fontWeight: 700, color: i === 1 ? 'var(--amp)' : 'var(--beam)' }}>{r.v}%</span>
+                      </div>
+                      <div style={{ height: 4, background: 'var(--panel)', borderRadius: 2, overflow: 'hidden' }}>
+                        <div className="sweep" style={{ width: `${r.v}%`, height: '100%', background: i === 1 ? 'var(--amp)' : 'var(--beam)', borderRadius: 2 }} />
+                      </div>
+                    </div>
+                  ))}
+                  <p style={{ ...mono('0.6rem'), color: 'var(--faint)', marginTop: '1.6rem', marginBottom: 0, lineHeight: 1.6 }}>{t.whatIs.source}</p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </div>
+
+      {/* HOW IT WORKS */}
+      <div className="max-w-screen-xl mx-auto mt-20 md:mt-24">
+        <div>
+          <Reveal><span style={{ ...mono('0.7rem'), color: 'var(--lock)' }}>{t.physicalAi.loopEyebrow}</span></Reveal>
+          <Reveal delay={60}>
+            <h3 style={{ fontSize: 'clamp(1.4rem, 2.8vw, 1.9rem)', lineHeight: 1.3, fontWeight: 700, letterSpacing: '-0.02em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
+              {t.howItWorks.title}
+            </h3>
+          </Reveal>
+          <Reveal delay={120}>
+            <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 300, marginTop: '1rem', marginBottom: '2.8rem', maxWidth: '52ch' }}>
+              {t.howItWorks.subtitle}
+            </p>
+          </Reveal>
+
+          <Reveal delay={180}>
+            <div className="card" style={{ overflow: 'hidden' }}>
+              {/* loop rail */}
+              <div className="flex" style={{ borderBottom: '1px solid var(--rail)' }}>
+                {t.howItWorks.steps.map((s, i) => {
+                  const on = i === activeStep;
+                  return (
+                    <button
+                      key={s.key}
+                      role="tab"
+                      aria-selected={on}
+                      className="step-btn"
+                      onClick={() => { setStepPlaying(false); setActiveStep(i); }}
+                      style={{
+                        flex: 1,
+                        border: 'none',
+                        borderRight: i < t.howItWorks.steps.length - 1 ? '1px solid var(--rail)' : 'none',
+                        padding: '1rem 0.5rem',
+                        cursor: 'pointer',
+                        background: on ? 'var(--beam)' : 'var(--panel)',
+                        color: on ? '#04070d' : 'var(--dim)',
+                        textAlign: 'center',
+                      }}
+                    >
+                      <div style={{ ...mono('0.62rem'), opacity: 0.75 }}>{String(i + 1).padStart(2, '0')}</div>
+                      <div style={{ fontSize: '0.86rem', fontWeight: 600, marginTop: '0.2rem' }}>{s.title}</div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div key={activeStep} className="latch grid grid-cols-1 md:grid-cols-12 gap-8 p-6 md:p-10">
+                <div className="md:col-span-7">
+                  <p style={{ fontSize: '1.1rem', lineHeight: 1.85, color: 'var(--text)', fontWeight: 300, margin: 0, maxWidth: '48ch' }}>
+                    {t.howItWorks.steps[activeStep].desc}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-6">
+                    {t.howItWorks.steps[activeStep].tech.map((tx, i) => (
+                      <span key={i} style={{ fontSize: '0.8rem', padding: '0.32rem 0.7rem', border: '1px solid var(--rail)', borderRadius: 4, color: 'var(--text)' }}>
+                        {tx}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="md:col-span-5 flex items-center justify-center">
+                  <LoopDiagram active={activeStep} total={t.howItWorks.steps.length} />
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+
       </section>
 
       {/* CONTACT */}
@@ -754,7 +791,7 @@ export default function App() {
       <footer className="px-5 md:px-10 py-10" style={{ background: 'var(--void)', borderTop: '1px solid var(--rail)' }}>
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
           <div className="flex items-center gap-3">
-            <img src="/logo-mark.png" alt="" style={{ height: 24, width: 'auto' }} />
+            <img src={asset('logo-mark.png')} alt="" style={{ height: 24, width: 'auto' }} />
             <div>
               <div style={{ fontSize: '0.9rem', fontWeight: 600 }}>{t.contact.company}</div>
               <div style={{ ...mono('0.6rem'), color: 'var(--faint)', marginTop: '0.1rem' }}>{t.contact.ceo} {t.contact.ceoName}</div>
@@ -851,6 +888,7 @@ function ContactForm({ t, lang }: { t: any; lang: Lang }) {
 
     const data = new FormData(e.currentTarget);
     const payload: InquiryPayload = {
+      type: ((data.get('type') as string) || '').trim() || undefined,
       name: ((data.get('name') as string) || '').trim(),
       org: ((data.get('org') as string) || '').trim(),
       email: ((data.get('email') as string) || '').trim(),
@@ -911,6 +949,23 @@ function ContactForm({ t, lang }: { t: any; lang: Lang }) {
   return (
     <form ref={formRef} onSubmit={submit} className="card" style={{ padding: '1.9rem' }}>
       <div style={{ ...mono('0.68rem'), color: 'var(--faint)', marginBottom: '1.4rem' }}>{t.contact.formTitle}</div>
+      <div className="mb-4">
+        <label style={fieldLabel} htmlFor="inquiry-type">{t.contact.fields.type}</label>
+        <select
+          id="inquiry-type"
+          name="type"
+          defaultValue={t.contact.types[0].label}
+          style={{ ...fieldInput, appearance: 'none', cursor: 'pointer' }}
+          onFocus={e => (e.currentTarget.style.borderColor = 'var(--beam)')}
+          onBlur={e => (e.currentTarget.style.borderColor = 'var(--rail)')}
+        >
+          {t.contact.types.map((o: { value: string; label: string }) => (
+            <option key={o.value} value={o.label} style={{ background: 'var(--panel)', color: 'var(--text)' }}>
+              {o.label}
+            </option>
+          ))}
+        </select>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label={t.contact.fields.name} name="name" required />
         <Field label={t.contact.fields.org} name="org" />

@@ -32,6 +32,8 @@ export type InquiryPayload = {
   org: string;
   email: string;
   message: string;
+  /** What the inquiry is about, already in the visitor's language. */
+  type?: string;
   /** Honeypot — real people leave this empty. */
   company?: string;
 };
@@ -49,9 +51,11 @@ export async function sendInquiry(payload: InquiryPayload, lang: 'ko' | 'en'): P
   }
 
   const isKo = lang === 'ko';
+  // The type leads the subject so purchase leads are obvious in the inbox list.
+  const tag = payload.type ? `[${payload.type}] ` : '';
   const subject = isKo
-    ? `[홈페이지 문의] ${payload.name}${payload.org ? ` · ${payload.org}` : ''}`
-    : `[Website inquiry] ${payload.name}${payload.org ? ` · ${payload.org}` : ''}`;
+    ? `${tag}[홈페이지 문의] ${payload.name}${payload.org ? ` · ${payload.org}` : ''}`
+    : `${tag}[Website inquiry] ${payload.name}${payload.org ? ` · ${payload.org}` : ''}`;
 
   const body = {
     access_key: ACCESS_KEY,
@@ -60,6 +64,7 @@ export async function sendInquiry(payload: InquiryPayload, lang: 'ko' | 'en'): P
     // Reply-to, so hitting reply in Naver Mail answers the visitor.
     email: payload.email,
     replyto: payload.email,
+    [isKo ? '문의 유형' : 'Inquiry type']: payload.type ?? '-',
     [isKo ? '이름' : 'Name']: payload.name,
     [isKo ? '소속·회사' : 'Organization']: payload.org || '-',
     [isKo ? '이메일' : 'Email']: payload.email,
@@ -86,9 +91,10 @@ export async function sendInquiry(payload: InquiryPayload, lang: 'ko' | 'en'): P
 /** Fallback link, used only after a delivery failure — never as the happy path. */
 export function mailtoFallback(payload: InquiryPayload, lang: 'ko' | 'en'): string {
   const isKo = lang === 'ko';
-  const subject = isKo ? `[문의] ${payload.name}` : `[Inquiry] ${payload.name}`;
+  const tag = payload.type ? `[${payload.type}] ` : '';
+  const subject = isKo ? `${tag}[문의] ${payload.name}` : `${tag}[Inquiry] ${payload.name}`;
   const lines = isKo
-    ? [`이름: ${payload.name}`, `소속·회사: ${payload.org}`, `이메일: ${payload.email}`, '', payload.message]
-    : [`Name: ${payload.name}`, `Organization: ${payload.org}`, `Email: ${payload.email}`, '', payload.message];
+    ? [`문의 유형: ${payload.type ?? '-'}`, `이름: ${payload.name}`, `소속·회사: ${payload.org}`, `이메일: ${payload.email}`, '', payload.message]
+    : [`Inquiry type: ${payload.type ?? '-'}`, `Name: ${payload.name}`, `Organization: ${payload.org}`, `Email: ${payload.email}`, '', payload.message];
   return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
 }
