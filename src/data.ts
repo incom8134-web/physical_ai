@@ -244,7 +244,7 @@ export const services = [
 
 export const journey = [
   { step: '01', label: '인식', sub: '피지컬 AI 세미나\n무엇이 달라질까?' },
-  { step: '02', label: '체험', sub: '해봇 AI (Heabot AI)\n직접 보고 경험하기' },
+  { step: '02', label: '체험', sub: '해봇 (Haebot)\n직접 보고 경험하기' },
   { step: '03', label: '교육', sub: '학생·재직자 학습\n어떻게 작동할까?' },
   { step: '04', label: '컨설팅', sub: '산업·업무 연결\n어디에 가치가 있을까?' },
   { step: '05', label: 'Demo/PoC', sub: '소규모 실증\n우리 환경에서도 될까?' },
@@ -253,21 +253,21 @@ export const journey = [
 
 export const robots = [
   {
-    name: 'Heabot AI (해봇 AI)',
+    name: 'Haebot (해봇)',
     type: '양팔 · 이동형 베이스',
     spec: '자체 개발 플랫폼',
     desc: '양팔 매니퓰레이터와 이동형 카트 베이스를 결합한 자체 개발 플랫폼. 인지–판단–행동 전 과정을 한 대에서 실습합니다.',
     art: 'platform' as const,
   },
   {
-    name: 'Heabot AI (해봇 AI)',
+    name: 'Haebot (해봇)',
     type: '모듈러 구조',
     spec: '프레임 · 마운트 · 베이스',
     desc: '알루미늄 메인 프레임과 모터 마운트, 휠 브래킷이 모듈로 분리됩니다. 조립과 확장을 직접 다루며 기구 설계를 익힙니다.',
     art: 'platform' as const,
   },
   {
-    name: 'Heabot AI (해봇 AI)',
+    name: 'Haebot (해봇)',
     type: '개발 키트',
     spec: 'CAD 설계 연동',
     desc: '데스크탑 규모의 개발 키트. CAD 설계와 실물을 나란히 놓고 설계–제작–검증 흐름을 반복할 수 있습니다.',
@@ -276,7 +276,7 @@ export const robots = [
 ];
 
 // ---------------------------------------------------------------------------
-// Rental page content — Heabot AI (해봇 AI), JINIE EDUTECH's own platform
+// Rental page content — Haebot (해봇), JINIE EDUTECH's own platform
 // ---------------------------------------------------------------------------
 
 export type RentalUseCase = { title: string; titleEn: string; desc: string; descEn: string };
@@ -301,8 +301,8 @@ export type RentalRobot = {
 export const rentalRobots: RentalRobot[] = [
   {
     key: 'field',
-    name: '해봇 AI · 듀얼암 모바일',
-    nameEn: 'Haebot AI · Dual-arm Mobile',
+    name: '해봇 · 듀얼암 모바일',
+    nameEn: 'Haebot · Dual-arm Mobile',
     tagline: '양팔 매니퓰레이터 + 이동형 베이스',
     taglineEn: 'Dual-arm manipulator on a mobile base',
     image: '/images/heabot-field.jpg',
@@ -323,8 +323,8 @@ export const rentalRobots: RentalRobot[] = [
   },
   {
     key: 'modular',
-    name: '해봇 AI · 모듈러 구성',
-    nameEn: 'Haebot AI · Modular Build',
+    name: '해봇 · 모듈러 구성',
+    nameEn: 'Haebot · Modular Build',
     tagline: '분해·조립이 가능한 모듈 구조',
     taglineEn: 'A build that comes apart and goes back together',
     image: '/images/heabot-modular.jpg',
@@ -345,8 +345,8 @@ export const rentalRobots: RentalRobot[] = [
   },
   {
     key: 'kit',
-    name: '해봇 AI · 개발 키트',
-    nameEn: 'Haebot AI · Developer Kit',
+    name: '해봇 · 개발 키트',
+    nameEn: 'Haebot · Developer Kit',
     tagline: 'CAD 설계와 실물을 나란히',
     taglineEn: 'CAD model and hardware, side by side',
     image: '/images/heabot-kit.jpg',
