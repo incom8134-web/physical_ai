@@ -95,14 +95,10 @@ export default function RentalPage({ lang, t, onContact }: { lang: Lang; t: any;
                         </div>
                       </div>
 
-                      <div className="flex flex-wrap gap-2.5" style={{ marginTop: '1.6rem' }}>
-                        <button onClick={onContact} className="btn btn-primary" style={{ padding: '0.7rem 1.4rem', fontSize: '0.85rem', border: 'none' }}>
-                          {p.buyCta}
-                        </button>
-                        <button onClick={onContact} className="btn btn-ghost" style={{ padding: '0.7rem 1.4rem', fontSize: '0.85rem' }}>
-                          {p.rentCta}
-                        </button>
-                      </div>
+                      {/* Each card is one way to get Haebot, so it gets the one button that matches it. */}
+                      <button onClick={onContact} className="btn btn-primary" style={{ marginTop: '1.6rem', padding: '0.7rem 1.4rem', fontSize: '0.85rem', border: 'none' }}>
+                        {r.key === 'purchase' ? p.buyCta : p.rentCta}
+                      </button>
                     </div>
                   </div>
                 </div>
