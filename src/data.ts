@@ -244,7 +244,7 @@ export const services = [
 
 export const journey = [
   { step: '01', label: '인식', sub: '피지컬 AI 세미나\n무엇이 달라질까?' },
-  { step: '02', label: '체험', sub: '해봇 AI (Heabot AI)\n직접 보고 경험하기' },
+  { step: '02', label: '체험', sub: '해봇 (Haebot)\n직접 보고 경험하기' },
   { step: '03', label: '교육', sub: '학생·재직자 학습\n어떻게 작동할까?' },
   { step: '04', label: '컨설팅', sub: '산업·업무 연결\n어디에 가치가 있을까?' },
   { step: '05', label: 'Demo/PoC', sub: '소규모 실증\n우리 환경에서도 될까?' },
@@ -253,21 +253,21 @@ export const journey = [
 
 export const robots = [
   {
-    name: '해봇 AI (Haebot AI)',
+    name: '해봇 (Haebot)',
     type: '듀얼암 모바일 매니퓰레이터',
     spec: '양팔 · 그리퍼',
     desc: '두 팔로 물체를 집고 옮기는 이동형 매니퓰레이터. 머리의 스테레오 카메라로 주변을 인식합니다.',
     art: 'platform' as const,
   },
   {
-    name: '해봇 AI (Haebot AI)',
+    name: '해봇 (Haebot)',
     type: '메카넘 휠 베이스',
     spec: '전방향 주행',
     desc: '네 바퀴 모두 메카넘 휠 — 전후좌우·대각선 이동과 제자리 회전이 가능합니다.',
     art: 'platform' as const,
   },
   {
-    name: '해봇 AI (Haebot AI)',
+    name: '해봇 (Haebot)',
     type: '교육·연구 현장',
     spec: '실습 · 프로젝트',
     desc: '강의실과 연구실에 두고 쓰는 실습 플랫폼. 학생 프로젝트의 기반 장비로 활용합니다.',
@@ -276,7 +276,7 @@ export const robots = [
 ];
 
 // ---------------------------------------------------------------------------
-// Rental page content — Heabot AI (해봇 AI), JINIE EDUTECH's own platform
+// Rental page content — Haebot (해봇), JINIE EDUTECH's own platform
 // ---------------------------------------------------------------------------
 
 export type RentalUseCase = { title: string; titleEn: string; desc: string; descEn: string };
@@ -301,8 +301,8 @@ export type RentalRobot = {
 export const rentalRobots: RentalRobot[] = [
   {
     key: 'purchase',
-    name: '해봇 AI · 구매',
-    nameEn: 'Haebot AI · Purchase',
+    name: '해봇 · 구매',
+    nameEn: 'Haebot · Purchase',
     tagline: '상시 운용 · 연구 · 사업화',
     taglineEn: 'Full-time use, research, and product work',
     image: '/images/haebot-full.jpg',
@@ -314,8 +314,8 @@ export const rentalRobots: RentalRobot[] = [
       { label: '이동', labelEn: 'Locomotion', value: '메카넘 휠 · 전방향 주행', valueEn: 'Mecanum wheels · omnidirectional' },
       { label: '소프트웨어', labelEn: 'Software', value: 'AI 인지·판단 연동', valueEn: 'AI perception & decision' },
     ],
-    desc: '해봇 AI를 직접 소유해 상시 운용합니다. 연구실의 기반 장비로, 자체 서비스 개발의 테스트베드로, 현장 도입의 실증 장비로 쓰실 때 가장 경제적입니다. 용도에 맞춰 그리퍼·센서 등 구성을 협의해 제작합니다.',
-    descEn: 'Own a Haebot AI and run it full time. It is the most economical option as a lab’s base hardware, a testbed for your own service, or validation equipment for an on-site rollout. Grippers, sensors, and other parts are configured to your use.',
+    desc: '해봇을 직접 소유해 상시 운용합니다. 연구실의 기반 장비로, 자체 서비스 개발의 테스트베드로, 현장 도입의 실증 장비로 쓰실 때 가장 경제적입니다. 용도에 맞춰 그리퍼·센서 등 구성을 협의해 제작합니다.',
+    descEn: 'Own a Haebot and run it full time. It is the most economical option as a lab’s base hardware, a testbed for your own service, or validation equipment for an on-site rollout. Grippers, sensors, and other parts are configured to your use.',
     bestFor: ['기업 도입 · 현장 실증', '연구실 기반 장비', '자체 서비스 · 제품 개발', '상설 전시 · 쇼룸'],
     bestForEn: ['Corporate adoption & on-site validation', 'Base hardware for a lab', 'Building your own service or product', 'Permanent exhibits & showrooms'],
     includes: ['설치 · 운용 교육', '사용 매뉴얼 · 기술 문서', '구매 후 유지보수 · 기술 지원', '기관 조달 · 납품 서류'],
@@ -323,8 +323,8 @@ export const rentalRobots: RentalRobot[] = [
   },
   {
     key: 'term',
-    name: '해봇 AI · 장기 대여',
-    nameEn: 'Haebot AI · Long-term Rental',
+    name: '해봇 · 장기 대여',
+    nameEn: 'Haebot · Long-term Rental',
     tagline: '학기 · 과제 기간 단위',
     taglineEn: 'By semester or project period',
     image: '/images/haebot-lab.jpg',
@@ -336,8 +336,8 @@ export const rentalRobots: RentalRobot[] = [
       { label: '대상', labelEn: 'For', value: '대학 · 연구기관 · 기업 교육', valueEn: 'Universities, institutes, corporate training' },
       { label: '전환', labelEn: 'Upgrade path', value: '구매 전환 가능', valueEn: 'Convertible to purchase' },
     ],
-    desc: '한 학기나 과제 기간 동안 해봇 AI를 두고 씁니다. 교육 과정과 묶어 실습 장비로 쓰거나, 구매 전에 충분히 검증해 보는 용도에 맞습니다. 대여 기간이 끝난 뒤 구매로 전환하실 수도 있습니다.',
-    descEn: 'Keep a Haebot AI for a semester or a project period. It suits hands-on course equipment bundled with our training, or a thorough evaluation before buying. You can convert to a purchase when the rental ends.',
+    desc: '한 학기나 과제 기간 동안 해봇을 두고 씁니다. 교육 과정과 묶어 실습 장비로 쓰거나, 구매 전에 충분히 검증해 보는 용도에 맞습니다. 대여 기간이 끝난 뒤 구매로 전환하실 수도 있습니다.',
+    descEn: 'Keep a Haebot for a semester or a project period. It suits hands-on course equipment bundled with our training, or a thorough evaluation before buying. You can convert to a purchase when the rental ends.',
     bestFor: ['대학 실습 · 캡스톤 수업', '정부과제 · 연구 기간', '기업 사내 교육', '구매 전 검증'],
     bestForEn: ['University labs & capstone courses', 'Government projects & research periods', 'Corporate in-house training', 'Evaluation before buying'],
     includes: ['설치 · 운용 교육', '교육 과정 연계 실습 자료', '대여 기간 중 원격 기술 지원', '기간 종료 후 회수 또는 구매 전환'],
@@ -345,8 +345,8 @@ export const rentalRobots: RentalRobot[] = [
   },
   {
     key: 'event',
-    name: '해봇 AI · 단기 대여',
-    nameEn: 'Haebot AI · Short-term Rental',
+    name: '해봇 · 단기 대여',
+    nameEn: 'Haebot · Short-term Rental',
     tagline: '전시 · 행사 · 촬영',
     taglineEn: 'Exhibitions, events, and shoots',
     image: '/images/haebot-mecanum.jpg',
@@ -358,8 +358,8 @@ export const rentalRobots: RentalRobot[] = [
       { label: '공간', labelEn: 'Space', value: '좁은 부스에서도 전방향 주행', valueEn: 'Omnidirectional even in tight booths' },
       { label: '구성', labelEn: 'Setup', value: '행사별 데모 시나리오', valueEn: 'Demo scenario per event' },
     ],
-    desc: '박람회 부스, 제품 런칭, 컨퍼런스, 촬영 현장에 해봇 AI를 보내 드립니다. 메카넘 휠 덕분에 방향 전환 공간이 부족한 부스 안에서도 자유롭게 움직여, 관람객 앞에서 인지–판단–행동을 그대로 보여줍니다.',
-    descEn: 'We send Haebot AI to trade show booths, product launches, conferences, and film sets. Its mecanum wheels let it move freely even in a booth with no room to turn, showing sense-decide-act right in front of visitors.',
+    desc: '박람회 부스, 제품 런칭, 컨퍼런스, 촬영 현장에 해봇을 보내 드립니다. 메카넘 휠 덕분에 방향 전환 공간이 부족한 부스 안에서도 자유롭게 움직여, 관람객 앞에서 인지–판단–행동을 그대로 보여줍니다.',
+    descEn: 'We send Haebot to trade show booths, product launches, conferences, and film sets. Its mecanum wheels let it move freely even in a booth with no room to turn, showing sense-decide-act right in front of visitors.',
     bestFor: ['전시 · 박람회 체험 부스', '제품 런칭 · 컨퍼런스', '기업 쇼케이스', '방송 · 영상 촬영'],
     bestForEn: ['Exhibition & trade show booths', 'Product launches & conferences', 'Corporate showcases', 'Broadcast & video shoots'],
     includes: ['전담 오퍼레이터 현장 지원', '데모 시나리오 기획 · 리허설', '운반 · 설치 · 철수 · 안전관리', '촬영 · 관람객 인터랙션 가이드'],
@@ -401,14 +401,14 @@ export const posterCards: PosterCard[] = [
     image: '/images/poster-haebot.jpg',
     title: 'AI가 세상을 이해하고 직접 행동하는 시대',
     titleEn: 'The age of AI that understands the world and acts on it',
-    category: '해봇 AI',
-    categoryEn: 'Haebot AI',
+    category: '해봇',
+    categoryEn: 'Haebot',
     body: [
-      '센서로 세상을 인식하고, AI가 판단하고 계획하고, 액추에이터가 직접 행동하고, 피드백으로 더 똑똑해집니다. 해봇 AI는 이 순환을 한 대의 로봇에 담았습니다.',
+      '센서로 세상을 인식하고, AI가 판단하고 계획하고, 액추에이터가 직접 행동하고, 피드백으로 더 똑똑해집니다. 해봇은 이 순환을 한 대의 로봇에 담았습니다.',
       '양팔 매니퓰레이터와 메카넘 휠 베이스로 교육, 산업, 파트너십 현장을 모두 다룹니다.',
     ],
     bodyEn: [
-      'Sensors perceive the world, AI decides and plans, actuators act, and feedback makes it smarter. Haebot AI puts that whole loop into one robot.',
+      'Sensors perceive the world, AI decides and plans, actuators act, and feedback makes it smarter. Haebot puts that whole loop into one robot.',
       'With dual arms and a mecanum-wheel base, it covers education, industry, and partnership work alike.',
     ],
   },
@@ -469,11 +469,11 @@ export const posterCards: PosterCard[] = [
     categoryEn: 'Company overview',
     body: [
       '아이디어가 현실이 되는 곳, 지니에듀테크. 교육, 연구, 제작, 스마트팜, 산업 솔루션 — 다섯 영역에서 AI와 로봇으로 현장의 문제를 함께 해결합니다.',
-      '사람과 기술이 만드는 더 나은 미래를 위해, 해봇 AI와 함께 배우고, 만들고, 실전을 경험합니다.',
+      '사람과 기술이 만드는 더 나은 미래를 위해, 해봇과 함께 배우고, 만들고, 실전을 경험합니다.',
     ],
     bodyEn: [
       'JINIE EDUTECH, where ideas become real. Education, research, fabrication, smart farming, industrial solutions — five areas where we solve real problems with AI and robots.',
-      'Learning, building, and getting real-world experience with Haebot AI, toward a better future made by people and technology.',
+      'Learning, building, and getting real-world experience with Haebot, toward a better future made by people and technology.',
     ],
   },
 ];
