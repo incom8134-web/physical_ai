@@ -24,12 +24,11 @@ const mono = (size = '0.7rem'): React.CSSProperties => ({
   letterSpacing: '0.06em',
 });
 
-// Haebot — JINIE EDUTECH's own platform, in the three configurations shown
-// in the robots section, in the same order as t.robots.items.
+// Haebot AI — one robot shown three ways, in the same order as t.robots.items.
 const robotMedia: { src: string; position: string }[] = [
-  { src: '/images/heabot-field.jpg', position: 'center 42%' },
-  { src: '/images/heabot-modular.jpg', position: 'center center' },
-  { src: '/images/heabot-kit.jpg', position: 'center center' },
+  { src: '/images/haebot-full.jpg', position: 'center center' },
+  { src: '/images/haebot-mecanum.jpg', position: 'center center' },
+  { src: '/images/haebot-lab.jpg', position: 'center center' },
 ];
 
 function RobotMedia({ src, position, alt }: { src: string; position: string; alt: string }) {
@@ -274,24 +273,14 @@ export default function App() {
       {page === 'home' && <>
       {/* HERO */}
       <section id="top" className="sheet px-5 md:px-10 pt-32 md:pt-40 pb-16" style={{ borderBottom: '1px solid var(--rail)', position: 'relative', overflow: 'hidden' }}>
-        {/* Analytical → Generative → Agentic → Physical AI, re-toned for the dark canvas */}
-        <div
-          aria-hidden
-          style={{
-            position: 'absolute', inset: 0, pointerEvents: 'none',
-            backgroundImage: `url(${asset('images/hero-bg.jpg')})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center 68%',
-            opacity: 0.38,
-          }}
-        />
+        <HeroBackground />
         <div
           aria-hidden
           style={{
             position: 'absolute', inset: 0, pointerEvents: 'none',
             background:
-              'linear-gradient(90deg, rgba(5,8,15,0.97) 0%, rgba(5,8,15,0.90) 46%, rgba(5,8,15,0.45) 100%),' +
-              'linear-gradient(180deg, rgba(5,8,15,0.92) 0%, rgba(5,8,15,0.25) 40%, rgba(5,8,15,0.95) 100%)',
+              'linear-gradient(90deg, rgba(5,8,15,0.93) 0%, rgba(5,8,15,0.74) 45%, rgba(5,8,15,0.32) 100%),' +
+              'linear-gradient(180deg, rgba(5,8,15,0.85) 0%, rgba(5,8,15,0.15) 38%, rgba(5,8,15,0.93) 100%)',
           }}
         />
         <div
@@ -349,30 +338,44 @@ export default function App() {
 
             <div className="md:col-span-5" style={{ position: 'relative', zIndex: 1 }}>
               <Reveal delay={200}>
-                <div style={{ position: 'relative' }}>
+                {/* Haebot cut out of its render backdrop, standing directly on the page */}
+                <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                   <div
                     aria-hidden
                     style={{
-                      position: 'absolute', inset: '-8%',
-                      background: 'radial-gradient(50% 50% at 50% 45%, rgba(92,139,255,0.30), transparent 70%)',
-                      filter: 'blur(10px)',
+                      position: 'absolute', left: '-10%', right: '-10%', top: '4%', bottom: '10%',
+                      background: 'radial-gradient(48% 46% at 50% 44%, rgba(92,139,255,0.34), transparent 72%)',
+                      filter: 'blur(14px)', pointerEvents: 'none',
+                    }}
+                  />
+                  <picture className="hero-float" style={{ position: 'relative', display: 'block' }}>
+                    <source srcSet={asset('images/haebot-cutout.webp')} type="image/webp" />
+                    <img
+                      src={asset('images/haebot-cutout.png')}
+                      alt="해봇 AI (Haebot AI) — 지니에듀테크가 자체 개발한 메카넘 휠 양팔 이동형 로봇"
+                      width={554}
+                      height={921}
+                      style={{
+                        display: 'block', width: 'auto', height: 'auto',
+                        maxHeight: 'min(600px, 68vh)', maxWidth: '100%',
+                        filter: 'drop-shadow(0 24px 34px rgba(0,0,0,0.6))',
+                      }}
+                    />
+                  </picture>
+                  {/* floor shadow under the wheels */}
+                  <div
+                    aria-hidden
+                    style={{
+                      width: '62%', height: 26, marginTop: -18,
+                      background: 'radial-gradient(50% 50% at 50% 50%, rgba(0,0,0,0.65), transparent 72%)',
                     }}
                   />
                   <div
-                    className="card hero-float"
-                    style={{ position: 'relative', padding: '0.6rem', overflow: 'hidden' }}
+                    className="inline-flex items-center gap-2 mt-3"
+                    style={{ border: '1px solid var(--rail)', background: 'rgba(11,18,32,0.7)', padding: '0.3rem 0.8rem', borderRadius: 999, backdropFilter: 'blur(6px)' }}
                   >
-                    <div style={{ aspectRatio: '4 / 5', overflow: 'hidden', borderRadius: 7, background: 'var(--panel)' }}>
-                      <img
-                        src={asset('images/heabot-field.jpg')}
-                        alt="해봇 (Haebot) — 지니에듀테크가 자체 개발한 메카넘 휠 양팔 이동형 로봇"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%', display: 'block' }}
-                      />
-                    </div>
-                    <div className="flex items-center justify-between gap-3 px-2 pt-3 pb-1">
-                      <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>{lang === 'ko' ? '해봇' : 'Haebot'}</span>
-                      <span style={{ ...mono('0.6rem'), color: 'var(--lock)' }}>{lang === 'ko' ? 'Haebot' : '해봇'}</span>
-                    </div>
+                    <span style={{ fontSize: '0.82rem', fontWeight: 600 }}>{lang === 'ko' ? '해봇 AI' : 'Haebot AI'}</span>
+                    <span style={{ ...mono('0.6rem'), color: 'var(--lock)' }}>{lang === 'ko' ? 'Haebot AI' : '해봇 AI'}</span>
                   </div>
                 </div>
               </Reveal>
@@ -386,7 +389,7 @@ export default function App() {
         <div className="marquee-inner">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center">
-              {['해봇', 'HAEBOT', 'PHYSICAL AI', 'MECANUM WHEELS', 'DUAL-ARM MOBILE', 'SALES · RENTAL', 'EDUCATION', 'CONSULTING', 'VLA', 'SENSE · DECIDE · ACT', 'MODULAR BUILD'].map((tx, j) => (
+              {['해봇 AI', 'HAEBOT AI', 'PHYSICAL AI', 'MECANUM WHEELS', 'DUAL-ARM MOBILE', 'SALES · RENTAL', 'EDUCATION', 'CONSULTING', 'VLA', 'SENSE · DECIDE · ACT', 'OMNIDIRECTIONAL'].map((tx, j) => (
                 <span key={j} style={{ ...mono('0.72rem'), color: 'var(--faint)', whiteSpace: 'nowrap', padding: '0 1.8rem' }}>
                   {tx}<span style={{ color: 'var(--beam)', marginLeft: '1.8rem', opacity: 0.5 }}>/</span>
                 </span>
@@ -806,6 +809,65 @@ export default function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+/**
+ * Looping, muted background video for the hero. Visitors who ask the OS for
+ * reduced motion get the static diagram instead, and the video pauses while
+ * the hero is scrolled out of view so it isn't decoding off-screen.
+ */
+function HeroBackground() {
+  const ref = useRef<HTMLVideoElement>(null);
+  const [allowMotion] = useState(
+    () => typeof window === 'undefined' || !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  );
+
+  useEffect(() => {
+    const v = ref.current;
+    if (!v) return;
+    // Autoplay is only permitted while muted; set it as a property too, since
+    // React does not always reflect `muted` onto the element in time.
+    v.muted = true;
+    v.defaultMuted = true;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) v.play().catch(() => {});
+        else v.pause();
+      },
+      { threshold: 0.05 },
+    );
+    io.observe(v);
+    return () => io.disconnect();
+  }, [allowMotion]);
+
+  const layer: React.CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' };
+
+  if (!allowMotion) {
+    return (
+      <div
+        aria-hidden
+        style={{ ...layer, backgroundImage: `url(${asset('images/hero-bg.jpg')})`, backgroundSize: 'cover', backgroundPosition: 'center 68%', opacity: 0.4 }}
+      />
+    );
+  }
+
+  return (
+    <video
+      ref={ref}
+      aria-hidden
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="auto"
+      poster={asset('video/hero-loop-poster.jpg')}
+      style={{ ...layer, objectFit: 'cover', objectPosition: 'center center', opacity: 0.85 }}
+    >
+      {/* WebM first (smaller; also plays in Chromium builds without H.264), MP4 for Safari/older browsers */}
+      <source src={asset('video/hero-loop.webm')} type="video/webm" />
+      <source src={asset('video/hero-loop.mp4')} type="video/mp4" />
+    </video>
   );
 }
 
