@@ -9,7 +9,7 @@ export const mono = (size = '0.7rem'): React.CSSProperties => ({
 
 export function Breadcrumb({ label, eyebrow }: { label: string; eyebrow: string }) {
   return (
-    <div className="px-5 md:px-10 pt-24 pb-0">
+    <div className="sheet theme-dark px-5 md:px-10 pt-24 pb-0">
       <div className="max-w-screen-xl mx-auto flex items-center gap-2" style={{ ...mono('0.7rem'), color: 'var(--faint)' }}>
         <span>{label}</span>
         <span style={{ opacity: 0.5 }}>/</span>
@@ -39,7 +39,7 @@ export function PageHero({
   accentColor?: string;
 }) {
   return (
-    <section className="sheet px-5 md:px-10 pt-8 pb-16 md:pb-20" style={{ borderBottom: '1px solid var(--rail)', position: 'relative', overflow: 'hidden' }}>
+    <section className="sheet theme-dark px-5 md:px-10 pt-8 pb-16 md:pb-20" style={{ position: 'relative', overflow: 'hidden' }}>
       <div
         aria-hidden
         style={{
@@ -148,10 +148,10 @@ export function FinalCta({
   onCta: () => void;
 }) {
   return (
-    <section className="sheet px-5 md:px-10 py-20 md:py-28" style={{ position: 'relative', borderTop: '1px solid var(--rail)' }}>
+    <section className="sheet theme-dark px-5 md:px-10 py-20 md:py-28" style={{ position: 'relative' }}>
       <div
         aria-hidden
-        style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(50% 60% at 50% 100%, rgba(29,91,214,0.08), transparent 70%)' }}
+        style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(50% 60% at 50% 100%, rgba(59,130,246,0.2), transparent 70%)' }}
       />
       <div className="max-w-screen-xl mx-auto text-center" style={{ position: 'relative' }}>
         <Reveal>
