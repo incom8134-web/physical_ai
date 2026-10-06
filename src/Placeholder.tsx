@@ -31,7 +31,7 @@ export default function Placeholder({
         <circle cx="8.5" cy="9.5" r="1.6" />
         <path d="M21 15l-5.5-5.5a2 2 0 0 0-2.8 0L3 19" />
       </svg>
-      <span style={{ fontSize: '0.84rem', fontWeight: 500, lineHeight: 1.5, maxWidth: '20ch' }}>{label}</span>
+      <span style={{ fontSize: '0.84rem', fontWeight: 600, lineHeight: 1.5, maxWidth: '20ch' }}>{label}</span>
     </div>
   );
 }

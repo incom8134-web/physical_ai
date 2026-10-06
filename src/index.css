@@ -11,7 +11,7 @@
   --color-amp: #b45f06;
   --color-lock: #0a8a5f;
   --color-text: #111827;
-  --color-dim: #374151;
+  --color-dim: #283141;
   --font-sans: 'Pretendard Variable', Pretendard, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
@@ -21,7 +21,8 @@
    Token names are kept from the original theme: --void is a section's
    background, --deck a card surface, --rail a border, --beam the accent blue. */
 :root,
-.theme-light {
+.theme-light,
+.theme-dark .card {
   --void: #ffffff;
   --deck: #ffffff;
   --panel: #f3f6fb;
@@ -39,34 +40,35 @@
   --amp: #b45f06;
   --lock: #0a8a5f;
   --text: #111827;
-  --dim: #374151;
-  --faint: #4b5563;
+  --dim: #283141;
+  --faint: #3b4554;
   --grid: rgba(17, 24, 39, 0.045);
   --shadow-card: 0 1px 2px rgba(17,24,39,0.05), 0 10px 30px -14px rgba(17,24,39,0.16);
   --shadow-hover: 0 4px 12px rgba(17,24,39,0.08), 0 24px 48px -18px rgba(26,99,216,0.28);
 }
-.theme-light { color: var(--text); }
+.theme-light,
+.theme-dark .card { color: var(--text); }
 
 /* Navy band. Everything inside reads the same tokens, re-toned for a dark ground. */
 .theme-dark {
-  --void: #172036;
+  --void: #152c5e;
   --deck: rgba(255, 255, 255, 0.05);
   --panel: rgba(255, 255, 255, 0.07);
   --panel-2: rgba(255, 255, 255, 0.1);
-  --rail: rgba(255, 255, 255, 0.13);
+  --rail: rgba(255, 255, 255, 0.16);
   --rail-soft: rgba(255, 255, 255, 0.08);
-  --beam: #6ea8ff;
+  --beam: #8cbcff;
   --beam-deep: #3b82f6;
   --beam-soft: rgba(110, 168, 255, 0.14);
   --beam-glow: rgba(59, 130, 246, 0.45);
   --btn-bg: #1f6ae6;
   --btn-hover: #3b82f6;
   --amp: #ffc24b;
-  --lock: #4fd6a2;
+  --lock: #6ee7b7;
   --text: #ffffff;
-  --dim: #e2e8f2;
-  --faint: #b4bfd3;
-  --grid: rgba(255, 255, 255, 0.045);
+  --dim: #edf1f8;
+  --faint: #cdd7e8;
+  --grid: rgba(255, 255, 255, 0.05);
   --shadow-card: 0 1px 2px rgba(0,0,0,0.3), 0 12px 32px -12px rgba(0,0,0,0.45);
   --shadow-hover: 0 4px 10px rgba(0,0,0,0.35), 0 24px 48px -16px rgba(59,130,246,0.35);
   background-color: var(--void);
@@ -87,7 +89,7 @@ body {
   background-color: var(--void);
   color: var(--text);
   font-family: 'Pretendard Variable', Pretendard, system-ui, -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   /* Break Korean between words, not inside them (keeps "지니에듀테크(주)는" whole). */
   word-break: keep-all;
