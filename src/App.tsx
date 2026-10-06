@@ -775,7 +775,7 @@ export default function App() {
                   icon="pin"
                   label={t.contact.lab}
                   value={t.contact.labAddr}
-                  href={`https://map.naver.com/p/search/${encodeURIComponent(t.contact.labAddr)}`}
+                  href={`https://map.naver.com/p/search/${encodeURIComponent(t.contact.labMapQuery)}`}
                   newTab
                   last
                 />
