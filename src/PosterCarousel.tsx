@@ -53,7 +53,7 @@ export default function PosterCarousel({
   return (
     <>
       <div className="flex items-center justify-between gap-4 mb-4">
-        <span style={{ ...mono('0.62rem'), color: 'var(--faint)' }}>{labels.hint}</span>
+        <span style={{ ...mono('0.78rem'), color: 'var(--faint)' }}>{labels.hint}</span>
         <div className="hidden md:flex items-center gap-2">
           <button onClick={() => scrollBy(-1)} aria-label="Previous" style={arrowBtn}>←</button>
           <button onClick={() => scrollBy(1)} aria-label="Next" style={arrowBtn}>→</button>
@@ -101,18 +101,18 @@ export default function PosterCarousel({
               />
             </div>
             <div style={{ padding: '1rem 1.1rem 1.2rem', borderTop: '1px solid var(--rail)' }}>
-              <span style={{ ...mono('0.6rem'), color: 'var(--lock)' }}>
+              <span style={{ ...mono('0.78rem'), color: 'var(--lock)' }}>
                 {lang === 'ko' ? card.category : card.categoryEn}
               </span>
               <div
                 style={{
-                  fontSize: '0.92rem', fontWeight: 600, lineHeight: 1.5,
+                  fontSize: '1rem', fontWeight: 600, lineHeight: 1.5,
                   margin: '0.45rem 0 0.7rem', color: 'var(--text)',
                 }}
               >
                 {lang === 'ko' ? card.title : card.titleEn}
               </div>
-              <span style={{ ...mono('0.62rem'), color: 'var(--beam)' }}>{labels.open} →</span>
+              <span style={{ ...mono('0.78rem'), color: 'var(--beam)' }}>{labels.open} →</span>
             </div>
           </button>
         ))}
@@ -152,7 +152,7 @@ export default function PosterCarousel({
                 className="md:col-span-6 p-6 md:p-8"
                 style={{ borderTop: '1px solid var(--rail)', display: 'flex', flexDirection: 'column' }}
               >
-                <span style={{ ...mono('0.62rem'), color: 'var(--lock)' }}>
+                <span style={{ ...mono('0.78rem'), color: 'var(--lock)' }}>
                   {lang === 'ko' ? active.category : active.categoryEn}
                 </span>
                 <h3
@@ -166,7 +166,7 @@ export default function PosterCarousel({
                 {(lang === 'ko' ? active.body : active.bodyEn).map((para, i) => (
                   <p
                     key={i}
-                    style={{ fontSize: '0.9rem', lineHeight: 1.85, color: 'var(--dim)', fontWeight: 300, margin: i ? '0.9rem 0 0' : 0 }}
+                    style={{ fontSize: '1rem', lineHeight: 1.85, color: 'var(--dim)', fontWeight: 400, margin: i ? '0.9rem 0 0' : 0 }}
                   >
                     {para}
                   </p>
@@ -174,7 +174,7 @@ export default function PosterCarousel({
                 <button
                   onClick={close}
                   className="btn btn-ghost"
-                  style={{ marginTop: '1.8rem', padding: '0.7rem 1.3rem', fontSize: '0.85rem', alignSelf: 'flex-start' }}
+                  style={{ marginTop: '1.8rem', padding: '0.7rem 1.3rem', fontSize: '0.92rem', alignSelf: 'flex-start' }}
                 >
                   {labels.close}
                 </button>
@@ -195,6 +195,6 @@ const arrowBtn: React.CSSProperties = {
   background: 'transparent',
   color: 'var(--dim)',
   cursor: 'pointer',
-  fontSize: '0.85rem',
+  fontSize: '0.92rem',
   lineHeight: 1,
 };
