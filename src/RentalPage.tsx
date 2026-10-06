@@ -41,7 +41,7 @@ export default function RentalPage({ lang, t, onContact }: { lang: Lang; t: any;
       </section>
 
       {/* ROBOTS */}
-      <section id="rental-robots" className="sheet-soft px-5 md:px-10 py-20 md:py-28" style={{ borderBottom: '1px solid var(--rail)' }}>
+      <section id="rental-robots" className="sheet theme-dark px-5 md:px-10 py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto">
           <SectionHeading eyebrow={p.robotsEyebrow} title={p.robotsTitle} />
 
@@ -122,7 +122,7 @@ export default function RentalPage({ lang, t, onContact }: { lang: Lang; t: any;
       </section>
 
       {/* PROCESS */}
-      <section className="sheet-soft px-5 md:px-10 py-20 md:py-28" style={{ borderBottom: '1px solid var(--rail)' }}>
+      <section className="sheet theme-dark px-5 md:px-10 py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto">
           <SectionHeading eyebrow={p.processEyebrow} title={p.processTitle} />
           <div className="mt-10">

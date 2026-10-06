@@ -838,13 +838,6 @@ export default function App() {
                 <InfoRow icon="globe" label={t.contact.website} value="jcodeedu.com" href={MAIN_SITE_URL} newTab />
                 <InfoRow
                   icon="pin"
-                  label={t.contact.hq}
-                  value={t.contact.hqAddr}
-                  href={`https://map.kakao.com/link/search/${encodeURIComponent(t.contact.hqAddr)}`}
-                  newTab
-                />
-                <InfoRow
-                  icon="pin"
                   label={t.contact.lab}
                   value={t.contact.labAddr}
                   href={`https://map.naver.com/p/search/${encodeURIComponent(t.contact.labMapQuery)}`}
