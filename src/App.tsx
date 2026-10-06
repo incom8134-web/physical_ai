@@ -18,7 +18,7 @@ function pageFromHash(): Page {
   return 'home';
 }
 
-const mono = (size = '0.7rem'): React.CSSProperties => ({
+const mono = (size = '0.84rem'): React.CSSProperties => ({
   fontFamily: 'JetBrains Mono, monospace',
   fontSize: size,
   letterSpacing: '0.06em',
@@ -178,11 +178,11 @@ export default function App() {
         >
           <img src={asset('logo-mark.png')} alt={t.contact.company} className="logo-mark" style={{ height: 32, width: 'auto' }} />
           <span style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.15 }}>
-            <span style={{ fontWeight: 800, fontSize: '1.08rem', letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>{lang === 'ko' ? '지니에듀테크(주)' : 'JINIE EDUTECH'}</span>
-            <span style={{ fontSize: '0.62rem', fontWeight: 600, color: 'var(--faint)', whiteSpace: 'nowrap' }}>{lang === 'ko' ? 'Jinie EduTech Co., Ltd.' : '지니에듀테크(주)'}</span>
+            <span style={{ fontWeight: 800, fontSize: '1.2rem', letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>{lang === 'ko' ? '지니에듀테크(주)' : 'JINIE EDUTECH'}</span>
+            <span style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--faint)', whiteSpace: 'nowrap' }}>{lang === 'ko' ? 'Jinie EduTech Co., Ltd.' : '지니에듀테크(주)'}</span>
           </span>
         </a>
-        <div className="hidden md:flex items-center gap-7" style={{ fontSize: '0.86rem', color: 'var(--dim)' }}>
+        <div className="hidden md:flex items-center gap-7" style={{ fontSize: '0.92rem', color: 'var(--dim)' }}>
           {t.nav.items.map(item => (
             <a
               key={item.href}
@@ -214,7 +214,7 @@ export default function App() {
             onClick={toggle}
             aria-label="Toggle language"
             style={{
-              ...mono('0.7rem'),
+              ...mono('0.84rem'),
               display: 'flex',
               alignItems: 'center',
               gap: 4,
@@ -233,7 +233,7 @@ export default function App() {
             href="#contact"
             onClick={e => { e.preventDefault(); goToSection('contact'); }}
             className="btn btn-primary nav-cta"
-            style={{ fontSize: '0.85rem', padding: '0.55rem 1.15rem' }}
+            style={{ fontSize: '0.92rem', padding: '0.55rem 1.15rem' }}
           >
             {t.nav.cta}
           </a>
@@ -272,7 +272,7 @@ export default function App() {
               href={item.href}
               onClick={e => { e.preventDefault(); setMenuOpen(false); goToSection(item.href.slice(1)); }}
               style={{
-                display: 'block', padding: '0.95rem 0', fontSize: '0.98rem',
+                display: 'block', padding: '0.95rem 0', fontSize: '1.08rem',
                 color: 'var(--text)', textDecoration: 'none',
                 borderBottom: '1px solid var(--rail-soft)',
               }}
@@ -287,7 +287,7 @@ export default function App() {
             onClick={() => setMenuOpen(false)}
             className="flex items-center justify-between"
             style={{
-              padding: '0.95rem 0', fontSize: '0.98rem', fontWeight: 600,
+              padding: '0.95rem 0', fontSize: '1.08rem', fontWeight: 600,
               color: 'var(--beam)', textDecoration: 'none',
               borderBottom: '1px solid var(--rail-soft)',
             }}
@@ -299,7 +299,7 @@ export default function App() {
             href="#contact"
             onClick={e => { e.preventDefault(); setMenuOpen(false); goToSection('contact'); }}
             className="btn btn-primary"
-            style={{ marginTop: '1.1rem', padding: '0.8rem 1.2rem', fontSize: '0.9rem', width: '100%' }}
+            style={{ marginTop: '1.1rem', padding: '0.8rem 1.2rem', fontSize: '1rem', width: '100%' }}
           >
             {t.nav.cta}
           </a>
@@ -340,7 +340,7 @@ export default function App() {
               <Reveal>
                 <div className="inline-flex items-center gap-2.5 mb-7" style={{ border: '1px solid var(--rail)', background: 'var(--deck)', padding: '0.3rem 0.8rem', borderRadius: 999 }}>
                   <span className="blip" style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--lock)' }} />
-                  <span style={{ ...mono('0.68rem'), color: 'var(--dim)' }}>{t.hero.eyebrow}</span>
+                  <span style={{ ...mono('0.84rem'), color: 'var(--dim)' }}>{t.hero.eyebrow}</span>
                 </div>
               </Reveal>
               <Reveal delay={80}>
@@ -350,14 +350,14 @@ export default function App() {
                 </h1>
               </Reveal>
               <Reveal delay={160}>
-                <p style={{ fontSize: '1.08rem', lineHeight: 1.85, color: 'var(--dim)', fontWeight: 300, marginTop: '1.6rem', maxWidth: '46ch' }}>
+                <p style={{ fontSize: '1.2rem', lineHeight: 1.85, color: 'var(--dim)', fontWeight: 400, marginTop: '1.6rem', maxWidth: '46ch' }}>
                   {t.hero.subtitle}
                 </p>
               </Reveal>
               <Reveal delay={240}>
                 <div className="flex flex-wrap gap-3 mt-8">
-                  <a href="#services" className="btn btn-primary" style={{ padding: '0.85rem 1.7rem', fontSize: '0.92rem' }}>{t.hero.ctaPrimary}</a>
-                  <a href="#contact" className="btn btn-ghost" style={{ padding: '0.85rem 1.7rem', fontSize: '0.92rem' }}>{t.hero.ctaSecondary}</a>
+                  <a href="#services" className="btn btn-primary" style={{ padding: '0.85rem 1.7rem', fontSize: '1rem' }}>{t.hero.ctaPrimary}</a>
+                  <a href="#contact" className="btn btn-ghost" style={{ padding: '0.85rem 1.7rem', fontSize: '1rem' }}>{t.hero.ctaSecondary}</a>
                 </div>
               </Reveal>
               <Reveal delay={280}>
@@ -375,9 +375,9 @@ export default function App() {
                 >
                   <img src={asset('logo-mark.png')} alt="" style={{ width: 40, height: 40, flexShrink: 0 }} />
                   <span style={{ flex: 1, minWidth: 0 }}>
-                    <span style={{ ...mono('0.6rem'), color: 'var(--beam)', display: 'block' }}>{t.hero.mainSiteLabel} · jcodeedu.com</span>
-                    <span style={{ display: 'block', fontWeight: 700, fontSize: '0.98rem', marginTop: '0.15rem' }}>{t.hero.mainSiteTitle}</span>
-                    <span style={{ display: 'block', fontSize: '0.8rem', color: 'var(--dim)', marginTop: '0.15rem', lineHeight: 1.5 }}>{t.hero.mainSiteDesc}</span>
+                    <span style={{ ...mono('0.78rem'), color: 'var(--beam)', display: 'block' }}>{t.hero.mainSiteLabel} · jcodeedu.com</span>
+                    <span style={{ display: 'block', fontWeight: 700, fontSize: '1.08rem', marginTop: '0.15rem' }}>{t.hero.mainSiteTitle}</span>
+                    <span style={{ display: 'block', fontSize: '0.92rem', color: 'var(--dim)', marginTop: '0.15rem', lineHeight: 1.5 }}>{t.hero.mainSiteDesc}</span>
                   </span>
                   <span
                     aria-hidden
@@ -396,8 +396,8 @@ export default function App() {
                 <div className="grid grid-cols-3 gap-4 mt-12 max-w-md">
                   {t.hero.stats.map((s, i) => (
                     <div key={i}>
-                      <div style={{ ...mono('1.4rem'), fontWeight: 700, color: 'var(--beam)' }}>{s.n}</div>
-                      <div style={{ fontSize: '0.72rem', color: 'var(--faint)', marginTop: '0.2rem', lineHeight: 1.4 }}>{s.l}</div>
+                      <div style={{ ...mono('1.5rem'), fontWeight: 700, color: 'var(--beam)' }}>{s.n}</div>
+                      <div style={{ fontSize: '0.84rem', color: 'var(--faint)', marginTop: '0.2rem', lineHeight: 1.4 }}>{s.l}</div>
                     </div>
                   ))}
                 </div>
@@ -442,8 +442,8 @@ export default function App() {
                     className="inline-flex items-center gap-2 mt-3"
                     style={{ border: '1px solid var(--rail)', background: 'rgba(255,255,255,0.08)', padding: '0.3rem 0.8rem', borderRadius: 999, backdropFilter: 'blur(6px)' }}
                   >
-                    <span style={{ fontSize: '0.82rem', fontWeight: 600 }}>{lang === 'ko' ? '해봇' : 'Haebot'}</span>
-                    <span style={{ ...mono('0.6rem'), color: 'var(--lock)' }}>{lang === 'ko' ? 'Haebot' : '해봇'}</span>
+                    <span style={{ fontSize: '0.92rem', fontWeight: 600 }}>{lang === 'ko' ? '해봇' : 'Haebot'}</span>
+                    <span style={{ ...mono('0.78rem'), color: 'var(--lock)' }}>{lang === 'ko' ? 'Haebot' : '해봇'}</span>
                   </div>
                 </div>
               </Reveal>
@@ -458,7 +458,7 @@ export default function App() {
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center">
               {['해봇', 'HAEBOT', 'PHYSICAL AI', 'MECANUM WHEELS', 'DUAL-ARM MOBILE', 'SALES · RENTAL', 'EDUCATION', 'CONSULTING', 'VLA', 'SENSE · DECIDE · ACT', 'OMNIDIRECTIONAL'].map((tx, j) => (
-                <span key={j} style={{ ...mono('0.72rem'), color: 'var(--faint)', whiteSpace: 'nowrap', padding: '0 1.8rem' }}>
+                <span key={j} style={{ ...mono('0.84rem'), color: 'var(--faint)', whiteSpace: 'nowrap', padding: '0 1.8rem' }}>
                   {tx}<span style={{ color: 'var(--beam)', marginLeft: '1.8rem', opacity: 0.5 }}>/</span>
                 </span>
               ))}
@@ -472,7 +472,7 @@ export default function App() {
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
-              <Reveal><span style={{ ...mono('0.7rem'), color: 'var(--beam)' }}>{t.services.eyebrow}</span></Reveal>
+              <Reveal><span style={{ ...mono('0.84rem'), color: 'var(--beam)' }}>{t.services.eyebrow}</span></Reveal>
               <Reveal delay={60}>
                 <h2 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', lineHeight: 1.2, fontWeight: 700, letterSpacing: '-0.025em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
                   {t.services.title}
@@ -480,7 +480,7 @@ export default function App() {
               </Reveal>
             </div>
             <Reveal delay={120}>
-              <p style={{ fontSize: '0.98rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 300, maxWidth: '36ch', margin: 0 }}>
+              <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 400, maxWidth: '36ch', margin: 0 }}>
                 {t.services.subtitle}
               </p>
             </Reveal>
@@ -515,7 +515,7 @@ export default function App() {
                     <div className="flex justify-between items-start mb-5">
                       <span
                         style={{
-                          ...mono('0.62rem'),
+                          ...mono('0.78rem'),
                           color: accent.ink,
                           background: accent.color,
                           padding: '0.22rem 0.55rem',
@@ -525,18 +525,18 @@ export default function App() {
                       >
                         {s.tagLabel}
                       </span>
-                      <span style={{ ...mono('0.65rem'), color: accent.color }}>{String(i + 1).padStart(2, '0')}</span>
+                      <span style={{ ...mono('0.78rem'), color: accent.color }}>{String(i + 1).padStart(2, '0')}</span>
                     </div>
-                    <div style={{ fontSize: '1.4rem', fontWeight: 600, letterSpacing: '-0.015em', marginBottom: '0.5rem' }}>{s.title}</div>
+                    <div style={{ fontSize: '1.5rem', fontWeight: 600, letterSpacing: '-0.015em', marginBottom: '0.5rem' }}>{s.title}</div>
                     <div className="flex gap-1.5 flex-wrap mb-4">
                       {s.audience.map((a, j) => (
-                        <span key={j} style={{ ...mono('0.6rem'), color: 'var(--dim)', border: '1px solid var(--rail)', padding: '0.2rem 0.45rem', borderRadius: 2 }}>{a}</span>
+                        <span key={j} style={{ ...mono('0.78rem'), color: 'var(--dim)', border: '1px solid var(--rail)', padding: '0.2rem 0.45rem', borderRadius: 2 }}>{a}</span>
                       ))}
                     </div>
-                    <p style={{ fontSize: '0.9rem', lineHeight: 1.75, color: 'var(--dim)', fontWeight: 300, marginBottom: '1.4rem' }}>{s.desc}</p>
+                    <p style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--dim)', fontWeight: 400, marginBottom: '1.4rem' }}>{s.desc}</p>
                     <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.4rem' }}>
                       {s.points.map((p, j) => (
-                        <li key={j} style={{ fontSize: '0.85rem', padding: '0.5rem 0', color: 'var(--text)', fontWeight: 300, borderTop: '1px solid var(--rail-soft)', display: 'flex', gap: '0.6rem' }}>
+                        <li key={j} style={{ fontSize: '0.92rem', padding: '0.5rem 0', color: 'var(--text)', fontWeight: 400, borderTop: '1px solid var(--rail-soft)', display: 'flex', gap: '0.6rem' }}>
                           <span style={{ color: accent.color, flexShrink: 0 }}>/</span>{p}
                         </li>
                       ))}
@@ -549,7 +549,7 @@ export default function App() {
                           marginTop: 'auto',
                           paddingTop: '0.65rem',
                           paddingBottom: '0.65rem',
-                          fontSize: '0.82rem',
+                          fontSize: '0.92rem',
                           width: '100%',
                           background: 'transparent',
                           color: accent.color,
@@ -572,14 +572,14 @@ export default function App() {
       {/* ROBOTS */}
       <section id="robots" className="sheet-soft px-5 md:px-10 py-20 md:py-28" style={{ borderBottom: '1px solid var(--rail)' }}>
         <div className="max-w-screen-xl mx-auto">
-          <Reveal><span style={{ ...mono('0.7rem'), color: 'var(--beam)' }}>{t.robots.eyebrow}</span></Reveal>
+          <Reveal><span style={{ ...mono('0.84rem'), color: 'var(--beam)' }}>{t.robots.eyebrow}</span></Reveal>
           <Reveal delay={60}>
             <h2 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', lineHeight: 1.2, fontWeight: 700, letterSpacing: '-0.025em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
               {t.robots.title}
             </h2>
           </Reveal>
           <Reveal delay={120}>
-            <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 300, marginTop: '1rem', marginBottom: '3rem', maxWidth: '52ch' }}>
+            <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 400, marginTop: '1rem', marginBottom: '3rem', maxWidth: '52ch' }}>
               {t.robots.subtitle}
             </p>
           </Reveal>
@@ -592,20 +592,20 @@ export default function App() {
                     <RobotMedia src={asset(robotMedia[i].src)} position={robotMedia[i].position} alt={`${r.name} — ${r.type}`} />
                   </div>
                   <div className="p-5" style={{ borderTop: '1px solid var(--rail)' }}>
-                    <div style={{ fontWeight: 600, fontSize: '1.02rem', letterSpacing: '-0.01em' }}>{r.name}</div>
+                    <div style={{ fontWeight: 600, fontSize: '1.08rem', letterSpacing: '-0.01em' }}>{r.name}</div>
                     <div className="flex items-center gap-2 mt-1.5 mb-3.5 flex-wrap">
-                      <span style={{ ...mono('0.62rem'), color: 'var(--beam)' }}>{r.type}</span>
+                      <span style={{ ...mono('0.78rem'), color: 'var(--beam)' }}>{r.type}</span>
                       <span style={{ color: 'var(--rail)' }}>|</span>
-                      <span style={{ ...mono('0.62rem'), color: 'var(--faint)' }}>{r.spec}</span>
+                      <span style={{ ...mono('0.78rem'), color: 'var(--faint)' }}>{r.spec}</span>
                     </div>
-                    <p style={{ fontSize: '0.88rem', lineHeight: 1.75, color: 'var(--dim)', fontWeight: 300, margin: 0 }}>{r.desc}</p>
+                    <p style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--dim)', fontWeight: 400, margin: 0 }}>{r.desc}</p>
                   </div>
                 </div>
               </Reveal>
             ))}
           </div>
           <Reveal delay={320}>
-            <p style={{ ...mono('0.64rem'), color: 'var(--faint)', marginTop: '1.6rem', lineHeight: 1.7 }}>{t.robots.note}</p>
+            <p style={{ ...mono('0.78rem'), color: 'var(--faint)', marginTop: '1.6rem', lineHeight: 1.7 }}>{t.robots.note}</p>
           </Reveal>
         </div>
       </section>
@@ -629,11 +629,11 @@ export default function App() {
           <div className="max-w-screen-xl mx-auto px-5 md:px-10 h-full flex items-center" style={{ position: 'relative', minHeight: 340 }}>
             <Reveal>
               <div style={{ maxWidth: '32ch' }}>
-                <span style={{ ...mono('0.68rem'), color: 'var(--beam)' }}>{t.banner.eyebrow}</span>
+                <span style={{ ...mono('0.84rem'), color: 'var(--beam)' }}>{t.banner.eyebrow}</span>
                 <h3 style={{ fontSize: 'clamp(1.5rem, 3.2vw, 2.3rem)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.3, margin: '0.5rem 0 0' }}>
                   {t.banner.title}
                 </h3>
-                <p style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'var(--dim)', fontWeight: 300, marginTop: '1rem' }}>
+                <p style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--dim)', fontWeight: 400, marginTop: '1rem' }}>
                   {t.banner.subtitle}
                 </p>
               </div>
@@ -645,14 +645,14 @@ export default function App() {
       {/* PHYSICAL AI — what it is + how it works, merged and moved to the back */}
       <section id="physical-ai" className="px-5 md:px-10 py-20 md:py-28" style={{ borderBottom: '1px solid var(--rail)' }}>
         <div className="max-w-screen-xl mx-auto mb-12 md:mb-16">
-          <Reveal><span style={{ ...mono('0.7rem'), color: 'var(--beam)' }}>{t.physicalAi.eyebrow}</span></Reveal>
+          <Reveal><span style={{ ...mono('0.84rem'), color: 'var(--beam)' }}>{t.physicalAi.eyebrow}</span></Reveal>
           <Reveal delay={60}>
             <h2 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', lineHeight: 1.2, fontWeight: 700, letterSpacing: '-0.025em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
               {t.physicalAi.title}
             </h2>
           </Reveal>
           <Reveal delay={120}>
-            <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 300, marginTop: '1rem', maxWidth: '56ch' }}>
+            <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 400, marginTop: '1rem', maxWidth: '56ch' }}>
               {t.physicalAi.subtitle}
             </p>
           </Reveal>
@@ -668,30 +668,30 @@ export default function App() {
                 </h3>
               </Reveal>
               <Reveal delay={100}>
-                <p style={{ fontSize: '1rem', lineHeight: 1.85, color: 'var(--dim)', fontWeight: 300, marginTop: '1.4rem', maxWidth: '46ch' }}>
+                <p style={{ fontSize: '1.08rem', lineHeight: 1.85, color: 'var(--dim)', fontWeight: 400, marginTop: '1.4rem', maxWidth: '46ch' }}>
                   {t.whatIs.body1}
                 </p>
               </Reveal>
               <Reveal delay={180}>
-                <p style={{ fontSize: '1rem', lineHeight: 1.85, color: 'var(--text)', fontWeight: 400, marginTop: '1.1rem', maxWidth: '46ch' }}>
+                <p style={{ fontSize: '1.08rem', lineHeight: 1.85, color: 'var(--text)', fontWeight: 400, marginTop: '1.1rem', maxWidth: '46ch' }}>
                   {t.whatIs.body2}
                 </p>
               </Reveal>
 
               <Reveal delay={260}>
                 <div className="mt-10">
-                  <div style={{ ...mono('0.68rem'), color: 'var(--faint)', marginBottom: '0.8rem' }}>{t.whatIs.compareTitle}</div>
+                  <div style={{ ...mono('0.84rem'), color: 'var(--faint)', marginBottom: '0.8rem' }}>{t.whatIs.compareTitle}</div>
                   <div className="card" style={{ overflow: 'hidden' }}>
                     <div className="grid grid-cols-3" style={{ background: 'var(--panel)', borderBottom: '1px solid var(--rail)' }}>
                       <div style={{ padding: '0.7rem 0.9rem' }} />
-                      <div style={{ padding: '0.7rem 0.9rem', ...mono('0.62rem'), color: 'var(--faint)' }}>SOFTWARE AI</div>
-                      <div style={{ padding: '0.7rem 0.9rem', ...mono('0.62rem'), color: 'var(--beam)' }}>PHYSICAL AI</div>
+                      <div style={{ padding: '0.7rem 0.9rem', ...mono('0.78rem'), color: 'var(--faint)' }}>SOFTWARE AI</div>
+                      <div style={{ padding: '0.7rem 0.9rem', ...mono('0.78rem'), color: 'var(--beam)' }}>PHYSICAL AI</div>
                     </div>
                     {t.whatIs.compare.map((row, i) => (
                       <div key={i} className="grid grid-cols-3" style={{ borderTop: i ? '1px solid var(--rail-soft)' : 'none' }}>
-                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.8rem', color: 'var(--dim)', fontWeight: 500 }}>{row.label}</div>
-                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.82rem', color: 'var(--faint)', fontWeight: 300 }}>{row.software}</div>
-                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.82rem', color: 'var(--text)', fontWeight: 400 }}>{row.physical}</div>
+                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.92rem', color: 'var(--dim)', fontWeight: 500 }}>{row.label}</div>
+                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.92rem', color: 'var(--faint)', fontWeight: 400 }}>{row.software}</div>
+                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.92rem', color: 'var(--text)', fontWeight: 400 }}>{row.physical}</div>
                       </div>
                     ))}
                   </div>
@@ -702,21 +702,21 @@ export default function App() {
             <Reveal delay={140}>
               <div className="card" style={{ padding: 0 }}>
                 <div className="px-5 py-3" style={{ borderBottom: '1px solid var(--rail)' }}>
-                  <span style={{ ...mono('0.68rem'), color: 'var(--dim)' }}>{t.whatIs.statsTitle}</span>
+                  <span style={{ ...mono('0.84rem'), color: 'var(--dim)' }}>{t.whatIs.statsTitle}</span>
                 </div>
                 <div className="p-5">
                   {t.whatIs.stats.map((r, i) => (
                     <div key={i} style={{ marginTop: i ? '1.3rem' : 0 }}>
                       <div className="flex justify-between items-baseline mb-2">
-                        <span style={{ fontSize: '0.88rem', color: 'var(--text)', fontWeight: 300 }}>{r.l}</span>
-                        <span style={{ ...mono('0.95rem'), fontWeight: 700, color: i === 1 ? 'var(--amp)' : 'var(--beam)' }}>{r.v}%</span>
+                        <span style={{ fontSize: '1rem', color: 'var(--text)', fontWeight: 400 }}>{r.l}</span>
+                        <span style={{ ...mono('1rem'), fontWeight: 700, color: i === 1 ? 'var(--amp)' : 'var(--beam)' }}>{r.v}%</span>
                       </div>
                       <div style={{ height: 4, background: 'var(--panel)', borderRadius: 2, overflow: 'hidden' }}>
                         <div className="sweep" style={{ width: `${r.v}%`, height: '100%', background: i === 1 ? 'var(--amp)' : 'var(--beam)', borderRadius: 2 }} />
                       </div>
                     </div>
                   ))}
-                  <p style={{ ...mono('0.6rem'), color: 'var(--faint)', marginTop: '1.6rem', marginBottom: 0, lineHeight: 1.6 }}>{t.whatIs.source}</p>
+                  <p style={{ ...mono('0.78rem'), color: 'var(--faint)', marginTop: '1.6rem', marginBottom: 0, lineHeight: 1.6 }}>{t.whatIs.source}</p>
                 </div>
               </div>
             </Reveal>
@@ -727,14 +727,14 @@ export default function App() {
       {/* HOW IT WORKS */}
       <div className="max-w-screen-xl mx-auto mt-20 md:mt-24">
         <div>
-          <Reveal><span style={{ ...mono('0.7rem'), color: 'var(--lock)' }}>{t.physicalAi.loopEyebrow}</span></Reveal>
+          <Reveal><span style={{ ...mono('0.84rem'), color: 'var(--lock)' }}>{t.physicalAi.loopEyebrow}</span></Reveal>
           <Reveal delay={60}>
             <h3 style={{ fontSize: 'clamp(1.4rem, 2.8vw, 1.9rem)', lineHeight: 1.3, fontWeight: 700, letterSpacing: '-0.02em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
               {t.howItWorks.title}
             </h3>
           </Reveal>
           <Reveal delay={120}>
-            <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 300, marginTop: '1rem', marginBottom: '2.8rem', maxWidth: '52ch' }}>
+            <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 400, marginTop: '1rem', marginBottom: '2.8rem', maxWidth: '52ch' }}>
               {t.howItWorks.subtitle}
             </p>
           </Reveal>
@@ -763,8 +763,8 @@ export default function App() {
                         textAlign: 'center',
                       }}
                     >
-                      <div style={{ ...mono('0.62rem'), opacity: 0.75 }}>{String(i + 1).padStart(2, '0')}</div>
-                      <div style={{ fontSize: '0.86rem', fontWeight: 600, marginTop: '0.2rem' }}>{s.title}</div>
+                      <div style={{ ...mono('0.78rem'), opacity: 0.75 }}>{String(i + 1).padStart(2, '0')}</div>
+                      <div style={{ fontSize: '0.92rem', fontWeight: 600, marginTop: '0.2rem' }}>{s.title}</div>
                     </button>
                   );
                 })}
@@ -772,12 +772,12 @@ export default function App() {
 
               <div key={activeStep} className="latch grid grid-cols-1 md:grid-cols-12 gap-8 p-6 md:p-10">
                 <div className="md:col-span-7">
-                  <p style={{ fontSize: '1.1rem', lineHeight: 1.85, color: 'var(--text)', fontWeight: 300, margin: 0, maxWidth: '48ch' }}>
+                  <p style={{ fontSize: '1.2rem', lineHeight: 1.85, color: 'var(--text)', fontWeight: 400, margin: 0, maxWidth: '48ch' }}>
                     {t.howItWorks.steps[activeStep].desc}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-6">
                     {t.howItWorks.steps[activeStep].tech.map((tx, i) => (
-                      <span key={i} style={{ fontSize: '0.8rem', padding: '0.32rem 0.7rem', border: '1px solid var(--rail)', borderRadius: 4, color: 'var(--text)' }}>
+                      <span key={i} style={{ fontSize: '0.92rem', padding: '0.32rem 0.7rem', border: '1px solid var(--rail)', borderRadius: 4, color: 'var(--text)' }}>
                         {tx}
                       </span>
                     ))}
@@ -801,14 +801,14 @@ export default function App() {
           style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(50% 60% at 50% 100%, rgba(29,91,214,0.08), transparent 70%)' }}
         />
         <div className="max-w-screen-xl mx-auto" style={{ position: 'relative' }}>
-          <Reveal><span style={{ ...mono('0.7rem'), color: 'var(--beam)' }}>{t.contact.eyebrow}</span></Reveal>
+          <Reveal><span style={{ ...mono('0.84rem'), color: 'var(--beam)' }}>{t.contact.eyebrow}</span></Reveal>
           <Reveal delay={60}>
             <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.4rem)', lineHeight: 1.15, fontWeight: 700, letterSpacing: '-0.03em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
               {t.contact.title}
             </h2>
           </Reveal>
           <Reveal delay={120}>
-            <p style={{ fontSize: '1.02rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 300, marginTop: '1rem', marginBottom: '3rem', maxWidth: '44ch' }}>
+            <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 400, marginTop: '1rem', marginBottom: '3rem', maxWidth: '44ch' }}>
               {t.contact.subtitle}
             </p>
           </Reveal>
@@ -820,12 +820,12 @@ export default function App() {
 
             <Reveal delay={220} className="lg:col-span-5">
               <div className="card" style={{ padding: '1.9rem', height: '100%' }}>
-                <div style={{ ...mono('0.68rem'), color: 'var(--faint)', marginBottom: '1.4rem' }}>{t.contact.infoTitle}</div>
+                <div style={{ ...mono('0.84rem'), color: 'var(--faint)', marginBottom: '1.4rem' }}>{t.contact.infoTitle}</div>
 
                 <div style={{ marginBottom: '1.6rem' }}>
-                  <div style={{ fontSize: '1.15rem', fontWeight: 600 }}>{t.contact.company}</div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--faint)', marginTop: '0.15rem' }}>{t.contact.companyEn}</div>
-                  <div style={{ fontSize: '0.85rem', color: 'var(--dim)', marginTop: '0.4rem' }}>{t.contact.ceo} · {t.contact.ceoName}</div>
+                  <div style={{ fontSize: '1.2rem', fontWeight: 600 }}>{t.contact.company}</div>
+                  <div style={{ fontSize: '0.92rem', color: 'var(--faint)', marginTop: '0.15rem' }}>{t.contact.companyEn}</div>
+                  <div style={{ fontSize: '0.92rem', color: 'var(--dim)', marginTop: '0.4rem' }}>{t.contact.ceo} · {t.contact.ceoName}</div>
                 </div>
 
                 <InfoRow icon="mail" label={t.contact.email} value={CONTACT_EMAIL} href={`mailto:${CONTACT_EMAIL}`} />
@@ -865,8 +865,8 @@ export default function App() {
             <div className="flex items-center gap-3">
               <img src={asset('logo-mark.png')} alt="" className="logo-mark" style={{ height: 30, width: 'auto' }} />
               <div>
-                <div style={{ fontSize: '1.05rem', fontWeight: 800, letterSpacing: '-0.02em' }}>{t.contact.company}</div>
-                <div style={{ fontSize: '0.65rem', fontWeight: 600, color: 'var(--faint)', marginTop: '0.1rem' }}>{t.contact.companyEn}</div>
+                <div style={{ fontSize: '1.08rem', fontWeight: 800, letterSpacing: '-0.02em' }}>{t.contact.company}</div>
+                <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--faint)', marginTop: '0.1rem' }}>{t.contact.companyEn}</div>
               </div>
             </div>
             <a
@@ -874,19 +874,19 @@ export default function App() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
-              style={{ padding: '0.65rem 1.2rem', fontSize: '0.85rem' }}
+              style={{ padding: '0.65rem 1.2rem', fontSize: '0.92rem' }}
             >
               {t.hero.mainSiteTitle}
               <ExternalIcon size={13} />
             </a>
           </div>
-          <div className="flex flex-col md:flex-row md:flex-wrap gap-x-6 gap-y-2 pt-6" style={{ fontSize: '0.78rem', color: 'var(--dim)' }}>
+          <div className="flex flex-col md:flex-row md:flex-wrap gap-x-6 gap-y-2 pt-6" style={{ fontSize: '0.92rem', color: 'var(--dim)' }}>
             <span>{t.footer.ceoLabel} : {t.contact.ceoName}</span>
             <span>{t.footer.bizNoLabel} : 528-88-00923</span>
             <span>{t.footer.addrLabel} : {t.contact.labAddr}</span>
             <span>{t.contact.email} : <a href={`mailto:${CONTACT_EMAIL}`} className="link-underline">{CONTACT_EMAIL}</a></span>
           </div>
-          <div className="flex flex-col md:flex-row justify-between gap-4 pt-6" style={{ fontSize: '0.75rem', color: 'var(--faint)' }}>
+          <div className="flex flex-col md:flex-row justify-between gap-4 pt-6" style={{ fontSize: '0.84rem', color: 'var(--faint)' }}>
             <span>© 2026 {t.contact.company} — {t.footer.rights}</span>
             <div className="flex gap-5">
               <a href="#" className="link-underline">{t.footer.privacy}</a>
@@ -959,8 +959,8 @@ function HeroBackground() {
 }
 
 function LoopDiagram({ active, total }: { active: number; total: number }) {
-  const size = 220;
-  const r = 82;
+  const size = 260;
+  const r = 92;
   const cx = size / 2;
   const cy = size / 2;
   const pts = Array.from({ length: total }, (_, i) => {
@@ -969,22 +969,22 @@ function LoopDiagram({ active, total }: { active: number; total: number }) {
   });
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} role="img" aria-hidden="true">
-      <circle cx={cx} cy={cy} r={r} fill="none" stroke="var(--rail)" strokeWidth="1" strokeDasharray="2 6" />
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke="var(--faint)" strokeOpacity="0.45" strokeWidth="1.2" strokeDasharray="2 6" />
       {pts.map((p, i) => {
         const next = pts[(i + 1) % total];
         const on = i === active;
         return (
           <g key={i}>
-            <line x1={p.x} y1={p.y} x2={next.x} y2={next.y} stroke="var(--rail)" strokeWidth="1" />
-            <circle cx={p.x} cy={p.y} r={on ? 10 : 7} fill={on ? 'var(--beam)' : 'var(--panel)'} stroke={on ? 'var(--beam)' : 'var(--rail)'} strokeWidth="1.4" style={{ transition: 'r 0.3s, fill 0.3s' }} />
-            <text x={p.x} y={p.y + 1} textAnchor="middle" dominantBaseline="middle" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 9, fill: on ? '#ffffff' : 'var(--faint)', fontWeight: 700 }}>
+            <line x1={p.x} y1={p.y} x2={next.x} y2={next.y} stroke="var(--faint)" strokeOpacity="0.35" strokeWidth="1.4" />
+            <circle cx={p.x} cy={p.y} r={on ? 17 : 13} fill={on ? 'var(--beam)' : 'var(--panel)'} stroke={on ? 'var(--beam)' : 'var(--faint)'} strokeOpacity={on ? 1 : 0.5} strokeWidth="1.6" style={{ transition: 'r 0.3s, fill 0.3s' }} />
+            <text x={p.x} y={p.y + 1} textAnchor="middle" dominantBaseline="middle" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 14, fill: on ? '#ffffff' : 'var(--dim)', fontWeight: 700 }}>
               {i + 1}
             </text>
           </g>
         );
       })}
-      <circle cx={cx} cy={cy} r={26} fill="var(--void)" stroke="var(--rail)" strokeWidth="1" />
-      <text x={cx} y={cy + 4} textAnchor="middle" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 10, fill: 'var(--beam)', fontWeight: 700 }}>
+      <circle cx={cx} cy={cy} r={34} fill="var(--beam-soft)" stroke="var(--beam)" strokeOpacity="0.4" strokeWidth="1.4" />
+      <text x={cx} y={cy + 1} textAnchor="middle" dominantBaseline="middle" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 16, fill: 'var(--beam)', fontWeight: 700 }}>
         AI
       </text>
     </svg>
@@ -1002,8 +1002,8 @@ function InfoRow({ icon, label, value, href, last, newTab }: { icon: 'mail' | 'p
     <div className="flex items-start gap-3" style={{ padding: '0.7rem 0', borderBottom: last ? 'none' : '1px solid var(--rail-soft)' }}>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--beam)" strokeWidth="1.6" style={{ marginTop: 2, flexShrink: 0 }}>{icons[icon]}</svg>
       <div>
-        <div style={{ fontSize: '0.68rem', color: 'var(--faint)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{label}</div>
-        <div style={{ fontSize: '0.9rem', color: 'var(--text)', marginTop: '0.1rem', lineHeight: 1.5 }}>{value}</div>
+        <div style={{ fontSize: '0.84rem', color: 'var(--faint)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{label}</div>
+        <div style={{ fontSize: '1rem', color: 'var(--text)', marginTop: '0.1rem', lineHeight: 1.5 }}>{value}</div>
       </div>
     </div>
   );
@@ -1070,14 +1070,14 @@ function ContactForm({ t, lang }: { t: any; lang: Lang }) {
             <path d="M20 6L9 17l-5-5" />
           </svg>
         </div>
-        <div style={{ fontSize: '1.15rem', fontWeight: 700 }}>{f.sentTitle}</div>
-        <p style={{ fontSize: '0.92rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 300, marginTop: '0.6rem' }}>
+        <div style={{ fontSize: '1.2rem', fontWeight: 700 }}>{f.sentTitle}</div>
+        <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 400, marginTop: '0.6rem' }}>
           {f.sentBody}
         </p>
         <button
           onClick={() => setState({ phase: 'idle' })}
           className="btn btn-ghost"
-          style={{ marginTop: '1.6rem', padding: '0.7rem 1.4rem', fontSize: '0.85rem', alignSelf: 'flex-start' }}
+          style={{ marginTop: '1.6rem', padding: '0.7rem 1.4rem', fontSize: '0.92rem', alignSelf: 'flex-start' }}
         >
           {f.again}
         </button>
@@ -1097,7 +1097,7 @@ function ContactForm({ t, lang }: { t: any; lang: Lang }) {
 
   return (
     <form ref={formRef} onSubmit={submit} className="card" style={{ padding: '1.9rem' }}>
-      <div style={{ ...mono('0.68rem'), color: 'var(--faint)', marginBottom: '1.4rem' }}>{t.contact.formTitle}</div>
+      <div style={{ ...mono('0.84rem'), color: 'var(--faint)', marginBottom: '1.4rem' }}>{t.contact.formTitle}</div>
       <div className="mb-4">
         <label style={fieldLabel} htmlFor="inquiry-type">{t.contact.fields.type}</label>
         <select
@@ -1154,14 +1154,14 @@ function ContactForm({ t, lang }: { t: any; lang: Lang }) {
             border: '1px solid var(--amp)', background: 'rgba(180,95,6,0.06)',
           }}
         >
-          <div style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--amp)' }}>{f.failTitle}</div>
-          <p style={{ fontSize: '0.85rem', lineHeight: 1.7, color: 'var(--text)', fontWeight: 300, margin: '0.4rem 0 0.9rem' }}>
+          <div style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--amp)' }}>{f.failTitle}</div>
+          <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--text)', fontWeight: 400, margin: '0.4rem 0 0.9rem' }}>
             {errorText}
           </p>
           <a
             href={mailtoFallback(state.payload, lang)}
             className="btn btn-ghost"
-            style={{ padding: '0.55rem 1.1rem', fontSize: '0.8rem' }}
+            style={{ padding: '0.55rem 1.1rem', fontSize: '0.92rem' }}
           >
             {f.mailFallback}
           </a>
@@ -1172,11 +1172,11 @@ function ContactForm({ t, lang }: { t: any; lang: Lang }) {
         type="submit"
         disabled={sending}
         className="btn btn-primary mt-6"
-        style={{ padding: '0.85rem 1.8rem', fontSize: '0.92rem', width: '100%', opacity: sending ? 0.7 : 1, cursor: sending ? 'wait' : 'pointer' }}
+        style={{ padding: '0.85rem 1.8rem', fontSize: '1rem', width: '100%', opacity: sending ? 0.7 : 1, cursor: sending ? 'wait' : 'pointer' }}
       >
         {sending ? f.sending : state.phase === 'error' ? f.retry : t.contact.fields.submit}
       </button>
-      <p style={{ fontSize: '0.72rem', color: 'var(--faint)', textAlign: 'center', margin: '0.9rem 0 0', lineHeight: 1.6 }}>
+      <p style={{ fontSize: '0.84rem', color: 'var(--faint)', textAlign: 'center', margin: '0.9rem 0 0', lineHeight: 1.6 }}>
         {f.privacy}
       </p>
     </form>
@@ -1201,7 +1201,7 @@ function Field({ label, name, type = 'text', required }: { label: string; name: 
 
 const fieldLabel: React.CSSProperties = {
   display: 'block',
-  fontSize: '0.72rem',
+  fontSize: '0.84rem',
   color: 'var(--faint)',
   marginBottom: '0.4rem',
   letterSpacing: '0.02em',
@@ -1214,7 +1214,7 @@ const fieldInput: React.CSSProperties = {
   borderRadius: 6,
   padding: '0.65rem 0.85rem',
   color: 'var(--text)',
-  fontSize: '0.9rem',
+  fontSize: '1rem',
   outline: 'none',
   transition: 'border-color 0.25s ease',
 };

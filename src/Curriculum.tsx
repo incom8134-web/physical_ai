@@ -7,7 +7,7 @@ const TOTAL = 60;
 
 function Mono({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
   return (
-    <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.06em', ...style }}>
+    <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.84rem', letterSpacing: '0.06em', ...style }}>
       {children}
     </span>
   );
@@ -80,7 +80,7 @@ export default function Curriculum() {
             </h2>
           </div>
           <div className="md:col-span-6 flex items-end">
-            <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 300, maxWidth: '46ch', margin: 0 }}>
+            <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 400, maxWidth: '46ch', margin: 0 }}>
               각 단계가 문서와 결과물을 남기고, 그것이 다음 단계의 입력물이 됩니다.
               아래에서 단계를 선택하면 무엇을 배우고 무엇이 손에 남는지 바로 확인할 수 있습니다.
             </p>
@@ -112,7 +112,7 @@ export default function Curriculum() {
                   aria-pressed={lens === l}
                   style={{
                     fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.68rem',
+                    fontSize: '0.84rem',
                     letterSpacing: '0.05em',
                     padding: '0.38rem 0.85rem',
                     borderRadius: 2,
@@ -134,7 +134,7 @@ export default function Curriculum() {
           <div className="px-5 md:px-6 pt-6 pb-2">
             <div className="flex items-baseline justify-between mb-2">
               <Mono style={{ color: 'var(--faint)' }}>시간 배분</Mono>
-              <Mono style={{ color: 'var(--amp)', fontSize: '0.72rem' }}>
+              <Mono style={{ color: 'var(--amp)', fontSize: '0.84rem' }}>
                 {cumulative}H / {TOTAL}H 누적
               </Mono>
             </div>
@@ -173,10 +173,10 @@ export default function Curriculum() {
                       overflow: 'hidden',
                     }}
                   >
-                    <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.66rem', fontWeight: 700, letterSpacing: '0.04em' }}>
+                    <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.04em' }}>
                       {isModule ? modules[i].code : stages[i].num}
                     </span>
-                    <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.78rem', fontWeight: 700, opacity: on ? 1 : 0.75 }}>
+                    <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.92rem', fontWeight: 700, opacity: on ? 1 : 0.75 }}>
                       {it.hours}H
                     </span>
                   </button>
@@ -184,7 +184,7 @@ export default function Curriculum() {
               })}
             </div>
             <div className="flex items-center justify-between mt-2">
-              <Mono style={{ color: 'var(--faint)', fontSize: '0.62rem' }}>
+              <Mono style={{ color: 'var(--faint)', fontSize: '0.78rem' }}>
                 막대 너비 = 배정 시간 · ← → 키로 이동
               </Mono>
               <div className="flex items-center gap-2">
@@ -220,7 +220,7 @@ export default function Curriculum() {
                   <span
                     style={{
                       fontFamily: 'JetBrains Mono, monospace',
-                      fontSize: '0.7rem',
+                      fontSize: '0.84rem',
                       fontWeight: 700,
                       color: 'var(--beam)',
                       border: '1px solid var(--beam)',
@@ -236,7 +236,7 @@ export default function Curriculum() {
                 <h3 style={{ fontSize: 'clamp(1.35rem, 2.6vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.015em', lineHeight: 1.3, margin: '0 0 0.3rem' }}>
                   {title}
                 </h3>
-                <Mono style={{ color: 'var(--faint)', fontSize: '0.72rem' }}>{en}</Mono>
+                <Mono style={{ color: 'var(--faint)', fontSize: '0.84rem' }}>{en}</Mono>
 
                 <div style={{ marginTop: '1.8rem' }}>
                   <Mono style={{ color: 'var(--faint)' }}>다루는 내용</Mono>
@@ -245,7 +245,7 @@ export default function Curriculum() {
                       <span
                         key={i}
                         style={{
-                          fontSize: '0.82rem',
+                          fontSize: '0.92rem',
                           padding: '0.32rem 0.7rem',
                           border: '1px solid var(--rail)',
                           background: 'var(--panel)',
@@ -261,7 +261,7 @@ export default function Curriculum() {
 
                 <div style={{ marginTop: '1.8rem', paddingTop: '1.5rem', borderTop: '1px solid var(--rail)' }}>
                   <Mono style={{ color: 'var(--faint)' }}>본인 프로젝트에서 하는 일</Mono>
-                  <p style={{ fontSize: '0.98rem', lineHeight: 1.8, color: 'var(--text)', fontWeight: 300, margin: '0.6rem 0 0', maxWidth: '52ch' }}>
+                  <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--text)', fontWeight: 400, margin: '0.6rem 0 0', maxWidth: '52ch' }}>
                     {activity}
                   </p>
                 </div>
@@ -294,13 +294,13 @@ export default function Curriculum() {
                               )}
                             </div>
                             <div style={{ textAlign: 'center', marginTop: 4 }}>
-                              <Mono style={{ fontSize: '0.56rem', color: on ? 'var(--beam)' : 'var(--faint)' }}>{w}</Mono>
+                              <Mono style={{ fontSize: '0.78rem', color: on ? 'var(--beam)' : 'var(--faint)' }}>{w}</Mono>
                             </div>
                           </div>
                         );
                       })}
                     </div>
-                    <Mono style={{ color: 'var(--faint)', fontSize: '0.62rem', display: 'block', marginTop: '0.6rem' }}>
+                    <Mono style={{ color: 'var(--faint)', fontSize: '0.78rem', display: 'block', marginTop: '0.6rem' }}>
                       <span style={{ color: 'var(--amp)' }}>●</span> 표시된 주차에 멘토링 회차가 있습니다
                     </Mono>
                   </div>
@@ -312,7 +312,7 @@ export default function Curriculum() {
             <div className="lg:col-span-5 p-5 md:p-8" style={{ background: 'var(--panel)' }}>
               <div className="flex items-baseline justify-between mb-4">
                 <Mono style={{ color: 'var(--faint)' }}>손에 남는 산출물</Mono>
-                <Mono style={{ color: 'var(--lock)', fontSize: '0.72rem' }}>
+                <Mono style={{ color: 'var(--lock)', fontSize: '0.84rem' }}>
                   {ledger.filter(l => l.step <= idx).length} / {ledger.length}
                 </Mono>
               </div>
@@ -336,7 +336,7 @@ export default function Curriculum() {
                       <span
                         style={{
                           fontFamily: 'JetBrains Mono, monospace',
-                          fontSize: '0.6rem',
+                          fontSize: '0.78rem',
                           color: got ? 'var(--lock)' : 'var(--faint)',
                           flexShrink: 0,
                           width: 22,
@@ -344,16 +344,16 @@ export default function Curriculum() {
                       >
                         {got ? '완료' : ''}
                       </span>
-                      <span style={{ fontSize: '0.88rem', fontWeight: got ? 400 : 300, color: got ? 'var(--text)' : 'var(--dim)' }}>
+                      <span style={{ fontSize: '1rem', fontWeight: got ? 400 : 300, color: got ? 'var(--text)' : 'var(--dim)' }}>
                         {l.text}
                       </span>
-                      <Mono style={{ marginLeft: 'auto', color: 'var(--faint)', fontSize: '0.6rem', flexShrink: 0 }}>{l.owner}</Mono>
+                      <Mono style={{ marginLeft: 'auto', color: 'var(--faint)', fontSize: '0.78rem', flexShrink: 0 }}>{l.owner}</Mono>
                     </li>
                   );
                 })}
               </ul>
 
-              <p style={{ fontSize: '0.82rem', lineHeight: 1.7, color: 'var(--dim)', fontWeight: 300, marginTop: '1.5rem', marginBottom: 0 }}>
+              <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--dim)', fontWeight: 400, marginTop: '1.5rem', marginBottom: 0 }}>
                 수료 기준은 출석 시간이 아니라 이 목록입니다. 기획서 · 프로토타입 · 사업화 계획이 모두 채워졌을 때 과정이 끝납니다.
               </p>
             </div>
@@ -377,12 +377,12 @@ export default function Curriculum() {
                   }}
                 >
                   <div>
-                    <Mono style={{ color: 'var(--amp)', fontWeight: 700, fontSize: '0.75rem' }}>{m.round}</Mono>
-                    <div><Mono style={{ color: 'var(--faint)', fontSize: '0.6rem' }}>{m.week}주차</Mono></div>
+                    <Mono style={{ color: 'var(--amp)', fontWeight: 700, fontSize: '0.84rem' }}>{m.round}</Mono>
+                    <div><Mono style={{ color: 'var(--faint)', fontSize: '0.78rem' }}>{m.week}주차</Mono></div>
                   </div>
                   <div>
-                    <div style={{ fontSize: '0.86rem', color: 'var(--dim)', fontWeight: 300, lineHeight: 1.6 }}>{m.check}</div>
-                    <div style={{ fontSize: '0.86rem', color: 'var(--lock)', marginTop: '0.25rem' }}>{m.out}</div>
+                    <div style={{ fontSize: '0.92rem', color: 'var(--dim)', fontWeight: 400, lineHeight: 1.6 }}>{m.check}</div>
+                    <div style={{ fontSize: '0.92rem', color: 'var(--lock)', marginTop: '0.25rem' }}>{m.out}</div>
                   </div>
                 </div>
               ))}
@@ -404,12 +404,12 @@ export default function Curriculum() {
                     alignItems: 'baseline',
                   }}
                 >
-                  <Mono style={{ color: 'var(--beam)', fontSize: '0.72rem' }}>
+                  <Mono style={{ color: 'var(--beam)', fontSize: '0.84rem' }}>
                     {w.weeks.length > 1 ? `${w.weeks[0]}–${w.weeks[w.weeks.length - 1]}주` : `${w.weeks[0]}주`}
                   </Mono>
                   <div>
-                    <div style={{ fontSize: '0.9rem' }}>{w.label}</div>
-                    <div style={{ fontSize: '0.8rem', color: 'var(--dim)', fontWeight: 300, marginTop: '0.15rem' }}>{w.out}</div>
+                    <div style={{ fontSize: '1rem' }}>{w.label}</div>
+                    <div style={{ fontSize: '0.92rem', color: 'var(--dim)', fontWeight: 400, marginTop: '0.15rem' }}>{w.out}</div>
                   </div>
                 </div>
               ))}
@@ -430,6 +430,6 @@ const navBtn: React.CSSProperties = {
   cursor: 'pointer',
   borderRadius: 2,
   fontFamily: 'JetBrains Mono, monospace',
-  fontSize: '0.68rem',
+  fontSize: '0.84rem',
   lineHeight: 1,
 };
