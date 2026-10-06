@@ -3,7 +3,7 @@ import { useLang, type Lang } from './i18n';
 import { sendInquiry, mailtoFallback, CONTACT_EMAIL, type InquiryPayload } from './inquiry';
 import { Reveal } from './useReveal';
 import { asset } from './asset';
-import { absoluteUrl } from './siteMeta';
+import { absoluteUrl, MAIN_SITE_URL } from './siteMeta';
 import EducationPage from './EducationPage';
 import ConsultingPage from './ConsultingPage';
 import RentalPage from './RentalPage';
@@ -46,9 +46,9 @@ function RobotMedia({ src, position, alt }: { src: string; position: string; alt
 
 // Accent per service card, matching each page's own accent colour.
 const serviceAccent: Record<string, { color: string; soft: string; ink: string }> = {
-  Education: { color: 'var(--beam)', soft: 'rgba(92,139,255,0.10)', ink: '#04070d' },
-  Consulting: { color: 'var(--amp)', soft: 'rgba(255,194,75,0.10)', ink: '#1a1200' },
-  Rental: { color: 'var(--lock)', soft: 'rgba(69,224,168,0.10)', ink: '#04140e' },
+  Education: { color: 'var(--beam)', soft: 'rgba(29,91,214,0.07)', ink: '#ffffff' },
+  Consulting: { color: 'var(--amp)', soft: 'rgba(180,95,6,0.07)', ink: '#ffffff' },
+  Rental: { color: 'var(--lock)', soft: 'rgba(10,138,95,0.07)', ink: '#ffffff' },
 };
 
 export default function App() {
@@ -161,7 +161,7 @@ export default function App() {
         className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 md:px-10 h-16"
         style={{
           borderBottom: '1px solid var(--rail)',
-          background: navSolid ? 'rgba(5,8,15,0.86)' : 'rgba(5,8,15,0.35)',
+          background: navSolid ? 'rgba(255,255,255,0.94)' : 'rgba(255,255,255,0.72)',
           backdropFilter: 'blur(12px)',
           transition: 'background 0.3s ease',
         }}
@@ -173,7 +173,7 @@ export default function App() {
           style={{ textDecoration: 'none', color: 'inherit' }}
         >
           <img src={asset('logo-mark.png')} alt={t.contact.company} style={{ height: 30, width: 'auto' }} />
-          <span style={{ fontWeight: 600, fontSize: '0.95rem', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>{lang === 'ko' ? '지니에듀테크' : 'JINIE EDUTECH'}</span>
+          <span style={{ fontWeight: 600, fontSize: '0.95rem', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>{lang === 'ko' ? '지니에듀테크(주)' : 'JINIE EDUTECH'}</span>
         </a>
         <div className="hidden md:flex items-center gap-7" style={{ fontSize: '0.86rem', color: 'var(--dim)' }}>
           {t.nav.items.map(item => (
@@ -187,6 +187,20 @@ export default function App() {
               {item.label}
             </a>
           ))}
+          <a
+            href={MAIN_SITE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5"
+            style={{
+              color: 'var(--beam)', fontWeight: 600, textDecoration: 'none',
+              border: '1px solid var(--beam)', borderRadius: 999, padding: '0.32rem 0.85rem',
+              background: 'var(--beam-soft)',
+            }}
+          >
+            {t.nav.mainSite}
+            <ExternalIcon size={12} />
+          </a>
         </div>
         <div className="flex items-center gap-3">
           <button
@@ -205,8 +219,8 @@ export default function App() {
               color: 'var(--dim)',
             }}
           >
-            <span style={{ padding: '0.15rem 0.5rem', borderRadius: 999, background: lang === 'ko' ? 'var(--beam)' : 'transparent', color: lang === 'ko' ? '#04070d' : 'var(--dim)', fontWeight: lang === 'ko' ? 700 : 400, transition: 'all 0.2s' }}>KO</span>
-            <span style={{ padding: '0.15rem 0.5rem', borderRadius: 999, background: lang === 'en' ? 'var(--beam)' : 'transparent', color: lang === 'en' ? '#04070d' : 'var(--dim)', fontWeight: lang === 'en' ? 700 : 400, transition: 'all 0.2s' }}>EN</span>
+            <span style={{ padding: '0.15rem 0.5rem', borderRadius: 999, background: lang === 'ko' ? 'var(--beam)' : 'transparent', color: lang === 'ko' ? '#ffffff' : 'var(--dim)', fontWeight: lang === 'ko' ? 700 : 400, transition: 'all 0.2s' }}>KO</span>
+            <span style={{ padding: '0.15rem 0.5rem', borderRadius: 999, background: lang === 'en' ? 'var(--beam)' : 'transparent', color: lang === 'en' ? '#ffffff' : 'var(--dim)', fontWeight: lang === 'en' ? 700 : 400, transition: 'all 0.2s' }}>EN</span>
           </button>
           <a
             href="#contact"
@@ -241,7 +255,7 @@ export default function App() {
           className="md:hidden latch"
           style={{
             position: 'fixed', top: 64, left: 0, right: 0, zIndex: 45,
-            background: 'rgba(5,8,15,0.97)', backdropFilter: 'blur(12px)',
+            background: 'rgba(255,255,255,0.98)', backdropFilter: 'blur(12px)',
             borderBottom: '1px solid var(--rail)', padding: '0.5rem 1.25rem 1.25rem',
           }}
         >
@@ -259,6 +273,21 @@ export default function App() {
               {item.label}
             </a>
           ))}
+          <a
+            href={MAIN_SITE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center justify-between"
+            style={{
+              padding: '0.95rem 0', fontSize: '0.98rem', fontWeight: 600,
+              color: 'var(--beam)', textDecoration: 'none',
+              borderBottom: '1px solid var(--rail-soft)',
+            }}
+          >
+            {t.nav.mainSite} · jcodeedu.com
+            <ExternalIcon size={14} />
+          </a>
           <a
             href="#contact"
             onClick={e => { e.preventDefault(); setMenuOpen(false); goToSection('contact'); }}
@@ -279,15 +308,15 @@ export default function App() {
           style={{
             position: 'absolute', inset: 0, pointerEvents: 'none',
             background:
-              'linear-gradient(90deg, rgba(5,8,15,0.93) 0%, rgba(5,8,15,0.74) 45%, rgba(5,8,15,0.32) 100%),' +
-              'linear-gradient(180deg, rgba(5,8,15,0.85) 0%, rgba(5,8,15,0.15) 38%, rgba(5,8,15,0.93) 100%)',
+              'linear-gradient(90deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.9) 45%, rgba(240,245,253,0.55) 100%),' +
+              'linear-gradient(180deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0) 40%, rgba(245,248,253,0.95) 100%)',
           }}
         />
         <div
           aria-hidden
           style={{
             position: 'absolute', inset: 0, pointerEvents: 'none',
-            background: 'radial-gradient(60% 55% at 22% 8%, rgba(92,139,255,0.15), transparent 70%)',
+            background: 'radial-gradient(60% 55% at 22% 8%, rgba(29,91,214,0.10), transparent 70%)',
           }}
         />
         <div
@@ -324,6 +353,38 @@ export default function App() {
                   <a href="#contact" className="btn btn-ghost" style={{ padding: '0.85rem 1.7rem', fontSize: '0.92rem' }}>{t.hero.ctaSecondary}</a>
                 </div>
               </Reveal>
+              <Reveal delay={280}>
+                <a
+                  href={MAIN_SITE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card card-hover main-site-card"
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: '1rem',
+                    marginTop: '1.5rem', maxWidth: 460, padding: '0.9rem 1.1rem',
+                    textDecoration: 'none', color: 'inherit',
+                    borderLeft: '4px solid var(--beam)',
+                  }}
+                >
+                  <img src={asset('logo-mark.png')} alt="" style={{ width: 40, height: 40, flexShrink: 0 }} />
+                  <span style={{ flex: 1, minWidth: 0 }}>
+                    <span style={{ ...mono('0.6rem'), color: 'var(--beam)', display: 'block' }}>{t.hero.mainSiteLabel} · jcodeedu.com</span>
+                    <span style={{ display: 'block', fontWeight: 700, fontSize: '0.98rem', marginTop: '0.15rem' }}>{t.hero.mainSiteTitle}</span>
+                    <span style={{ display: 'block', fontSize: '0.8rem', color: 'var(--dim)', marginTop: '0.15rem', lineHeight: 1.5 }}>{t.hero.mainSiteDesc}</span>
+                  </span>
+                  <span
+                    aria-hidden
+                    className="main-site-arrow"
+                    style={{
+                      width: 36, height: 36, borderRadius: '50%', flexShrink: 0,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      background: 'var(--beam)', color: '#ffffff',
+                    }}
+                  >
+                    <ExternalIcon size={15} />
+                  </span>
+                </a>
+              </Reveal>
               <Reveal delay={320}>
                 <div className="grid grid-cols-3 gap-4 mt-12 max-w-md">
                   {t.hero.stats.map((s, i) => (
@@ -344,7 +405,7 @@ export default function App() {
                     aria-hidden
                     style={{
                       position: 'absolute', left: '-10%', right: '-10%', top: '4%', bottom: '10%',
-                      background: 'radial-gradient(48% 46% at 50% 44%, rgba(92,139,255,0.34), transparent 72%)',
+                      background: 'radial-gradient(48% 46% at 50% 44%, rgba(29,91,214,0.20), transparent 72%)',
                       filter: 'blur(14px)', pointerEvents: 'none',
                     }}
                   />
@@ -352,13 +413,13 @@ export default function App() {
                     <source srcSet={asset('images/haebot-cutout.webp')} type="image/webp" />
                     <img
                       src={asset('images/haebot-cutout.png')}
-                      alt="해봇 (Haebot) — 지니에듀테크가 자체 개발한 메카넘 휠 양팔 이동형 로봇"
+                      alt="해봇 (Haebot) — 지니에듀테크(주)가 자체 개발한 메카넘 휠 양팔 이동형 로봇"
                       width={554}
                       height={921}
                       style={{
                         display: 'block', width: 'auto', height: 'auto',
                         maxHeight: 'min(600px, 68vh)', maxWidth: '100%',
-                        filter: 'drop-shadow(0 24px 34px rgba(0,0,0,0.6))',
+                        filter: 'drop-shadow(0 24px 30px rgba(15,27,51,0.28))',
                       }}
                     />
                   </picture>
@@ -367,12 +428,12 @@ export default function App() {
                     aria-hidden
                     style={{
                       width: '62%', height: 26, marginTop: -18,
-                      background: 'radial-gradient(50% 50% at 50% 50%, rgba(0,0,0,0.65), transparent 72%)',
+                      background: 'radial-gradient(50% 50% at 50% 50%, rgba(15,27,51,0.28), transparent 72%)',
                     }}
                   />
                   <div
                     className="inline-flex items-center gap-2 mt-3"
-                    style={{ border: '1px solid var(--rail)', background: 'rgba(11,18,32,0.7)', padding: '0.3rem 0.8rem', borderRadius: 999, backdropFilter: 'blur(6px)' }}
+                    style={{ border: '1px solid var(--rail)', background: 'rgba(255,255,255,0.85)', padding: '0.3rem 0.8rem', borderRadius: 999, backdropFilter: 'blur(6px)' }}
                   >
                     <span style={{ fontSize: '0.82rem', fontWeight: 600 }}>{lang === 'ko' ? '해봇' : 'Haebot'}</span>
                     <span style={{ ...mono('0.6rem'), color: 'var(--lock)' }}>{lang === 'ko' ? 'Haebot' : '해봇'}</span>
@@ -555,7 +616,7 @@ export default function App() {
             aria-hidden
             style={{
               position: 'absolute', inset: 0,
-              background: 'linear-gradient(90deg, rgba(5,8,15,0.94) 0%, rgba(5,8,15,0.62) 45%, rgba(5,8,15,0.2) 100%)',
+              background: 'linear-gradient(90deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.8) 45%, rgba(255,255,255,0.15) 100%)',
             }}
           />
           <div className="max-w-screen-xl mx-auto px-5 md:px-10 h-full flex items-center" style={{ position: 'relative', minHeight: 340 }}>
@@ -691,7 +752,7 @@ export default function App() {
                         padding: '1rem 0.5rem',
                         cursor: 'pointer',
                         background: on ? 'var(--beam)' : 'var(--panel)',
-                        color: on ? '#04070d' : 'var(--dim)',
+                        color: on ? '#ffffff' : 'var(--dim)',
                         textAlign: 'center',
                       }}
                     >
@@ -730,7 +791,7 @@ export default function App() {
       <section id="contact" className="sheet px-5 md:px-10 py-20 md:py-28" style={{ position: 'relative' }}>
         <div
           aria-hidden
-          style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(50% 60% at 50% 100%, rgba(92,139,255,0.14), transparent 70%)' }}
+          style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(50% 60% at 50% 100%, rgba(29,91,214,0.08), transparent 70%)' }}
         />
         <div className="max-w-screen-xl mx-auto" style={{ position: 'relative' }}>
           <Reveal><span style={{ ...mono('0.7rem'), color: 'var(--beam)' }}>{t.contact.eyebrow}</span></Reveal>
@@ -763,7 +824,7 @@ export default function App() {
                 <InfoRow icon="mail" label={t.contact.email} value={CONTACT_EMAIL} href={`mailto:${CONTACT_EMAIL}`} />
                 <InfoRow icon="phone" label={t.contact.phone} value="010-4588-2794" href="tel:010-4588-2794" />
                 <InfoRow icon="phone" label={t.contact.phone} value="051-331-0110" href="tel:051-331-0110" />
-                <InfoRow icon="globe" label={t.contact.website} value="jcodeedu.com" href="http://jcodeedu.com" />
+                <InfoRow icon="globe" label={t.contact.website} value="jcodeedu.com" href={MAIN_SITE_URL} newTab />
                 <InfoRow
                   icon="pin"
                   label={t.contact.hq}
@@ -890,7 +951,7 @@ function LoopDiagram({ active, total }: { active: number; total: number }) {
           <g key={i}>
             <line x1={p.x} y1={p.y} x2={next.x} y2={next.y} stroke="var(--rail)" strokeWidth="1" />
             <circle cx={p.x} cy={p.y} r={on ? 10 : 7} fill={on ? 'var(--beam)' : 'var(--panel)'} stroke={on ? 'var(--beam)' : 'var(--rail)'} strokeWidth="1.4" style={{ transition: 'r 0.3s, fill 0.3s' }} />
-            <text x={p.x} y={p.y + 1} textAnchor="middle" dominantBaseline="middle" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 9, fill: on ? '#04070d' : 'var(--faint)', fontWeight: 700 }}>
+            <text x={p.x} y={p.y + 1} textAnchor="middle" dominantBaseline="middle" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 9, fill: on ? '#ffffff' : 'var(--faint)', fontWeight: 700 }}>
               {i + 1}
             </text>
           </g>
@@ -975,7 +1036,7 @@ function ContactForm({ t, lang }: { t: any; lang: Lang }) {
         <div
           style={{
             width: 48, height: 48, borderRadius: '50%', marginBottom: '1.2rem',
-            background: 'rgba(69,224,168,0.12)', border: '1px solid var(--lock)',
+            background: 'rgba(10,138,95,0.08)', border: '1px solid var(--lock)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}
         >
@@ -1064,7 +1125,7 @@ function ContactForm({ t, lang }: { t: any; lang: Lang }) {
           className="latch"
           style={{
             marginTop: '1.4rem', padding: '1rem 1.1rem', borderRadius: 6,
-            border: '1px solid var(--amp)', background: 'rgba(255,194,75,0.08)',
+            border: '1px solid var(--amp)', background: 'rgba(180,95,6,0.06)',
           }}
         >
           <div style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--amp)' }}>{f.failTitle}</div>
@@ -1131,3 +1192,11 @@ const fieldInput: React.CSSProperties = {
   outline: 'none',
   transition: 'border-color 0.25s ease',
 };
+
+function ExternalIcon({ size }: { size: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M7 17L17 7" /><path d="M8 7h9v9" />
+    </svg>
+  );
+}

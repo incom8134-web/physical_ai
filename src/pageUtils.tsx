@@ -151,7 +151,7 @@ export function FinalCta({
     <section className="sheet px-5 md:px-10 py-20 md:py-28" style={{ position: 'relative', borderTop: '1px solid var(--rail)' }}>
       <div
         aria-hidden
-        style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(50% 60% at 50% 100%, rgba(92,139,255,0.14), transparent 70%)' }}
+        style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(50% 60% at 50% 100%, rgba(29,91,214,0.08), transparent 70%)' }}
       />
       <div className="max-w-screen-xl mx-auto text-center" style={{ position: 'relative' }}>
         <Reveal>
@@ -199,7 +199,7 @@ export function LockModal({
       onClick={onClose}
       style={{
         position: 'fixed', inset: 0, zIndex: 100,
-        background: 'rgba(4,6,12,0.72)',
+        background: 'rgba(15,27,51,0.55)',
         backdropFilter: 'blur(3px)',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         padding: '1.5rem',

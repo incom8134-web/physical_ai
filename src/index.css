@@ -3,36 +3,40 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-void: #05080f;
-  --color-deck: #0b1220;
-  --color-panel: #101a2b;
-  --color-rail: #1c2941;
-  --color-beam: #5c8bff;
-  --color-amp: #ffc24b;
-  --color-lock: #45e0a8;
-  --color-text: #dce4f0;
-  --color-dim: #7c8ba3;
+  --color-void: #f5f8fd;
+  --color-deck: #ffffff;
+  --color-panel: #edf3fc;
+  --color-rail: #d8e2f1;
+  --color-beam: #1d5bd6;
+  --color-amp: #b45f06;
+  --color-lock: #0a8a5f;
+  --color-text: #0f1b33;
+  --color-dim: #4a5a74;
   --font-sans: 'IBM Plex Sans KR', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
+/* White-and-blue palette, following the main site (jcodeedu.com).
+   Token names are kept from the original dark theme: --void is the page,
+   --deck a card surface, --rail a border, --beam the brand blue. */
 :root {
-  --void: #05080f;
-  --deck: #0b1220;
-  --panel: #101a2b;
-  --panel-2: #142238;
-  --rail: #1c2941;
-  --rail-soft: #152033;
-  --beam: #5c8bff;
-  --beam-soft: rgba(92, 139, 255, 0.14);
-  --beam-glow: rgba(92, 139, 255, 0.35);
-  --amp: #ffc24b;
-  --lock: #45e0a8;
-  --text: #dce4f0;
-  --dim: #7c8ba3;
-  --faint: #4a5a72;
-  --shadow-card: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px -12px rgba(0,0,0,0.55);
-  --shadow-hover: 0 4px 10px rgba(0,0,0,0.45), 0 24px 48px -16px rgba(92,139,255,0.28);
+  --void: #f5f8fd;
+  --deck: #ffffff;
+  --panel: #edf3fc;
+  --panel-2: #e4ecf9;
+  --rail: #d8e2f1;
+  --rail-soft: #e7edf7;
+  --beam: #1d5bd6;
+  --beam-deep: #0f3f9e;
+  --beam-soft: rgba(29, 91, 214, 0.08);
+  --beam-glow: rgba(29, 91, 214, 0.32);
+  --amp: #b45f06;
+  --lock: #0a8a5f;
+  --text: #0f1b33;
+  --dim: #4a5a74;
+  --faint: #6b7890;
+  --shadow-card: 0 1px 2px rgba(15,27,51,0.06), 0 10px 28px -14px rgba(15,27,51,0.18);
+  --shadow-hover: 0 4px 10px rgba(15,27,51,0.08), 0 22px 44px -16px rgba(29,91,214,0.30);
 }
 
 * { box-sizing: border-box; }
@@ -45,23 +49,26 @@ body {
   font-family: 'IBM Plex Sans KR', system-ui, sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
+  /* Break Korean between words, not inside them (keeps "지니에듀테크(주)는" whole). */
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 .sheet {
   background-image:
-    linear-gradient(rgba(92, 139, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(92, 139, 255, 0.045) 1px, transparent 1px);
+    linear-gradient(rgba(29, 91, 214, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 91, 214, 0.05) 1px, transparent 1px);
   background-size: 32px 32px;
   background-position: center top;
 }
 .sheet-soft {
   background-image:
-    linear-gradient(rgba(92, 139, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(92, 139, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(29, 91, 214, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 91, 214, 0.035) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
-::selection { background: var(--beam); color: #04070d; }
+::selection { background: var(--beam); color: #ffffff; }
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--deck); }
 ::-webkit-scrollbar-thumb { background: var(--rail); border-radius: 3px; }
@@ -70,7 +77,7 @@ body {
 
 a { color: inherit; }
 
-/* Elevation card — MUI-style resting/hover elevation, tuned for a dark surface */
+/* Elevation card — MUI-style resting/hover elevation, tuned for a light surface */
 .card {
   background: var(--deck);
   border: 1px solid var(--rail);
@@ -86,10 +93,14 @@ a { color: inherit; }
 /* Service cards carry their own accent, so the hover border follows it. */
 .service-card.card-hover:hover {
   border-color: var(--accent, var(--beam));
-  box-shadow: 0 4px 10px rgba(0,0,0,0.45), 0 24px 48px -16px color-mix(in srgb, var(--accent, #5c8bff) 28%, transparent);
+  box-shadow: 0 4px 10px rgba(15,27,51,0.08), 0 24px 48px -16px color-mix(in srgb, var(--accent, #1d5bd6) 30%, transparent);
 }
 
-/* Poster carousel rail — a thin scrollbar that matches the dark surface. */
+/* Hero link to the main website: the arrow nudges toward the exit on hover. */
+.main-site-arrow { transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); }
+.main-site-card:hover .main-site-arrow { transform: translate(2px, -2px); }
+
+/* Poster carousel rail — a thin scrollbar that matches the light surface. */
 .poster-rail {
   scrollbar-width: thin;
   scrollbar-color: var(--rail) transparent;
@@ -132,10 +143,12 @@ a { color: inherit; }
 .btn:active { transform: scale(0.97); }
 .btn-primary {
   background: var(--beam);
-  color: #04070d;
+  color: #ffffff;
   border: 1px solid var(--beam);
 }
 .btn-primary:hover {
+  background: var(--beam-deep);
+  border-color: var(--beam-deep);
   box-shadow: 0 8px 24px -6px var(--beam-glow);
   transform: translateY(-2px);
 }
@@ -164,7 +177,7 @@ a { color: inherit; }
   transform: translateY(-2px);
 }
 
-::-moz-selection { background: var(--beam); color: #04070d; }
+::-moz-selection { background: var(--beam); color: #ffffff; }
 
 @keyframes blip {
   0%, 100% { opacity: 1; transform: scale(1); }
