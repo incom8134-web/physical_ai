@@ -46,7 +46,7 @@ export default function EducationPage({ lang, t, onContact }: { lang: Lang; t: a
 
   return (
     <>
-      <Breadcrumb label={lang === 'ko' ? '지니에듀테크' : 'JINIE EDUTECH'} eyebrow={p.eyebrow} />
+      <Breadcrumb label={lang === 'ko' ? '지니에듀테크(주)' : 'JINIE EDUTECH'} eyebrow={p.eyebrow} />
       <PageHero
         eyebrow={p.eyebrow}
         title={p.title}
@@ -84,7 +84,7 @@ export default function EducationPage({ lang, t, onContact }: { lang: Lang; t: a
                     className="step-btn"
                     style={{
                       textAlign: 'left', border: '1px solid', borderColor: on ? 'var(--beam)' : 'var(--rail)',
-                      background: on ? 'rgba(92,139,255,0.1)' : 'var(--deck)', borderRadius: 6,
+                      background: on ? 'rgba(29,91,214,0.07)' : 'var(--deck)', borderRadius: 6,
                       padding: '0.95rem 1.1rem', cursor: 'pointer', display: 'flex', gap: '0.9rem', alignItems: 'center',
                     }}
                   >
@@ -157,8 +157,8 @@ export default function EducationPage({ lang, t, onContact }: { lang: Lang; t: a
                       style={{
                         flexGrow: m.hours, flexBasis: 0, minWidth: 0, border: 'none', cursor: 'pointer',
                         padding: '0 0.5rem', textAlign: 'left',
-                        background: on ? 'var(--beam)' : locked ? 'var(--panel)' : 'rgba(92,139,255,0.16)',
-                        color: on ? '#04070d' : locked ? 'var(--faint)' : 'var(--text)',
+                        background: on ? 'var(--beam)' : locked ? 'var(--panel)' : 'rgba(29,91,214,0.10)',
+                        color: on ? '#ffffff' : locked ? 'var(--faint)' : 'var(--text)',
                         display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden',
                         position: 'relative', opacity: locked ? 0.7 : 1,
                       }}
@@ -204,7 +204,7 @@ export default function EducationPage({ lang, t, onContact }: { lang: Lang; t: a
                   <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'var(--text)', fontWeight: 300, margin: '0.6rem 0 0' }}>{lang === 'ko' ? activeModule.activity : activeModule.activityEn}</p>
                 </div>
               </div>
-              <div className="lg:col-span-5 p-5 md:p-8" style={{ background: 'rgba(16,26,43,0.45)' }}>
+              <div className="lg:col-span-5 p-5 md:p-8" style={{ background: 'var(--panel)' }}>
                 <div style={{ ...mono('0.66rem'), color: 'var(--faint)', marginBottom: '1rem' }}>{lang === 'ko' ? '손에 남는 산출물' : 'What you produce'}</div>
                 <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
                   {(lang === 'ko' ? activeModule.outputs : activeModule.outputsEn).map((o, j) => (

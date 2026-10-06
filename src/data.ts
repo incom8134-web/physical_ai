@@ -389,7 +389,7 @@ export const posterCards: PosterCard[] = [
     categoryEn: 'Introducing Physical AI',
     body: [
       '소프트웨어 AI는 화면 안에서 답을 만들어 냅니다. 피지컬 AI는 그 답을 현실에서 실행합니다 — 카메라로 보고, 판단하고, 모터를 움직여 결과를 만듭니다.',
-      '지니에듀테크는 다음 세대의 교육과 산업을 바꾸는 이 전환을 판매·대여, 교육, 컨설팅으로 지원합니다.',
+      '지니에듀테크(주)는 다음 세대의 교육과 산업을 바꾸는 이 전환을 판매·대여, 교육, 컨설팅으로 지원합니다.',
     ],
     bodyEn: [
       'Software AI produces an answer on a screen. Physical AI carries that answer out in the real world — it sees through a camera, decides, and drives motors to produce a result.',
@@ -468,7 +468,7 @@ export const posterCards: PosterCard[] = [
     category: '회사 소개',
     categoryEn: 'Company overview',
     body: [
-      '아이디어가 현실이 되는 곳, 지니에듀테크. 교육, 연구, 제작, 스마트팜, 산업 솔루션 — 다섯 영역에서 AI와 로봇으로 현장의 문제를 함께 해결합니다.',
+      '아이디어가 현실이 되는 곳, 지니에듀테크(주). 교육, 연구, 제작, 스마트팜, 산업 솔루션 — 다섯 영역에서 AI와 로봇으로 현장의 문제를 함께 해결합니다.',
       '사람과 기술이 만드는 더 나은 미래를 위해, 해봇과 함께 배우고, 만들고, 실전을 경험합니다.',
     ],
     bodyEn: [

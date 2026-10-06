@@ -15,7 +15,7 @@ export default function Placeholder({
         borderRadius: 8,
         border: '1.5px dashed var(--rail)',
         background:
-          'repeating-linear-gradient(135deg, rgba(92,139,255,0.05) 0px, rgba(92,139,255,0.05) 10px, transparent 10px, transparent 20px)',
+          'repeating-linear-gradient(135deg, rgba(29,91,214,0.05) 0px, rgba(29,91,214,0.05) 10px, transparent 10px, transparent 20px)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',

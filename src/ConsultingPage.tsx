@@ -12,7 +12,7 @@ export default function ConsultingPage({ lang, t, onContact }: { lang: Lang; t: 
 
   return (
     <>
-      <Breadcrumb label={lang === 'ko' ? '지니에듀테크' : 'JINIE EDUTECH'} eyebrow={p.eyebrow} />
+      <Breadcrumb label={lang === 'ko' ? '지니에듀테크(주)' : 'JINIE EDUTECH'} eyebrow={p.eyebrow} />
       <PageHero
         eyebrow={p.eyebrow}
         title={p.title}
@@ -41,7 +41,7 @@ export default function ConsultingPage({ lang, t, onContact }: { lang: Lang; t: 
                     ...mono('0.72rem'), padding: '0.6rem 1.1rem', borderRadius: 999, cursor: 'pointer',
                     border: '1px solid', borderColor: on ? 'var(--amp)' : 'var(--rail)',
                     background: on ? 'var(--amp)' : 'transparent',
-                    color: on ? '#1a1200' : 'var(--dim)', fontWeight: on ? 700 : 400,
+                    color: on ? '#ffffff' : 'var(--dim)', fontWeight: on ? 700 : 400,
                   }}
                 >
                   {lang === 'ko' ? a.label : a.labelEn}
