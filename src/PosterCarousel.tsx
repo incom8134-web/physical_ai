@@ -106,7 +106,7 @@ export default function PosterCarousel({
               </span>
               <div
                 style={{
-                  fontSize: '1rem', fontWeight: 600, lineHeight: 1.5,
+                  fontSize: '1rem', fontWeight: 700, lineHeight: 1.5,
                   margin: '0.45rem 0 0.7rem', color: 'var(--text)',
                 }}
               >
@@ -157,7 +157,7 @@ export default function PosterCarousel({
                 </span>
                 <h3
                   style={{
-                    fontSize: 'clamp(1.15rem, 2.4vw, 1.6rem)', fontWeight: 700,
+                    fontSize: 'clamp(1.15rem, 2.4vw, 1.6rem)', fontWeight: 800,
                     letterSpacing: '-0.015em', lineHeight: 1.35, margin: '0.5rem 0 1rem',
                   }}
                 >
@@ -166,7 +166,7 @@ export default function PosterCarousel({
                 {(lang === 'ko' ? active.body : active.bodyEn).map((para, i) => (
                   <p
                     key={i}
-                    style={{ fontSize: '1rem', lineHeight: 1.85, color: 'var(--dim)', fontWeight: 400, margin: i ? '0.9rem 0 0' : 0 }}
+                    style={{ fontSize: '1rem', lineHeight: 1.85, color: 'var(--dim)', fontWeight: 500, margin: i ? '0.9rem 0 0' : 0 }}
                   >
                     {para}
                   </p>

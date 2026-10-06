@@ -41,7 +41,7 @@ export default function ConsultingPage({ lang, t, onContact }: { lang: Lang; t: 
                     ...mono('0.84rem'), padding: '0.6rem 1.1rem', borderRadius: 999, cursor: 'pointer',
                     border: '1px solid', borderColor: on ? 'var(--amp)' : 'var(--rail)',
                     background: on ? 'var(--amp)' : 'transparent',
-                    color: on ? '#ffffff' : 'var(--dim)', fontWeight: on ? 700 : 400,
+                    color: on ? '#ffffff' : 'var(--dim)', fontWeight: on ? 800 : 500,
                   }}
                 >
                   {lang === 'ko' ? a.label : a.labelEn}
@@ -54,10 +54,10 @@ export default function ConsultingPage({ lang, t, onContact }: { lang: Lang; t: 
             <div className="lg:col-span-6">
               <Reveal key={active.key}>
                 <span style={{ ...mono('0.84rem'), color: 'var(--amp)' }}>{active.eyebrow}</span>
-                <h3 style={{ fontSize: 'clamp(1.6rem, 3.2vw, 2.3rem)', lineHeight: 1.25, fontWeight: 700, letterSpacing: '-0.02em', margin: '0.5rem 0 1.2rem', whiteSpace: 'pre-line' }}>
+                <h3 style={{ fontSize: 'clamp(1.6rem, 3.2vw, 2.3rem)', lineHeight: 1.25, fontWeight: 800, letterSpacing: '-0.02em', margin: '0.5rem 0 1.2rem', whiteSpace: 'pre-line' }}>
                   {lang === 'ko' ? active.headline : active.headlineEn}
                 </h3>
-                <p style={{ fontSize: '1.08rem', lineHeight: 1.85, color: 'var(--dim)', fontWeight: 400, maxWidth: '48ch' }}>
+                <p style={{ fontSize: '1.08rem', lineHeight: 1.85, color: 'var(--dim)', fontWeight: 500, maxWidth: '48ch' }}>
                   {lang === 'ko' ? active.desc : active.descEn}
                 </p>
               </Reveal>
@@ -69,7 +69,7 @@ export default function ConsultingPage({ lang, t, onContact }: { lang: Lang; t: 
                 </div>
                 <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
                   {(lang === 'ko' ? active.offers : active.offersEn).map((o, j) => (
-                    <li key={j} style={{ fontSize: '1rem', padding: '0.75rem 0', color: 'var(--text)', fontWeight: 400, borderTop: j === 0 ? 'none' : '1px solid var(--rail-soft)', display: 'flex', gap: '0.7rem' }}>
+                    <li key={j} style={{ fontSize: '1rem', padding: '0.75rem 0', color: 'var(--text)', fontWeight: 500, borderTop: j === 0 ? 'none' : '1px solid var(--rail-soft)', display: 'flex', gap: '0.7rem' }}>
                       <span style={{ color: 'var(--amp)', flexShrink: 0 }}>/</span>{o}
                     </li>
                   ))}
@@ -89,8 +89,8 @@ export default function ConsultingPage({ lang, t, onContact }: { lang: Lang; t: 
               <Reveal key={i} delay={i * 70}>
                 <div className="card card-hover" style={{ padding: '1.6rem', height: '100%' }}>
                   <span style={{ ...mono('0.84rem'), color: 'var(--beam)' }}>{String(i + 1).padStart(2, '0')}</span>
-                  <div style={{ fontSize: '1.08rem', fontWeight: 600, margin: '0.6rem 0 0.5rem' }}>{lang === 'ko' ? tp.title : tp.titleEn}</div>
-                  <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'var(--dim)', fontWeight: 400, margin: 0 }}>{lang === 'ko' ? tp.desc : tp.descEn}</p>
+                  <div style={{ fontSize: '1.08rem', fontWeight: 700, margin: '0.6rem 0 0.5rem' }}>{lang === 'ko' ? tp.title : tp.titleEn}</div>
+                  <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'var(--dim)', fontWeight: 500, margin: 0 }}>{lang === 'ko' ? tp.desc : tp.descEn}</p>
                 </div>
               </Reveal>
             ))}
@@ -109,7 +109,7 @@ export default function ConsultingPage({ lang, t, onContact }: { lang: Lang; t: 
                   className="card"
                   style={{ marginTop: '2rem', padding: '1.3rem 1.5rem', borderLeft: '3px solid var(--amp)' }}
                 >
-                  <p style={{ fontSize: '1.08rem', lineHeight: 1.7, color: 'var(--text)', fontWeight: 400, margin: 0 }}>
+                  <p style={{ fontSize: '1.08rem', lineHeight: 1.7, color: 'var(--text)', fontWeight: 500, margin: 0 }}>
                     {p.posterCaption}
                   </p>
                 </div>
