@@ -81,7 +81,7 @@ export default function ConsultingPage({ lang, t, onContact }: { lang: Lang; t: 
       </section>
 
       {/* TOPICS COVERED */}
-      <section className="sheet-soft px-5 md:px-10 py-20 md:py-28" style={{ borderBottom: '1px solid var(--rail)' }}>
+      <section className="sheet theme-dark px-5 md:px-10 py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto">
           <SectionHeading eyebrow={p.topicsEyebrow} title={p.topicsTitle} />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
@@ -142,7 +142,7 @@ export default function ConsultingPage({ lang, t, onContact }: { lang: Lang; t: 
       </section>
 
       {/* PROCESS */}
-      <section className="sheet-soft px-5 md:px-10 py-20 md:py-28" style={{ borderBottom: '1px solid var(--rail)' }}>
+      <section className="sheet theme-dark px-5 md:px-10 py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto">
           <SectionHeading eyebrow={p.processEyebrow} title={p.processTitle} />
           <div className="mt-10">
