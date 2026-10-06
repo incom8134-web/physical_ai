@@ -31,8 +31,8 @@ export default function RentalPage({ lang, t, onContact }: { lang: Lang; t: any;
               <Reveal key={i} delay={i * 70}>
                 <div className="card card-hover" style={{ padding: '1.4rem', height: '100%' }}>
                   <span style={{ ...mono('0.78rem'), color: 'var(--lock)' }}>{String(i + 1).padStart(2, '0')}</span>
-                  <div style={{ fontSize: '1.08rem', fontWeight: 600, margin: '0.5rem 0 0.4rem' }}>{lang === 'ko' ? u.title : u.titleEn}</div>
-                  <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--dim)', fontWeight: 400, margin: 0 }}>{lang === 'ko' ? u.desc : u.descEn}</p>
+                  <div style={{ fontSize: '1.08rem', fontWeight: 700, margin: '0.5rem 0 0.4rem' }}>{lang === 'ko' ? u.title : u.titleEn}</div>
+                  <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--dim)', fontWeight: 500, margin: 0 }}>{lang === 'ko' ? u.desc : u.descEn}</p>
                 </div>
               </Reveal>
             ))}
@@ -62,7 +62,7 @@ export default function RentalPage({ lang, t, onContact }: { lang: Lang; t: any;
                     </div>
                     <div className="md:col-span-8 p-6 md:p-8" style={{ borderTop: '1px solid var(--rail)', borderLeft: '1px solid var(--rail)' }}>
                       <div className="flex flex-wrap items-baseline justify-between gap-3 mb-1">
-                        <div style={{ fontSize: '1.5rem', fontWeight: 700, letterSpacing: '-0.01em' }}>{lang === 'ko' ? r.name : r.nameEn}</div>
+                        <div style={{ fontSize: '1.5rem', fontWeight: 800, letterSpacing: '-0.01em' }}>{lang === 'ko' ? r.name : r.nameEn}</div>
                         <span style={{ ...mono('0.84rem'), color: 'var(--lock)' }}>{lang === 'ko' ? r.tagline : r.taglineEn}</span>
                       </div>
                       <div className="flex gap-1.5 flex-wrap my-3">
@@ -70,14 +70,14 @@ export default function RentalPage({ lang, t, onContact }: { lang: Lang; t: any;
                           <Chip key={j}>{lang === 'ko' ? s.label : s.labelEn} · {lang === 'ko' ? s.value : s.valueEn}</Chip>
                         ))}
                       </div>
-                      <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 400, marginBottom: '1.4rem' }}>{lang === 'ko' ? r.desc : r.descEn}</p>
+                      <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 500, marginBottom: '1.4rem' }}>{lang === 'ko' ? r.desc : r.descEn}</p>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                           <div style={{ ...mono('0.78rem'), color: 'var(--faint)', marginBottom: '0.6rem' }}>{p.bestForLabel}</div>
                           <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
                             {(lang === 'ko' ? r.bestFor : r.bestForEn).map((b, j) => (
-                              <li key={j} style={{ fontSize: '0.92rem', padding: '0.35rem 0', color: 'var(--text)', fontWeight: 400, display: 'flex', gap: '0.5rem' }}>
+                              <li key={j} style={{ fontSize: '0.92rem', padding: '0.35rem 0', color: 'var(--text)', fontWeight: 500, display: 'flex', gap: '0.5rem' }}>
                                 <span style={{ color: 'var(--lock)', flexShrink: 0 }}>/</span>{b}
                               </li>
                             ))}
@@ -87,7 +87,7 @@ export default function RentalPage({ lang, t, onContact }: { lang: Lang; t: any;
                           <div style={{ ...mono('0.78rem'), color: 'var(--faint)', marginBottom: '0.6rem' }}>{p.includesLabel}</div>
                           <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
                             {(lang === 'ko' ? r.includes : r.includesEn).map((b, j) => (
-                              <li key={j} style={{ fontSize: '0.92rem', padding: '0.35rem 0', color: 'var(--text)', fontWeight: 400, display: 'flex', gap: '0.5rem' }}>
+                              <li key={j} style={{ fontSize: '0.92rem', padding: '0.35rem 0', color: 'var(--text)', fontWeight: 500, display: 'flex', gap: '0.5rem' }}>
                                 <span style={{ color: 'var(--beam)', flexShrink: 0 }}>/</span>{b}
                               </li>
                             ))}
