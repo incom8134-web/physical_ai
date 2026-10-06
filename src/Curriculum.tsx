@@ -119,7 +119,7 @@ export default function Curriculum() {
                     border: 'none',
                     cursor: 'pointer',
                     background: lens === l ? 'var(--beam)' : 'transparent',
-                    color: lens === l ? '#04070d' : 'var(--dim)',
+                    color: lens === l ? '#ffffff' : 'var(--dim)',
                     fontWeight: lens === l ? 700 : 400,
                     transition: 'background 0.15s, color 0.15s',
                   }}
@@ -164,8 +164,8 @@ export default function Curriculum() {
                       cursor: 'pointer',
                       padding: '0 0.5rem',
                       textAlign: 'left',
-                      background: on ? 'var(--beam)' : done ? 'rgba(92,139,255,0.22)' : 'var(--panel)',
-                      color: on ? '#04070d' : done ? 'var(--text)' : 'var(--dim)',
+                      background: on ? 'var(--beam)' : done ? 'rgba(29,91,214,0.14)' : 'var(--panel)',
+                      color: on ? '#ffffff' : done ? 'var(--text)' : 'var(--dim)',
                       transition: 'background 0.2s, color 0.2s',
                       display: 'flex',
                       flexDirection: 'column',
@@ -290,7 +290,7 @@ export default function Curriculum() {
                               }}
                             >
                               {mentor && (
-                                <span style={{ width: 5, height: 5, borderRadius: '50%', background: on ? '#04070d' : 'var(--amp)' }} />
+                                <span style={{ width: 5, height: 5, borderRadius: '50%', background: on ? '#ffffff' : 'var(--amp)' }} />
                               )}
                             </div>
                             <div style={{ textAlign: 'center', marginTop: 4 }}>
@@ -309,7 +309,7 @@ export default function Curriculum() {
             </div>
 
             {/* Output ledger */}
-            <div className="lg:col-span-5 p-5 md:p-8" style={{ background: 'rgba(16,26,43,0.45)' }}>
+            <div className="lg:col-span-5 p-5 md:p-8" style={{ background: 'var(--panel)' }}>
               <div className="flex items-baseline justify-between mb-4">
                 <Mono style={{ color: 'var(--faint)' }}>손에 남는 산출물</Mono>
                 <Mono style={{ color: 'var(--lock)', fontSize: '0.72rem' }}>

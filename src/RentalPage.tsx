@@ -10,7 +10,7 @@ export default function RentalPage({ lang, t, onContact }: { lang: Lang; t: any;
 
   return (
     <>
-      <Breadcrumb label={lang === 'ko' ? '지니에듀테크' : 'JINIE EDUTECH'} eyebrow={p.eyebrow} />
+      <Breadcrumb label={lang === 'ko' ? '지니에듀테크(주)' : 'JINIE EDUTECH'} eyebrow={p.eyebrow} />
       <PageHero
         eyebrow={p.eyebrow}
         title={p.title}
@@ -50,7 +50,7 @@ export default function RentalPage({ lang, t, onContact }: { lang: Lang; t: any;
               <Reveal key={r.key} delay={i * 100}>
                 <div className="card" style={{ overflow: 'hidden' }}>
                   <div className="grid grid-cols-1 md:grid-cols-12">
-                    <div className="md:col-span-4" style={{ padding: '0.75rem', background: 'radial-gradient(60% 70% at 50% 55%, rgba(69,224,168,0.08), transparent 70%)' }}>
+                    <div className="md:col-span-4" style={{ padding: '0.75rem', background: 'radial-gradient(60% 70% at 50% 55%, rgba(10,138,95,0.06), transparent 70%)' }}>
                       <div style={{ aspectRatio: '4 / 3', width: '100%', overflow: 'hidden', borderRadius: 8 }}>
                         <img
                           src={asset(r.image)}
