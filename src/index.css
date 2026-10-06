@@ -11,7 +11,7 @@
   --color-amp: #b45f06;
   --color-lock: #0a8a5f;
   --color-text: #111827;
-  --color-dim: #4b5563;
+  --color-dim: #374151;
   --font-sans: 'Pretendard Variable', Pretendard, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
@@ -39,8 +39,8 @@
   --amp: #b45f06;
   --lock: #0a8a5f;
   --text: #111827;
-  --dim: #4b5563;
-  --faint: #6b7280;
+  --dim: #374151;
+  --faint: #4b5563;
   --grid: rgba(17, 24, 39, 0.045);
   --shadow-card: 0 1px 2px rgba(17,24,39,0.05), 0 10px 30px -14px rgba(17,24,39,0.16);
   --shadow-hover: 0 4px 12px rgba(17,24,39,0.08), 0 24px 48px -18px rgba(26,99,216,0.28);
@@ -64,8 +64,8 @@
   --amp: #ffc24b;
   --lock: #4fd6a2;
   --text: #ffffff;
-  --dim: #c3cbdc;
-  --faint: #8e9ab3;
+  --dim: #e2e8f2;
+  --faint: #b4bfd3;
   --grid: rgba(255, 255, 255, 0.045);
   --shadow-card: 0 1px 2px rgba(0,0,0,0.3), 0 12px 32px -12px rgba(0,0,0,0.45);
   --shadow-hover: 0 4px 10px rgba(0,0,0,0.35), 0 24px 48px -16px rgba(59,130,246,0.35);
@@ -79,8 +79,11 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
+html { font-size: 16px; }
+
 body {
   margin: 0;
+  line-height: 1.6;
   background-color: var(--void);
   color: var(--text);
   font-family: 'Pretendard Variable', Pretendard, system-ui, -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
