@@ -70,7 +70,7 @@ export default function EducationPage({ lang, t, onContact }: { lang: Lang; t: a
       </section>
 
       {/* 5-STAGE JOURNEY */}
-      <section className="sheet-soft px-5 md:px-10 py-20 md:py-28" style={{ borderBottom: '1px solid var(--rail)' }}>
+      <section className="sheet theme-dark px-5 md:px-10 py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto">
           <SectionHeading eyebrow={p.journeyEyebrow} title={p.journeyTitle} />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-10">
@@ -225,7 +225,7 @@ export default function EducationPage({ lang, t, onContact }: { lang: Lang; t: a
       </section>
 
       {/* EQUIPMENT SUPPORT */}
-      <section className="sheet-soft px-5 md:px-10 py-20 md:py-28" style={{ borderBottom: '1px solid var(--rail)' }}>
+      <section className="sheet theme-dark px-5 md:px-10 py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto">
           <SectionHeading eyebrow={p.supportEyebrow} title={p.supportTitle} subtitle={lang === 'ko' ? '장비 미보유자도 착수 가능하도록 실습 환경과 재료를 사업에서 제공합니다.' : 'We provide the practice environment and materials so no one is blocked by missing equipment.'} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
@@ -281,7 +281,7 @@ export default function EducationPage({ lang, t, onContact }: { lang: Lang; t: a
       </section>
 
       {/* MENTORING + SCHEDULE */}
-      <section className="sheet-soft px-5 md:px-10 py-20 md:py-28" style={{ borderBottom: '1px solid var(--rail)' }}>
+      <section className="sheet theme-dark px-5 md:px-10 py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5">
           <div style={{ border: '1px solid var(--rail)', borderRadius: 4, padding: '1.6rem' }}>
             <span style={{ ...mono('0.84rem'), color: 'var(--faint)' }}>{p.mentoringTitle}</span>
