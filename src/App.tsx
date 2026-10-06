@@ -21,6 +21,7 @@ function pageFromHash(): Page {
 const mono = (size = '0.84rem'): React.CSSProperties => ({
   fontFamily: 'JetBrains Mono, monospace',
   fontSize: size,
+  fontWeight: 600,
   letterSpacing: '0.06em',
 });
 
@@ -164,7 +165,7 @@ export default function App() {
         style={{
           borderBottom: '1px solid var(--rail)',
           // Navy over the hero band, white once the page scrolls — as on the main site.
-          background: navLight ? 'rgba(255,255,255,0.96)' : 'rgba(23,32,54,0.55)',
+          background: navLight ? 'rgba(255,255,255,0.96)' : 'rgba(21,44,94,0.55)',
           color: 'var(--text)',
           backdropFilter: 'blur(12px)',
           transition: 'background 0.3s ease',
@@ -179,7 +180,7 @@ export default function App() {
           <img src={asset('logo-mark.png')} alt={t.contact.company} className="logo-mark" style={{ height: 32, width: 'auto' }} />
           <span style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.15 }}>
             <span style={{ fontWeight: 800, fontSize: '1.2rem', letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>{lang === 'ko' ? '지니에듀테크(주)' : 'JINIE EDUTECH'}</span>
-            <span style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--faint)', whiteSpace: 'nowrap' }}>{lang === 'ko' ? 'Jinie EduTech Co., Ltd.' : '지니에듀테크(주)'}</span>
+            <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--faint)', whiteSpace: 'nowrap' }}>{lang === 'ko' ? 'Jinie EduTech Co., Ltd.' : '지니에듀테크(주)'}</span>
           </span>
         </a>
         <div className="hidden md:flex items-center gap-7" style={{ fontSize: '0.92rem', color: 'var(--dim)' }}>
@@ -200,7 +201,7 @@ export default function App() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5"
             style={{
-              color: 'var(--beam)', fontWeight: 600, textDecoration: 'none',
+              color: 'var(--beam)', fontWeight: 700, textDecoration: 'none',
               border: '1px solid var(--beam)', borderRadius: 999, padding: '0.32rem 0.85rem',
               background: 'var(--beam-soft)',
             }}
@@ -226,8 +227,8 @@ export default function App() {
               color: 'var(--dim)',
             }}
           >
-            <span style={{ padding: '0.15rem 0.5rem', borderRadius: 999, background: lang === 'ko' ? 'var(--btn-bg)' : 'transparent', color: lang === 'ko' ? '#ffffff' : 'var(--dim)', fontWeight: lang === 'ko' ? 700 : 400, transition: 'all 0.2s' }}>KO</span>
-            <span style={{ padding: '0.15rem 0.5rem', borderRadius: 999, background: lang === 'en' ? 'var(--btn-bg)' : 'transparent', color: lang === 'en' ? '#ffffff' : 'var(--dim)', fontWeight: lang === 'en' ? 700 : 400, transition: 'all 0.2s' }}>EN</span>
+            <span style={{ padding: '0.15rem 0.5rem', borderRadius: 999, background: lang === 'ko' ? 'var(--btn-bg)' : 'transparent', color: lang === 'ko' ? '#ffffff' : 'var(--dim)', fontWeight: lang === 'ko' ? 800 : 500, transition: 'all 0.2s' }}>KO</span>
+            <span style={{ padding: '0.15rem 0.5rem', borderRadius: 999, background: lang === 'en' ? 'var(--btn-bg)' : 'transparent', color: lang === 'en' ? '#ffffff' : 'var(--dim)', fontWeight: lang === 'en' ? 800 : 500, transition: 'all 0.2s' }}>EN</span>
           </button>
           <a
             href="#contact"
@@ -287,7 +288,7 @@ export default function App() {
             onClick={() => setMenuOpen(false)}
             className="flex items-center justify-between"
             style={{
-              padding: '0.95rem 0', fontSize: '1.08rem', fontWeight: 600,
+              padding: '0.95rem 0', fontSize: '1.08rem', fontWeight: 700,
               color: 'var(--beam)', textDecoration: 'none',
               borderBottom: '1px solid var(--rail-soft)',
             }}
@@ -315,8 +316,8 @@ export default function App() {
           style={{
             position: 'absolute', inset: 0, pointerEvents: 'none',
             background:
-              'linear-gradient(90deg, rgba(23,32,54,0.92) 0%, rgba(23,32,54,0.72) 45%, rgba(23,32,54,0.3) 100%),' +
-              'linear-gradient(180deg, rgba(23,32,54,0.8) 0%, rgba(23,32,54,0.1) 38%, rgba(23,32,54,0.92) 100%)',
+              'linear-gradient(90deg, rgba(21,44,94,0.92) 0%, rgba(21,44,94,0.72) 45%, rgba(21,44,94,0.3) 100%),' +
+              'linear-gradient(180deg, rgba(21,44,94,0.8) 0%, rgba(21,44,94,0.1) 38%, rgba(21,44,94,0.92) 100%)',
           }}
         />
         <div
@@ -344,13 +345,13 @@ export default function App() {
                 </div>
               </Reveal>
               <Reveal delay={80}>
-                <h1 style={{ fontSize: 'clamp(3rem, 8vw, 6.2rem)', lineHeight: 0.98, fontWeight: 700, letterSpacing: '-0.035em', margin: 0 }}>
+                <h1 style={{ fontSize: 'clamp(3rem, 8vw, 6.2rem)', lineHeight: 0.98, fontWeight: 800, letterSpacing: '-0.035em', margin: 0 }}>
                   {t.hero.titleTop}<br />
                   <span style={{ color: 'var(--beam)' }}>{t.hero.titleAccent}</span>
                 </h1>
               </Reveal>
               <Reveal delay={160}>
-                <p style={{ fontSize: '1.2rem', lineHeight: 1.85, color: 'var(--dim)', fontWeight: 400, marginTop: '1.6rem', maxWidth: '46ch' }}>
+                <p style={{ fontSize: '1.2rem', lineHeight: 1.85, color: 'var(--dim)', fontWeight: 500, marginTop: '1.6rem', maxWidth: '46ch' }}>
                   {t.hero.subtitle}
                 </p>
               </Reveal>
@@ -376,7 +377,7 @@ export default function App() {
                   <img src={asset('logo-mark.png')} alt="" style={{ width: 40, height: 40, flexShrink: 0 }} />
                   <span style={{ flex: 1, minWidth: 0 }}>
                     <span style={{ ...mono('0.78rem'), color: 'var(--beam)', display: 'block' }}>{t.hero.mainSiteLabel} · jcodeedu.com</span>
-                    <span style={{ display: 'block', fontWeight: 700, fontSize: '1.08rem', marginTop: '0.15rem' }}>{t.hero.mainSiteTitle}</span>
+                    <span style={{ display: 'block', fontWeight: 800, fontSize: '1.08rem', marginTop: '0.15rem' }}>{t.hero.mainSiteTitle}</span>
                     <span style={{ display: 'block', fontSize: '0.92rem', color: 'var(--dim)', marginTop: '0.15rem', lineHeight: 1.5 }}>{t.hero.mainSiteDesc}</span>
                   </span>
                   <span
@@ -396,7 +397,7 @@ export default function App() {
                 <div className="grid grid-cols-3 gap-4 mt-12 max-w-md">
                   {t.hero.stats.map((s, i) => (
                     <div key={i}>
-                      <div style={{ ...mono('1.5rem'), fontWeight: 700, color: 'var(--beam)' }}>{s.n}</div>
+                      <div style={{ ...mono('1.5rem'), fontWeight: 800, color: 'var(--beam)' }}>{s.n}</div>
                       <div style={{ fontSize: '0.84rem', color: 'var(--faint)', marginTop: '0.2rem', lineHeight: 1.4 }}>{s.l}</div>
                     </div>
                   ))}
@@ -442,7 +443,7 @@ export default function App() {
                     className="inline-flex items-center gap-2 mt-3"
                     style={{ border: '1px solid var(--rail)', background: 'rgba(255,255,255,0.08)', padding: '0.3rem 0.8rem', borderRadius: 999, backdropFilter: 'blur(6px)' }}
                   >
-                    <span style={{ fontSize: '0.92rem', fontWeight: 600 }}>{lang === 'ko' ? '해봇' : 'Haebot'}</span>
+                    <span style={{ fontSize: '0.92rem', fontWeight: 700 }}>{lang === 'ko' ? '해봇' : 'Haebot'}</span>
                     <span style={{ ...mono('0.78rem'), color: 'var(--lock)' }}>{lang === 'ko' ? 'Haebot' : '해봇'}</span>
                   </div>
                 </div>
@@ -453,7 +454,7 @@ export default function App() {
       </section>
 
       {/* MARQUEE */}
-      <div className="theme-dark" style={{ background: '#121a2d', borderTop: '1px solid var(--rail)', overflow: 'hidden', padding: '0.7rem 0' }}>
+      <div className="theme-dark" style={{ background: '#10244f', borderTop: '1px solid var(--rail)', overflow: 'hidden', padding: '0.7rem 0' }}>
         <div className="marquee-inner">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center">
@@ -474,13 +475,13 @@ export default function App() {
             <div>
               <Reveal><span style={{ ...mono('0.84rem'), color: 'var(--beam)' }}>{t.services.eyebrow}</span></Reveal>
               <Reveal delay={60}>
-                <h2 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', lineHeight: 1.2, fontWeight: 700, letterSpacing: '-0.025em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
+                <h2 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', lineHeight: 1.2, fontWeight: 800, letterSpacing: '-0.025em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
                   {t.services.title}
                 </h2>
               </Reveal>
             </div>
             <Reveal delay={120}>
-              <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 400, maxWidth: '36ch', margin: 0 }}>
+              <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 500, maxWidth: '36ch', margin: 0 }}>
                 {t.services.subtitle}
               </p>
             </Reveal>
@@ -520,23 +521,23 @@ export default function App() {
                           background: accent.color,
                           padding: '0.22rem 0.55rem',
                           borderRadius: 3,
-                          fontWeight: 700,
+                          fontWeight: 800,
                         }}
                       >
                         {s.tagLabel}
                       </span>
                       <span style={{ ...mono('0.78rem'), color: accent.color }}>{String(i + 1).padStart(2, '0')}</span>
                     </div>
-                    <div style={{ fontSize: '1.5rem', fontWeight: 600, letterSpacing: '-0.015em', marginBottom: '0.5rem' }}>{s.title}</div>
+                    <div style={{ fontSize: '1.5rem', fontWeight: 700, letterSpacing: '-0.015em', marginBottom: '0.5rem' }}>{s.title}</div>
                     <div className="flex gap-1.5 flex-wrap mb-4">
                       {s.audience.map((a, j) => (
                         <span key={j} style={{ ...mono('0.78rem'), color: 'var(--dim)', border: '1px solid var(--rail)', padding: '0.2rem 0.45rem', borderRadius: 2 }}>{a}</span>
                       ))}
                     </div>
-                    <p style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--dim)', fontWeight: 400, marginBottom: '1.4rem' }}>{s.desc}</p>
+                    <p style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--dim)', fontWeight: 500, marginBottom: '1.4rem' }}>{s.desc}</p>
                     <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.4rem' }}>
                       {s.points.map((p, j) => (
-                        <li key={j} style={{ fontSize: '0.92rem', padding: '0.5rem 0', color: 'var(--text)', fontWeight: 400, borderTop: '1px solid var(--rail-soft)', display: 'flex', gap: '0.6rem' }}>
+                        <li key={j} style={{ fontSize: '0.92rem', padding: '0.5rem 0', color: 'var(--text)', fontWeight: 500, borderTop: '1px solid var(--rail-soft)', display: 'flex', gap: '0.6rem' }}>
                           <span style={{ color: accent.color, flexShrink: 0 }}>/</span>{p}
                         </li>
                       ))}
@@ -569,17 +570,17 @@ export default function App() {
         </div>
       </section>
 
-      {/* ROBOTS */}
-      <section id="robots" className="sheet-soft px-5 md:px-10 py-20 md:py-28" style={{ borderBottom: '1px solid var(--rail)' }}>
+      {/* ROBOTS — blue band */}
+      <section id="robots" className="sheet theme-dark px-5 md:px-10 py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto">
           <Reveal><span style={{ ...mono('0.84rem'), color: 'var(--beam)' }}>{t.robots.eyebrow}</span></Reveal>
           <Reveal delay={60}>
-            <h2 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', lineHeight: 1.2, fontWeight: 700, letterSpacing: '-0.025em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
+            <h2 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', lineHeight: 1.2, fontWeight: 800, letterSpacing: '-0.025em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
               {t.robots.title}
             </h2>
           </Reveal>
           <Reveal delay={120}>
-            <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 400, marginTop: '1rem', marginBottom: '3rem', maxWidth: '52ch' }}>
+            <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 500, marginTop: '1rem', marginBottom: '3rem', maxWidth: '52ch' }}>
               {t.robots.subtitle}
             </p>
           </Reveal>
@@ -592,13 +593,13 @@ export default function App() {
                     <RobotMedia src={asset(robotMedia[i].src)} position={robotMedia[i].position} alt={`${r.name} — ${r.type}`} />
                   </div>
                   <div className="p-5" style={{ borderTop: '1px solid var(--rail)' }}>
-                    <div style={{ fontWeight: 600, fontSize: '1.08rem', letterSpacing: '-0.01em' }}>{r.name}</div>
+                    <div style={{ fontWeight: 700, fontSize: '1.08rem', letterSpacing: '-0.01em' }}>{r.name}</div>
                     <div className="flex items-center gap-2 mt-1.5 mb-3.5 flex-wrap">
                       <span style={{ ...mono('0.78rem'), color: 'var(--beam)' }}>{r.type}</span>
                       <span style={{ color: 'var(--rail)' }}>|</span>
                       <span style={{ ...mono('0.78rem'), color: 'var(--faint)' }}>{r.spec}</span>
                     </div>
-                    <p style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--dim)', fontWeight: 400, margin: 0 }}>{r.desc}</p>
+                    <p style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--dim)', fontWeight: 500, margin: 0 }}>{r.desc}</p>
                   </div>
                 </div>
               </Reveal>
@@ -610,8 +611,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* CAPABILITY BANNER */}
-      <section className="theme-dark" style={{ position: 'relative', overflow: 'hidden' }}>
+      {/* CAPABILITY BANNER — white band over the photo */}
+      <section className="theme-light" style={{ position: 'relative', overflow: 'hidden', background: '#ffffff' }}>
         <div style={{ position: 'relative', minHeight: 340 }}>
           <img
             src={asset('images/platforms-bg.jpg')}
@@ -623,17 +624,17 @@ export default function App() {
             aria-hidden
             style={{
               position: 'absolute', inset: 0,
-              background: 'linear-gradient(90deg, rgba(23,32,54,0.95) 0%, rgba(23,32,54,0.7) 45%, rgba(23,32,54,0.2) 100%)',
+              background: 'linear-gradient(90deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.85) 45%, rgba(255,255,255,0.2) 100%)',
             }}
           />
           <div className="max-w-screen-xl mx-auto px-5 md:px-10 h-full flex items-center" style={{ position: 'relative', minHeight: 340 }}>
             <Reveal>
               <div style={{ maxWidth: '32ch' }}>
                 <span style={{ ...mono('0.84rem'), color: 'var(--beam)' }}>{t.banner.eyebrow}</span>
-                <h3 style={{ fontSize: 'clamp(1.5rem, 3.2vw, 2.3rem)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.3, margin: '0.5rem 0 0' }}>
+                <h3 style={{ fontSize: 'clamp(1.5rem, 3.2vw, 2.3rem)', fontWeight: 800, letterSpacing: '-0.02em', lineHeight: 1.3, margin: '0.5rem 0 0' }}>
                   {t.banner.title}
                 </h3>
-                <p style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--dim)', fontWeight: 400, marginTop: '1rem' }}>
+                <p style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--dim)', fontWeight: 500, marginTop: '1rem' }}>
                   {t.banner.subtitle}
                 </p>
               </div>
@@ -643,16 +644,16 @@ export default function App() {
       </section>
 
       {/* PHYSICAL AI — what it is + how it works, merged and moved to the back */}
-      <section id="physical-ai" className="px-5 md:px-10 py-20 md:py-28" style={{ borderBottom: '1px solid var(--rail)' }}>
+      <section id="physical-ai" className="sheet theme-dark px-5 md:px-10 py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto mb-12 md:mb-16">
           <Reveal><span style={{ ...mono('0.84rem'), color: 'var(--beam)' }}>{t.physicalAi.eyebrow}</span></Reveal>
           <Reveal delay={60}>
-            <h2 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', lineHeight: 1.2, fontWeight: 700, letterSpacing: '-0.025em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
+            <h2 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', lineHeight: 1.2, fontWeight: 800, letterSpacing: '-0.025em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
               {t.physicalAi.title}
             </h2>
           </Reveal>
           <Reveal delay={120}>
-            <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 400, marginTop: '1rem', maxWidth: '56ch' }}>
+            <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 500, marginTop: '1rem', maxWidth: '56ch' }}>
               {t.physicalAi.subtitle}
             </p>
           </Reveal>
@@ -663,17 +664,17 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
             <div>
               <Reveal>
-                <h3 style={{ fontSize: 'clamp(1.4rem, 2.8vw, 1.9rem)', lineHeight: 1.3, fontWeight: 700, letterSpacing: '-0.02em', margin: 0, whiteSpace: 'pre-line' }}>
+                <h3 style={{ fontSize: 'clamp(1.4rem, 2.8vw, 1.9rem)', lineHeight: 1.3, fontWeight: 800, letterSpacing: '-0.02em', margin: 0, whiteSpace: 'pre-line' }}>
                   {t.whatIs.title}
                 </h3>
               </Reveal>
               <Reveal delay={100}>
-                <p style={{ fontSize: '1.08rem', lineHeight: 1.85, color: 'var(--dim)', fontWeight: 400, marginTop: '1.4rem', maxWidth: '46ch' }}>
+                <p style={{ fontSize: '1.08rem', lineHeight: 1.85, color: 'var(--dim)', fontWeight: 500, marginTop: '1.4rem', maxWidth: '46ch' }}>
                   {t.whatIs.body1}
                 </p>
               </Reveal>
               <Reveal delay={180}>
-                <p style={{ fontSize: '1.08rem', lineHeight: 1.85, color: 'var(--text)', fontWeight: 400, marginTop: '1.1rem', maxWidth: '46ch' }}>
+                <p style={{ fontSize: '1.08rem', lineHeight: 1.85, color: 'var(--text)', fontWeight: 500, marginTop: '1.1rem', maxWidth: '46ch' }}>
                   {t.whatIs.body2}
                 </p>
               </Reveal>
@@ -689,9 +690,9 @@ export default function App() {
                     </div>
                     {t.whatIs.compare.map((row, i) => (
                       <div key={i} className="grid grid-cols-3" style={{ borderTop: i ? '1px solid var(--rail-soft)' : 'none' }}>
-                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.92rem', color: 'var(--dim)', fontWeight: 500 }}>{row.label}</div>
-                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.92rem', color: 'var(--faint)', fontWeight: 400 }}>{row.software}</div>
-                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.92rem', color: 'var(--text)', fontWeight: 400 }}>{row.physical}</div>
+                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.92rem', color: 'var(--dim)', fontWeight: 600 }}>{row.label}</div>
+                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.92rem', color: 'var(--faint)', fontWeight: 500 }}>{row.software}</div>
+                        <div style={{ padding: '0.8rem 0.9rem', fontSize: '0.92rem', color: 'var(--text)', fontWeight: 500 }}>{row.physical}</div>
                       </div>
                     ))}
                   </div>
@@ -708,8 +709,8 @@ export default function App() {
                   {t.whatIs.stats.map((r, i) => (
                     <div key={i} style={{ marginTop: i ? '1.3rem' : 0 }}>
                       <div className="flex justify-between items-baseline mb-2">
-                        <span style={{ fontSize: '1rem', color: 'var(--text)', fontWeight: 400 }}>{r.l}</span>
-                        <span style={{ ...mono('1rem'), fontWeight: 700, color: i === 1 ? 'var(--amp)' : 'var(--beam)' }}>{r.v}%</span>
+                        <span style={{ fontSize: '1rem', color: 'var(--text)', fontWeight: 500 }}>{r.l}</span>
+                        <span style={{ ...mono('1rem'), fontWeight: 800, color: i === 1 ? 'var(--amp)' : 'var(--beam)' }}>{r.v}%</span>
                       </div>
                       <div style={{ height: 4, background: 'var(--panel)', borderRadius: 2, overflow: 'hidden' }}>
                         <div className="sweep" style={{ width: `${r.v}%`, height: '100%', background: i === 1 ? 'var(--amp)' : 'var(--beam)', borderRadius: 2 }} />
@@ -724,17 +725,20 @@ export default function App() {
         </div>
       </div>
 
-      {/* HOW IT WORKS */}
-      <div className="max-w-screen-xl mx-auto mt-20 md:mt-24">
+      </section>
+
+      {/* HOW IT WORKS — white band */}
+      <section className="px-5 md:px-10 py-20 md:py-28">
+      <div className="max-w-screen-xl mx-auto">
         <div>
           <Reveal><span style={{ ...mono('0.84rem'), color: 'var(--lock)' }}>{t.physicalAi.loopEyebrow}</span></Reveal>
           <Reveal delay={60}>
-            <h3 style={{ fontSize: 'clamp(1.4rem, 2.8vw, 1.9rem)', lineHeight: 1.3, fontWeight: 700, letterSpacing: '-0.02em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
+            <h3 style={{ fontSize: 'clamp(1.4rem, 2.8vw, 1.9rem)', lineHeight: 1.3, fontWeight: 800, letterSpacing: '-0.02em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
               {t.howItWorks.title}
             </h3>
           </Reveal>
           <Reveal delay={120}>
-            <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 400, marginTop: '1rem', marginBottom: '2.8rem', maxWidth: '52ch' }}>
+            <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 500, marginTop: '1rem', marginBottom: '2.8rem', maxWidth: '52ch' }}>
               {t.howItWorks.subtitle}
             </p>
           </Reveal>
@@ -764,7 +768,7 @@ export default function App() {
                       }}
                     >
                       <div style={{ ...mono('0.78rem'), opacity: 0.75 }}>{String(i + 1).padStart(2, '0')}</div>
-                      <div style={{ fontSize: '0.92rem', fontWeight: 600, marginTop: '0.2rem' }}>{s.title}</div>
+                      <div style={{ fontSize: '0.92rem', fontWeight: 700, marginTop: '0.2rem' }}>{s.title}</div>
                     </button>
                   );
                 })}
@@ -772,7 +776,7 @@ export default function App() {
 
               <div key={activeStep} className="latch grid grid-cols-1 md:grid-cols-12 gap-8 p-6 md:p-10">
                 <div className="md:col-span-7">
-                  <p style={{ fontSize: '1.2rem', lineHeight: 1.85, color: 'var(--text)', fontWeight: 400, margin: 0, maxWidth: '48ch' }}>
+                  <p style={{ fontSize: '1.2rem', lineHeight: 1.85, color: 'var(--text)', fontWeight: 500, margin: 0, maxWidth: '48ch' }}>
                     {t.howItWorks.steps[activeStep].desc}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-6">
@@ -795,20 +799,20 @@ export default function App() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="sheet-soft px-5 md:px-10 py-20 md:py-28" style={{ position: 'relative' }}>
+      <section id="contact" className="sheet theme-dark px-5 md:px-10 py-20 md:py-28" style={{ position: 'relative' }}>
         <div
           aria-hidden
-          style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(50% 60% at 50% 100%, rgba(29,91,214,0.08), transparent 70%)' }}
+          style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(50% 60% at 50% 100%, rgba(59,130,246,0.25), transparent 70%)' }}
         />
         <div className="max-w-screen-xl mx-auto" style={{ position: 'relative' }}>
           <Reveal><span style={{ ...mono('0.84rem'), color: 'var(--beam)' }}>{t.contact.eyebrow}</span></Reveal>
           <Reveal delay={60}>
-            <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.4rem)', lineHeight: 1.15, fontWeight: 700, letterSpacing: '-0.03em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.4rem)', lineHeight: 1.15, fontWeight: 800, letterSpacing: '-0.03em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
               {t.contact.title}
             </h2>
           </Reveal>
           <Reveal delay={120}>
-            <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 400, marginTop: '1rem', marginBottom: '3rem', maxWidth: '44ch' }}>
+            <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 500, marginTop: '1rem', marginBottom: '3rem', maxWidth: '44ch' }}>
               {t.contact.subtitle}
             </p>
           </Reveal>
@@ -823,7 +827,7 @@ export default function App() {
                 <div style={{ ...mono('0.84rem'), color: 'var(--faint)', marginBottom: '1.4rem' }}>{t.contact.infoTitle}</div>
 
                 <div style={{ marginBottom: '1.6rem' }}>
-                  <div style={{ fontSize: '1.2rem', fontWeight: 600 }}>{t.contact.company}</div>
+                  <div style={{ fontSize: '1.2rem', fontWeight: 700 }}>{t.contact.company}</div>
                   <div style={{ fontSize: '0.92rem', color: 'var(--faint)', marginTop: '0.15rem' }}>{t.contact.companyEn}</div>
                   <div style={{ fontSize: '0.92rem', color: 'var(--dim)', marginTop: '0.4rem' }}>{t.contact.ceo} · {t.contact.ceoName}</div>
                 </div>
@@ -859,14 +863,14 @@ export default function App() {
       {page === 'rental' && <RentalPage lang={lang} t={t} onContact={() => goToSection('contact')} />}
 
       {/* FOOTER — navy, with company details, as on the main site */}
-      <footer className="theme-dark px-5 md:px-10 pt-12 pb-8">
+      <footer className="theme-dark px-5 md:px-10 pt-12 pb-8" style={{ background: '#0d1b3d', borderTop: '1px solid var(--rail)' }}>
         <div className="max-w-screen-xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8" style={{ borderBottom: '1px solid var(--rail)' }}>
             <div className="flex items-center gap-3">
               <img src={asset('logo-mark.png')} alt="" className="logo-mark" style={{ height: 30, width: 'auto' }} />
               <div>
                 <div style={{ fontSize: '1.08rem', fontWeight: 800, letterSpacing: '-0.02em' }}>{t.contact.company}</div>
-                <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--faint)', marginTop: '0.1rem' }}>{t.contact.companyEn}</div>
+                <div style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--faint)', marginTop: '0.1rem' }}>{t.contact.companyEn}</div>
               </div>
             </div>
             <a
@@ -977,14 +981,14 @@ function LoopDiagram({ active, total }: { active: number; total: number }) {
           <g key={i}>
             <line x1={p.x} y1={p.y} x2={next.x} y2={next.y} stroke="var(--faint)" strokeOpacity="0.35" strokeWidth="1.4" />
             <circle cx={p.x} cy={p.y} r={on ? 17 : 13} fill={on ? 'var(--beam)' : 'var(--panel)'} stroke={on ? 'var(--beam)' : 'var(--faint)'} strokeOpacity={on ? 1 : 0.5} strokeWidth="1.6" style={{ transition: 'r 0.3s, fill 0.3s' }} />
-            <text x={p.x} y={p.y + 1} textAnchor="middle" dominantBaseline="middle" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 14, fill: on ? '#ffffff' : 'var(--dim)', fontWeight: 700 }}>
+            <text x={p.x} y={p.y + 1} textAnchor="middle" dominantBaseline="middle" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 14, fill: on ? '#ffffff' : 'var(--dim)', fontWeight: 800 }}>
               {i + 1}
             </text>
           </g>
         );
       })}
       <circle cx={cx} cy={cy} r={34} fill="var(--beam-soft)" stroke="var(--beam)" strokeOpacity="0.4" strokeWidth="1.4" />
-      <text x={cx} y={cy + 1} textAnchor="middle" dominantBaseline="middle" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 16, fill: 'var(--beam)', fontWeight: 700 }}>
+      <text x={cx} y={cy + 1} textAnchor="middle" dominantBaseline="middle" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 16, fill: 'var(--beam)', fontWeight: 800 }}>
         AI
       </text>
     </svg>
@@ -1070,8 +1074,8 @@ function ContactForm({ t, lang }: { t: any; lang: Lang }) {
             <path d="M20 6L9 17l-5-5" />
           </svg>
         </div>
-        <div style={{ fontSize: '1.2rem', fontWeight: 700 }}>{f.sentTitle}</div>
-        <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 400, marginTop: '0.6rem' }}>
+        <div style={{ fontSize: '1.2rem', fontWeight: 800 }}>{f.sentTitle}</div>
+        <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 500, marginTop: '0.6rem' }}>
           {f.sentBody}
         </p>
         <button
@@ -1154,8 +1158,8 @@ function ContactForm({ t, lang }: { t: any; lang: Lang }) {
             border: '1px solid var(--amp)', background: 'rgba(180,95,6,0.06)',
           }}
         >
-          <div style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--amp)' }}>{f.failTitle}</div>
-          <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--text)', fontWeight: 400, margin: '0.4rem 0 0.9rem' }}>
+          <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--amp)' }}>{f.failTitle}</div>
+          <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--text)', fontWeight: 500, margin: '0.4rem 0 0.9rem' }}>
             {errorText}
           </p>
           <a

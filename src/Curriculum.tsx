@@ -74,13 +74,13 @@ export default function Curriculum() {
       <div className="max-w-screen-xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 mb-10">
           <div className="md:col-span-6">
-            <h2 style={{ fontSize: 'clamp(2rem, 4.4vw, 3.2rem)', lineHeight: 1.12, fontWeight: 700, letterSpacing: '-0.02em', margin: 0 }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 4.4vw, 3.2rem)', lineHeight: 1.12, fontWeight: 800, letterSpacing: '-0.02em', margin: 0 }}>
               커리큘럼을 직접<br />
               눌러보며 확인하세요
             </h2>
           </div>
           <div className="md:col-span-6 flex items-end">
-            <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 400, maxWidth: '46ch', margin: 0 }}>
+            <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 500, maxWidth: '46ch', margin: 0 }}>
               각 단계가 문서와 결과물을 남기고, 그것이 다음 단계의 입력물이 됩니다.
               아래에서 단계를 선택하면 무엇을 배우고 무엇이 손에 남는지 바로 확인할 수 있습니다.
             </p>
@@ -120,7 +120,7 @@ export default function Curriculum() {
                     cursor: 'pointer',
                     background: lens === l ? 'var(--beam)' : 'transparent',
                     color: lens === l ? '#ffffff' : 'var(--dim)',
-                    fontWeight: lens === l ? 700 : 400,
+                    fontWeight: lens === l ? 800 : 600,
                     transition: 'background 0.15s, color 0.15s',
                   }}
                 >
@@ -173,10 +173,10 @@ export default function Curriculum() {
                       overflow: 'hidden',
                     }}
                   >
-                    <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.04em' }}>
+                    <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.78rem', fontWeight: 800, letterSpacing: '0.04em' }}>
                       {isModule ? modules[i].code : stages[i].num}
                     </span>
-                    <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.92rem', fontWeight: 700, opacity: on ? 1 : 0.75 }}>
+                    <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.92rem', fontWeight: 800, opacity: on ? 1 : 0.75 }}>
                       {it.hours}H
                     </span>
                   </button>
@@ -221,7 +221,7 @@ export default function Curriculum() {
                     style={{
                       fontFamily: 'JetBrains Mono, monospace',
                       fontSize: '0.84rem',
-                      fontWeight: 700,
+                      fontWeight: 800,
                       color: 'var(--beam)',
                       border: '1px solid var(--beam)',
                       padding: '0.15rem 0.5rem',
@@ -233,7 +233,7 @@ export default function Curriculum() {
                   <Mono style={{ color: 'var(--faint)' }}>{when}</Mono>
                 </div>
 
-                <h3 style={{ fontSize: 'clamp(1.35rem, 2.6vw, 1.9rem)', fontWeight: 600, letterSpacing: '-0.015em', lineHeight: 1.3, margin: '0 0 0.3rem' }}>
+                <h3 style={{ fontSize: 'clamp(1.35rem, 2.6vw, 1.9rem)', fontWeight: 700, letterSpacing: '-0.015em', lineHeight: 1.3, margin: '0 0 0.3rem' }}>
                   {title}
                 </h3>
                 <Mono style={{ color: 'var(--faint)', fontSize: '0.84rem' }}>{en}</Mono>
@@ -261,7 +261,7 @@ export default function Curriculum() {
 
                 <div style={{ marginTop: '1.8rem', paddingTop: '1.5rem', borderTop: '1px solid var(--rail)' }}>
                   <Mono style={{ color: 'var(--faint)' }}>본인 프로젝트에서 하는 일</Mono>
-                  <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--text)', fontWeight: 400, margin: '0.6rem 0 0', maxWidth: '52ch' }}>
+                  <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--text)', fontWeight: 500, margin: '0.6rem 0 0', maxWidth: '52ch' }}>
                     {activity}
                   </p>
                 </div>
@@ -344,7 +344,7 @@ export default function Curriculum() {
                       >
                         {got ? '완료' : ''}
                       </span>
-                      <span style={{ fontSize: '1rem', fontWeight: got ? 400 : 300, color: got ? 'var(--text)' : 'var(--dim)' }}>
+                      <span style={{ fontSize: '1rem', fontWeight: got ? 600 : 500, color: got ? 'var(--text)' : 'var(--dim)' }}>
                         {l.text}
                       </span>
                       <Mono style={{ marginLeft: 'auto', color: 'var(--faint)', fontSize: '0.78rem', flexShrink: 0 }}>{l.owner}</Mono>
@@ -353,7 +353,7 @@ export default function Curriculum() {
                 })}
               </ul>
 
-              <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--dim)', fontWeight: 400, marginTop: '1.5rem', marginBottom: 0 }}>
+              <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--dim)', fontWeight: 500, marginTop: '1.5rem', marginBottom: 0 }}>
                 수료 기준은 출석 시간이 아니라 이 목록입니다. 기획서 · 프로토타입 · 사업화 계획이 모두 채워졌을 때 과정이 끝납니다.
               </p>
             </div>
@@ -377,11 +377,11 @@ export default function Curriculum() {
                   }}
                 >
                   <div>
-                    <Mono style={{ color: 'var(--amp)', fontWeight: 700, fontSize: '0.84rem' }}>{m.round}</Mono>
+                    <Mono style={{ color: 'var(--amp)', fontWeight: 800, fontSize: '0.84rem' }}>{m.round}</Mono>
                     <div><Mono style={{ color: 'var(--faint)', fontSize: '0.78rem' }}>{m.week}주차</Mono></div>
                   </div>
                   <div>
-                    <div style={{ fontSize: '0.92rem', color: 'var(--dim)', fontWeight: 400, lineHeight: 1.6 }}>{m.check}</div>
+                    <div style={{ fontSize: '0.92rem', color: 'var(--dim)', fontWeight: 500, lineHeight: 1.6 }}>{m.check}</div>
                     <div style={{ fontSize: '0.92rem', color: 'var(--lock)', marginTop: '0.25rem' }}>{m.out}</div>
                   </div>
                 </div>
@@ -409,7 +409,7 @@ export default function Curriculum() {
                   </Mono>
                   <div>
                     <div style={{ fontSize: '1rem' }}>{w.label}</div>
-                    <div style={{ fontSize: '0.92rem', color: 'var(--dim)', fontWeight: 400, marginTop: '0.15rem' }}>{w.out}</div>
+                    <div style={{ fontSize: '0.92rem', color: 'var(--dim)', fontWeight: 500, marginTop: '0.15rem' }}>{w.out}</div>
                   </div>
                 </div>
               ))}
