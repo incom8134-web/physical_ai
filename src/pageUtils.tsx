@@ -149,10 +149,10 @@ export function FinalCta({
   onCta: () => void;
 }) {
   return (
-    <section className="sheet theme-dark px-5 md:px-10 py-20 md:py-28" style={{ position: 'relative' }}>
+    <section className="sheet theme-light px-5 md:px-10 py-20 md:py-28" style={{ position: 'relative', background: '#ffffff' }}>
       <div
         aria-hidden
-        style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(50% 60% at 50% 100%, rgba(59,130,246,0.2), transparent 70%)' }}
+        style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(50% 60% at 50% 100%, rgba(26,99,216,0.1), transparent 70%)' }}
       />
       <div className="max-w-screen-xl mx-auto text-center" style={{ position: 'relative' }}>
         <Reveal>
