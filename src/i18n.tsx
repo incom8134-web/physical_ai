@@ -183,6 +183,9 @@ const dict = {
     },
     footer: {
       rights: 'All rights reserved.',
+      ceoLabel: '대표',
+      bizNoLabel: '사업자등록번호',
+      addrLabel: '주소',
       privacy: '개인정보처리방침',
       terms: '이용약관',
     },
@@ -446,6 +449,9 @@ const dict = {
     },
     footer: {
       rights: 'All rights reserved.',
+      ceoLabel: 'CEO',
+      bizNoLabel: 'Business Reg. No.',
+      addrLabel: 'Address',
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
     },

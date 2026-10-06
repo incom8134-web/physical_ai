@@ -62,6 +62,8 @@ export default function App() {
   const pendingScroll = useRef<string | null>(null);
 
   const sectionIds = ['services', 'robots', 'physical-ai', 'contact'];
+  // Every page opens on a navy band, so the header is navy until the page scrolls.
+  const navLight = navSolid || menuOpen;
 
   const goToPage = (p: Page) => {
     setPage(p);
@@ -158,10 +160,12 @@ export default function App() {
 
       {/* NAV */}
       <nav
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 md:px-10 h-16"
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 md:px-10 h-16 ${navLight ? 'theme-light' : 'theme-dark'}`}
         style={{
           borderBottom: '1px solid var(--rail)',
-          background: navSolid ? 'rgba(255,255,255,0.94)' : 'rgba(255,255,255,0.72)',
+          // Navy over the hero band, white once the page scrolls — as on the main site.
+          background: navLight ? 'rgba(255,255,255,0.96)' : 'rgba(23,32,54,0.55)',
+          color: 'var(--text)',
           backdropFilter: 'blur(12px)',
           transition: 'background 0.3s ease',
         }}
@@ -172,8 +176,11 @@ export default function App() {
           className="flex items-center gap-3"
           style={{ textDecoration: 'none', color: 'inherit' }}
         >
-          <img src={asset('logo-mark.png')} alt={t.contact.company} style={{ height: 30, width: 'auto' }} />
-          <span style={{ fontWeight: 600, fontSize: '0.95rem', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>{lang === 'ko' ? '지니에듀테크(주)' : 'JINIE EDUTECH'}</span>
+          <img src={asset('logo-mark.png')} alt={t.contact.company} className="logo-mark" style={{ height: 32, width: 'auto' }} />
+          <span style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.15 }}>
+            <span style={{ fontWeight: 800, fontSize: '1.08rem', letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>{lang === 'ko' ? '지니에듀테크(주)' : 'JINIE EDUTECH'}</span>
+            <span style={{ fontSize: '0.62rem', fontWeight: 600, color: 'var(--faint)', whiteSpace: 'nowrap' }}>{lang === 'ko' ? 'Jinie EduTech Co., Ltd.' : '지니에듀테크(주)'}</span>
+          </span>
         </a>
         <div className="hidden md:flex items-center gap-7" style={{ fontSize: '0.86rem', color: 'var(--dim)' }}>
           {t.nav.items.map(item => (
@@ -219,8 +226,8 @@ export default function App() {
               color: 'var(--dim)',
             }}
           >
-            <span style={{ padding: '0.15rem 0.5rem', borderRadius: 999, background: lang === 'ko' ? 'var(--beam)' : 'transparent', color: lang === 'ko' ? '#ffffff' : 'var(--dim)', fontWeight: lang === 'ko' ? 700 : 400, transition: 'all 0.2s' }}>KO</span>
-            <span style={{ padding: '0.15rem 0.5rem', borderRadius: 999, background: lang === 'en' ? 'var(--beam)' : 'transparent', color: lang === 'en' ? '#ffffff' : 'var(--dim)', fontWeight: lang === 'en' ? 700 : 400, transition: 'all 0.2s' }}>EN</span>
+            <span style={{ padding: '0.15rem 0.5rem', borderRadius: 999, background: lang === 'ko' ? 'var(--btn-bg)' : 'transparent', color: lang === 'ko' ? '#ffffff' : 'var(--dim)', fontWeight: lang === 'ko' ? 700 : 400, transition: 'all 0.2s' }}>KO</span>
+            <span style={{ padding: '0.15rem 0.5rem', borderRadius: 999, background: lang === 'en' ? 'var(--btn-bg)' : 'transparent', color: lang === 'en' ? '#ffffff' : 'var(--dim)', fontWeight: lang === 'en' ? 700 : 400, transition: 'all 0.2s' }}>EN</span>
           </button>
           <a
             href="#contact"
@@ -252,7 +259,7 @@ export default function App() {
       {menuOpen && (
         <div
           id="mobile-nav"
-          className="md:hidden latch"
+          className="md:hidden latch theme-light"
           style={{
             position: 'fixed', top: 64, left: 0, right: 0, zIndex: 45,
             background: 'rgba(255,255,255,0.98)', backdropFilter: 'blur(12px)',
@@ -301,22 +308,22 @@ export default function App() {
 
       {page === 'home' && <>
       {/* HERO */}
-      <section id="top" className="sheet px-5 md:px-10 pt-32 md:pt-40 pb-16" style={{ borderBottom: '1px solid var(--rail)', position: 'relative', overflow: 'hidden' }}>
+      <section id="top" className="sheet theme-dark px-5 md:px-10 pt-32 md:pt-40 pb-16" style={{ borderBottom: '1px solid var(--rail)', position: 'relative', overflow: 'hidden' }}>
         <HeroBackground />
         <div
           aria-hidden
           style={{
             position: 'absolute', inset: 0, pointerEvents: 'none',
             background:
-              'linear-gradient(90deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.9) 45%, rgba(240,245,253,0.55) 100%),' +
-              'linear-gradient(180deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0) 40%, rgba(245,248,253,0.95) 100%)',
+              'linear-gradient(90deg, rgba(23,32,54,0.92) 0%, rgba(23,32,54,0.72) 45%, rgba(23,32,54,0.3) 100%),' +
+              'linear-gradient(180deg, rgba(23,32,54,0.8) 0%, rgba(23,32,54,0.1) 38%, rgba(23,32,54,0.92) 100%)',
           }}
         />
         <div
           aria-hidden
           style={{
             position: 'absolute', inset: 0, pointerEvents: 'none',
-            background: 'radial-gradient(60% 55% at 22% 8%, rgba(29,91,214,0.10), transparent 70%)',
+            background: 'radial-gradient(60% 55% at 22% 8%, rgba(59,130,246,0.22), transparent 70%)',
           }}
         />
         <div
@@ -358,11 +365,11 @@ export default function App() {
                   href={MAIN_SITE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="card card-hover main-site-card"
+                  className="card card-hover main-site-card theme-light"
                   style={{
                     display: 'flex', alignItems: 'center', gap: '1rem',
                     marginTop: '1.5rem', maxWidth: 460, padding: '0.9rem 1.1rem',
-                    textDecoration: 'none', color: 'inherit',
+                    textDecoration: 'none', color: 'var(--text)',
                     borderLeft: '4px solid var(--beam)',
                   }}
                 >
@@ -405,7 +412,7 @@ export default function App() {
                     aria-hidden
                     style={{
                       position: 'absolute', left: '-10%', right: '-10%', top: '4%', bottom: '10%',
-                      background: 'radial-gradient(48% 46% at 50% 44%, rgba(29,91,214,0.20), transparent 72%)',
+                      background: 'radial-gradient(48% 46% at 50% 44%, rgba(59,130,246,0.35), transparent 72%)',
                       filter: 'blur(14px)', pointerEvents: 'none',
                     }}
                   />
@@ -419,7 +426,7 @@ export default function App() {
                       style={{
                         display: 'block', width: 'auto', height: 'auto',
                         maxHeight: 'min(600px, 68vh)', maxWidth: '100%',
-                        filter: 'drop-shadow(0 24px 30px rgba(15,27,51,0.28))',
+                        filter: 'drop-shadow(0 24px 34px rgba(0,0,0,0.5))',
                       }}
                     />
                   </picture>
@@ -428,12 +435,12 @@ export default function App() {
                     aria-hidden
                     style={{
                       width: '62%', height: 26, marginTop: -18,
-                      background: 'radial-gradient(50% 50% at 50% 50%, rgba(15,27,51,0.28), transparent 72%)',
+                      background: 'radial-gradient(50% 50% at 50% 50%, rgba(0,0,0,0.55), transparent 72%)',
                     }}
                   />
                   <div
                     className="inline-flex items-center gap-2 mt-3"
-                    style={{ border: '1px solid var(--rail)', background: 'rgba(255,255,255,0.85)', padding: '0.3rem 0.8rem', borderRadius: 999, backdropFilter: 'blur(6px)' }}
+                    style={{ border: '1px solid var(--rail)', background: 'rgba(255,255,255,0.08)', padding: '0.3rem 0.8rem', borderRadius: 999, backdropFilter: 'blur(6px)' }}
                   >
                     <span style={{ fontSize: '0.82rem', fontWeight: 600 }}>{lang === 'ko' ? '해봇' : 'Haebot'}</span>
                     <span style={{ ...mono('0.6rem'), color: 'var(--lock)' }}>{lang === 'ko' ? 'Haebot' : '해봇'}</span>
@@ -446,7 +453,7 @@ export default function App() {
       </section>
 
       {/* MARQUEE */}
-      <div style={{ background: 'var(--deck)', borderBottom: '1px solid var(--rail)', overflow: 'hidden', padding: '0.7rem 0' }}>
+      <div className="theme-dark" style={{ background: '#121a2d', borderTop: '1px solid var(--rail)', overflow: 'hidden', padding: '0.7rem 0' }}>
         <div className="marquee-inner">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center">
@@ -604,7 +611,7 @@ export default function App() {
       </section>
 
       {/* CAPABILITY BANNER */}
-      <section style={{ position: 'relative', borderBottom: '1px solid var(--rail)', overflow: 'hidden' }}>
+      <section className="theme-dark" style={{ position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'relative', minHeight: 340 }}>
           <img
             src={asset('images/platforms-bg.jpg')}
@@ -616,7 +623,7 @@ export default function App() {
             aria-hidden
             style={{
               position: 'absolute', inset: 0,
-              background: 'linear-gradient(90deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.8) 45%, rgba(255,255,255,0.15) 100%)',
+              background: 'linear-gradient(90deg, rgba(23,32,54,0.95) 0%, rgba(23,32,54,0.7) 45%, rgba(23,32,54,0.2) 100%)',
             }}
           />
           <div className="max-w-screen-xl mx-auto px-5 md:px-10 h-full flex items-center" style={{ position: 'relative', minHeight: 340 }}>
@@ -788,7 +795,7 @@ export default function App() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="sheet px-5 md:px-10 py-20 md:py-28" style={{ position: 'relative' }}>
+      <section id="contact" className="sheet-soft px-5 md:px-10 py-20 md:py-28" style={{ position: 'relative' }}>
         <div
           aria-hidden
           style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(50% 60% at 50% 100%, rgba(29,91,214,0.08), transparent 70%)' }}
@@ -851,21 +858,40 @@ export default function App() {
       {page === 'consulting' && <ConsultingPage lang={lang} t={t} onContact={() => goToSection('contact')} />}
       {page === 'rental' && <RentalPage lang={lang} t={t} onContact={() => goToSection('contact')} />}
 
-      {/* FOOTER */}
-      <footer className="px-5 md:px-10 py-10" style={{ background: 'var(--void)', borderTop: '1px solid var(--rail)' }}>
-        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
-          <div className="flex items-center gap-3">
-            <img src={asset('logo-mark.png')} alt="" style={{ height: 24, width: 'auto' }} />
-            <div>
-              <div style={{ fontSize: '0.9rem', fontWeight: 600 }}>{t.contact.company}</div>
-              <div style={{ ...mono('0.6rem'), color: 'var(--faint)', marginTop: '0.1rem' }}>{t.contact.ceo} {t.contact.ceoName}</div>
+      {/* FOOTER — navy, with company details, as on the main site */}
+      <footer className="theme-dark px-5 md:px-10 pt-12 pb-8">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8" style={{ borderBottom: '1px solid var(--rail)' }}>
+            <div className="flex items-center gap-3">
+              <img src={asset('logo-mark.png')} alt="" className="logo-mark" style={{ height: 30, width: 'auto' }} />
+              <div>
+                <div style={{ fontSize: '1.05rem', fontWeight: 800, letterSpacing: '-0.02em' }}>{t.contact.company}</div>
+                <div style={{ fontSize: '0.65rem', fontWeight: 600, color: 'var(--faint)', marginTop: '0.1rem' }}>{t.contact.companyEn}</div>
+              </div>
             </div>
+            <a
+              href={MAIN_SITE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+              style={{ padding: '0.65rem 1.2rem', fontSize: '0.85rem' }}
+            >
+              {t.hero.mainSiteTitle}
+              <ExternalIcon size={13} />
+            </a>
           </div>
-          <div style={{ ...mono('0.6rem'), color: 'var(--faint)' }}>© 2026 {t.contact.company} — {t.footer.rights}</div>
-          <div className="flex gap-5" style={{ fontSize: '0.8rem', color: 'var(--dim)' }}>
-            <a href="#" className="link-underline">{t.footer.privacy}</a>
-            <a href="#" className="link-underline">{t.footer.terms}</a>
-            <a href={`mailto:${CONTACT_EMAIL}`} className="link-underline">{t.contact.email}</a>
+          <div className="flex flex-col md:flex-row md:flex-wrap gap-x-6 gap-y-2 pt-6" style={{ fontSize: '0.78rem', color: 'var(--dim)' }}>
+            <span>{t.footer.ceoLabel} : {t.contact.ceoName}</span>
+            <span>{t.footer.bizNoLabel} : 528-88-00923</span>
+            <span>{t.footer.addrLabel} : {t.contact.labAddr}</span>
+            <span>{t.contact.email} : <a href={`mailto:${CONTACT_EMAIL}`} className="link-underline">{CONTACT_EMAIL}</a></span>
+          </div>
+          <div className="flex flex-col md:flex-row justify-between gap-4 pt-6" style={{ fontSize: '0.75rem', color: 'var(--faint)' }}>
+            <span>© 2026 {t.contact.company} — {t.footer.rights}</span>
+            <div className="flex gap-5">
+              <a href="#" className="link-underline">{t.footer.privacy}</a>
+              <a href="#" className="link-underline">{t.footer.terms}</a>
+            </div>
           </div>
         </div>
       </footer>
