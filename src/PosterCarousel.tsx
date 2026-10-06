@@ -96,7 +96,7 @@ export default function PosterCarousel({
                 aria-hidden
                 style={{
                   position: 'absolute', inset: 0,
-                  background: 'linear-gradient(180deg, rgba(5,8,15,0) 45%, rgba(5,8,15,0.85) 100%)',
+                  background: 'linear-gradient(180deg, rgba(15,27,51,0) 55%, rgba(15,27,51,0.35) 100%)',
                 }}
               />
             </div>
@@ -125,7 +125,7 @@ export default function PosterCarousel({
           aria-label={lang === 'ko' ? active.title : active.titleEn}
           style={{
             position: 'fixed', inset: 0, zIndex: 120,
-            background: 'rgba(4,6,12,0.82)',
+            background: 'rgba(15,27,51,0.72)',
             backdropFilter: 'blur(4px)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             padding: '1.25rem',
