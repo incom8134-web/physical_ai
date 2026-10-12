@@ -21,7 +21,7 @@ const dict = {
       titleTop: 'PHYSICAL',
       titleAccent: 'AI',
       subtitle:
-        '현실 세계를 인지하고 판단하고 움직이는 피지컬 AI — 지니에듀테크(주)는 자체 개발 로봇 해봇을 만들고, 판매·대여하고, 교육과 컨설팅으로 현장에 연결합니다.',
+        '현실 세계를 인지하고 판단하고 움직이는 피지컬 AI — 지니에듀테크(주)는 자체 개발 로봇 해봇을 만들고, 판매·대여하고, 교육·컨설팅·운영 지원(CS/AS)으로 현장에 연결합니다.',
       ctaPrimary: '서비스 살펴보기',
       ctaSecondary: '문의하기',
       mainSiteLabel: 'OFFICIAL SITE',
@@ -29,7 +29,7 @@ const dict = {
       mainSiteDesc: '회사 소개와 전체 교육 프로그램을 본사 홈페이지에서 확인하세요.',
       stats: [
         { n: '52.1%', l: '휴머노이드 시장 연평균 성장률' },
-        { n: '3', l: '핵심 서비스' },
+        { n: '4', l: '핵심 서비스' },
         { n: '360°', l: '메카넘 휠 전방향 주행' },
       ],
     },
@@ -95,8 +95,8 @@ const dict = {
     },
     services: {
       eyebrow: '서비스',
-      title: '로봇을 사고, 빌리고,\n배우는 세 가지 방법',
-      subtitle: '도입을 검토 중이시든 이미 결정하셨든, 해봇을 현장에 놓는 방법은 세 가지입니다.',
+      title: '첫 경험에서 실제 운영까지,\n네 가지 서비스',
+      subtitle: '교육 역량을 바탕으로 체험과 기술 검토, 도입 이후의 운영까지 — 하나의 과정으로 연결합니다.',
       items: [
         {
           tag: 'Education',
@@ -113,6 +113,14 @@ const dict = {
           audience: ['사업가', '기업', '투자자'],
           desc: '피지컬 AI가 우리 사업에 어떤 기회가 될지, 어디서부터 시작해야 할지 함께 진단하고 실행 방향을 제시합니다.',
           points: ['기술 이해와 산업 적용 기회 분석', '업종별 활용 사례와 도입 방향 제시', 'Demo·PoC(개념 검증) 기획 및 실행', '투자·사업화 판단을 위한 자료 제공'],
+        },
+        {
+          tag: 'Support',
+          tagLabel: 'CS · AS',
+          title: 'CS / AS',
+          audience: ['기업', '기관', '운영 조직'],
+          desc: '로봇을 들여온 뒤에도 현장에서 계속 쓸 수 있도록 운영 안내, 사용 교육, 문제 대응을 지원합니다. 지원 범위는 장비와 운영 조건에 맞춰 협의합니다.',
+          points: ['운영 안내와 기술 지원', '사용 교육과 문제 대응', '유지관리 · 지원 연계', '도입 조건에 맞춘 지원 범위 협의'],
         },
         {
           tag: 'Rental',
@@ -143,7 +151,7 @@ const dict = {
     contact: {
       eyebrow: '문의',
       title: '피지컬 AI,\n지금 시작해보세요',
-      subtitle: '구매, 대여, 교육, 컨설팅 — 무엇이든 편하게 문의해주세요. 견적은 구성과 기간에 따라 안내드립니다.',
+      subtitle: '구매, 대여, 교육, 컨설팅, CS/AS — 무엇이든 편하게 문의해주세요. 견적은 구성과 기간에 따라 안내드립니다.',
       formTitle: '문의 남기기',
       fields: { name: '이름', org: '소속·회사', email: '이메일', message: '문의 내용', submit: '문의 보내기', type: '문의 유형' },
       types: [
@@ -151,6 +159,7 @@ const dict = {
         { value: 'rental', label: '대여' },
         { value: 'education', label: '교육' },
         { value: 'consulting', label: '컨설팅' },
+        { value: 'support', label: 'CS · AS (운영 지원)' },
         { value: 'partnership', label: '제휴 · 사업협력' },
         { value: 'other', label: '기타' },
       ],
@@ -240,6 +249,27 @@ const dict = {
         posterCaption: '함께 해결할 가치 있는 문제를 제안해 주세요.',
         finalSubtitle: '어떤 단계에 있든, 편하게 문의해 주세요.',
       },
+      support: {
+        eyebrow: 'CS · AS',
+        title: '도입 이후에도,\n현장에서 계속 쓰도록',
+        subtitle: '로봇은 들여온 뒤부터가 시작입니다. 운영 안내와 사용 교육, 문제 대응, 유지관리 연계까지 — 기업·기관·운영 조직이 피지컬 AI 장비를 꾸준히 활용하도록 지원합니다.',
+        ctaPrimary: 'CS · AS 문의하기',
+        ctaSecondary: '지원 내용 보기',
+        areasEyebrow: '지원 영역',
+        areasTitle: '운영에 필요한\n세 가지 지원',
+        areasSubtitle: '처음 다루는 장비도 현장 담당자가 직접 운영할 수 있도록 안내와 교육, 문제 대응을 함께 제공합니다.',
+        audienceEyebrow: '지원 대상',
+        audienceTitle: '로봇을 실제로\n운영하는 곳',
+        processEyebrow: '진행 방식',
+        processTitle: '문의부터\n지원까지',
+        journeyEyebrow: '전체 과정에서의 위치',
+        journeyTitle: '체험과 검증 다음,\n지속 활용을 준비합니다',
+        journeySubtitle: 'CS/AS는 인식·체험·교육·컨설팅·Demo/PoC를 거친 뒤, 도입한 장비를 계속 쓰도록 돕는 마지막 단계입니다.',
+        scopeTitle: '지원 범위는 함께 정합니다',
+        scopeBody: '수리 방식, 보증, 응답 시간 같은 조건은 장비 종류와 운영 환경에 따라 다릅니다. 도입 전에 필요한 지원 내용을 확인하고 범위를 협의합니다.',
+        finalTitle: '운영 중인 장비,\n함께 살펴볼까요?',
+        finalSubtitle: '장비와 사용 환경을 알려주시면 필요한 지원을 안내드립니다.',
+      },
       rental: {
         eyebrow: '판매 · 대여',
         title: '해봇을\n현장에 두는 방법',
@@ -285,7 +315,7 @@ const dict = {
       titleTop: 'PHYSICAL',
       titleAccent: 'AI',
       subtitle:
-        'Physical AI senses, decides, and moves in the real world. JINIE EDUTECH builds its own robot \u2014 Haebot \u2014 sells and rents it, and connects it to the field through training and consulting.',
+        'Physical AI senses, decides, and moves in the real world. JINIE EDUTECH builds its own robot \u2014 Haebot \u2014 sells and rents it, and connects it to the field through training, consulting and operating support (CS/AS).',
       ctaPrimary: 'Explore services',
       ctaSecondary: 'Contact us',
       mainSiteLabel: 'OFFICIAL SITE',
@@ -293,7 +323,7 @@ const dict = {
       mainSiteDesc: 'See the full company profile and every education program on our main site.',
       stats: [
         { n: '52.1%', l: 'Annual growth, humanoid robot market' },
-        { n: '3', l: 'Core services' },
+        { n: '4', l: 'Core services' },
         { n: '360°', l: 'Omnidirectional mecanum drive' },
       ],
     },
@@ -359,8 +389,8 @@ const dict = {
     },
     services: {
       eyebrow: 'Services',
-      title: 'Buy it, rent it,\nor learn on it',
-      subtitle: 'Whether you are still evaluating or already decided, there are three ways to get Haebot onto your floor.',
+      title: 'From first look to daily use,\nfour services',
+      subtitle: 'Built on our education work, we connect hands-on experience, technical review and life after adoption into one process.',
       items: [
         {
           tag: 'Education',
@@ -377,6 +407,14 @@ const dict = {
           audience: ['Founders', 'Companies', 'Investors'],
           desc: 'We help you understand what opportunity physical AI represents for your business, and where to start.',
           points: ['Technology briefings and industry opportunity analysis', 'Use cases and adoption paths by industry', 'Demo and PoC (proof of concept) planning and execution', 'Materials to support investment and go/no-go decisions'],
+        },
+        {
+          tag: 'Support',
+          tagLabel: 'CS · AS',
+          title: 'CS / AS',
+          audience: ['Companies', 'Institutions', 'Operating teams'],
+          desc: 'Support that keeps the robot in use after it arrives: operating guidance, user training and troubleshooting. The scope is agreed to fit your equipment and operating conditions.',
+          points: ['Operating guidance and technical support', 'User training and troubleshooting', 'Maintenance and support referrals', 'Support scope agreed to your setup'],
         },
         {
           tag: 'Rental',
@@ -407,7 +445,7 @@ const dict = {
     contact: {
       eyebrow: 'Contact',
       title: 'Start your physical AI\njourney today',
-      subtitle: 'Purchase, rental, training, consulting — reach out about any of it. Quotes depend on configuration and duration.',
+      subtitle: 'Purchase, rental, training, consulting, CS/AS — reach out about any of it. Quotes depend on configuration and duration.',
       formTitle: 'Send an inquiry',
       fields: { name: 'Name', org: 'Organization', email: 'Email', message: 'Message', submit: 'Send inquiry', type: 'Inquiry type' },
       types: [
@@ -415,6 +453,7 @@ const dict = {
         { value: 'rental', label: 'Rental' },
         { value: 'education', label: 'Training' },
         { value: 'consulting', label: 'Consulting' },
+        { value: 'support', label: 'CS · AS (operating support)' },
         { value: 'partnership', label: 'Partnership' },
         { value: 'other', label: 'Other' },
       ],
@@ -503,6 +542,27 @@ const dict = {
         posterAlt: 'JINIE EDUTECH partnership poster \u2014 the five areas we can build in together',
         posterCaption: 'Bring us a problem worth solving.',
         finalSubtitle: 'Wherever you are in the process, feel free to reach out.',
+      },
+      support: {
+        eyebrow: 'CS · AS',
+        title: 'After adoption,\nkeeping it in use',
+        subtitle: 'The work starts once the robot arrives. Operating guidance, user training, troubleshooting and maintenance referrals \u2014 we help companies, institutions and operating teams keep their physical AI equipment in steady use.',
+        ctaPrimary: 'Ask about CS · AS',
+        ctaSecondary: 'See what we support',
+        areasEyebrow: 'What we support',
+        areasTitle: 'Three kinds of\noperating support',
+        areasSubtitle: 'Guidance, training and troubleshooting, so your own staff can run equipment they have never used before.',
+        audienceEyebrow: 'Who it is for',
+        audienceTitle: 'Places that actually\nrun the robots',
+        processEyebrow: 'How it works',
+        processTitle: 'From your first message\nto support',
+        journeyEyebrow: 'Where it fits',
+        journeyTitle: 'After trying and validating,\nready for ongoing use',
+        journeySubtitle: 'CS/AS is the last step: after awareness, hands-on experience, education, consulting and a Demo/PoC, it keeps the adopted equipment in use.',
+        scopeTitle: 'We agree the scope together',
+        scopeBody: 'Terms such as repair, warranty and response time depend on the equipment and how it is used. We review what you need before adoption and agree the scope with you.',
+        finalTitle: 'Equipment already running?\nLet\u2019s take a look together',
+        finalSubtitle: 'Tell us about your equipment and setup, and we\u2019ll tell you what support fits.',
       },
       rental: {
         eyebrow: 'Sales & Rental',
