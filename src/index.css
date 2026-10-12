@@ -39,6 +39,8 @@
   --btn-hover: #1a63d8;
   --amp: #b45f06;
   --lock: #0a8a5f;
+  --sky: #0e7490;
+  --sky-soft: rgba(14, 116, 144, 0.08);
   --text: #111827;
   --dim: #283141;
   --faint: #3b4554;
@@ -65,6 +67,8 @@
   --btn-hover: #3b82f6;
   --amp: #ffc24b;
   --lock: #6ee7b7;
+  --sky: #67e8f9;
+  --sky-soft: rgba(103, 232, 249, 0.14);
   --text: #ffffff;
   --dim: #edf1f8;
   --faint: #cdd7e8;

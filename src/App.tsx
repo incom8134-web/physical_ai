@@ -7,13 +7,15 @@ import { absoluteUrl, MAIN_SITE_URL } from './siteMeta';
 import EducationPage from './EducationPage';
 import ConsultingPage from './ConsultingPage';
 import RentalPage from './RentalPage';
+import SupportPage from './SupportPage';
 
-export type Page = 'home' | 'education' | 'consulting' | 'rental';
+export type Page = 'home' | 'education' | 'consulting' | 'support' | 'rental';
 
 function pageFromHash(): Page {
   const h = window.location.hash;
   if (h.startsWith('#/education')) return 'education';
   if (h.startsWith('#/consulting')) return 'consulting';
+  if (h.startsWith('#/support')) return 'support';
   if (h.startsWith('#/rental')) return 'rental';
   return 'home';
 }
@@ -49,7 +51,16 @@ function RobotMedia({ src, position, alt }: { src: string; position: string; alt
 const serviceAccent: Record<string, { color: string; soft: string; ink: string }> = {
   Education: { color: 'var(--beam)', soft: 'rgba(29,91,214,0.07)', ink: '#ffffff' },
   Consulting: { color: 'var(--amp)', soft: 'rgba(180,95,6,0.07)', ink: '#ffffff' },
+  Support: { color: 'var(--sky)', soft: 'rgba(14,116,144,0.07)', ink: '#ffffff' },
   Rental: { color: 'var(--lock)', soft: 'rgba(10,138,95,0.07)', ink: '#ffffff' },
+};
+
+// Subpage behind each service card's "learn more" button.
+const servicePage: Record<string, Page> = {
+  Education: 'education',
+  Consulting: 'consulting',
+  Support: 'support',
+  Rental: 'rental',
 };
 
 export default function App() {
@@ -458,7 +469,7 @@ export default function App() {
         <div className="marquee-inner">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center">
-              {['해봇', 'HAEBOT', 'PHYSICAL AI', 'MECANUM WHEELS', 'DUAL-ARM MOBILE', 'SALES · RENTAL', 'EDUCATION', 'CONSULTING', 'VLA', 'SENSE · DECIDE · ACT', 'OMNIDIRECTIONAL'].map((tx, j) => (
+              {['해봇', 'HAEBOT', 'PHYSICAL AI', 'MECANUM WHEELS', 'DUAL-ARM MOBILE', 'EDUCATION', 'CONSULTING', 'CS · AS', 'SALES · RENTAL', 'VLA', 'SENSE · DECIDE · ACT', 'OMNIDIRECTIONAL'].map((tx, j) => (
                 <span key={j} style={{ ...mono('0.84rem'), color: 'var(--faint)', whiteSpace: 'nowrap', padding: '0 1.8rem' }}>
                   {tx}<span style={{ color: 'var(--beam)', marginLeft: '1.8rem', opacity: 0.5 }}>/</span>
                 </span>
@@ -487,7 +498,7 @@ export default function App() {
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
             {t.services.items.map((s, i) => {
               const accent = serviceAccent[s.tag] ?? serviceAccent.Education;
               return (
@@ -542,9 +553,9 @@ export default function App() {
                         </li>
                       ))}
                     </ul>
-                    {(s.tag === 'Education' || s.tag === 'Consulting' || s.tag === 'Rental') && (
+                    {servicePage[s.tag] && (
                       <button
-                        onClick={() => goToPage(s.tag === 'Education' ? 'education' : s.tag === 'Consulting' ? 'consulting' : 'rental')}
+                        onClick={() => goToPage(servicePage[s.tag])}
                         className="btn"
                         style={{
                           marginTop: 'auto',
@@ -853,6 +864,7 @@ export default function App() {
 
       {page === 'education' && <EducationPage lang={lang} t={t} onContact={() => goToSection('contact')} />}
       {page === 'consulting' && <ConsultingPage lang={lang} t={t} onContact={() => goToSection('contact')} />}
+      {page === 'support' && <SupportPage lang={lang} t={t} onContact={() => goToSection('contact')} />}
       {page === 'rental' && <RentalPage lang={lang} t={t} onContact={() => goToSection('contact')} />}
 
       {/* FOOTER — navy, with company details, as on the main site */}
