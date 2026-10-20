@@ -97,6 +97,7 @@ const dict = {
       eyebrow: '서비스',
       title: '첫 경험에서 실제 운영까지,\n네 가지 서비스',
       subtitle: '교육 역량을 바탕으로 체험과 기술 검토, 도입 이후의 운영까지 — 하나의 과정으로 연결합니다.',
+      video: { title: '지니에듀테크(주) 소개 영상', soundOn: '소리 켜기', soundOff: '소리 끄기', play: '영상 재생', pause: '영상 일시정지' },
       items: [
         {
           tag: 'Education',
@@ -141,7 +142,6 @@ const dict = {
         { name: '해봇', type: '메카넘 휠 베이스', spec: '전방향 주행', desc: '네 바퀴 모두 메카넘 휠이라 전후좌우·대각선 이동과 제자리 회전이 가능합니다. 방향을 틀 공간이 없는 통로나 전시 부스에서도 그대로 움직입니다.' },
         { name: '해봇', type: '교육·연구 현장', spec: '실습 · 프로젝트', desc: '강의실과 연구실에 두고 쓰는 실습 플랫폼입니다. 교육 과정과 연계해 인지–판단–행동을 직접 구현하고, 학생 프로젝트의 기반 장비로 활용합니다.' },
       ],
-      video: { title: '지니에듀테크(주) 소개 영상', soundOn: '소리 켜기', soundOff: '소리 끄기', play: '영상 재생', pause: '영상 일시정지' },
       note: '세 장 모두 같은 로봇 — 지니에듀테크(주)가 직접 개발한 해봇입니다. 구매와 대여 모두 가능합니다.',
     },
     banner: {
@@ -392,6 +392,7 @@ const dict = {
       eyebrow: 'Services',
       title: 'From first look to daily use,\nfour services',
       subtitle: 'Built on our education work, we connect hands-on experience, technical review and life after adoption into one process.',
+      video: { title: 'JINIE EDUTECH intro film', soundOn: 'Sound on', soundOff: 'Sound off', play: 'Play video', pause: 'Pause video' },
       items: [
         {
           tag: 'Education',
@@ -436,7 +437,6 @@ const dict = {
         { name: 'Haebot', type: 'Mecanum-wheel base', spec: 'Omnidirectional drive', desc: 'All four wheels are mecanum wheels, so it moves forward, sideways, and diagonally and turns in place — it keeps working in aisles and booths with no room to turn.' },
         { name: 'Haebot', type: 'In education & research', spec: 'Labs · projects', desc: 'A hands-on platform for classrooms and labs. Tied to our courses, students build sense-decide-act themselves and use it as the base hardware for their projects.' },
       ],
-      video: { title: 'JINIE EDUTECH intro film', soundOn: 'Sound on', soundOff: 'Sound off', play: 'Play video', pause: 'Pause video' },
       note: 'All three photos show the same robot \u2014 Haebot, developed in-house by JINIE EDUTECH. Available to buy or to rent.',
     },
     banner: {
