@@ -584,17 +584,24 @@ export default function App() {
       {/* ROBOTS — blue band */}
       <section id="robots" className="sheet theme-dark px-5 md:px-10 py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto">
-          <Reveal><span style={{ ...mono('0.84rem'), color: 'var(--beam)' }}>{t.robots.eyebrow}</span></Reveal>
-          <Reveal delay={60}>
-            <h2 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', lineHeight: 1.2, fontWeight: 800, letterSpacing: '-0.025em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
-              {t.robots.title}
-            </h2>
-          </Reveal>
-          <Reveal delay={120}>
-            <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 500, marginTop: '1rem', marginBottom: '3rem', maxWidth: '52ch' }}>
-              {t.robots.subtitle}
-            </p>
-          </Reveal>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12">
+            <div className="lg:col-span-5">
+              <Reveal><span style={{ ...mono('0.84rem'), color: 'var(--beam)' }}>{t.robots.eyebrow}</span></Reveal>
+              <Reveal delay={60}>
+                <h2 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', lineHeight: 1.2, fontWeight: 800, letterSpacing: '-0.025em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
+                  {t.robots.title}
+                </h2>
+              </Reveal>
+              <Reveal delay={120}>
+                <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 500, marginTop: '1rem', marginBottom: 0, maxWidth: '52ch' }}>
+                  {t.robots.subtitle}
+                </p>
+              </Reveal>
+            </div>
+            <Reveal delay={160} className="lg:col-span-7">
+              <IntroVideo labels={t.robots.video} />
+            </Reveal>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {t.robots.items.map((r, i) => (
@@ -964,6 +971,108 @@ function HeroBackground() {
       <source src={asset('video/hero-loop.webm')} type="video/webm" />
       <source src={asset('video/hero-loop.mp4')} type="video/mp4" />
     </video>
+  );
+}
+
+// Company intro film in the Haebot section. It starts muted (browsers only
+// autoplay silent video) and plays while on screen; the viewer can turn the
+// sound on or pause it.
+function IntroVideo({ labels }: { labels: { title: string; soundOn: string; soundOff: string; play: string; pause: string } }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
+  const [playing, setPlaying] = useState(false);
+  // Paused by the viewer: don't restart it when it scrolls back into view.
+  const userPaused = useRef(false);
+  const [allowMotion] = useState(
+    () => typeof window === 'undefined' || !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  );
+
+  useEffect(() => {
+    const v = ref.current;
+    if (!v) return;
+    v.muted = true;
+    v.defaultMuted = true;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (allowMotion && !userPaused.current) v.play().catch(() => {});
+        } else {
+          v.pause();
+        }
+      },
+      { threshold: 0.35 },
+    );
+    io.observe(v);
+    return () => io.disconnect();
+  }, [allowMotion]);
+
+  const toggleSound = () => {
+    const v = ref.current;
+    if (!v) return;
+    v.muted = !v.muted;
+    setMuted(v.muted);
+    // Turning the sound on is a request to hear it, so start playback too.
+    if (!v.muted && v.paused) {
+      userPaused.current = false;
+      v.play().catch(() => {});
+    }
+  };
+
+  const togglePlay = () => {
+    const v = ref.current;
+    if (!v) return;
+    if (v.paused) {
+      userPaused.current = false;
+      v.play().catch(() => {});
+    } else {
+      userPaused.current = true;
+      v.pause();
+    }
+  };
+
+  const btn: React.CSSProperties = {
+    display: 'inline-flex', alignItems: 'center', gap: '0.45rem',
+    padding: '0.5rem 0.85rem', borderRadius: 999, cursor: 'pointer',
+    border: '1px solid rgba(255,255,255,0.25)', background: 'rgba(13,27,61,0.78)',
+    color: '#ffffff', fontSize: '0.84rem', fontWeight: 700, backdropFilter: 'blur(6px)',
+  };
+
+  return (
+    <div className="card" style={{ padding: '0.6rem', overflow: 'hidden' }}>
+      <div style={{ position: 'relative', aspectRatio: '16 / 9', borderRadius: 10, overflow: 'hidden', background: '#eef2f8' }}>
+        <video
+          ref={ref}
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={asset('video/haebot-intro-poster.jpg')}
+          aria-label={labels.title}
+          onPlay={() => setPlaying(true)}
+          onPause={() => setPlaying(false)}
+          onVolumeChange={e => setMuted(e.currentTarget.muted)}
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+        >
+          {/* WebM first (also plays in Chromium builds without H.264), MP4 for Safari */}
+          <source src={asset('video/haebot-intro.webm')} type="video/webm" />
+          <source src={asset('video/haebot-intro.mp4')} type="video/mp4" />
+        </video>
+        <div className="flex gap-2" style={{ position: 'absolute', right: 12, bottom: 12 }}>
+          <button type="button" onClick={togglePlay} style={btn} aria-label={playing ? labels.pause : labels.play}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+              {playing ? <><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></> : <path d="M8 5v14l11-7z" />}
+            </svg>
+          </button>
+          <button type="button" onClick={toggleSound} style={btn} aria-pressed={!muted}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M11 5L6 9H3v6h3l5 4V5z" fill="currentColor" />
+              {muted ? <><path d="M22 9l-6 6" /><path d="M16 9l6 6" /></> : <><path d="M15.5 8.5a5 5 0 010 7" /><path d="M18.5 5.5a9 9 0 010 13" /></>}
+            </svg>
+            {muted ? labels.soundOn : labels.soundOff}
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 
