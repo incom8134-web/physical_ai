@@ -498,6 +498,12 @@ export default function App() {
             </Reveal>
           </div>
 
+          <Reveal delay={160}>
+            <div style={{ marginBottom: '2.5rem' }}>
+              <IntroVideo labels={t.services.video} large />
+            </div>
+          </Reveal>
+
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
             {t.services.items.map((s, i) => {
               const accent = serviceAccent[s.tag] ?? serviceAccent.Education;
@@ -584,24 +590,17 @@ export default function App() {
       {/* ROBOTS — blue band */}
       <section id="robots" className="sheet theme-dark px-5 md:px-10 py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12">
-            <div className="lg:col-span-5">
-              <Reveal><span style={{ ...mono('0.84rem'), color: 'var(--beam)' }}>{t.robots.eyebrow}</span></Reveal>
-              <Reveal delay={60}>
-                <h2 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', lineHeight: 1.2, fontWeight: 800, letterSpacing: '-0.025em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
-                  {t.robots.title}
-                </h2>
-              </Reveal>
-              <Reveal delay={120}>
-                <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 500, marginTop: '1rem', marginBottom: 0, maxWidth: '52ch' }}>
-                  {t.robots.subtitle}
-                </p>
-              </Reveal>
-            </div>
-            <Reveal delay={160} className="lg:col-span-7">
-              <IntroVideo labels={t.robots.video} />
-            </Reveal>
-          </div>
+          <Reveal><span style={{ ...mono('0.84rem'), color: 'var(--beam)' }}>{t.robots.eyebrow}</span></Reveal>
+          <Reveal delay={60}>
+            <h2 style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', lineHeight: 1.2, fontWeight: 800, letterSpacing: '-0.025em', margin: '0.4rem 0 0', whiteSpace: 'pre-line' }}>
+              {t.robots.title}
+            </h2>
+          </Reveal>
+          <Reveal delay={120}>
+            <p style={{ fontSize: '1.08rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 500, marginTop: '1rem', marginBottom: '3rem', maxWidth: '52ch' }}>
+              {t.robots.subtitle}
+            </p>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {t.robots.items.map((r, i) => (
@@ -974,10 +973,10 @@ function HeroBackground() {
   );
 }
 
-// Company intro film in the Haebot section. It starts muted (browsers only
+// Company intro film in the services section. It starts muted (browsers only
 // autoplay silent video) and plays while on screen; the viewer can turn the
 // sound on or pause it.
-function IntroVideo({ labels }: { labels: { title: string; soundOn: string; soundOff: string; play: string; pause: string } }) {
+function IntroVideo({ labels, large }: { labels: { title: string; soundOn: string; soundOff: string; play: string; pause: string }; large?: boolean }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
   const [playing, setPlaying] = useState(false);
@@ -1030,16 +1029,12 @@ function IntroVideo({ labels }: { labels: { title: string; soundOn: string; soun
     }
   };
 
-  const btn: React.CSSProperties = {
-    display: 'inline-flex', alignItems: 'center', gap: '0.45rem',
-    padding: '0.5rem 0.85rem', borderRadius: 999, cursor: 'pointer',
-    border: '1px solid rgba(255,255,255,0.25)', background: 'rgba(13,27,61,0.78)',
-    color: '#ffffff', fontSize: '0.84rem', fontWeight: 700, backdropFilter: 'blur(6px)',
-  };
+  // Sizes live in index.css (.video-ctrl): the large variant only grows from tablet width up.
+  const ctrl = `video-ctrl${large ? ' video-ctrl-lg' : ''}`;
 
   return (
-    <div className="card" style={{ padding: '0.6rem', overflow: 'hidden' }}>
-      <div style={{ position: 'relative', aspectRatio: '16 / 9', borderRadius: 10, overflow: 'hidden', background: '#eef2f8' }}>
+    <div className="card" style={{ padding: large ? '0.75rem' : '0.6rem', overflow: 'hidden' }}>
+      <div style={{ position: 'relative', aspectRatio: '16 / 9', borderRadius: large ? 12 : 10, overflow: 'hidden', background: '#eef2f8' }}>
         <video
           ref={ref}
           muted
@@ -1057,13 +1052,13 @@ function IntroVideo({ labels }: { labels: { title: string; soundOn: string; soun
           <source src={asset('video/haebot-intro.webm')} type="video/webm" />
           <source src={asset('video/haebot-intro.mp4')} type="video/mp4" />
         </video>
-        <div className="flex gap-2" style={{ position: 'absolute', right: 12, bottom: 12 }}>
-          <button type="button" onClick={togglePlay} style={btn} aria-label={playing ? labels.pause : labels.play}>
+        <div className={`video-ctrls${large ? ' video-ctrls-lg' : ''}`}>
+          <button type="button" onClick={togglePlay} className={ctrl} aria-label={playing ? labels.pause : labels.play}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
               {playing ? <><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></> : <path d="M8 5v14l11-7z" />}
             </svg>
           </button>
-          <button type="button" onClick={toggleSound} style={btn} aria-pressed={!muted}>
+          <button type="button" onClick={toggleSound} className={ctrl} aria-pressed={!muted}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
               <path d="M11 5L6 9H3v6h3l5 4V5z" fill="currentColor" />
               {muted ? <><path d="M22 9l-6 6" /><path d="M16 9l6 6" /></> : <><path d="M15.5 8.5a5 5 0 010 7" /><path d="M18.5 5.5a9 9 0 010 13" /></>}
