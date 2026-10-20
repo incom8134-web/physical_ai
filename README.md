@@ -1,190 +1,74 @@
-# 지니에듀테크 — 피지컬 AI 랜딩페이지
+# Physical AI — 지니에듀테크(주)
 
-React 19 + Vite + Tailwind v4. 한국어가 기본이고 헤더의 `KO / EN` 버튼으로 전환합니다.
+Landing site for JINIE EDUTECH's physical AI services: education, consulting, CS / AS and Haebot sales & rental.
+Korean and English, built with React 19, Vite and Tailwind CSS v4.
+
+## Getting started
+
+Requirements: Node.js 22 or newer and pnpm 10 (`corepack enable` picks the pinned version from `package.json`).
 
 ```bash
 pnpm install
-pnpm dev        # http://localhost:8443
-pnpm build      # dist/ 생성
+pnpm dev          # local site at http://localhost:5173
 ```
 
----
+| Command          | What it does                                  |
+| ---------------- | --------------------------------------------- |
+| `pnpm dev`       | Development server with live reload           |
+| `pnpm build`     | Production build into `dist/`                 |
+| `pnpm preview`   | Serve the production build locally            |
+| `pnpm typecheck` | TypeScript check (also catches unused code)   |
+| `pnpm format`    | Format every file with Prettier               |
 
-## 1. 문의 폼 — 메일 연결 (배포 전 필수)
+## Project structure
 
-폼을 제출하면 **메일 앱이 열리지 않고 곧바로 `incom2794@naver.com`으로 전송**됩니다.
-정적 사이트는 브라우저만으로 메일을 보낼 수 없어서, 중계 서비스를 한 번 연결해야 합니다.
-
-| 단계 | 할 일 |
-|---|---|
-| 1 | <https://web3forms.com> 접속 → **incom2794@naver.com** 입력 |
-| 2 | 해당 메일함으로 도착한 **Access Key** 복사 |
-| 3 | 프로젝트 루트에서 `cp .env.example .env` |
-| 4 | `.env`의 `VITE_WEB3FORMS_KEY=` 뒤에 키를 붙여넣기 |
-| 5 | `pnpm build` (개발 중이면 `pnpm dev` 재시작) |
-
-- 수신 주소는 **키를 발급받을 때 등록한 메일함**으로 고정됩니다. 반드시 `incom2794@naver.com`으로 발급받으세요.
-- 방문자가 적은 이메일이 회신 주소(reply-to)로 들어가므로, 네이버 메일에서 **답장**을 누르면 그대로 회신됩니다.
-- 키를 넣지 않으면 폼은 **보낸 척하지 않습니다.** "메일 서버에 연결되지 않았습니다"라고 알리고 이메일 버튼을 보여줍니다.
-- 숨은 honeypot 필드(`company`)가 있어 봇 제출은 조용히 버려집니다.
-- 다른 방식(자체 SMTP 서버, Vercel 함수 등)을 원하시면 `src/inquiry.ts`의 `sendInquiry()` 하나만 교체하면 됩니다.
-
----
-
-## 2. 2026-09-21 변경 (v7) — 히어로 로봇 누끼 · 영상 속 간판 제거
-
-| 항목 | 내용 |
-|---|---|
-| 히어로 해봇 | 파란 SF 배경을 제거한 **투명 누끼**(`haebot-cutout.webp` 77 KB, PNG 대체 포함)로 교체. 카드 프레임 없이 페이지 배경(영상) 위에 바로 서 있고, 뒤쪽 푸른 글로와 바퀴 아래 그림자로 바닥감을 줬습니다 |
-| 누끼 방식 | AI 배경 제거(u2net). 몸통과 팔 사이 틈에 남은 하늘색 배경을 걷어내고, 가장자리 청록 번짐을 보정. 베이스의 파란 LED 띠·헤드 라이다는 그대로 유지 |
-| 영상 속 `XLeRobot` 간판 | 프레임마다 간판 위치를 추적해 그 부분만 흐림 처리. 카메라가 밀고 들어가며 간판이 움직여서 고정 박스 대신 추적 방식을 썼습니다. 해봇 머리·손은 흐리지 않도록 영역을 제한 |
-
----
-
-## 3. 2026-09-21 오후 변경 (v6) — 해봇 실사 교체 · 배경 영상
-
-### 왜 바꿨나
-
-이전 버전의 "해봇" 사진 3장과 포스터 2장에 나온 **노란·파란 카트형 로봇(일반 캐스터 바퀴)은 해봇이 아니라 오픈소스 로봇 XLeRobot**입니다(사진 속 박스에 `XLeRobot` 표기). 사이트의 `모듈러 구성`, `개발 키트`와 그 사양(알루미늄 프레임, ABS+PC 휠 브래킷, CAD 연동 등)은 전부 그 사진에서 읽어낸 내용이라, 사진과 함께 삭제했습니다.
-
-### 이미지
-
-| 위치 | 이전 (XLeRobot) | 이후 (해봇 AI) |
-|---|---|---|
-| 히어로 카드 | `heabot-field.jpg` | `haebot-main.jpg` — 해봇 전신 렌더 |
-| 로봇 카드 1 | `heabot-field.jpg` | `haebot-full.jpg` — 전신 (4:3 맞춤) |
-| 로봇 카드 2 | `heabot-modular.jpg` | `haebot-mecanum.jpg` — 메카넘 휠 베이스 클로즈업 |
-| 로봇 카드 3 | `heabot-kit.jpg` | `haebot-lab.jpg` — 교육·연구 현장 |
-| 캐러셀 | `poster-next-step.jpg` | `poster-ideas.jpg` (IDEAS INTO REALITY) |
-| 캐러셀 | `poster-system.jpg` | `poster-design-system.jpg` (시스템을 설계하라) |
-| 캐러셀 (추가) | — | `poster-haebot.jpg`, `poster-journey.jpg` (8단계 여정) |
-
-캐러셀은 4장 → 6장입니다.
-
-### 텍스트
-
-- **로봇 섹션 3장** — 같은 해봇을 세 측면으로: 듀얼암 모바일 매니퓰레이터 / 메카넘 휠 베이스 / 교육·연구 현장
-- **판매·대여 페이지 3장** — 해봇 한 대를 얻는 세 가지 방법: **구매 / 장기 대여(학기·과제) / 단기 대여(전시·행사)**. 카드마다 맞는 버튼 1개(구매 문의 또는 대여 문의)
-- **히어로 통계** `3 해봇 AI 구성` → `360° 메카넘 휠 전방향 주행`
-- **플랫폼 배너** `한 대의 로봇, 세 가지 구성` → `한 대의 로봇으로 교육부터 현장까지`
-
-### 배경 영상
-
-`public/video/hero-loop.webm`(767 KB) + `hero-loop.mp4`(972 KB) — 첫 화면 배경에서 무음 반복 재생됩니다.
-
-| 처리 | 이유 |
-|---|---|
-| **0 ~ 8.9초만 사용** (원본 10초) | 마지막 1초의 지니에듀테크 로고 엔드카드가 반복될 때마다 헤드라인 뒤에서 큰 엠블럼으로 번쩍여서 제외 |
-| 오디오 트랙 제거 | 배경 영상은 무음이어야 자동재생이 허용되고, 용량도 줄어듭니다 |
-| 시작·끝 0.4초 페이드 | 끝→처음으로 넘어가는 순간이 튀지 않도록 |
-| WebM + MP4 두 가지 | WebM이 더 작고, H.264를 못 푸는 일부 Chromium에서도 재생. MP4는 Safari·구형 브라우저용 |
-| 화면 밖이면 일시정지 | 스크롤해 내려가면 디코딩을 멈춰 노트북·모바일 배터리 절약 |
-| 모션 줄이기 설정 사용자 | 영상 대신 기존 정적 배경(`hero-bg.jpg`)을 보여줍니다 |
-
-영상을 바꾸려면 같은 이름으로 두 파일을 덮어쓰고, 첫 프레임을 `hero-loop-poster.jpg`로 저장하면 됩니다.
-
----
-
-## 4. 2026-09-21 오전 변경 (v5)
-
-| 요청 | 반영 |
-|---|---|
-| 도메인 PAI.COM | `src/siteMeta.ts`의 **`SITE_URL` 한 줄**만 고치면 canonical·og:url이 따라갑니다. 현재 `https://pai.com`으로 넣어두었습니다 |
-| 해봇이라는 단어가 중요 | 로고 옆 사명 다음으로 **해봇 AI**가 내비게이션·히어로·마키·로봇 섹션·대여 페이지·페이지 제목에 전면 노출. 기존 `Heabot` → **`Haebot`** (해 = Hae) |
-| 해봇 다리 → 매커넘휠 | `캐스터 구동 베이스` → **`메카넘 휠 · 전방향 주행`**. 전후좌우 이동·제자리 회전을 판매 포인트로 본문에 서술 |
-| 피지컬AI란·작동원리 뒤로 | 두 섹션을 **하나로 합쳐** `#physical-ai`로 만들고 문의 직전으로 이동. 내비게이션도 `서비스 · 해봇 AI · 피지컬 AI란 · 문의` 순으로 변경 |
-| 판매 및 사업 (B안) | `로봇 대여` → **`로봇 판매 · 대여`** 한 장으로 통합. 대여 페이지 전체를 구매+대여 흐름으로 개편, 로봇마다 **구매 문의 / 대여 문의** 버튼 2개 |
-
-**추가로 넣은 것** — 문의 폼 맨 위에 **문의 유형**(구매·대여·교육·컨설팅·제휴·기타) 선택을 넣었습니다. 선택값이 메일 제목 맨 앞에 `[구매]`처럼 붙어서, 네이버 메일 목록에서 구매 문의만 바로 골라낼 수 있습니다. 기본값은 `구매`입니다.
-
-**가격은 넣지 않았습니다.** 구성·기간에 따라 달라지는 값이라 임의로 쓸 수 없어, 전부 "견적 문의"로 두었습니다. 표준가를 주시면 넣어드리겠습니다.
-
-### 도메인 등록 후 할 일
-
-```ts
-// src/siteMeta.ts
-export const SITE_URL = 'https://pai.com';   // ← 등록한 도메인으로 교체
+```
+index.html                 Page shell: title, description, link-preview tags
+public/                    Images, videos and icons, served as-is
+src/
+  main.tsx                 Entry point
+  App.tsx                  Page routing, header and footer
+  index.css                Colour tokens, shared CSS classes, animations
+  config/site.ts           Site address, company contact details, main-site link
+  i18n/
+    dictionary.ts          All visible text, Korean and English
+    LanguageProvider.tsx   Current language and the useLanguage() hook
+  content/                 Structured data for the subpages (modules, rental plans, …)
+  pages/
+    home/                  Home page, one file per section
+    EducationPage.tsx      #/education
+    ConsultingPage.tsx     #/consulting
+    SupportPage.tsx        #/support   (CS / AS)
+    RentalPage.tsx         #/rental
+  components/              Shared UI: header, footer, page sections, reveal animation, …
+  hooks/                   Reusable React hooks
+  lib/                     Helpers: asset paths, page routing, inquiry form delivery
 ```
 
-교체 후 `pnpm build` 한 번이면 끝입니다. 다른 파일에는 도메인이 하드코딩되어 있지 않습니다.
+## Editing the site
 
----
+| To change …                                  | Edit                                       |
+| -------------------------------------------- | ------------------------------------------ |
+| Any text on the site (both languages)        | `src/i18n/dictionary.ts`                   |
+| Course modules, rental plans, posters, …     | `src/content/*.ts`                         |
+| Email, phone numbers, registration number    | `src/config/site.ts`                       |
+| Page title and link-preview text             | `index.html`                               |
+| Images and videos                            | `public/images`, `public/video`            |
+| Colours                                      | the tokens at the top of `src/index.css`   |
 
-## 5. 이전 수정 내역
+Korean is the source shape of the dictionary: when a key is added in Korean it must be added in English too, or
+`pnpm typecheck` fails.
 
-| 영역 | 내용 |
-|---|---|
-| Platforms 섹션 | 배경을 로봇 랩 사진(`platforms-bg.jpg`)으로 교체 |
-| 첫 화면 배경 | `Analytical → Generative → Agentic → Physical AI` 다이어그램을 다크 테마에 맞게 재가공(그레이스케일 반전 + 블루 톤)해 배경으로 적용 |
-| Our Robots | UNITREE G1·GO2 삭제 → **해봇 AI(Heabot AI)** 3종(듀얼암 모바일 / 모듈러 구성 / 개발 키트) |
-| 히어로 로봇 | Unitree 렌더 → 해봇 AI 실사 |
-| 문의 폼 | mailto 방식 → 실제 전송 + 전송중·성공·실패 상태 + 실패 시 이메일 대체 경로 |
-| Services 보드 | 카드별 액센트 컬러 — 교육 `#5c8bff` / 컨설팅 `#ffc24b` / 대여 `#45e0a8` (각 상세 페이지 색과 동일) |
-| Consulting 페이지 | 'WHAT CAN WE BUILD TOGETHER?' 포스터 섹션 추가 |
-| Rental 페이지 | 대여 로봇을 해봇 AI 3종으로 교체 |
-| Rental 캐러셀 | 로봇 아래 포스터 4종 캐러셀 — 카드를 누르면 확대 패널, 바깥 클릭/ESC로 닫힘 (`useOutsideClick`) |
-| 번역 | 아래 3절 참고 |
-| 모바일 | 없던 모바일 메뉴 추가 (기존에는 768px 미만에서 내비게이션이 아예 사라졌습니다) |
+Sections alternate between white and navy bands. Wrapping a section in `className="theme-dark"` switches every
+colour inside it to the navy palette; cards inside a navy band stay white.
 
-### `useOutsideClick` — 주신 코드에서 고친 6가지
+## Contact form
 
-`src/useOutsideClick.ts`에 주석으로도 남겨두었습니다.
+The form is delivered by [Web3Forms](https://web3forms.com). Copy `.env.example` to `.env` and paste the access key
+(registered with incom2794@naver.com). Without a key the form says it is not connected and offers the email address
+instead.
 
-| # | 원본 | 문제 | 수정 |
-|---|---|---|---|
-| 1 | `ref: RefObject<HTMLDivElement>` | React 19에서 `useRef(null)`의 실제 타입은 `RefObject<T \| null>` — 타입이 맞지 않아 컴파일 실패 | `RefObject<T \| null>` |
-| 2 | `HTMLDivElement` 고정 | div 외의 엘리먼트에 못 씀 | 제네릭 `<T extends HTMLElement>` |
-| 3 | `callback: Function` | 인자 검사를 전혀 하지 않음 | `(e: MouseEvent \| TouchEvent) => void` |
-| 4 | `callback`이 deps에 포함 | 인라인 함수를 넘기면 **매 렌더마다** 전역 리스너 재등록 | `savedCallback` ref 패턴 |
-| 5 | 버블 단계 등록 | 자식이 `stopPropagation()` 하면 바깥 클릭을 못 받음 | capture 단계 등록 |
-| 6 | 제거된 노드도 '바깥'으로 판정 | 같은 tick에 사라진 노드 클릭 시 방금 연 패널이 닫힘 | `target.isConnected` 검사 |
+## Deployment
 
-호출 방식은 그대로입니다: `useOutsideClick(ref, cb)` — 세 번째 인자 `enabled`로 닫힌 상태에서는 리스너 등록 자체를 건너뜁니다.
-
----
-
-## 6. 번역 관련 수정
-
-| 항목 | 이전 | 이후 |
-|---|---|---|
-| 영문 사명 | `GenieEduTech` | **`JINIE EDUTECH`** — 귀사 포스터 표기 기준 |
-| 연구소 주소 | `부산광역시 **부구** 만덕3로` / `Bugu` | `부산광역시 **북구**` / `Buk-gu` |
-| 본사 주소 | `서울시 강서구 등촌동 682번지` | `서울특별시 강서구 등촌동 682` |
-| 커리큘럼 주차 | 영문에서도 `3주차`로 노출 | `Week 3` |
-| 5단계 학습 모델 | 영문에서도 한글명이 먼저 노출 | 현재 언어가 먼저 |
-| 헤더 사명 | 두 언어 모두 `지니에듀테크` | 언어별 전환 |
-| 페이지 제목 | `Figma Make App` | `피지컬 AI \| 지니에듀테크(주)` |
-| `lang` 속성 | `en` | `ko` |
-| 검색엔진 | **`noindex`** (검색 노출 차단 상태였습니다) | 색인 허용 |
-| OG 이미지 | 없음 | `/og-image.jpg` (1200×630) |
-| 타입 안전성 | `as const` 때문에 한/영 사전 구조가 타입상 호환되지 않았음 (Vite가 타입 검사를 안 해 드러나지 않음) | 제거 후 `const _enMatchesKo: Dict = dict.en` 로 **영문 누락 시 빌드에서 잡히도록** 고정 |
-
-> 앞으로 한국어에만 키를 추가하고 영문을 빼먹으면 `npx tsc --noEmit`에서 즉시 오류가 납니다.
-
----
-
-## 7. 파일 위치
-
-| 바꾸고 싶은 것 | 파일 |
-|---|---|
-| 모든 문구 (한/영) | `src/i18n.tsx` |
-| 로봇·대여·컨설팅·포스터 데이터 | `src/data.ts` |
-| 메인 페이지 섹션 | `src/App.tsx` |
-| 교육 / 컨설팅 / 대여 페이지 | `src/EducationPage.tsx`, `src/ConsultingPage.tsx`, `src/RentalPage.tsx` |
-| 포스터 캐러셀 | `src/PosterCarousel.tsx` |
-| 문의 전송 | `src/inquiry.ts` |
-| 색상·애니메이션 | `src/index.css` |
-| 페이지 제목·설명·OG | `.figma/make/site.json` |
-| 이미지 | `public/images/` |
-| 도메인(canonical·og:url) | `src/siteMeta.ts` |
-| 배경 영상 | `public/video/` |
-
----
-
-## 8. 배포 전 확인해 주실 것
-
-1. **문의 폼 키** — 위 1절. 이것만 하면 문의가 바로 네이버 메일로 들어옵니다.
-2. **본사 주소** — 현재 서울 강서구로 되어 있습니다. 첨부해 주신 시스템 구성도 포스터에는 `대구광역시 북구`로 적혀 있어 서로 다릅니다. 어느 쪽이 맞는지 확인 후 `src/i18n.tsx`의 `contact.hqAddr`(ko/en 양쪽)를 맞춰 주세요.
-3. **배경 영상 우하단 ✦ 표시** — AI 생성 영상에 붙는 식별 워터마크입니다. AI 생성 사실을 알리는 표시라 지우지 않고 두었습니다. 히어로 카드가 없어지면서 로봇 오른쪽 아래에 조금 더 잘 보입니다.
-4. **실험실 사진 속 노란 사족보행 로봇** — `haebot-lab.jpg`에 `Haebot` 표기가 된 로봇개가 함께 나옵니다. 제품군에 포함된다면 소개 문구를 넣겠습니다. 아니라면 다른 컷으로 바꾸는 편이 오해가 없습니다.
-5. **개인정보처리방침 / 이용약관** — 푸터 링크가 아직 `#`입니다.
+Vercel builds and deploys the `main` branch automatically. Work on a branch, open a pull request, and merge it to
+publish. Every pull request also gets its own preview deployment.
