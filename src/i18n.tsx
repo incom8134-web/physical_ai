@@ -170,9 +170,17 @@ const dict = {
         sentBody: '영업일 기준 24시간 내에 회신드리겠습니다.',
         again: '문의 하나 더 보내기',
         failTitle: '전송하지 못했습니다',
-        failNetwork: '네트워크 문제로 전송이 되지 않았습니다. 잠시 후 다시 시도해 주세요.',
-        failRejected: '전송이 거부되었습니다. 아래 버튼으로 직접 보내주시면 바로 확인하겠습니다.',
-        failNotConfigured: '문의 폼이 아직 메일 서버에 연결되지 않았습니다. 아래 버튼으로 보내주시면 바로 확인하겠습니다.',
+        failNetwork: '네트워크 문제로 전송되지 않았습니다. 아래 방법으로 바로 보내주시면 확인하겠습니다.',
+        failRejected: '전송이 거부되었습니다. 아래 방법으로 바로 보내주시면 확인하겠습니다.',
+        failNotConfigured: '메일 앱에 문의 내용을 담아 열었습니다. 앱이 열리지 않으면 아래 주소나 전화로 연락 주세요.',
+        submitMail: '이메일로 문의 보내기',
+        directTitle: '메일 앱에 문의 내용을 담았습니다',
+        directBody: '메일 앱에서 보내기만 누르면 접수됩니다. 앱이 열리지 않으면 아래 이메일 주소나 전화로 연락 주세요.',
+        openMail: '메일 앱에서 열기',
+        copyEmail: '이메일 주소 복사',
+        copyMessage: '문의 내용 복사',
+        copied: '복사했습니다',
+        call: '전화 문의',
         mailFallback: '이메일로 보내기',
         retry: '다시 시도',
         privacy: '보내주신 내용은 문의 회신 목적으로만 사용합니다.',
@@ -196,6 +204,78 @@ const dict = {
       addrLabel: '주소',
       privacy: '개인정보처리방침',
       terms: '이용약관',
+    },
+    legal: {
+      close: '닫기',
+      updated: '시행일 2026년 11월 18일',
+      privacy: {
+        title: '개인정보처리방침',
+        lead: '지니에듀테크(주)는 haebotai.com을 통해 문의를 주신 분의 개인정보를 아래와 같이 처리합니다.',
+        sections: [
+          {
+            h: '1. 수집하는 개인정보',
+            p: '문의 폼으로 이름, 이메일 주소, 문의 내용을 받고, 소속·회사와 문의 유형은 선택 항목입니다. 그 밖의 정보는 따로 수집하지 않습니다.',
+          },
+          {
+            h: '2. 수집·이용 목적',
+            p: '수집한 정보는 문의에 대한 회신과 상담, 견적·일정 안내에만 사용합니다. 광고성 정보 발송에는 사용하지 않습니다.',
+          },
+          {
+            h: '3. 보유 및 이용 기간',
+            p: '문의 처리가 끝나면 지체 없이 파기합니다. 관계 법령에 따라 보존해야 하는 정보는 해당 기간 동안 보관한 뒤 파기합니다.',
+          },
+          {
+            h: '4. 처리 위탁 및 제3자 제공',
+            p: '문의 내용은 전송을 대행하는 서비스(Web3Forms)를 거쳐 회사 대표 메일로 전달되며, 그 밖의 제3자에게 제공하지 않습니다. 법령에 따라 요구되는 경우를 제외하고는 제공하지 않습니다.',
+          },
+          {
+            h: '5. 정보주체의 권리',
+            p: '본인의 개인정보에 대한 열람·정정·삭제·처리정지를 언제든지 요청할 수 있으며, 회사는 요청을 받으면 지체 없이 조치합니다.',
+          },
+          {
+            h: '6. 개인정보 보호책임자',
+            p: '이성웅 (대표이사) · incom2794@naver.com · 051-331-0110',
+          },
+          {
+            h: '7. 사업자 정보',
+            p: '지니에듀테크(주) · 대표 이성웅 · 사업자등록번호 528-88-00923 · 부산광역시 부산진구 엄광로 176, 317호 (동의대학교 제1효민생활관)',
+          },
+        ],
+      },
+      terms: {
+        title: '이용약관',
+        lead: '이 약관은 지니에듀테크(주)(이하 "회사")가 운영하는 haebotai.com(이하 "사이트")의 이용 조건을 정합니다.',
+        sections: [
+          {
+            h: '1. 사이트의 성격',
+            p: '사이트는 회사의 피지컬 AI 플랫폼 해봇(HAEBOT)과 교육·컨설팅·대여·CS/AS 서비스를 소개하는 정보 제공 페이지입니다. 사이트에서는 회원가입이나 결제를 받지 않습니다.',
+          },
+          {
+            h: '2. 정보의 정확성',
+            p: '사이트에 표시된 사양·가격·일정은 안내를 위한 내용이며, 실제 견적과 계약 조건은 상담을 통해 확정됩니다.',
+          },
+          {
+            h: '3. 지식재산권',
+            p: '사이트의 글·사진·영상·로고 등 콘텐츠에 대한 권리는 회사에 있습니다. 회사의 사전 동의 없이 복제·배포하거나 2차적으로 가공할 수 없습니다.',
+          },
+          {
+            h: '4. 문의',
+            p: '문의는 사이트의 문의 폼, 이메일(incom2794@naver.com), 전화(051-331-0110)로 접수합니다.',
+          },
+          {
+            h: '5. 책임의 한계',
+            p: '회사는 사이트 정보의 정확성과 최신성을 위해 노력하지만, 이용자가 사이트의 정보에 의존하여 입은 손해에 대해서는 관련 법령이 정하는 범위에서 책임을 집니다.',
+          },
+          {
+            h: '6. 약관의 변경',
+            p: '이 약관이 바뀌면 사이트에 시행일과 함께 게시합니다.',
+          },
+          {
+            h: '7. 준거법',
+            p: '이 약관은 대한민국 법령에 따르며, 분쟁은 관련 법령이 정한 절차에 따라 해결합니다.',
+          },
+        ],
+      },
     },
     pages: {
       back: '홈으로',
@@ -465,9 +545,17 @@ const dict = {
         sentBody: 'We\u2019ll get back to you within one business day.',
         again: 'Send another inquiry',
         failTitle: 'It could not be sent',
-        failNetwork: 'A network problem stopped the message from going out. Please try again in a moment.',
-        failRejected: 'The message was rejected. Use the button below to email it directly and we\u2019ll pick it up right away.',
-        failNotConfigured: 'The form is not connected to a mail server yet. Use the button below to email it directly and we\u2019ll pick it up right away.',
+        failNetwork: 'A network problem stopped the message from going out. Send it with one of the options below and we will pick it up.',
+        failRejected: 'The message was rejected. Send it with one of the options below and we will pick it up.',
+        failNotConfigured: 'Your message is ready in your mail app. If it did not open, use the address or phone number below.',
+        submitMail: 'Send by email',
+        directTitle: 'Your message is ready in your mail app',
+        directBody: 'Press send there and it reaches us. If the app did not open, use the email address or phone number below.',
+        openMail: 'Open in my mail app',
+        copyEmail: 'Copy email address',
+        copyMessage: 'Copy message',
+        copied: 'Copied',
+        call: 'Call us',
         mailFallback: 'Email it directly',
         retry: 'Try again',
         privacy: 'What you send is used only to reply to your inquiry.',
@@ -491,6 +579,78 @@ const dict = {
       addrLabel: 'Address',
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
+    },
+    legal: {
+      close: 'Close',
+      updated: 'Effective 18 November 2026',
+      privacy: {
+        title: 'Privacy Policy',
+        lead: 'JINIE EDUTECH Co., Ltd. handles the personal information of people who contact us through haebotai.com as described below.',
+        sections: [
+          {
+            h: '1. What we collect',
+            p: 'The inquiry form collects your name, email address and message; organization and inquiry type are optional. Nothing else is collected.',
+          },
+          {
+            h: '2. Why we collect it',
+            p: 'Only to reply to your inquiry, discuss it, and give you quotes and schedules. It is never used for advertising.',
+          },
+          {
+            h: '3. How long we keep it',
+            p: 'We delete it once the inquiry is handled. Information we must keep under applicable law is retained for that period and then deleted.',
+          },
+          {
+            h: '4. Processors and third parties',
+            p: 'The message passes through a delivery service (Web3Forms) on its way to the company inbox. It is not provided to any other third party except where the law requires it.',
+          },
+          {
+            h: '5. Your rights',
+            p: 'You may ask to view, correct, delete or stop processing your information at any time, and we act on the request without delay.',
+          },
+          {
+            h: '6. Privacy officer',
+            p: 'Sungwoong Lee (CEO) · incom2794@naver.com · +82 51 331 0110',
+          },
+          {
+            h: '7. Company details',
+            p: 'JINIE EDUTECH Co., Ltd. · CEO Sungwoong Lee · Business Reg. No. 528-88-00923 · Rm 317, 176 Eomgwang-ro, Busanjin-gu, Busan, Korea',
+          },
+        ],
+      },
+      terms: {
+        title: 'Terms of Service',
+        lead: 'These terms govern use of haebotai.com (the "site"), operated by JINIE EDUTECH Co., Ltd. (the "company").',
+        sections: [
+          {
+            h: '1. What the site is',
+            p: 'The site introduces the company\u2019s physical AI platform HAEBOT and its training, consulting, rental and support services. There is no sign-up or payment on the site.',
+          },
+          {
+            h: '2. Accuracy of information',
+            p: 'Specifications, prices and schedules shown on the site are for guidance. The actual quote and contract terms are confirmed through consultation.',
+          },
+          {
+            h: '3. Intellectual property',
+            p: 'Text, photographs, videos and logos on the site belong to the company and may not be copied, distributed or adapted without prior consent.',
+          },
+          {
+            h: '4. Contact',
+            p: 'Inquiries are taken through the site form, by email (incom2794@naver.com) or by phone (+82 51 331 0110).',
+          },
+          {
+            h: '5. Limitation of liability',
+            p: 'The company works to keep the site accurate and current, and is liable for loss arising from reliance on it only to the extent the applicable law provides.',
+          },
+          {
+            h: '6. Changes',
+            p: 'Changes to these terms are posted on the site with their effective date.',
+          },
+          {
+            h: '7. Governing law',
+            p: 'These terms are governed by the laws of the Republic of Korea, and disputes are resolved under the procedures those laws set out.',
+          },
+        ],
+      },
     },
     pages: {
       back: 'Back to home',
