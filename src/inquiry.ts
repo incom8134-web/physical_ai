@@ -88,13 +88,26 @@ export async function sendInquiry(payload: InquiryPayload, lang: 'ko' | 'en'): P
   }
 }
 
-/** Fallback link, used only after a delivery failure — never as the happy path. */
+/**
+ * The visitor's message as plain text — the body of the mailto link, and what
+ * the "copy the message" button puts on the clipboard when no mail app opens.
+ */
+export function plainInquiry(payload: InquiryPayload, lang: 'ko' | 'en'): string {
+  const isKo = lang === 'ko';
+  return (isKo
+    ? [`문의 유형: ${payload.type ?? '-'}`, `이름: ${payload.name}`, `소속·회사: ${payload.org || '-'}`, `이메일: ${payload.email}`, '', payload.message]
+    : [`Inquiry type: ${payload.type ?? '-'}`, `Name: ${payload.name}`, `Organization: ${payload.org || '-'}`, `Email: ${payload.email}`, '', payload.message]
+  ).join('\n');
+}
+
+/**
+ * The mailto link that carries the visitor's message. It is the whole delivery
+ * path while no relay key is configured, and the fallback when one is and the
+ * relay fails.
+ */
 export function mailtoFallback(payload: InquiryPayload, lang: 'ko' | 'en'): string {
   const isKo = lang === 'ko';
   const tag = payload.type ? `[${payload.type}] ` : '';
   const subject = isKo ? `${tag}[문의] ${payload.name}` : `${tag}[Inquiry] ${payload.name}`;
-  const lines = isKo
-    ? [`문의 유형: ${payload.type ?? '-'}`, `이름: ${payload.name}`, `소속·회사: ${payload.org}`, `이메일: ${payload.email}`, '', payload.message]
-    : [`Inquiry type: ${payload.type ?? '-'}`, `Name: ${payload.name}`, `Organization: ${payload.org}`, `Email: ${payload.email}`, '', payload.message];
-  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(plainInquiry(payload, lang))}`;
 }
