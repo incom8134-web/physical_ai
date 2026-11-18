@@ -1,15 +1,15 @@
 /**
- * The site's public address — the one place to change after the domain is
- * registered.
+ * The site's public address — the one place to change if the domain moves.
  *
  * Used for the canonical URL and the og:url tag, both of which must be absolute:
  * a relative value there makes search engines and link previews resolve against
  * whatever host happens to serve the page.
  *
- * After registering the domain, edit SITE_URL here and rebuild. Nothing else in
- * the project hard-codes a hostname.
+ * This is the host Vercel redirects to (haebotai.com -> www.haebotai.com), so
+ * the canonical URL matches where visitors actually land. Change it here and
+ * in index.html's static canonical / og:url if the primary domain is switched.
  */
-export const SITE_URL = 'https://pai.com';
+export const SITE_URL = 'https://www.haebotai.com';
 
 /** The company's main website, linked from the hero, the header and the contact block. */
 export const MAIN_SITE_URL = 'http://www.jcodeedu.com/';

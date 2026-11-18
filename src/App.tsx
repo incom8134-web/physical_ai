@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLang, type Lang } from './i18n';
-import { sendInquiry, mailtoFallback, CONTACT_EMAIL, type InquiryPayload } from './inquiry';
+import { sendInquiry, mailtoFallback, plainInquiry, inquiryConfigured, CONTACT_EMAIL, type InquiryPayload } from './inquiry';
 import { Reveal } from './useReveal';
 import { asset } from './asset';
 import { absoluteUrl, MAIN_SITE_URL } from './siteMeta';
@@ -71,6 +71,8 @@ export default function App() {
   const [stepPlaying, setStepPlaying] = useState(true);
   const [page, setPage] = useState<Page>(() => pageFromHash());
   const [menuOpen, setMenuOpen] = useState(false);
+  // Privacy policy / terms open over the page: the site has no other routes.
+  const [legalDoc, setLegalDoc] = useState<'privacy' | 'terms' | null>(null);
   const pendingScroll = useRef<string | null>(null);
 
   const sectionIds = ['services', 'robots', 'physical-ai', 'contact'];
@@ -904,12 +906,78 @@ export default function App() {
           <div className="flex flex-col md:flex-row justify-between gap-4 pt-6" style={{ fontSize: '0.84rem', color: 'var(--faint)' }}>
             <span>© 2026 {t.contact.company} — {t.footer.rights}</span>
             <div className="flex gap-5">
-              <a href="#" className="link-underline">{t.footer.privacy}</a>
-              <a href="#" className="link-underline">{t.footer.terms}</a>
+              <button type="button" onClick={() => setLegalDoc('privacy')} className="link-underline" style={{ background: 'none', border: 0, padding: 0, font: 'inherit', color: 'inherit', cursor: 'pointer' }}>
+                {t.footer.privacy}
+              </button>
+              <button type="button" onClick={() => setLegalDoc('terms')} className="link-underline" style={{ background: 'none', border: 0, padding: 0, font: 'inherit', color: 'inherit', cursor: 'pointer' }}>
+                {t.footer.terms}
+              </button>
             </div>
           </div>
         </div>
       </footer>
+
+      {legalDoc && <LegalDialog t={t} doc={legalDoc} onClose={() => setLegalDoc(null)} />}
+    </div>
+  );
+}
+
+/**
+ * Privacy policy and terms, shown over the page. Escape, the close button and a
+ * click outside all dismiss it.
+ */
+function LegalDialog({ t, doc, onClose }: { t: any; doc: 'privacy' | 'terms'; onClose: () => void }) {
+  const d = t.legal[doc];
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKey);
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = previous;
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={d.title}
+      onClick={onClose}
+      style={{
+        position: 'fixed', inset: 0, zIndex: 90, background: 'rgba(6,13,31,0.55)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1.2rem',
+      }}
+    >
+      <div
+        onClick={e => e.stopPropagation()}
+        style={{
+          background: 'var(--deck, #fff)', width: '100%', maxWidth: 720, maxHeight: '86vh',
+          overflowY: 'auto', borderRadius: 10, padding: '1.9rem 1.7rem 1.6rem',
+          boxShadow: '0 30px 80px rgba(6,13,31,0.35)', border: '1px solid var(--rail)',
+        }}
+      >
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }}>
+          <div>
+            <div style={{ ...mono('0.8rem'), color: 'var(--faint)' }}>{t.legal.updated}</div>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 800, margin: '0.3rem 0 0', letterSpacing: '-0.02em' }}>{d.title}</h2>
+          </div>
+          <button type="button" onClick={onClose} className="btn btn-ghost" style={{ padding: '0.45rem 1rem', fontSize: '0.9rem' }}>
+            {t.legal.close}
+          </button>
+        </div>
+        <p style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'var(--dim)', margin: '0.9rem 0 1.5rem' }}>{d.lead}</p>
+        {d.sections.map((sec: { h: string; p: string }) => (
+          <section key={sec.h} style={{ marginBottom: '1.15rem' }}>
+            <h3 style={{ fontSize: '1rem', fontWeight: 700, margin: 0 }}>{sec.h}</h3>
+            <p style={{ fontSize: '0.94rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 500, margin: '0.35rem 0 0' }}>{sec.p}</p>
+          </section>
+        ))}
+      </div>
     </div>
   );
 }
@@ -1137,6 +1205,8 @@ type FormState =
   | { phase: 'idle' }
   | { phase: 'sending' }
   | { phase: 'sent' }
+  /** No relay key is configured, so the message went to the visitor's mail app instead. */
+  | { phase: 'handoff'; payload: InquiryPayload }
   | { phase: 'error'; reason: 'not-configured' | 'rejected' | 'network'; payload: InquiryPayload };
 
 function ContactForm({ t, lang }: { t: any; lang: Lang }) {
@@ -1157,6 +1227,14 @@ function ContactForm({ t, lang }: { t: any; lang: Lang }) {
       message: ((data.get('message') as string) || '').trim(),
       company: ((data.get('company') as string) || '').trim(),
     };
+
+    // With no relay key there is no server to post to. Rather than fail, hand
+    // the finished message to the visitor's mail app and show where it went.
+    if (!inquiryConfigured) {
+      window.location.href = mailtoFallback(payload, lang);
+      setState({ phase: 'handoff', payload });
+      return;
+    }
 
     setState({ phase: 'sending' });
     const result = await sendInquiry(payload, lang);
@@ -1207,7 +1285,10 @@ function ContactForm({ t, lang }: { t: any; lang: Lang }) {
           ? f.failNotConfigured
           : f.failRejected
       : null;
-
+  // Whichever way the send did not go through, the visitor gets the same
+  // usable set: their message in a mail app, on the clipboard, or by phone.
+  const fallbackPayload =
+    state.phase === 'handoff' || state.phase === 'error' ? state.payload : null;
   return (
     <form ref={formRef} onSubmit={submit} className="card" style={{ padding: '1.9rem' }}>
       <div style={{ ...mono('0.84rem'), color: 'var(--faint)', marginBottom: '1.4rem' }}>{t.contact.formTitle}</div>
@@ -1258,27 +1339,15 @@ function ContactForm({ t, lang }: { t: any; lang: Lang }) {
         style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
       />
 
-      {errorText && state.phase === 'error' && (
-        <div
-          role="alert"
-          className="latch"
-          style={{
-            marginTop: '1.4rem', padding: '1rem 1.1rem', borderRadius: 6,
-            border: '1px solid var(--amp)', background: 'rgba(180,95,6,0.06)',
-          }}
-        >
-          <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--amp)' }}>{f.failTitle}</div>
-          <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--text)', fontWeight: 500, margin: '0.4rem 0 0.9rem' }}>
-            {errorText}
-          </p>
-          <a
-            href={mailtoFallback(state.payload, lang)}
-            className="btn btn-ghost"
-            style={{ padding: '0.55rem 1.1rem', fontSize: '0.92rem' }}
-          >
-            {f.mailFallback}
-          </a>
-        </div>
+      {fallbackPayload && (
+        <DirectContact
+          t={t}
+          lang={lang}
+          payload={fallbackPayload}
+          title={state.phase === 'handoff' ? f.directTitle : f.failTitle}
+          body={state.phase === 'handoff' ? f.directBody : errorText ?? f.failRejected}
+          tone={state.phase === 'error' ? 'alert' : 'info'}
+        />
       )}
 
       <button
@@ -1287,12 +1356,107 @@ function ContactForm({ t, lang }: { t: any; lang: Lang }) {
         className="btn btn-primary mt-6"
         style={{ padding: '0.85rem 1.8rem', fontSize: '1rem', width: '100%', opacity: sending ? 0.7 : 1, cursor: sending ? 'wait' : 'pointer' }}
       >
-        {sending ? f.sending : state.phase === 'error' ? f.retry : t.contact.fields.submit}
+        {sending
+          ? f.sending
+          : state.phase === 'error'
+            ? f.retry
+            : inquiryConfigured
+              ? t.contact.fields.submit
+              : f.submitMail}
       </button>
       <p style={{ fontSize: '0.84rem', color: 'var(--faint)', textAlign: 'center', margin: '0.9rem 0 0', lineHeight: 1.6 }}>
         {f.privacy}
       </p>
     </form>
+  );
+}
+
+/**
+ * Where the message goes when the form itself cannot deliver it: the visitor's
+ * mail app opens with the finished message, and the same text is one tap from
+ * the clipboard, with the address and phone number beside it.
+ */
+function DirectContact({
+  t,
+  lang,
+  payload,
+  title,
+  body,
+  tone,
+}: {
+  t: any;
+  lang: Lang;
+  payload: InquiryPayload;
+  title: string;
+  body: string;
+  tone: 'info' | 'alert';
+}) {
+  const f = t.contact.form;
+  const [copied, setCopied] = useState<'email' | 'message' | null>(null);
+
+  const copy = async (kind: 'email' | 'message') => {
+    const text = kind === 'email' ? CONTACT_EMAIL : plainInquiry(payload, lang);
+    const flash = () => {
+      setCopied(kind);
+      window.setTimeout(() => setCopied(null), 2200);
+    };
+    try {
+      await navigator.clipboard.writeText(text);
+      flash();
+    } catch {
+      // Older browsers, and pages not served over https.
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        flash();
+      } catch {
+        /* the e-mail address is still on screen to be copied by hand */
+      }
+      document.body.removeChild(ta);
+    }
+  };
+
+  const chip: React.CSSProperties = { padding: '0.55rem 1.05rem', fontSize: '0.92rem' };
+  const accent = tone === 'alert' ? 'var(--amp)' : 'var(--beam)';
+
+  return (
+    <div
+      className="latch"
+      style={{
+        marginTop: '1.4rem',
+        padding: '1.15rem 1.15rem 1rem',
+        borderRadius: 6,
+        border: `1px solid ${tone === 'alert' ? 'var(--amp)' : 'var(--rail)'}`,
+        background: tone === 'alert' ? 'rgba(180,95,6,0.06)' : 'var(--panel)',
+      }}
+    >
+      <div style={{ fontSize: '1rem', fontWeight: 700, color: accent }}>{title}</div>
+      <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'var(--text)', fontWeight: 500, margin: '0.4rem 0 0.9rem' }}>
+        {body}
+      </p>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+        <a href={mailtoFallback(payload, lang)} className="btn btn-primary" style={chip}>
+          {f.openMail}
+        </a>
+        <button type="button" onClick={() => copy('message')} className="btn btn-ghost" style={chip}>
+          {copied === 'message' ? f.copied : f.copyMessage}
+        </button>
+        <button type="button" onClick={() => copy('email')} className="btn btn-ghost" style={chip}>
+          {copied === 'email' ? f.copied : f.copyEmail}
+        </button>
+        <a href="tel:+821045882794" className="btn btn-ghost" style={chip}>
+          {f.call} 010-4588-2794
+        </a>
+      </div>
+      <p style={{ fontSize: '0.84rem', color: 'var(--faint)', margin: '0.85rem 0 0', lineHeight: 1.6 }}>
+        {CONTACT_EMAIL} · 051-331-0110
+      </p>
+    </div>
   );
 }
 
