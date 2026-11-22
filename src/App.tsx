@@ -8,8 +8,11 @@ import EducationPage from './EducationPage';
 import ConsultingPage from './ConsultingPage';
 import RentalPage from './RentalPage';
 import SupportPage from './SupportPage';
+import UpdatesPage from './UpdatesPage';
+import { latestUpdate } from './updates';
+import { SectionHeading } from './pageUtils';
 
-export type Page = 'home' | 'education' | 'consulting' | 'support' | 'rental';
+export type Page = 'home' | 'education' | 'consulting' | 'support' | 'rental' | 'updates';
 
 function pageFromHash(): Page {
   const h = window.location.hash;
@@ -17,6 +20,7 @@ function pageFromHash(): Page {
   if (h.startsWith('#/consulting')) return 'consulting';
   if (h.startsWith('#/support')) return 'support';
   if (h.startsWith('#/rental')) return 'rental';
+  if (h.startsWith('#/updates')) return 'updates';
   return 'home';
 }
 
@@ -196,18 +200,23 @@ export default function App() {
             <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--faint)', whiteSpace: 'nowrap' }}>{lang === 'ko' ? 'Jinie EduTech Co., Ltd.' : '지니에듀테크(주)'}</span>
           </span>
         </a>
-        <div className="hidden md:flex items-center gap-7" style={{ fontSize: '0.92rem', color: 'var(--dim)' }}>
-          {t.nav.items.map(item => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={e => { e.preventDefault(); goToSection(item.href.slice(1)); }}
-              className={`link-underline ${page === 'home' && activeSection === item.href.slice(1) ? 'active' : ''}`}
-              style={{ color: page === 'home' && activeSection === item.href.slice(1) ? 'var(--text)' : 'inherit' }}
-            >
-              {item.label}
-            </a>
-          ))}
+        <div className="hidden md:flex items-center gap-5 lg:gap-7" style={{ fontSize: '0.92rem', color: 'var(--dim)' }}>
+          {t.nav.items.map(item => {
+            // A nav entry either opens a page of its own or scrolls to a band on the home page.
+            const target = (item.page || '') as Page | '';
+            const active = target ? page === target : page === 'home' && activeSection === item.href.slice(1);
+            return (
+              <a
+                key={item.href}
+                href={target ? `#/${target}` : item.href}
+                onClick={e => { e.preventDefault(); if (target) goToPage(target as Page); else goToSection(item.href.slice(1)); }}
+                className={`link-underline ${active ? 'active' : ''}`}
+                style={{ color: active ? 'var(--text)' : 'inherit', whiteSpace: 'nowrap' }}
+              >
+                {item.label}
+              </a>
+            );
+          })}
           <a
             href={MAIN_SITE_URL}
             target="_blank"
@@ -280,20 +289,25 @@ export default function App() {
             borderBottom: '1px solid var(--rail)', padding: '0.5rem 1.25rem 1.25rem',
           }}
         >
-          {t.nav.items.map(item => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={e => { e.preventDefault(); setMenuOpen(false); goToSection(item.href.slice(1)); }}
-              style={{
-                display: 'block', padding: '0.95rem 0', fontSize: '1.08rem',
-                color: 'var(--text)', textDecoration: 'none',
-                borderBottom: '1px solid var(--rail-soft)',
-              }}
-            >
-              {item.label}
-            </a>
-          ))}
+          {t.nav.items.map(item => {
+            const target = (item.page || '') as Page | '';
+            return (
+              <a
+                key={item.href}
+                href={target ? `#/${target}` : item.href}
+                onClick={e => { e.preventDefault(); setMenuOpen(false); if (target) goToPage(target as Page); else goToSection(item.href.slice(1)); }}
+                style={{
+                  display: 'block', padding: '0.95rem 0', fontSize: '1.08rem',
+                  color: target && page === target ? 'var(--beam)' : 'var(--text)',
+                  fontWeight: target && page === target ? 800 : 500,
+                  textDecoration: 'none',
+                  borderBottom: '1px solid var(--rail-soft)',
+                }}
+              >
+                {item.label}
+              </a>
+            );
+          })}
           <a
             href={MAIN_SITE_URL}
             target="_blank"
@@ -817,6 +831,68 @@ export default function App() {
 
       </section>
 
+      {/* UPDATES — the newest post, linking to the full page */}
+      <section id="updates" className="sheet sheet-soft px-5 md:px-10 py-20 md:py-28" style={{ borderBottom: '1px solid var(--rail)' }}>
+        <div className="max-w-screen-xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <SectionHeading eyebrow={t.updates.eyebrow} title={t.updates.title} subtitle={t.updates.subtitle} />
+            <Reveal delay={120}>
+              <button
+                type="button"
+                onClick={() => goToPage('updates')}
+                className="btn btn-ghost"
+                style={{ padding: '0.75rem 1.4rem', fontSize: '0.95rem', whiteSpace: 'nowrap' }}
+              >
+                {t.updates.viewAll}
+                <span aria-hidden style={{ marginLeft: 2 }}>→</span>
+              </button>
+            </Reveal>
+          </div>
+
+          <Reveal delay={160}>
+            <a
+              href="#/updates"
+              onClick={e => { e.preventDefault(); goToPage('updates'); }}
+              className="card card-hover"
+              style={{ display: 'block', marginTop: '2.2rem', textDecoration: 'none', color: 'inherit', overflow: 'hidden' }}
+            >
+              <span aria-hidden style={{ display: 'block', height: 3, background: 'var(--beam)' }} />
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 md:p-8 items-center">
+                <div className="lg:col-span-7">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span style={{ ...mono('0.84rem'), color: 'var(--beam)' }}>{latestUpdate.date.split('-').join('.')}</span>
+                    <span style={{ ...mono('0.78rem'), color: 'var(--dim)', border: '1px solid var(--rail)', padding: '0.18rem 0.55rem', borderRadius: 999 }}>
+                      {lang === 'ko' ? latestUpdate.tag : latestUpdate.tagEn}
+                    </span>
+                  </div>
+                  <h3 style={{ fontSize: 'clamp(1.35rem, 2.8vw, 1.85rem)', lineHeight: 1.35, fontWeight: 800, letterSpacing: '-0.02em', margin: '0.6rem 0 0' }}>
+                    {lang === 'ko' ? latestUpdate.title : latestUpdate.titleEn}
+                  </h3>
+                  <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--dim)', fontWeight: 500, margin: '0.7rem 0 0', maxWidth: '52ch' }}>
+                    {(lang === 'ko' ? latestUpdate.body : latestUpdate.bodyEn)[0]}
+                  </p>
+                  <span style={{ ...mono('0.84rem'), color: 'var(--beam)', marginTop: '1.1rem', display: 'inline-block' }}>
+                    {t.updates.readMore} →
+                  </span>
+                </div>
+                <div className="lg:col-span-5 grid grid-cols-3 gap-2">
+                  {latestUpdate.images.map(im => (
+                    <div key={im.src} style={{ aspectRatio: '1 / 1', overflow: 'hidden', borderRadius: 8, border: '1px solid var(--rail)', background: 'var(--panel)' }}>
+                      <img
+                        src={asset(im.src)}
+                        alt={lang === 'ko' ? im.alt : im.altEn}
+                        loading="lazy"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </a>
+          </Reveal>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section id="contact" className="sheet theme-dark px-5 md:px-10 py-20 md:py-28" style={{ position: 'relative' }}>
         <div
@@ -874,6 +950,7 @@ export default function App() {
       {page === 'consulting' && <ConsultingPage lang={lang} t={t} onContact={() => goToSection('contact')} />}
       {page === 'support' && <SupportPage lang={lang} t={t} onContact={() => goToSection('contact')} />}
       {page === 'rental' && <RentalPage lang={lang} t={t} onContact={() => goToSection('contact')} />}
+      {page === 'updates' && <UpdatesPage lang={lang} t={t} onContact={() => goToSection('contact')} />}
 
       {/* FOOTER — navy, with company details, as on the main site */}
       <footer className="theme-dark px-5 md:px-10 pt-12 pb-8" style={{ background: '#0d1b3d', borderTop: '1px solid var(--rail)' }}>
