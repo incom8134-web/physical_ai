@@ -83,7 +83,8 @@ export default function UpdatesPage({ lang, t, onContact }: { lang: Lang; t: any
                         <figure key={im.src} style={{ margin: 0 }}>
                           <div
                             style={{
-                              aspectRatio: '4 / 3',
+                              // A poster single image reads better tall; photo sets stay 4:3.
+                              aspectRatio: u.images.length === 1 ? '4 / 5' : '4 / 3',
                               overflow: 'hidden',
                               borderRadius: 10,
                               border: '1px solid var(--rail)',
