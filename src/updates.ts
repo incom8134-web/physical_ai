@@ -30,6 +30,43 @@ export type UpdateEntry = {
 
 export const updates: UpdateEntry[] = [
   {
+    slug: 'pipa-pukyong-forum-2026-11-27',
+    date: '2026-11-23',
+    tag: '행사·포럼',
+    tagEn: 'Forum',
+    title: '[PIPA×부경대] 조선·해양·플랜트 피지컬 AI 테크 포럼',
+    titleEn: '[PIPA × Pukyong National University] Shipbuilding · Offshore · Plant Physical AI Tech Forum',
+    body: [
+      "AI가 화면을 넘어 스스로 보고 판단하고 움직이는 '피지컬 AI' 시대, 부산 지역 산업과 대학이 현장에서 답을 찾습니다.",
+      "오는 11월 27일(금) 오전 10시, 광안리 아쿠아팰리스호텔 3층 오리온홀에서 국립부경대학교 공과대학과 (사)부산정보기술협회(PIPA)가 함께 '2026 조선·해양·플랜트 피지컬 AI 테크 포럼'을 엽니다.",
+      '(사)부산정보기술협회 회장으로서 지역 IT·제조 기업과 대학을 잇는 초광역 산학협력, 실증(PoC) 거점 구축, 그리고 현장형 인재 양성의 방향을 함께 나누려 합니다.',
+      '부산에서 시작하는 피지컬 AI 실증과 인재 양성, 말보다 현장의 결과로 보여드리겠습니다.',
+      'https://www.haebotai.com',
+      '아무것도 하지 않으면 아무 일도 일어나지 않는다.',
+      'MH정신, 이성웅 · 행사 문의 010-4588-2794',
+    ],
+    bodyEn: [
+      "In the era of 'Physical AI' that sees, judges and moves on its own beyond the screen, Busan's industries and universities are looking for answers in the field.",
+      'On Friday, November 27 at 10 a.m., the College of Engineering at Pukyong National University and the Pusan IT Partners Association (PIPA) will open the 2026 Shipbuilding · Offshore · Plant Physical AI Tech Forum at the Orion Hall on the 3rd floor of the Aqua Palace Hotel in Gwangalli.',
+      'As chairman of PIPA, I look forward to sharing the direction of cross-regional industry–academia cooperation that connects local IT and manufacturing companies with universities, the building of proof-of-concept (PoC) sites, and the training of talent for the field.',
+      'The physical AI deployment and talent development that begin in Busan — we will show them through results in the field rather than in words.',
+      'https://www.haebotai.com',
+      'If you do nothing, nothing happens.',
+      'MH Spirit, Lee Seong-ung · Forum inquiries 010-4588-2794',
+    ],
+    images: [
+      {
+        src: '/images/updates/pipa-pukyong-forum-20261123-01.jpg',
+        alt: "'2026 조선·해양·플랜트 피지컬 AI 테크 포럼' 포스터 — 국립부경대학교와 부산정보기술협회(PIPA) 공동 주최",
+        altEn: "Poster for the 2026 Shipbuilding · Offshore · Plant Physical AI Tech Forum, co-hosted by Pukyong National University and PIPA",
+        caption:
+          "2026. 11. 27.(금) 10:00~13:00, 광안리 아쿠아팰리스호텔 3층 오리온홀 — 피지컬 AI 기반 산업 적용 사례, 실증(PoC) 및 현장 도입 전략, 사족보행 로봇 등 로봇 시연이 함께 다뤄집니다.",
+        captionEn:
+          'Friday, November 27, 2026, 10:00–13:00, Orion Hall (3F), Aqua Palace Hotel, Gwangalli — the forum covers industrial applications of physical AI, proof-of-concept and on-site deployment strategies, and robot demonstrations including quadruped robots.',
+      },
+    ],
+  },
+  {
     slug: 'weekend-production-2026-11-22',
     date: '2026-11-22',
     tag: '제작 현장',
