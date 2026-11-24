@@ -30,6 +30,59 @@ export type UpdateEntry = {
 
 export const updates: UpdateEntry[] = [
   {
+    slug: 'pipa-busan-innovation-forum-2026-11-24',
+    date: '2026-11-24',
+    tag: '협회 활동',
+    tagEn: 'Association',
+    title: '[PIPA] 글로컬 기업 협의체 자문단 출범식 및 제2회 부산 기업 혁신 포럼 참석',
+    titleEn: '[PIPA] Attending the Glocal Corporate Council Advisory Board Launch and the 2nd Busan Corporate Innovation Forum',
+    body: [
+      '어제 하루는 (사)부산정보기술협회(PIPA) 회장으로서 부산 산학협력과 AI·제조 혁신 현장을 바쁘게 오갔습니다.',
+      "오전에는 부산 코모도호텔에서 열린 '글로컬 기업 협의체 자문단 출범식'(동아대·동서대·부산라이즈혁신원 등)에 참석해 기업과 대학이 함께 만드는 지속가능한 산학협력 생태계를 논의했습니다. 코모도호텔의 정겨운 호작도도 오랜만에 담아 보았습니다.",
+      "오후에는 아스티호텔 부산 그랜드볼룸에서 열린 '2026 제2회 부산 기업 혁신 포럼'(부산경제진흥원 주최·주관, PIPA 후원)으로 이어졌습니다. \"AI와 제조업을 잇다, 부산의 새로운 미래를 열다\"라는 주제처럼, 지역 기업들이 AI 전환의 해법을 찾고 서로 연결될 수 있도록 협회도 현장에서 발로 뛰며 힘을 보태겠습니다.",
+      '아무것도 하지 않으면 아무 일도 일어나지 않는다.',
+      'MH정신, 이성웅',
+      '문의: 010-4588-2794',
+    ],
+    bodyEn: [
+      'Yesterday was a full day moving between Busan\'s industry–academia sites and the front lines of AI and manufacturing innovation as chairman of the Pusan IT Partners Association (PIPA).',
+      "In the morning I attended the launch of the Glocal Corporate Council Advisory Board at the Busan Commodore Hotel (with Dong-A University, Dongseo University, the Busan Rise Innovation Center and others), where we discussed a sustainable industry–academia ecosystem that companies and universities build together. I also took a moment to photograph the hotel's warm-hearted tiger-and-magpie folk painting, something I had not seen in a long while.",
+      'In the afternoon the day continued at the 2026 2nd Busan Corporate Innovation Forum in the Grand Ballroom of Asti Hotel Busan (hosted by the Busan Economic Promotion Agency, sponsored by PIPA). Under the theme "Connecting AI and Manufacturing, Opening Busan\'s New Future," PIPA will keep working on the ground so that local companies can find their way to AI transformation and connect with one another.',
+      'If you do nothing, nothing happens.',
+      'MH Spirit, Lee Seong-ung',
+      'Inquiries: 010-4588-2794',
+    ],
+    images: [
+      {
+        src: '/images/updates/pipa-busan-innovation-forum-20261124-01.jpg',
+        alt: "'글로컬 기업 협의체 자문단 출범식' 현장 — 부산 코모도호텔, 2026. 11. 23.(월) 10:00",
+        altEn: 'The Glocal Corporate Council Advisory Board launch at the Busan Commodore Hotel, November 23, 2026, 10:00',
+        caption:
+          '기업과 대학이 함께 만드는 지속가능한 산학협력 생태계 — 동아대·동서대·부산라이즈혁신원 등과 함께한 글로컬 기업 협의체 자문단 출범식.',
+        captionEn:
+          'A sustainable industry–academia ecosystem built by companies and universities — the Glocal Corporate Council Advisory Board launch with Dong-A University, Dongseo University, the Busan Rise Innovation Center and others.',
+      },
+      {
+        src: '/images/updates/pipa-busan-innovation-forum-20261124-02.jpg',
+        alt: "'2026 제2회 부산 기업 혁신 포럼' 무대 — 아스티호텔 부산 그랜드볼룸",
+        altEn: 'The stage of the 2026 2nd Busan Corporate Innovation Forum at the Grand Ballroom of Asti Hotel Busan',
+        caption:
+          "'AI와 제조업을 잇다, 부산의 새로운 미래를 열다' — 부산경제진흥원 주최·주관, PIPA 후원으로 2026. 11. 23.(월) 14:00~17:00 열린 포럼.",
+        captionEn:
+          '"Connecting AI and Manufacturing, Opening Busan\'s New Future" — hosted by the Busan Economic Promotion Agency and sponsored by PIPA, November 23, 2026, 14:00–17:00.',
+      },
+      {
+        src: '/images/updates/pipa-busan-innovation-forum-20261124-03.jpg',
+        alt: '부산 코모도호텔에 걸린 호작도 부조 — 까치와 호랑이를 새긴 전통 문양',
+        altEn: 'A Hojakdo relief at the Busan Commodore Hotel — the traditional magpie-and-tiger motif',
+        caption:
+          '코모도호텔의 정겨운 호작도 — 바쁜 하루 사이 오랜만에 담아 본 부산의 얼굴입니다.',
+        captionEn:
+          'The warm-hearted Hojakdo at the Commodore Hotel — a face of Busan I had not photographed in a long while.',
+      },
+    ],
+  },
+  {
     slug: 'pipa-pukyong-forum-2026-11-27',
     date: '2026-11-23',
     tag: '행사·포럼',
