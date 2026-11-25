@@ -37,7 +37,8 @@ const dict = {
     physicalAi: {
       eyebrow: '피지컬 AI란',
       title: '그래서, 피지컬 AI가\n정확히 무엇인가요',
-      subtitle: '로봇을 도입하기 전에 알아두면 좋은 개념입니다. 소프트웨어 AI와 무엇이 다른지, 그리고 실제로 어떤 순서로 작동하는지 정리했습니다.',
+      subtitle:
+        '로봇을 도입하기 전에 알아두면 좋은 개념입니다. 소프트웨어 AI와 무엇이 다른지, 그리고 실제로 어떤 순서로 작동하는지 정리했습니다.',
       loopEyebrow: '작동 원리',
     },
     whatIs: {
@@ -97,8 +98,15 @@ const dict = {
     services: {
       eyebrow: '서비스',
       title: '첫 경험에서 실제 운영까지,\n네 가지 서비스',
-      subtitle: '교육 역량을 바탕으로 체험과 기술 검토, 도입 이후의 운영까지 — 하나의 과정으로 연결합니다.',
-      video: { title: '지니에듀테크(주) 소개 영상', soundOn: '소리 켜기', soundOff: '소리 끄기', play: '영상 재생', pause: '영상 일시정지' },
+      subtitle:
+        '교육 역량을 바탕으로 체험과 기술 검토, 도입 이후의 운영까지 — 하나의 과정으로 연결합니다.',
+      video: {
+        title: '지니에듀테크(주) 소개 영상',
+        soundOn: '소리 켜기',
+        soundOff: '소리 끄기',
+        play: '영상 재생',
+        pause: '영상 일시정지',
+      },
       items: [
         {
           tag: 'Education',
@@ -106,7 +114,12 @@ const dict = {
           title: '교육',
           audience: ['대학생', '산업체 재직자'],
           desc: '피지컬 AI의 기초 개념부터 로봇 체험, 실무 프로젝트 제작까지 — 직접 만들어보며 배우는 실무형 교육을 제공합니다.',
-          points: ['기초 개념과 AI·로보틱스 이해', '실제 로봇 체험과 조작 실습', '본인 프로젝트로 이어지는 실습 중심 커리큘럼', '안전 교육과 실무 교재 제공'],
+          points: [
+            '기초 개념과 AI·로보틱스 이해',
+            '실제 로봇 체험과 조작 실습',
+            '본인 프로젝트로 이어지는 실습 중심 커리큘럼',
+            '안전 교육과 실무 교재 제공',
+          ],
         },
         {
           tag: 'Consulting',
@@ -114,7 +127,12 @@ const dict = {
           title: '컨설팅',
           audience: ['사업가', '기업', '투자자'],
           desc: '피지컬 AI가 우리 사업에 어떤 기회가 될지, 어디서부터 시작해야 할지 함께 진단하고 실행 방향을 제시합니다.',
-          points: ['기술 이해와 산업 적용 기회 분석', '업종별 활용 사례와 도입 방향 제시', 'Demo·PoC(개념 검증) 기획 및 실행', '투자·사업화 판단을 위한 자료 제공'],
+          points: [
+            '기술 이해와 산업 적용 기회 분석',
+            '업종별 활용 사례와 도입 방향 제시',
+            'Demo·PoC(개념 검증) 기획 및 실행',
+            '투자·사업화 판단을 위한 자료 제공',
+          ],
         },
         {
           tag: 'Support',
@@ -122,7 +140,12 @@ const dict = {
           title: 'CS / AS',
           audience: ['기업', '기관', '운영 조직'],
           desc: '로봇을 들여온 뒤에도 현장에서 계속 쓸 수 있도록 운영 안내, 사용 교육, 문제 대응을 지원합니다. 지원 범위는 장비와 운영 조건에 맞춰 협의합니다.',
-          points: ['운영 안내와 기술 지원', '사용 교육과 문제 대응', '유지관리 · 지원 연계', '도입 조건에 맞춘 지원 범위 협의'],
+          points: [
+            '운영 안내와 기술 지원',
+            '사용 교육과 문제 대응',
+            '유지관리 · 지원 연계',
+            '도입 조건에 맞춘 지원 범위 협의',
+          ],
         },
         {
           tag: 'Rental',
@@ -130,39 +153,70 @@ const dict = {
           title: '로봇 판매 · 대여',
           audience: ['기업', '대학', '전시·행사'],
           desc: '자체 개발한 해봇을 직접 판매하고 대여합니다. 먼저 빌려 검증하고 도입을 결정하셔도 되고, 처음부터 구매해 현장에 두셔도 됩니다.',
-          points: ['해봇 본체 판매 · 구성 맞춤 제작', '단기 대여부터 학기 단위 장기 대여까지', '설치 · 교육 · 유지보수 패키지', '기관 조달 · 견적서 · 납품 절차 지원'],
+          points: [
+            '해봇 본체 판매 · 구성 맞춤 제작',
+            '단기 대여부터 학기 단위 장기 대여까지',
+            '설치 · 교육 · 유지보수 패키지',
+            '기관 조달 · 견적서 · 납품 절차 지원',
+          ],
         },
       ],
     },
     robots: {
       eyebrow: '해봇 · Haebot',
       title: '해봇,\n직접 만든 피지컬 AI 로봇',
-      subtitle: '지니에듀테크(주)가 설계·제작·운영까지 직접 하는 자체 플랫폼입니다. 구매도, 대여도, 교육 도입도 같은 로봇 위에서 이어집니다.',
+      subtitle:
+        '지니에듀테크(주)가 설계·제작·운영까지 직접 하는 자체 플랫폼입니다. 구매도, 대여도, 교육 도입도 같은 로봇 위에서 이어집니다.',
       items: [
-        { name: '해봇', type: '듀얼암 모바일 매니퓰레이터', spec: '양팔 · 그리퍼', desc: '두 팔로 물체를 집고 옮기는 이동형 매니퓰레이터입니다. 머리의 스테레오 카메라로 주변을 인식하고, 판단부터 동작까지 한 대에서 수행합니다.' },
-        { name: '해봇', type: '메카넘 휠 베이스', spec: '전방향 주행', desc: '네 바퀴 모두 메카넘 휠이라 전후좌우·대각선 이동과 제자리 회전이 가능합니다. 방향을 틀 공간이 없는 통로나 전시 부스에서도 그대로 움직입니다.' },
-        { name: '해봇', type: '교육·연구 현장', spec: '실습 · 프로젝트', desc: '강의실과 연구실에 두고 쓰는 실습 플랫폼입니다. 교육 과정과 연계해 인지–판단–행동을 직접 구현하고, 학생 프로젝트의 기반 장비로 활용합니다.' },
+        {
+          name: '해봇',
+          type: '듀얼암 모바일 매니퓰레이터',
+          spec: '양팔 · 그리퍼',
+          desc: '두 팔로 물체를 집고 옮기는 이동형 매니퓰레이터입니다. 머리의 스테레오 카메라로 주변을 인식하고, 판단부터 동작까지 한 대에서 수행합니다.',
+        },
+        {
+          name: '해봇',
+          type: '메카넘 휠 베이스',
+          spec: '전방향 주행',
+          desc: '네 바퀴 모두 메카넘 휠이라 전후좌우·대각선 이동과 제자리 회전이 가능합니다. 방향을 틀 공간이 없는 통로나 전시 부스에서도 그대로 움직입니다.',
+        },
+        {
+          name: '해봇',
+          type: '교육·연구 현장',
+          spec: '실습 · 프로젝트',
+          desc: '강의실과 연구실에 두고 쓰는 실습 플랫폼입니다. 교육 과정과 연계해 인지–판단–행동을 직접 구현하고, 학생 프로젝트의 기반 장비로 활용합니다.',
+        },
       ],
       note: '세 장 모두 같은 로봇 — 지니에듀테크(주)가 직접 개발한 해봇입니다. 구매와 대여 모두 가능합니다.',
     },
     updates: {
       eyebrow: '소식',
       title: '제작 현장의 오늘을\n가장 먼저 알립니다',
-      subtitle: '해봇을 만들고 고치고 현장에서 확인한 일을 짧게 기록합니다. 새 소식은 이곳에 올라갑니다.',
+      subtitle:
+        '해봇을 만들고 고치고 현장에서 확인한 일을 짧게 기록합니다. 새 소식은 이곳에 올라갑니다.',
       viewAll: '소식 전체 보기',
       readMore: '자세히 보기',
     },
     banner: {
       eyebrow: '보유 플랫폼',
       title: '한 대의 로봇으로\n교육부터 현장까지',
-      subtitle: '양팔 조작, 메카넘 휠 전방향 주행, 스테레오 비전 — 해봇 한 대로 강의실과 연구실, 전시장과 산업 현장을 모두 다룹니다.',
+      subtitle:
+        '양팔 조작, 메카넘 휠 전방향 주행, 스테레오 비전 — 해봇 한 대로 강의실과 연구실, 전시장과 산업 현장을 모두 다룹니다.',
     },
     contact: {
       eyebrow: '문의',
       title: '피지컬 AI,\n지금 시작해보세요',
-      subtitle: '구매, 대여, 교육, 컨설팅, CS/AS — 무엇이든 편하게 문의해주세요. 견적은 구성과 기간에 따라 안내드립니다.',
+      subtitle:
+        '구매, 대여, 교육, 컨설팅, CS/AS — 무엇이든 편하게 문의해주세요. 견적은 구성과 기간에 따라 안내드립니다.',
       formTitle: '문의 남기기',
-      fields: { name: '이름', org: '소속·회사', email: '이메일', message: '문의 내용', submit: '문의 보내기', type: '문의 유형' },
+      fields: {
+        name: '이름',
+        org: '소속·회사',
+        email: '이메일',
+        message: '문의 내용',
+        submit: '문의 보내기',
+        type: '문의 유형',
+      },
       types: [
         { value: 'purchase', label: '구매' },
         { value: 'rental', label: '대여' },
@@ -178,12 +232,15 @@ const dict = {
         sentBody: '영업일 기준 24시간 내에 회신드리겠습니다.',
         again: '문의 하나 더 보내기',
         failTitle: '전송하지 못했습니다',
-        failNetwork: '네트워크 문제로 전송되지 않았습니다. 아래 방법으로 바로 보내주시면 확인하겠습니다.',
+        failNetwork:
+          '네트워크 문제로 전송되지 않았습니다. 아래 방법으로 바로 보내주시면 확인하겠습니다.',
         failRejected: '전송이 거부되었습니다. 아래 방법으로 바로 보내주시면 확인하겠습니다.',
-        failNotConfigured: '메일 앱에 문의 내용을 담아 열었습니다. 앱이 열리지 않으면 아래 주소나 전화로 연락 주세요.',
+        failNotConfigured:
+          '메일 앱에 문의 내용을 담아 열었습니다. 앱이 열리지 않으면 아래 주소나 전화로 연락 주세요.',
         submitMail: '이메일로 문의 보내기',
         directTitle: '메일 앱에 문의 내용을 담았습니다',
-        directBody: '메일 앱에서 보내기만 누르면 접수됩니다. 앱이 열리지 않으면 아래 이메일 주소나 전화로 연락 주세요.',
+        directBody:
+          '메일 앱에서 보내기만 누르면 접수됩니다. 앱이 열리지 않으면 아래 이메일 주소나 전화로 연락 주세요.',
         openMail: '메일 앱에서 열기',
         copyEmail: '이메일 주소 복사',
         copyMessage: '문의 내용 복사',
@@ -289,7 +346,8 @@ const dict = {
       back: '홈으로',
       contactCta: '문의하기',
       lockedTitle: '이 레슨은 잠겨 있습니다',
-      lockedBody: '상세 커리큘럼은 교육 참여자에게 제공됩니다. 지금 문의하고 전체 커리큘럼과 멘토링 구성을 확인해 보세요.',
+      lockedBody:
+        '상세 커리큘럼은 교육 참여자에게 제공됩니다. 지금 문의하고 전체 커리큘럼과 멘토링 구성을 확인해 보세요.',
       lockedCta: '문의하고 잠금 해제하기',
       lockedClose: '닫기',
       previewBadge: '무료 미리보기',
@@ -297,7 +355,8 @@ const dict = {
       education: {
         eyebrow: '교육 프로그램',
         title: '피지컬 AI 프로젝트\n실무 교육 과정',
-        subtitle: '기술 학습에 그치지 않고, 자신의 아이디어를 실제 피지컬 AI 프로젝트로 발전시키는 실무형 교육입니다.',
+        subtitle:
+          '기술 학습에 그치지 않고, 자신의 아이디어를 실제 피지컬 AI 프로젝트로 발전시키는 실무형 교육입니다.',
         ctaPrimary: '교육 문의하기',
         ctaSecondary: '커리큘럼 보기',
         statLabels: ['총 교육시간', '운영 기간', '기수 정원', '멘토링 회차'],
@@ -306,7 +365,8 @@ const dict = {
         journeyTitle: '개별 기술 강의가 아니라,\n프로젝트를 완성해 가는 여정',
         curriculumEyebrow: '모듈별 커리큘럼',
         curriculumTitle: '커리큘럼을 직접\n눌러보며 확인하세요',
-        curriculumSubtitle: '각 모듈이 문서와 결과물을 남기고, 그것이 다음 모듈의 입력물이 됩니다. M1은 무료로 미리 볼 수 있습니다.',
+        curriculumSubtitle:
+          '각 모듈이 문서와 결과물을 남기고, 그것이 다음 모듈의 입력물이 됩니다. M1은 무료로 미리 볼 수 있습니다.',
         whyEyebrow: '왜 이 과정인가',
         whyTitle: '착수하지 못한 아이디어를,\n손에 잡히는 프로젝트로',
         supportEyebrow: '실습 환경 및 장비 지원',
@@ -321,7 +381,8 @@ const dict = {
       consulting: {
         eyebrow: '컨설팅',
         title: '피지컬 AI,\n어디서부터 시작해야 할까요',
-        subtitle: '학생, 초기 스타트업, B2B 기업, 투자자까지 — 대상에 맞는 방식으로 피지컬 AI의 이해부터 도입, 사업화까지 함께합니다.',
+        subtitle:
+          '학생, 초기 스타트업, B2B 기업, 투자자까지 — 대상에 맞는 방식으로 피지컬 AI의 이해부터 도입, 사업화까지 함께합니다.',
         ctaPrimary: '컨설팅 문의하기',
         ctaSecondary: '대상별 서비스 보기',
         audienceEyebrow: '대상별 컨설팅',
@@ -333,7 +394,8 @@ const dict = {
         finalTitle: '우리 사업에 피지컬 AI가\n기회가 될지 함께 확인해요',
         posterEyebrow: '함께 만들 수 있는 분야',
         posterTitle: '당신의 아이디어,\n우리의 기술',
-        posterSubtitle: '교육, 로봇공학, 스마트팜, AI 기반 3D 프린팅, 산업 맞춤형 솔루션 — 다섯 가지 영역에서 파트너와 함께 새로운 가치를 만듭니다.',
+        posterSubtitle:
+          '교육, 로봇공학, 스마트팜, AI 기반 3D 프린팅, 산업 맞춤형 솔루션 — 다섯 가지 영역에서 파트너와 함께 새로운 가치를 만듭니다.',
         posterAlt: '지니에듀테크(주) 협업 안내 포스터 — 함께 만들 수 있는 다섯 가지 분야',
         posterCaption: '함께 해결할 가치 있는 문제를 제안해 주세요.',
         finalSubtitle: '어떤 단계에 있든, 편하게 문의해 주세요.',
@@ -341,28 +403,33 @@ const dict = {
       support: {
         eyebrow: 'CS · AS',
         title: '도입 이후에도,\n현장에서 계속 쓰도록',
-        subtitle: '로봇은 들여온 뒤부터가 시작입니다. 운영 안내와 사용 교육, 문제 대응, 유지관리 연계까지 — 기업·기관·운영 조직이 피지컬 AI 장비를 꾸준히 활용하도록 지원합니다.',
+        subtitle:
+          '로봇은 들여온 뒤부터가 시작입니다. 운영 안내와 사용 교육, 문제 대응, 유지관리 연계까지 — 기업·기관·운영 조직이 피지컬 AI 장비를 꾸준히 활용하도록 지원합니다.',
         ctaPrimary: 'CS · AS 문의하기',
         ctaSecondary: '지원 내용 보기',
         areasEyebrow: '지원 영역',
         areasTitle: '운영에 필요한\n세 가지 지원',
-        areasSubtitle: '처음 다루는 장비도 현장 담당자가 직접 운영할 수 있도록 안내와 교육, 문제 대응을 함께 제공합니다.',
+        areasSubtitle:
+          '처음 다루는 장비도 현장 담당자가 직접 운영할 수 있도록 안내와 교육, 문제 대응을 함께 제공합니다.',
         audienceEyebrow: '지원 대상',
         audienceTitle: '로봇을 실제로\n운영하는 곳',
         processEyebrow: '진행 방식',
         processTitle: '문의부터\n지원까지',
         journeyEyebrow: '전체 과정에서의 위치',
         journeyTitle: '체험과 검증 다음,\n지속 활용을 준비합니다',
-        journeySubtitle: 'CS/AS는 인식·체험·교육·컨설팅·Demo/PoC를 거친 뒤, 도입한 장비를 계속 쓰도록 돕는 마지막 단계입니다.',
+        journeySubtitle:
+          'CS/AS는 인식·체험·교육·컨설팅·Demo/PoC를 거친 뒤, 도입한 장비를 계속 쓰도록 돕는 마지막 단계입니다.',
         scopeTitle: '지원 범위는 함께 정합니다',
-        scopeBody: '수리 방식, 보증, 응답 시간 같은 조건은 장비 종류와 운영 환경에 따라 다릅니다. 도입 전에 필요한 지원 내용을 확인하고 범위를 협의합니다.',
+        scopeBody:
+          '수리 방식, 보증, 응답 시간 같은 조건은 장비 종류와 운영 환경에 따라 다릅니다. 도입 전에 필요한 지원 내용을 확인하고 범위를 협의합니다.',
         finalTitle: '운영 중인 장비,\n함께 살펴볼까요?',
         finalSubtitle: '장비와 사용 환경을 알려주시면 필요한 지원을 안내드립니다.',
       },
       rental: {
         eyebrow: '판매 · 대여',
         title: '해봇을\n현장에 두는 방법',
-        subtitle: '해봇은 구매와 대여 모두 가능합니다. 먼저 빌려 검증한 뒤 도입을 결정하셔도 되고, 처음부터 구매해 상시 운용하셔도 됩니다.',
+        subtitle:
+          '해봇은 구매와 대여 모두 가능합니다. 먼저 빌려 검증한 뒤 도입을 결정하셔도 되고, 처음부터 구매해 상시 운용하셔도 됩니다.',
         ctaPrimary: '견적 문의하기',
         ctaSecondary: '해봇 구성 보기',
         useCaseEyebrow: '이런 곳에서 활용합니다',
@@ -377,7 +444,8 @@ const dict = {
         finalSubtitle: '용도와 기간, 필요한 구성을 알려주시면 맞춤 견적을 안내해 드립니다.',
         galleryEyebrow: '자료실',
         galleryTitle: '피지컬 AI,\n한 장으로 먼저 보기',
-        gallerySubtitle: '카드를 누르면 전체 이미지와 설명이 열립니다. 행사·강의 자료로 그대로 쓰실 수 있습니다.',
+        gallerySubtitle:
+          '카드를 누르면 전체 이미지와 설명이 열립니다. 행사·강의 자료로 그대로 쓰실 수 있습니다.',
         buyCta: '구매 문의',
         rentCta: '대여 문의',
         galleryOpen: '자세히 보기',
@@ -387,7 +455,8 @@ const dict = {
       updates: {
         eyebrow: '소식',
         title: '만들고, 고치고,\n현장에서 확인합니다',
-        subtitle: '지니에듀테크의 제작 라인과 현장에서 있었던 일을 기록합니다. 해봇 도입·협업·교육에 관한 소식도 이곳에 정리해 올립니다.',
+        subtitle:
+          '지니에듀테크의 제작 라인과 현장에서 있었던 일을 기록합니다. 해봇 도입·협업·교육에 관한 소식도 이곳에 정리해 올립니다.',
         ctaPrimary: '문의하기',
         ctaSecondary: '최신 소식 보기',
         listEyebrow: '최신 소식',
@@ -395,7 +464,8 @@ const dict = {
         contactLabel: '문의 · CONTACT',
         note: '새 소식은 이 페이지와 지니에듀테크 공식 채널에 함께 올라갑니다.',
         finalTitle: '해봇 도입·협업·교육,\n바로 상담하세요',
-        finalSubtitle: '단기 대여부터 맞춤형 시제품, 교육, 현장 실증(PoC)까지 필요한 형태로 제안드립니다.',
+        finalSubtitle:
+          '단기 대여부터 맞춤형 시제품, 교육, 현장 실증(PoC)까지 필요한 형태로 제안드립니다.',
       },
     },
   },
@@ -433,7 +503,8 @@ const dict = {
     physicalAi: {
       eyebrow: 'What is Physical AI',
       title: 'So what exactly\nis physical AI?',
-      subtitle: 'Worth knowing before you bring a robot in — how it differs from software AI, and the order it actually works in.',
+      subtitle:
+        'Worth knowing before you bring a robot in — how it differs from software AI, and the order it actually works in.',
       loopEyebrow: 'How it works',
     },
     whatIs: {
@@ -445,10 +516,26 @@ const dict = {
         'As VLA (Vision-Language-Action) architectures connect perception, judgment, and control into a single model, robots understanding and responding like people is becoming a practical reality.',
       compareTitle: 'How it differs from software AI',
       compare: [
-        { label: 'Where it operates', software: 'Data on a screen', physical: 'Real physical space' },
-        { label: 'Output', software: 'Text, images, code', physical: 'Physical action — movement, manipulation' },
-        { label: 'Cost of failure', software: 'Just regenerate', physical: 'Real risk — collision, damage' },
-        { label: 'Core capability', software: 'Language & pattern understanding', physical: 'Integrated perception-decision-control' },
+        {
+          label: 'Where it operates',
+          software: 'Data on a screen',
+          physical: 'Real physical space',
+        },
+        {
+          label: 'Output',
+          software: 'Text, images, code',
+          physical: 'Physical action — movement, manipulation',
+        },
+        {
+          label: 'Cost of failure',
+          software: 'Just regenerate',
+          physical: 'Real risk — collision, damage',
+        },
+        {
+          label: 'Core capability',
+          software: 'Language & pattern understanding',
+          physical: 'Integrated perception-decision-control',
+        },
       ],
       statsTitle: 'The gap between AI awareness and adoption in Korea',
       stats: [
@@ -493,8 +580,15 @@ const dict = {
     services: {
       eyebrow: 'Services',
       title: 'From first look to daily use,\nfour services',
-      subtitle: 'Built on our education work, we connect hands-on experience, technical review and life after adoption into one process.',
-      video: { title: 'JINIE EDUTECH intro film', soundOn: 'Sound on', soundOff: 'Sound off', play: 'Play video', pause: 'Pause video' },
+      subtitle:
+        'Built on our education work, we connect hands-on experience, technical review and life after adoption into one process.',
+      video: {
+        title: 'JINIE EDUTECH intro film',
+        soundOn: 'Sound on',
+        soundOff: 'Sound off',
+        play: 'Play video',
+        pause: 'Pause video',
+      },
       items: [
         {
           tag: 'Education',
@@ -502,7 +596,12 @@ const dict = {
           title: 'Education',
           audience: ['University students', 'Industry professionals'],
           desc: 'From foundational concepts to hands-on robot experience to real project work — practical, build-it-yourself education in physical AI.',
-          points: ['Foundational concepts in AI and robotics', 'Hands-on experience with real robots', 'Hands-on curriculum built around your own project', 'Safety training and practical course materials'],
+          points: [
+            'Foundational concepts in AI and robotics',
+            'Hands-on experience with real robots',
+            'Hands-on curriculum built around your own project',
+            'Safety training and practical course materials',
+          ],
         },
         {
           tag: 'Consulting',
@@ -510,7 +609,12 @@ const dict = {
           title: 'Consulting',
           audience: ['Founders', 'Companies', 'Investors'],
           desc: 'We help you understand what opportunity physical AI represents for your business, and where to start.',
-          points: ['Technology briefings and industry opportunity analysis', 'Use cases and adoption paths by industry', 'Demo and PoC (proof of concept) planning and execution', 'Materials to support investment and go/no-go decisions'],
+          points: [
+            'Technology briefings and industry opportunity analysis',
+            'Use cases and adoption paths by industry',
+            'Demo and PoC (proof of concept) planning and execution',
+            'Materials to support investment and go/no-go decisions',
+          ],
         },
         {
           tag: 'Support',
@@ -518,7 +622,12 @@ const dict = {
           title: 'CS / AS',
           audience: ['Companies', 'Institutions', 'Operating teams'],
           desc: 'Support that keeps the robot in use after it arrives: operating guidance, user training and troubleshooting. The scope is agreed to fit your equipment and operating conditions.',
-          points: ['Operating guidance and technical support', 'User training and troubleshooting', 'Maintenance and support referrals', 'Support scope agreed to your setup'],
+          points: [
+            'Operating guidance and technical support',
+            'User training and troubleshooting',
+            'Maintenance and support referrals',
+            'Support scope agreed to your setup',
+          ],
         },
         {
           tag: 'Rental',
@@ -526,39 +635,70 @@ const dict = {
           title: 'Sales & Rental',
           audience: ['Companies', 'Universities', 'Events'],
           desc: 'We sell and rent Haebot, the robot we build ourselves. Rent it first to validate the fit, or buy it outright and put it on your floor from day one.',
-          points: ['Haebot units, built to your configuration', 'Rental from a single day to a full semester', 'Installation, training, and maintenance packages', 'Quotes, procurement paperwork, and delivery support'],
+          points: [
+            'Haebot units, built to your configuration',
+            'Rental from a single day to a full semester',
+            'Installation, training, and maintenance packages',
+            'Quotes, procurement paperwork, and delivery support',
+          ],
         },
       ],
     },
     robots: {
       eyebrow: 'Haebot · 해봇',
       title: 'Haebot,\nour own physical AI robot',
-      subtitle: 'JINIE EDUTECH designs, builds, and operates this platform in-house. Buying it, renting it, or bringing it into a course all run on the same robot.',
+      subtitle:
+        'JINIE EDUTECH designs, builds, and operates this platform in-house. Buying it, renting it, or bringing it into a course all run on the same robot.',
       items: [
-        { name: 'Haebot', type: 'Dual-arm mobile manipulator', spec: 'Dual arms · grippers', desc: 'A mobile manipulator that picks up and carries objects with two arms. A stereo camera in the head reads the surroundings, and one machine handles everything from decision to motion.' },
-        { name: 'Haebot', type: 'Mecanum-wheel base', spec: 'Omnidirectional drive', desc: 'All four wheels are mecanum wheels, so it moves forward, sideways, and diagonally and turns in place — it keeps working in aisles and booths with no room to turn.' },
-        { name: 'Haebot', type: 'In education & research', spec: 'Labs · projects', desc: 'A hands-on platform for classrooms and labs. Tied to our courses, students build sense-decide-act themselves and use it as the base hardware for their projects.' },
+        {
+          name: 'Haebot',
+          type: 'Dual-arm mobile manipulator',
+          spec: 'Dual arms · grippers',
+          desc: 'A mobile manipulator that picks up and carries objects with two arms. A stereo camera in the head reads the surroundings, and one machine handles everything from decision to motion.',
+        },
+        {
+          name: 'Haebot',
+          type: 'Mecanum-wheel base',
+          spec: 'Omnidirectional drive',
+          desc: 'All four wheels are mecanum wheels, so it moves forward, sideways, and diagonally and turns in place — it keeps working in aisles and booths with no room to turn.',
+        },
+        {
+          name: 'Haebot',
+          type: 'In education & research',
+          spec: 'Labs · projects',
+          desc: 'A hands-on platform for classrooms and labs. Tied to our courses, students build sense-decide-act themselves and use it as the base hardware for their projects.',
+        },
       ],
       note: 'All three photos show the same robot \u2014 Haebot, developed in-house by JINIE EDUTECH. Available to buy or to rent.',
     },
     updates: {
       eyebrow: 'Updates',
       title: 'What comes off the line,\nreported first',
-      subtitle: 'Short notes from the workshop — what we build, adjust and prove in the field. New posts go up here.',
+      subtitle:
+        'Short notes from the workshop — what we build, adjust and prove in the field. New posts go up here.',
       viewAll: 'See all updates',
       readMore: 'Read the post',
     },
     banner: {
       eyebrow: 'Platforms',
       title: 'One robot, from the\nclassroom to the field',
-      subtitle: 'Dual-arm manipulation, omnidirectional mecanum drive, stereo vision \u2014 one Haebot covers classrooms and labs, exhibition floors and industrial sites.',
+      subtitle:
+        'Dual-arm manipulation, omnidirectional mecanum drive, stereo vision \u2014 one Haebot covers classrooms and labs, exhibition floors and industrial sites.',
     },
     contact: {
       eyebrow: 'Contact',
       title: 'Start your physical AI\njourney today',
-      subtitle: 'Purchase, rental, training, consulting, CS/AS — reach out about any of it. Quotes depend on configuration and duration.',
+      subtitle:
+        'Purchase, rental, training, consulting, CS/AS — reach out about any of it. Quotes depend on configuration and duration.',
       formTitle: 'Send an inquiry',
-      fields: { name: 'Name', org: 'Organization', email: 'Email', message: 'Message', submit: 'Send inquiry', type: 'Inquiry type' },
+      fields: {
+        name: 'Name',
+        org: 'Organization',
+        email: 'Email',
+        message: 'Message',
+        submit: 'Send inquiry',
+        type: 'Inquiry type',
+      },
       types: [
         { value: 'purchase', label: 'Purchase' },
         { value: 'rental', label: 'Rental' },
@@ -574,12 +714,16 @@ const dict = {
         sentBody: 'We\u2019ll get back to you within one business day.',
         again: 'Send another inquiry',
         failTitle: 'It could not be sent',
-        failNetwork: 'A network problem stopped the message from going out. Send it with one of the options below and we will pick it up.',
-        failRejected: 'The message was rejected. Send it with one of the options below and we will pick it up.',
-        failNotConfigured: 'Your message is ready in your mail app. If it did not open, use the address or phone number below.',
+        failNetwork:
+          'A network problem stopped the message from going out. Send it with one of the options below and we will pick it up.',
+        failRejected:
+          'The message was rejected. Send it with one of the options below and we will pick it up.',
+        failNotConfigured:
+          'Your message is ready in your mail app. If it did not open, use the address or phone number below.',
         submitMail: 'Send by email',
         directTitle: 'Your message is ready in your mail app',
-        directBody: 'Press send there and it reaches us. If the app did not open, use the email address or phone number below.',
+        directBody:
+          'Press send there and it reaches us. If the app did not open, use the email address or phone number below.',
         openMail: 'Open in my mail app',
         copyEmail: 'Copy email address',
         copyMessage: 'Copy message',
@@ -595,7 +739,8 @@ const dict = {
       ceo: 'CEO',
       ceoName: 'Sungwoong Lee',
       lab: 'R&D Center',
-      labAddr: 'Rm 317, 176 Eomgwang-ro, Busanjin-gu, Busan (Busan Startup Dream Center, Dong-eui Univ.)',
+      labAddr:
+        'Rm 317, 176 Eomgwang-ro, Busanjin-gu, Busan (Busan Startup Dream Center, Dong-eui Univ.)',
       labMapQuery: '부산광역시 부산진구 엄광로 176',
       phone: 'Phone',
       email: 'Email',
@@ -685,7 +830,8 @@ const dict = {
       back: 'Back to home',
       contactCta: 'Contact us',
       lockedTitle: 'This lesson is locked',
-      lockedBody: 'Full module detail is provided to enrolled participants. Contact us to see the complete curriculum and mentoring structure.',
+      lockedBody:
+        'Full module detail is provided to enrolled participants. Contact us to see the complete curriculum and mentoring structure.',
       lockedCta: 'Contact us to unlock',
       lockedClose: 'Close',
       previewBadge: 'Free preview',
@@ -693,7 +839,8 @@ const dict = {
       education: {
         eyebrow: 'Education Program',
         title: 'Physical AI\nHands-on Project Course',
-        subtitle: 'Not just technical lectures — a practical course that turns your own idea into a working physical AI project.',
+        subtitle:
+          'Not just technical lectures — a practical course that turns your own idea into a working physical AI project.',
         ctaPrimary: 'Ask about the program',
         ctaSecondary: 'View curriculum',
         statLabels: ['Total hours', 'Program length', 'Cohort size', 'Mentoring rounds'],
@@ -702,7 +849,8 @@ const dict = {
         journeyTitle: 'Not a stack of tech lectures —\na journey to a finished project',
         curriculumEyebrow: 'Module curriculum',
         curriculumTitle: 'Tap through the\ncurriculum yourself',
-        curriculumSubtitle: 'Each module leaves a document or output that feeds the next one. Module 1 is open for a free preview.',
+        curriculumSubtitle:
+          'Each module leaves a document or output that feeds the next one. Module 1 is open for a free preview.',
         whyEyebrow: 'Why this course',
         whyTitle: 'From an idea you never started\nto a project you can hold',
         supportEyebrow: 'Practice environment & equipment support',
@@ -712,12 +860,14 @@ const dict = {
         mentoringTitle: '4 rounds of project mentoring',
         scheduleTitle: '10-week program schedule',
         finalTitle: 'Turn your idea into a\nphysical AI project',
-        finalSubtitle: 'Reach out and we\u2019ll walk you through the next cohort\u2019s schedule and selection process.',
+        finalSubtitle:
+          'Reach out and we\u2019ll walk you through the next cohort\u2019s schedule and selection process.',
       },
       consulting: {
         eyebrow: 'Consulting',
         title: 'Physical AI —\nwhere should you start?',
-        subtitle: 'From students to early startups, B2B companies, and investors — we meet each audience where they are, from understanding physical AI to adoption and commercialization.',
+        subtitle:
+          'From students to early startups, B2B companies, and investors — we meet each audience where they are, from understanding physical AI to adoption and commercialization.',
         ctaPrimary: 'Ask about consulting',
         ctaSecondary: 'See services by audience',
         audienceEyebrow: 'Consulting by audience',
@@ -729,36 +879,44 @@ const dict = {
         finalTitle: 'Let\u2019s find out if physical AI\nis an opportunity for you',
         posterEyebrow: 'What we can build together',
         posterTitle: 'Your idea,\nour technology',
-        posterSubtitle: 'Education, robotics, smart farming, AI-driven 3D printing, and custom industrial solutions \u2014 five areas where we build new value alongside our partners.',
-        posterAlt: 'JINIE EDUTECH partnership poster \u2014 the five areas we can build in together',
+        posterSubtitle:
+          'Education, robotics, smart farming, AI-driven 3D printing, and custom industrial solutions \u2014 five areas where we build new value alongside our partners.',
+        posterAlt:
+          'JINIE EDUTECH partnership poster \u2014 the five areas we can build in together',
         posterCaption: 'Bring us a problem worth solving.',
         finalSubtitle: 'Wherever you are in the process, feel free to reach out.',
       },
       support: {
         eyebrow: 'CS · AS',
         title: 'After adoption,\nkeeping it in use',
-        subtitle: 'The work starts once the robot arrives. Operating guidance, user training, troubleshooting and maintenance referrals \u2014 we help companies, institutions and operating teams keep their physical AI equipment in steady use.',
+        subtitle:
+          'The work starts once the robot arrives. Operating guidance, user training, troubleshooting and maintenance referrals \u2014 we help companies, institutions and operating teams keep their physical AI equipment in steady use.',
         ctaPrimary: 'Ask about CS · AS',
         ctaSecondary: 'See what we support',
         areasEyebrow: 'What we support',
         areasTitle: 'Three kinds of\noperating support',
-        areasSubtitle: 'Guidance, training and troubleshooting, so your own staff can run equipment they have never used before.',
+        areasSubtitle:
+          'Guidance, training and troubleshooting, so your own staff can run equipment they have never used before.',
         audienceEyebrow: 'Who it is for',
         audienceTitle: 'Places that actually\nrun the robots',
         processEyebrow: 'How it works',
         processTitle: 'From your first message\nto support',
         journeyEyebrow: 'Where it fits',
         journeyTitle: 'After trying and validating,\nready for ongoing use',
-        journeySubtitle: 'CS/AS is the last step: after awareness, hands-on experience, education, consulting and a Demo/PoC, it keeps the adopted equipment in use.',
+        journeySubtitle:
+          'CS/AS is the last step: after awareness, hands-on experience, education, consulting and a Demo/PoC, it keeps the adopted equipment in use.',
         scopeTitle: 'We agree the scope together',
-        scopeBody: 'Terms such as repair, warranty and response time depend on the equipment and how it is used. We review what you need before adoption and agree the scope with you.',
+        scopeBody:
+          'Terms such as repair, warranty and response time depend on the equipment and how it is used. We review what you need before adoption and agree the scope with you.',
         finalTitle: 'Equipment already running?\nLet\u2019s take a look together',
-        finalSubtitle: 'Tell us about your equipment and setup, and we\u2019ll tell you what support fits.',
+        finalSubtitle:
+          'Tell us about your equipment and setup, and we\u2019ll tell you what support fits.',
       },
       rental: {
         eyebrow: 'Sales & Rental',
         title: 'Getting Haebot\nonto your floor',
-        subtitle: 'Haebot is available to buy or to rent. Rent it first to prove the fit, or buy it outright and run it full time.',
+        subtitle:
+          'Haebot is available to buy or to rent. Rent it first to prove the fit, or buy it outright and run it full time.',
         ctaPrimary: 'Request a quote',
         ctaSecondary: 'See the configurations',
         useCaseEyebrow: 'Where it gets used',
@@ -770,10 +928,12 @@ const dict = {
         processEyebrow: 'How it works',
         processTitle: 'From inquiry to delivery and demo',
         finalTitle: 'Haebot \u2014 yours\nto buy or to rent',
-        finalSubtitle: 'Tell us the use, the duration, and the configuration you need, and we\u2019ll put together a quote.',
+        finalSubtitle:
+          'Tell us the use, the duration, and the configuration you need, and we\u2019ll put together a quote.',
         galleryEyebrow: 'Resources',
         galleryTitle: 'Physical AI,\none sheet at a time',
-        gallerySubtitle: 'Tap a card to open the full image and its explanation. These are ready to use as event or lecture handouts.',
+        gallerySubtitle:
+          'Tap a card to open the full image and its explanation. These are ready to use as event or lecture handouts.',
         buyCta: 'Ask about buying',
         rentCta: 'Ask about renting',
         galleryOpen: 'View details',
@@ -783,7 +943,8 @@ const dict = {
       updates: {
         eyebrow: 'Updates',
         title: 'Built, adjusted,\nproven on site',
-        subtitle: 'Notes from the Jinie EduTech production line and the sites we work in — including news on adopting HAEBOT, collaborating with us and training on it.',
+        subtitle:
+          'Notes from the Jinie EduTech production line and the sites we work in — including news on adopting HAEBOT, collaborating with us and training on it.',
         ctaPrimary: 'Contact us',
         ctaSecondary: 'See the latest post',
         listEyebrow: 'Latest',
@@ -791,23 +952,21 @@ const dict = {
         contactLabel: 'Contact',
         note: 'New posts appear on this page and on Jinie EduTech\u2019s official channels.',
         finalTitle: 'Adoption, collaboration or training \u2014\ntalk to us directly',
-        finalSubtitle: 'Short-term rental, custom prototypes, training or an on-site proof of concept \u2014 we will propose the form you need.',
+        finalSubtitle:
+          'Short-term rental, custom prototypes, training or an on-site proof of concept \u2014 we will propose the form you need.',
       },
     },
   },
 };
 
-/**
- * The Korean tree is the canonical shape; English must match it.
- * (`as const` used to be here, which narrowed every Korean value to a string
- * literal and made the English tree unassignable — the app only worked because
- * Vite transpiles without type-checking.)
- */
-type Dict = typeof dict.ko;
-const _enMatchesKo: Dict = dict.en;
-void _enMatchesKo;
+export type Translations = typeof dict.ko;
 
-const LangContext = createContext<{ lang: Lang; t: Dict; toggle: () => void; setLang: (l: Lang) => void }>({
+const LangContext = createContext<{
+  lang: Lang;
+  t: Translations;
+  toggle: () => void;
+  setLang: (l: Lang) => void;
+}>({
   lang: 'ko',
   t: dict.ko,
   toggle: () => {},
@@ -816,8 +975,12 @@ const LangContext = createContext<{ lang: Lang; t: Dict; toggle: () => void; set
 
 export function LangProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>('ko');
-  const toggle = () => setLang(l => (l === 'ko' ? 'en' : 'ko'));
-  return <LangContext.Provider value={{ lang, t: dict[lang], toggle, setLang }}>{children}</LangContext.Provider>;
+  const toggle = () => setLang((l) => (l === 'ko' ? 'en' : 'ko'));
+  return (
+    <LangContext.Provider value={{ lang, t: dict[lang], toggle, setLang }}>
+      {children}
+    </LangContext.Provider>
+  );
 }
 
 export function useLang() {

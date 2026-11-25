@@ -24,9 +24,15 @@ export const modules: Module[] = [
     weekEn: 'Week 3',
     weeks: [3],
     topics: ['피지컬 AI의 정의', '소프트웨어 AI와의 차이', '주요 적용 분야', '프로젝트 사례'],
-    topicsEn: ['Defining physical AI', 'How it differs from software AI', 'Key application areas', 'Project case studies'],
+    topicsEn: [
+      'Defining physical AI',
+      'How it differs from software AI',
+      'Key application areas',
+      'Project case studies',
+    ],
     activity: '현장 문제를 탐색하고 피지컬 AI 적용 기회를 찾아 본인 프로젝트 주제를 정합니다.',
-    activityEn: 'Explore real-world problems, find opportunities to apply physical AI, and settle on your own project topic.',
+    activityEn:
+      'Explore real-world problems, find opportunities to apply physical AI, and settle on your own project topic.',
     outputs: ['문제 정의서', '초기 프로젝트 아이디어'],
     outputsEn: ['Problem statement', 'Initial project idea'],
   },
@@ -39,9 +45,17 @@ export const modules: Module[] = [
     weekEn: 'Week 3',
     weeks: [3],
     topics: ['센서', '구동부·모터', '제어기', '입출력 구조', '시스템 아키텍처', '부품 선정 기준'],
-    topicsEn: ['Sensors', 'Actuators & motors', 'Controllers', 'I/O structure', 'System architecture', 'Component selection criteria'],
+    topicsEn: [
+      'Sensors',
+      'Actuators & motors',
+      'Controllers',
+      'I/O structure',
+      'System architecture',
+      'Component selection criteria',
+    ],
     activity: '본인 프로젝트의 초기 시스템 구성을 작성하고 필요한 부품을 도출합니다.',
-    activityEn: 'Draft an initial system configuration for your project and identify the parts you need.',
+    activityEn:
+      'Draft an initial system configuration for your project and identify the parts you need.',
     outputs: ['초기 시스템 구성도', '부품 목록'],
     outputsEn: ['Initial system diagram', 'Parts list'],
   },
@@ -54,7 +68,13 @@ export const modules: Module[] = [
     weekEn: 'Week 4',
     weeks: [4],
     topics: ['기본 제어 개념', '마이크로컨트롤러', '임베디드 시스템', 'HW–SW 통신', '구동부 제어'],
-    topicsEn: ['Basic control concepts', 'Microcontrollers', 'Embedded systems', 'HW–SW communication', 'Actuator control'],
+    topicsEn: [
+      'Basic control concepts',
+      'Microcontrollers',
+      'Embedded systems',
+      'HW–SW communication',
+      'Actuator control',
+    ],
     activity: '본인 프로젝트 구성 요소의 기본 동작을 직접 구현합니다.',
     activityEn: 'Implement the basic operation of your project components yourself.',
     outputs: ['동작하는 기본 제어 시스템'],
@@ -69,7 +89,13 @@ export const modules: Module[] = [
     weekEn: 'Week 4',
     weeks: [4],
     topics: ['컴퓨터 비전', 'AI 인지', '판단 로직', 'VLA 개념', 'AI 모델과 물리 시스템 연결'],
-    topicsEn: ['Computer vision', 'AI perception', 'Decision logic', 'VLA concepts', 'Connecting AI models to physical systems'],
+    topicsEn: [
+      'Computer vision',
+      'AI perception',
+      'Decision logic',
+      'VLA concepts',
+      'Connecting AI models to physical systems',
+    ],
     activity: '본인 프로젝트에 인지 또는 판단 기능을 연동합니다.',
     activityEn: 'Integrate a perception or decision-making feature into your project.',
     outputs: ['AI 기능이 통합된 프로젝트'],
@@ -83,8 +109,24 @@ export const modules: Module[] = [
     week: '5주차',
     weekEn: 'Week 5',
     weeks: [5],
-    topics: ['요구사항 정의', '시스템 아키텍처', 'HW–SW 계획', 'MVP 개념', '원가 산정', '일정', '위험요인'],
-    topicsEn: ['Requirements definition', 'System architecture', 'HW–SW planning', 'MVP concept', 'Cost estimation', 'Scheduling', 'Risk factors'],
+    topics: [
+      '요구사항 정의',
+      '시스템 아키텍처',
+      'HW–SW 계획',
+      'MVP 개념',
+      '원가 산정',
+      '일정',
+      '위험요인',
+    ],
+    topicsEn: [
+      'Requirements definition',
+      'System architecture',
+      'HW–SW planning',
+      'MVP concept',
+      'Cost estimation',
+      'Scheduling',
+      'Risk factors',
+    ],
     activity: '프로젝트 설계서를 작성하고 프로토타입 제작에 착수합니다.',
     activityEn: 'Write your project design document and begin building the prototype.',
     outputs: ['프로젝트 설계서', '프로토타입(MVP) 계획'],
@@ -98,12 +140,32 @@ export const modules: Module[] = [
     week: '5주차',
     weekEn: 'Week 5',
     weeks: [5],
-    topics: ['시스템 통합', '시험', '문제 해결', '성능 검증', '시연 준비', '발표', '기초 사업화 기획'],
-    topicsEn: ['System integration', 'Testing', 'Troubleshooting', 'Performance verification', 'Demo prep', 'Presentation', 'Basic commercialization planning'],
+    topics: [
+      '시스템 통합',
+      '시험',
+      '문제 해결',
+      '성능 검증',
+      '시연 준비',
+      '발표',
+      '기초 사업화 기획',
+    ],
+    topicsEn: [
+      'System integration',
+      'Testing',
+      'Troubleshooting',
+      'Performance verification',
+      'Demo prep',
+      'Presentation',
+      'Basic commercialization planning',
+    ],
     activity: '프로토타입을 통합 검증하고 공개 발표를 준비합니다.',
     activityEn: 'Integrate and verify the prototype, and prepare for the public presentation.',
     outputs: ['동작하는 프로토타입(MVP)', '발표 자료', '기초 사업화 계획'],
-    outputsEn: ['A working prototype (MVP)', 'Presentation materials', 'Basic commercialization plan'],
+    outputsEn: [
+      'A working prototype (MVP)',
+      'Presentation materials',
+      'Basic commercialization plan',
+    ],
   },
 ];
 
@@ -129,11 +191,18 @@ export const stages: Stage[] = [
     en: 'Foundation',
     hours: 12,
     desc: '피지컬 AI의 개념과 구성 요소, 소프트웨어 AI와의 차이를 이해합니다.',
-    descEn: 'Understand the concepts and components of physical AI and how it differs from software AI.',
+    descEn:
+      'Understand the concepts and components of physical AI and how it differs from software AI.',
     topics: ['개념과 구성 요소', '소프트웨어 AI와의 차이', '적용 분야', '프로젝트 사례'],
-    topicsEn: ['Concepts & components', 'Difference from software AI', 'Application areas', 'Project case studies'],
+    topicsEn: [
+      'Concepts & components',
+      'Difference from software AI',
+      'Application areas',
+      'Project case studies',
+    ],
     activity: '기술을 넓게 훑는 대신, 프로젝트를 진행하는 데 필요한 범위에서 학습합니다.',
-    activityEn: 'Instead of surveying the technology broadly, you learn only what you need to move your project forward.',
+    activityEn:
+      'Instead of surveying the technology broadly, you learn only what you need to move your project forward.',
     outputs: ['기초 이해', '적용 분야 정리'],
     outputsEn: ['Foundational understanding', 'Summary of application areas'],
   },
@@ -145,9 +214,15 @@ export const stages: Stage[] = [
     desc: '현장의 실제 문제를 찾고, 본인 프로젝트 주제를 도출합니다.',
     descEn: 'Find real problems in the field and derive your own project topic.',
     topics: ['현장 문제 탐색', '적용 기회 발굴', '아이디어 도출', '주제 선정'],
-    topicsEn: ['Exploring field problems', 'Finding application opportunities', 'Idea generation', 'Topic selection'],
+    topicsEn: [
+      'Exploring field problems',
+      'Finding application opportunities',
+      'Idea generation',
+      'Topic selection',
+    ],
     activity: '9단계 발굴 절차 중 1~4단계를 다루고, 1차 멘토링에서 검토합니다.',
-    activityEn: 'Covers steps 1–4 of a 9-step discovery process, reviewed in the first mentoring round.',
+    activityEn:
+      'Covers steps 1–4 of a 9-step discovery process, reviewed in the first mentoring round.',
     outputs: ['문제 정의서', '초기 프로젝트 아이디어'],
     outputsEn: ['Problem statement', 'Initial project idea'],
   },
@@ -157,11 +232,19 @@ export const stages: Stage[] = [
     en: 'Design',
     hours: 12,
     desc: '요구사항, 시스템 구성, 기술 선정, 일정과 비용을 문서로 확정합니다.',
-    descEn: 'Finalize requirements, system configuration, technology choices, schedule, and cost in a document.',
+    descEn:
+      'Finalize requirements, system configuration, technology choices, schedule, and cost in a document.',
     topics: ['요구사항', '시스템 구성', '기술 선정', '일정·원가', '위험요인'],
-    topicsEn: ['Requirements', 'System configuration', 'Technology selection', 'Schedule & cost', 'Risk factors'],
+    topicsEn: [
+      'Requirements',
+      'System configuration',
+      'Technology selection',
+      'Schedule & cost',
+      'Risk factors',
+    ],
     activity: '2차 멘토링에서 설계서를 확정하고 제작 범위를 고정합니다.',
-    activityEn: 'Finalize the design document and lock the build scope in the second mentoring round.',
+    activityEn:
+      'Finalize the design document and lock the build scope in the second mentoring round.',
     outputs: ['프로젝트 기획서', '프로젝트 설계서'],
     outputsEn: ['Project proposal', 'Project design document'],
   },
@@ -173,9 +256,15 @@ export const stages: Stage[] = [
     desc: '프로토타입(MVP)을 구현하고 성능을 검증·개선합니다.',
     descEn: 'Build the prototype (MVP) and verify and improve its performance.',
     topics: ['기본 동작 구현', 'AI 기능 연동', '시스템 통합', '성능 검증'],
-    topicsEn: ['Basic operation implementation', 'AI feature integration', 'System integration', 'Performance verification'],
+    topicsEn: [
+      'Basic operation implementation',
+      'AI feature integration',
+      'System integration',
+      'Performance verification',
+    ],
     activity: '3차 멘토링에서 기술적 병목을 함께 풀고, 4차에서 동작 안정성을 확인합니다.',
-    activityEn: 'Work through technical bottlenecks together in the third mentoring round, and confirm operational stability in the fourth.',
+    activityEn:
+      'Work through technical bottlenecks together in the third mentoring round, and confirm operational stability in the fourth.',
     outputs: ['동작하는 프로토타입(MVP)', '개발 진척 보고서'],
     outputsEn: ['A working prototype (MVP)', 'Development progress report'],
   },
@@ -185,99 +274,108 @@ export const stages: Stage[] = [
     en: 'Commercialization',
     hours: 10,
     desc: '고객, 가치 제안, 수익 구조, 후속 사업화 경로를 학습합니다.',
-    descEn: 'Learn about customers, value proposition, revenue structure, and the path to commercialization.',
+    descEn:
+      'Learn about customers, value proposition, revenue structure, and the path to commercialization.',
     topics: ['고객 정의', '가치 제안', '수익 구조', '후속 사업화 경로'],
-    topicsEn: ['Customer definition', 'Value proposition', 'Revenue structure', 'Path to commercialization'],
+    topicsEn: [
+      'Customer definition',
+      'Value proposition',
+      'Revenue structure',
+      'Path to commercialization',
+    ],
     activity: '공개 발표회에서 대외 실증 자료를 확보하고 후속 상담으로 연결합니다.',
-    activityEn: 'Secure external validation material at the public demo day and connect it to follow-up consultations.',
+    activityEn:
+      'Secure external validation material at the public demo day and connect it to follow-up consultations.',
     outputs: ['발표 자료', '사업화 계획서'],
     outputsEn: ['Presentation materials', 'Commercialization plan'],
   },
 ];
 
 export const mentoring = [
-  { round: '1차', roundEn: 'Round 1', week: 3, check: '문제 · 대상 사용자 · 해결안 · 적합성 · 실현성 · 범위', checkEn: 'Problem · target users · solution · fit · feasibility · scope', out: '프로젝트 타당성 검토서', outEn: 'Project feasibility review' },
-  { round: '2차', roundEn: 'Round 2', week: 5, check: '시스템 구성 · 부품 · HW · SW · AI · 일정 · 원가', checkEn: 'System configuration · parts · HW · SW · AI · schedule · cost', out: '프로젝트 설계서 (확정)', outEn: 'Project design document (final)' },
-  { round: '3차', roundEn: 'Round 3', week: 7, check: '제작 진척 · 기술적 병목 · 통합 · 개선 사항', checkEn: 'Build progress · technical bottlenecks · integration · improvements', out: '개발 진척 보고서', outEn: 'Development progress report' },
-  { round: '4차', roundEn: 'Round 4', week: 9, check: '동작 안정성 · 성능 · 시연 · 적용 시나리오', checkEn: 'Operational stability · performance · demo · application scenarios', out: '발표 준비 완료 프로젝트', outEn: 'Presentation-ready project' },
+  {
+    round: '1차',
+    roundEn: 'Round 1',
+    week: 3,
+    check: '문제 · 대상 사용자 · 해결안 · 적합성 · 실현성 · 범위',
+    checkEn: 'Problem · target users · solution · fit · feasibility · scope',
+    out: '프로젝트 타당성 검토서',
+    outEn: 'Project feasibility review',
+  },
+  {
+    round: '2차',
+    roundEn: 'Round 2',
+    week: 5,
+    check: '시스템 구성 · 부품 · HW · SW · AI · 일정 · 원가',
+    checkEn: 'System configuration · parts · HW · SW · AI · schedule · cost',
+    out: '프로젝트 설계서 (확정)',
+    outEn: 'Project design document (final)',
+  },
+  {
+    round: '3차',
+    roundEn: 'Round 3',
+    week: 7,
+    check: '제작 진척 · 기술적 병목 · 통합 · 개선 사항',
+    checkEn: 'Build progress · technical bottlenecks · integration · improvements',
+    out: '개발 진척 보고서',
+    outEn: 'Development progress report',
+  },
+  {
+    round: '4차',
+    roundEn: 'Round 4',
+    week: 9,
+    check: '동작 안정성 · 성능 · 시연 · 적용 시나리오',
+    checkEn: 'Operational stability · performance · demo · application scenarios',
+    out: '발표 준비 완료 프로젝트',
+    outEn: 'Presentation-ready project',
+  },
 ];
 
 export const weekPlan = [
-  { weeks: [1, 2], label: '모집 · 선발', labelEn: 'Recruiting & selection', out: '선발 결과 보고서', outEn: 'Selection results report' },
-  { weeks: [3], label: 'M1–M2 교육 (18H)', labelEn: 'M1–M2 training (18H)', out: '문제 정의서 · 시스템 구성도', outEn: 'Problem statement · system diagram' },
-  { weeks: [4, 5], label: 'M3–M6 교육 (42H)', labelEn: 'M3–M6 training (42H)', out: '역량 진단 · 프로젝트 설계서', outEn: 'Skills assessment · project design document' },
-  { weeks: [6, 7, 8], label: '프로토타입 제작', labelEn: 'Prototype build', out: '개발 진척 보고서', outEn: 'Development progress report' },
-  { weeks: [9], label: '최종 검증', labelEn: 'Final verification', out: '발표 준비 완료서', outEn: 'Presentation readiness report' },
-  { weeks: [10], label: '공개 발표회', labelEn: 'Public demo day', out: '발표 자료 · 사업화 계획', outEn: 'Presentation materials · commercialization plan' },
-];
-
-export const services = [
   {
-    num: '01',
-    title: '교육',
-    subtitle: 'Education',
-    targets: ['대학생', '산업체 재직자'],
-    items: ['기초 개념과 AI·로보틱스', '로봇 체험과 조작 실습', '안전 교육과 실무 교재', '교육 콘텐츠 기반'],
+    weeks: [1, 2],
+    label: '모집 · 선발',
+    labelEn: 'Recruiting & selection',
+    out: '선발 결과 보고서',
+    outEn: 'Selection results report',
   },
   {
-    num: '02',
-    title: '컨설팅',
-    subtitle: 'Consulting',
-    targets: ['사업가', '기업', '투자자'],
-    items: ['기술 이해와 산업 기회', '활용 사례와 도입 방향', 'Demo·PoC 기획', '제안 서비스'],
+    weeks: [3],
+    label: 'M1–M2 교육 (18H)',
+    labelEn: 'M1–M2 training (18H)',
+    out: '문제 정의서 · 시스템 구성도',
+    outEn: 'Problem statement · system diagram',
   },
   {
-    num: '03',
-    title: 'CS / AS',
-    subtitle: 'Support',
-    targets: ['기업', '기관', '운영 조직'],
-    items: ['운영 안내와 기술 지원', '사용 교육과 문제 대응', '유지관리·지원 연계', '범위 협의'],
+    weeks: [4, 5],
+    label: 'M3–M6 교육 (42H)',
+    labelEn: 'M3–M6 training (42H)',
+    out: '역량 진단 · 프로젝트 설계서',
+    outEn: 'Skills assessment · project design document',
   },
   {
-    num: '04',
-    title: '대여',
-    subtitle: 'Rental',
-    targets: ['기업', '대학', '전시', '행사'],
-    items: ['로봇 대여와 전시 체험', '기업 쇼케이스·엔터테인먼트', '피지컬 AI 경험 프로그램', '협력 연계 활용'],
-  },
-];
-
-export const journey = [
-  { step: '01', label: '인식', sub: '피지컬 AI 세미나\n무엇이 달라질까?' },
-  { step: '02', label: '체험', sub: '해봇 (Haebot)\n직접 보고 경험하기' },
-  { step: '03', label: '교육', sub: '학생·재직자 학습\n어떻게 작동할까?' },
-  { step: '04', label: '컨설팅', sub: '산업·업무 연결\n어디에 가치가 있을까?' },
-  { step: '05', label: 'Demo/PoC', sub: '소규모 실증\n우리 환경에서도 될까?' },
-  { step: '06', label: '도입·지원', sub: '교육·운영 지원\n지속 활용을 준비하기' },
-];
-
-export const robots = [
-  {
-    name: '해봇 (Haebot)',
-    type: '듀얼암 모바일 매니퓰레이터',
-    spec: '양팔 · 그리퍼',
-    desc: '두 팔로 물체를 집고 옮기는 이동형 매니퓰레이터. 머리의 스테레오 카메라로 주변을 인식합니다.',
-    art: 'platform' as const,
+    weeks: [6, 7, 8],
+    label: '프로토타입 제작',
+    labelEn: 'Prototype build',
+    out: '개발 진척 보고서',
+    outEn: 'Development progress report',
   },
   {
-    name: '해봇 (Haebot)',
-    type: '메카넘 휠 베이스',
-    spec: '전방향 주행',
-    desc: '네 바퀴 모두 메카넘 휠 — 전후좌우·대각선 이동과 제자리 회전이 가능합니다.',
-    art: 'platform' as const,
+    weeks: [9],
+    label: '최종 검증',
+    labelEn: 'Final verification',
+    out: '발표 준비 완료서',
+    outEn: 'Presentation readiness report',
   },
   {
-    name: '해봇 (Haebot)',
-    type: '교육·연구 현장',
-    spec: '실습 · 프로젝트',
-    desc: '강의실과 연구실에 두고 쓰는 실습 플랫폼. 학생 프로젝트의 기반 장비로 활용합니다.',
-    art: 'platform' as const,
+    weeks: [10],
+    label: '공개 발표회',
+    labelEn: 'Public demo day',
+    out: '발표 자료 · 사업화 계획',
+    outEn: 'Presentation materials · commercialization plan',
   },
 ];
 
-// ---------------------------------------------------------------------------
 // Rental page content — Haebot (해봇), JINIE EDUTECH's own platform
-// ---------------------------------------------------------------------------
 
 export type RentalUseCase = { title: string; titleEn: string; desc: string; descEn: string };
 export type RentalRobot = {
@@ -309,17 +407,58 @@ export const rentalRobots: RentalRobot[] = [
     type: '듀얼암 모바일 매니퓰레이터',
     typeEn: 'Dual-arm mobile manipulator',
     specs: [
-      { label: '조작', labelEn: 'Manipulation', value: '양팔 · 그리퍼', valueEn: 'Dual arms with grippers' },
-      { label: '비전', labelEn: 'Vision', value: '헤드 스테레오 카메라', valueEn: 'Stereo camera in the head' },
-      { label: '이동', labelEn: 'Locomotion', value: '메카넘 휠 · 전방향 주행', valueEn: 'Mecanum wheels · omnidirectional' },
-      { label: '소프트웨어', labelEn: 'Software', value: 'AI 인지·판단 연동', valueEn: 'AI perception & decision' },
+      {
+        label: '조작',
+        labelEn: 'Manipulation',
+        value: '양팔 · 그리퍼',
+        valueEn: 'Dual arms with grippers',
+      },
+      {
+        label: '비전',
+        labelEn: 'Vision',
+        value: '헤드 스테레오 카메라',
+        valueEn: 'Stereo camera in the head',
+      },
+      {
+        label: '이동',
+        labelEn: 'Locomotion',
+        value: '메카넘 휠 · 전방향 주행',
+        valueEn: 'Mecanum wheels · omnidirectional',
+      },
+      {
+        label: '소프트웨어',
+        labelEn: 'Software',
+        value: 'AI 인지·판단 연동',
+        valueEn: 'AI perception & decision',
+      },
     ],
     desc: '해봇을 직접 소유해 상시 운용합니다. 연구실의 기반 장비로, 자체 서비스 개발의 테스트베드로, 현장 도입의 실증 장비로 쓰실 때 가장 경제적입니다. 용도에 맞춰 그리퍼·센서 등 구성을 협의해 제작합니다.',
-    descEn: 'Own a Haebot and run it full time. It is the most economical option as a lab’s base hardware, a testbed for your own service, or validation equipment for an on-site rollout. Grippers, sensors, and other parts are configured to your use.',
-    bestFor: ['기업 도입 · 현장 실증', '연구실 기반 장비', '자체 서비스 · 제품 개발', '상설 전시 · 쇼룸'],
-    bestForEn: ['Corporate adoption & on-site validation', 'Base hardware for a lab', 'Building your own service or product', 'Permanent exhibits & showrooms'],
-    includes: ['설치 · 운용 교육', '사용 매뉴얼 · 기술 문서', '구매 후 유지보수 · 기술 지원', '기관 조달 · 납품 서류'],
-    includesEn: ['Installation and operator training', 'User manual and technical documentation', 'Maintenance and technical support after purchase', 'Procurement and delivery paperwork'],
+    descEn:
+      'Own a Haebot and run it full time. It is the most economical option as a lab’s base hardware, a testbed for your own service, or validation equipment for an on-site rollout. Grippers, sensors, and other parts are configured to your use.',
+    bestFor: [
+      '기업 도입 · 현장 실증',
+      '연구실 기반 장비',
+      '자체 서비스 · 제품 개발',
+      '상설 전시 · 쇼룸',
+    ],
+    bestForEn: [
+      'Corporate adoption & on-site validation',
+      'Base hardware for a lab',
+      'Building your own service or product',
+      'Permanent exhibits & showrooms',
+    ],
+    includes: [
+      '설치 · 운용 교육',
+      '사용 매뉴얼 · 기술 문서',
+      '구매 후 유지보수 · 기술 지원',
+      '기관 조달 · 납품 서류',
+    ],
+    includesEn: [
+      'Installation and operator training',
+      'User manual and technical documentation',
+      'Maintenance and technical support after purchase',
+      'Procurement and delivery paperwork',
+    ],
   },
   {
     key: 'term',
@@ -331,17 +470,53 @@ export const rentalRobots: RentalRobot[] = [
     type: '교육 · 연구용',
     typeEn: 'Education & research',
     specs: [
-      { label: '기간', labelEn: 'Period', value: '학기 · 과제 기간 단위', valueEn: 'Semester or project period' },
-      { label: '연계', labelEn: 'Paired with', value: '피지컬 AI 교육 과정', valueEn: 'Our physical AI course' },
-      { label: '대상', labelEn: 'For', value: '대학 · 연구기관 · 기업 교육', valueEn: 'Universities, institutes, corporate training' },
-      { label: '전환', labelEn: 'Upgrade path', value: '구매 전환 가능', valueEn: 'Convertible to purchase' },
+      {
+        label: '기간',
+        labelEn: 'Period',
+        value: '학기 · 과제 기간 단위',
+        valueEn: 'Semester or project period',
+      },
+      {
+        label: '연계',
+        labelEn: 'Paired with',
+        value: '피지컬 AI 교육 과정',
+        valueEn: 'Our physical AI course',
+      },
+      {
+        label: '대상',
+        labelEn: 'For',
+        value: '대학 · 연구기관 · 기업 교육',
+        valueEn: 'Universities, institutes, corporate training',
+      },
+      {
+        label: '전환',
+        labelEn: 'Upgrade path',
+        value: '구매 전환 가능',
+        valueEn: 'Convertible to purchase',
+      },
     ],
     desc: '한 학기나 과제 기간 동안 해봇을 두고 씁니다. 교육 과정과 묶어 실습 장비로 쓰거나, 구매 전에 충분히 검증해 보는 용도에 맞습니다. 대여 기간이 끝난 뒤 구매로 전환하실 수도 있습니다.',
-    descEn: 'Keep a Haebot for a semester or a project period. It suits hands-on course equipment bundled with our training, or a thorough evaluation before buying. You can convert to a purchase when the rental ends.',
+    descEn:
+      'Keep a Haebot for a semester or a project period. It suits hands-on course equipment bundled with our training, or a thorough evaluation before buying. You can convert to a purchase when the rental ends.',
     bestFor: ['대학 실습 · 캡스톤 수업', '정부과제 · 연구 기간', '기업 사내 교육', '구매 전 검증'],
-    bestForEn: ['University labs & capstone courses', 'Government projects & research periods', 'Corporate in-house training', 'Evaluation before buying'],
-    includes: ['설치 · 운용 교육', '교육 과정 연계 실습 자료', '대여 기간 중 원격 기술 지원', '기간 종료 후 회수 또는 구매 전환'],
-    includesEn: ['Installation and operator training', 'Practice material tied to the course', 'Remote technical support during the rental', 'Collection at the end, or conversion to purchase'],
+    bestForEn: [
+      'University labs & capstone courses',
+      'Government projects & research periods',
+      'Corporate in-house training',
+      'Evaluation before buying',
+    ],
+    includes: [
+      '설치 · 운용 교육',
+      '교육 과정 연계 실습 자료',
+      '대여 기간 중 원격 기술 지원',
+      '기간 종료 후 회수 또는 구매 전환',
+    ],
+    includesEn: [
+      'Installation and operator training',
+      'Practice material tied to the course',
+      'Remote technical support during the rental',
+      'Collection at the end, or conversion to purchase',
+    ],
   },
   {
     key: 'event',
@@ -353,17 +528,58 @@ export const rentalRobots: RentalRobot[] = [
     type: '행사 · 시연용',
     typeEn: 'Events & demos',
     specs: [
-      { label: '기간', labelEn: 'Period', value: '1일 ~ 수 주', valueEn: 'One day to several weeks' },
-      { label: '운영', labelEn: 'Operation', value: '전담 오퍼레이터 동행', valueEn: 'Dedicated operator on site' },
-      { label: '공간', labelEn: 'Space', value: '좁은 부스에서도 전방향 주행', valueEn: 'Omnidirectional even in tight booths' },
-      { label: '구성', labelEn: 'Setup', value: '행사별 데모 시나리오', valueEn: 'Demo scenario per event' },
+      {
+        label: '기간',
+        labelEn: 'Period',
+        value: '1일 ~ 수 주',
+        valueEn: 'One day to several weeks',
+      },
+      {
+        label: '운영',
+        labelEn: 'Operation',
+        value: '전담 오퍼레이터 동행',
+        valueEn: 'Dedicated operator on site',
+      },
+      {
+        label: '공간',
+        labelEn: 'Space',
+        value: '좁은 부스에서도 전방향 주행',
+        valueEn: 'Omnidirectional even in tight booths',
+      },
+      {
+        label: '구성',
+        labelEn: 'Setup',
+        value: '행사별 데모 시나리오',
+        valueEn: 'Demo scenario per event',
+      },
     ],
     desc: '박람회 부스, 제품 런칭, 컨퍼런스, 촬영 현장에 해봇을 보내 드립니다. 메카넘 휠 덕분에 방향 전환 공간이 부족한 부스 안에서도 자유롭게 움직여, 관람객 앞에서 인지–판단–행동을 그대로 보여줍니다.',
-    descEn: 'We send Haebot to trade show booths, product launches, conferences, and film sets. Its mecanum wheels let it move freely even in a booth with no room to turn, showing sense-decide-act right in front of visitors.',
-    bestFor: ['전시 · 박람회 체험 부스', '제품 런칭 · 컨퍼런스', '기업 쇼케이스', '방송 · 영상 촬영'],
-    bestForEn: ['Exhibition & trade show booths', 'Product launches & conferences', 'Corporate showcases', 'Broadcast & video shoots'],
-    includes: ['전담 오퍼레이터 현장 지원', '데모 시나리오 기획 · 리허설', '운반 · 설치 · 철수 · 안전관리', '촬영 · 관람객 인터랙션 가이드'],
-    includesEn: ['A dedicated operator on site', 'Demo scenario planning and rehearsal', 'Transport, setup, teardown & safety', 'Filming and visitor-interaction guide'],
+    descEn:
+      'We send Haebot to trade show booths, product launches, conferences, and film sets. Its mecanum wheels let it move freely even in a booth with no room to turn, showing sense-decide-act right in front of visitors.',
+    bestFor: [
+      '전시 · 박람회 체험 부스',
+      '제품 런칭 · 컨퍼런스',
+      '기업 쇼케이스',
+      '방송 · 영상 촬영',
+    ],
+    bestForEn: [
+      'Exhibition & trade show booths',
+      'Product launches & conferences',
+      'Corporate showcases',
+      'Broadcast & video shoots',
+    ],
+    includes: [
+      '전담 오퍼레이터 현장 지원',
+      '데모 시나리오 기획 · 리허설',
+      '운반 · 설치 · 철수 · 안전관리',
+      '촬영 · 관람객 인터랙션 가이드',
+    ],
+    includesEn: [
+      'A dedicated operator on site',
+      'Demo scenario planning and rehearsal',
+      'Transport, setup, teardown & safety',
+      'Filming and visitor-interaction guide',
+    ],
   },
 ];
 
@@ -479,22 +695,72 @@ export const posterCards: PosterCard[] = [
 ];
 
 export const rentalUseCases: RentalUseCase[] = [
-  { title: '기업 도입', titleEn: 'Corporate adoption', desc: '현장 실증부터 상시 운용까지 — 먼저 대여로 검증하고 구매로 이어가는 방식이 가장 흔합니다.', descEn: 'From on-site validation to full-time operation — most customers rent to validate, then buy.' },
-  { title: '대학·연구', titleEn: 'Universities & research', desc: '실습 수업, 캡스톤 프로젝트, 연구 장비 — 학과 예산에 맞춰 구매와 학기 단위 대여 중 선택합니다.', descEn: 'Lab courses, capstone projects, research equipment — buy it or rent by the semester, whichever fits the budget.' },
-  { title: '전시·행사', titleEn: 'Exhibitions & events', desc: '박람회 부스, 제품 런칭, 컨퍼런스 — 단기 대여로 관람객의 발길을 잡는 체험 콘텐츠를 만듭니다.', descEn: 'Trade show booths, product launches, conferences — short-term rentals that draw visitors in.' },
-  { title: '방송·콘텐츠', titleEn: 'Broadcast & content', desc: '촬영·유튜브·광고 등 미디어 제작을 위한 로봇 섭외와 현장 연출을 지원합니다.', descEn: 'We support robot booking and on-site direction for filming, YouTube, ads, and other media production.' },
+  {
+    title: '기업 도입',
+    titleEn: 'Corporate adoption',
+    desc: '현장 실증부터 상시 운용까지 — 먼저 대여로 검증하고 구매로 이어가는 방식이 가장 흔합니다.',
+    descEn:
+      'From on-site validation to full-time operation — most customers rent to validate, then buy.',
+  },
+  {
+    title: '대학·연구',
+    titleEn: 'Universities & research',
+    desc: '실습 수업, 캡스톤 프로젝트, 연구 장비 — 학과 예산에 맞춰 구매와 학기 단위 대여 중 선택합니다.',
+    descEn:
+      'Lab courses, capstone projects, research equipment — buy it or rent by the semester, whichever fits the budget.',
+  },
+  {
+    title: '전시·행사',
+    titleEn: 'Exhibitions & events',
+    desc: '박람회 부스, 제품 런칭, 컨퍼런스 — 단기 대여로 관람객의 발길을 잡는 체험 콘텐츠를 만듭니다.',
+    descEn:
+      'Trade show booths, product launches, conferences — short-term rentals that draw visitors in.',
+  },
+  {
+    title: '방송·콘텐츠',
+    titleEn: 'Broadcast & content',
+    desc: '촬영·유튜브·광고 등 미디어 제작을 위한 로봇 섭외와 현장 연출을 지원합니다.',
+    descEn:
+      'We support robot booking and on-site direction for filming, YouTube, ads, and other media production.',
+  },
 ];
 
 export const rentalProcess = [
-  { step: '01', title: '문의 접수', titleEn: 'Inquiry', desc: '구매인지 대여인지, 용도와 기간을 알려주시면 담당자가 24시간 내 연락드립니다.', descEn: 'Tell us whether you are buying or renting, plus the use and duration — we reply within 24 hours.' },
-  { step: '02', title: '구성 상담', titleEn: 'Configuration', desc: '어떤 구성이 필요한지, 추가 모듈이나 커스터마이징이 필요한지 함께 정합니다.', descEn: 'We settle which configuration you need, and whether extra modules or customization are involved.' },
-  { step: '03', title: '견적·계약', titleEn: 'Quote & contract', desc: '구매가 또는 대여료, 운반·설치 범위를 반영한 견적서를 전달드립니다. 기관 조달 서류도 지원합니다.', descEn: 'We send a quote covering purchase price or rental fee plus transport and setup, and support procurement paperwork.' },
-  { step: '04', title: '납품·설치·교육', titleEn: 'Delivery, setup & training', desc: '현장에 설치하고 운용 교육까지 진행합니다. 대여는 철수까지, 구매는 이후 유지보수까지 이어집니다.', descEn: 'We install on site and train your operators. Rentals run through teardown; purchases continue into maintenance.' },
+  {
+    step: '01',
+    title: '문의 접수',
+    titleEn: 'Inquiry',
+    desc: '구매인지 대여인지, 용도와 기간을 알려주시면 담당자가 24시간 내 연락드립니다.',
+    descEn:
+      'Tell us whether you are buying or renting, plus the use and duration — we reply within 24 hours.',
+  },
+  {
+    step: '02',
+    title: '구성 상담',
+    titleEn: 'Configuration',
+    desc: '어떤 구성이 필요한지, 추가 모듈이나 커스터마이징이 필요한지 함께 정합니다.',
+    descEn:
+      'We settle which configuration you need, and whether extra modules or customization are involved.',
+  },
+  {
+    step: '03',
+    title: '견적·계약',
+    titleEn: 'Quote & contract',
+    desc: '구매가 또는 대여료, 운반·설치 범위를 반영한 견적서를 전달드립니다. 기관 조달 서류도 지원합니다.',
+    descEn:
+      'We send a quote covering purchase price or rental fee plus transport and setup, and support procurement paperwork.',
+  },
+  {
+    step: '04',
+    title: '납품·설치·교육',
+    titleEn: 'Delivery, setup & training',
+    desc: '현장에 설치하고 운용 교육까지 진행합니다. 대여는 철수까지, 구매는 이후 유지보수까지 이어집니다.',
+    descEn:
+      'We install on site and train your operators. Rentals run through teardown; purchases continue into maintenance.',
+  },
 ];
 
-// ---------------------------------------------------------------------------
 // Consulting page content
-// ---------------------------------------------------------------------------
 
 export type ConsultingAudience = {
   key: 'students' | 'startups' | 'b2b' | 'investors';
@@ -518,9 +784,20 @@ export const consultingAudiences: ConsultingAudience[] = [
     headline: '진로와 프로젝트로\n피지컬 AI를 연결합니다',
     headlineEn: 'Connecting physical AI\nto your path and projects',
     desc: '피지컬 AI 분야로 진로를 고민하는 학생, 졸업 프로젝트나 공모전을 준비하는 팀을 위한 방향 제시와 실습 연계를 제공합니다.',
-    descEn: 'Guidance and hands-on connections for students considering a career in physical AI, and for teams preparing a capstone project or competition entry.',
-    offers: ['분야 개요와 진로 로드맵 상담', '졸업작품·공모전 주제 발굴 코칭', '로봇 실습 연계 및 장비 자문', '포트폴리오·발표 자료 피드백'],
-    offersEn: ['Field overview and career roadmap consulting', 'Coaching to find a capstone or competition topic', 'Hands-on robot access and equipment advice', 'Feedback on portfolios and presentation materials'],
+    descEn:
+      'Guidance and hands-on connections for students considering a career in physical AI, and for teams preparing a capstone project or competition entry.',
+    offers: [
+      '분야 개요와 진로 로드맵 상담',
+      '졸업작품·공모전 주제 발굴 코칭',
+      '로봇 실습 연계 및 장비 자문',
+      '포트폴리오·발표 자료 피드백',
+    ],
+    offersEn: [
+      'Field overview and career roadmap consulting',
+      'Coaching to find a capstone or competition topic',
+      'Hands-on robot access and equipment advice',
+      'Feedback on portfolios and presentation materials',
+    ],
   },
   {
     key: 'startups',
@@ -530,9 +807,20 @@ export const consultingAudiences: ConsultingAudience[] = [
     headline: '아이디어를\n검증 가능한 제품으로',
     headlineEn: 'Turning an idea into\na testable product',
     desc: '피지컬 AI 아이템을 준비 중인 예비창업자와 초기 스타트업을 위해, 기술 타당성 검토부터 MVP·PoC 설계까지 실행 중심으로 돕습니다.',
-    descEn: 'Hands-on support for aspiring founders and early-stage startups building a physical AI product — from technical feasibility review to MVP/PoC design.',
-    offers: ['기술·시장 타당성 진단', 'MVP/PoC 범위 설계 및 로드맵', '정부지원사업·R&D 연계 자문', '투자 유치용 기술 자료 정리'],
-    offersEn: ['Technical & market feasibility assessment', 'MVP/PoC scope design and roadmap', 'Advice on government funding & R&D programs', 'Preparing technical materials for fundraising'],
+    descEn:
+      'Hands-on support for aspiring founders and early-stage startups building a physical AI product — from technical feasibility review to MVP/PoC design.',
+    offers: [
+      '기술·시장 타당성 진단',
+      'MVP/PoC 범위 설계 및 로드맵',
+      '정부지원사업·R&D 연계 자문',
+      '투자 유치용 기술 자료 정리',
+    ],
+    offersEn: [
+      'Technical & market feasibility assessment',
+      'MVP/PoC scope design and roadmap',
+      'Advice on government funding & R&D programs',
+      'Preparing technical materials for fundraising',
+    ],
   },
   {
     key: 'b2b',
@@ -542,9 +830,20 @@ export const consultingAudiences: ConsultingAudience[] = [
     headline: '현장에 맞는\n도입 시나리오 설계',
     headlineEn: 'Designing an adoption\nscenario for your site',
     desc: '제조·물류·서비스 현장에 피지컬 AI를 도입하려는 기업을 위해, 업무 프로세스 분석부터 로봇 적용 시나리오, 조직 준비까지 함께 설계합니다.',
-    descEn: 'For companies adopting physical AI in manufacturing, logistics, or service settings — from process analysis to robot deployment scenarios and organizational readiness.',
-    offers: ['업무 프로세스·적용 지점 진단', '업종별 활용 사례 및 도입 로드맵', 'Demo·PoC 기획 및 현장 실증', '실무자 교육 및 조직 준비 컨설팅'],
-    offersEn: ['Diagnosing workflows and application points', 'Industry use cases and an adoption roadmap', 'Demo/PoC planning and on-site validation', 'Staff training and organizational readiness consulting'],
+    descEn:
+      'For companies adopting physical AI in manufacturing, logistics, or service settings — from process analysis to robot deployment scenarios and organizational readiness.',
+    offers: [
+      '업무 프로세스·적용 지점 진단',
+      '업종별 활용 사례 및 도입 로드맵',
+      'Demo·PoC 기획 및 현장 실증',
+      '실무자 교육 및 조직 준비 컨설팅',
+    ],
+    offersEn: [
+      'Diagnosing workflows and application points',
+      'Industry use cases and an adoption roadmap',
+      'Demo/PoC planning and on-site validation',
+      'Staff training and organizational readiness consulting',
+    ],
   },
   {
     key: 'investors',
@@ -554,65 +853,212 @@ export const consultingAudiences: ConsultingAudience[] = [
     headline: '기술을 이해하고\n판단할 수 있도록',
     headlineEn: 'Understand the technology\nwell enough to judge it',
     desc: '피지컬 AI 분야 투자를 검토하는 투자자와 심사역을 위해, 기술 브리핑과 기술 실사(Tech Due Diligence) 관점의 자료를 제공합니다.',
-    descEn: 'For investors and analysts evaluating physical AI opportunities — technology briefings and materials framed for technical due diligence.',
-    offers: ['비전문가를 위한 기술 브리핑', '기술 실사(Tech DD) 체크리스트 자문', '포트폴리오사 로봇 데모 참관 주선', '시장·경쟁 기술 동향 리포트'],
-    offersEn: ['Technology briefings for non-specialists', 'Advice on a technical due-diligence checklist', 'Arranging robot demo visits for portfolio companies', 'Market and competing-technology trend reports'],
+    descEn:
+      'For investors and analysts evaluating physical AI opportunities — technology briefings and materials framed for technical due diligence.',
+    offers: [
+      '비전문가를 위한 기술 브리핑',
+      '기술 실사(Tech DD) 체크리스트 자문',
+      '포트폴리오사 로봇 데모 참관 주선',
+      '시장·경쟁 기술 동향 리포트',
+    ],
+    offersEn: [
+      'Technology briefings for non-specialists',
+      'Advice on a technical due-diligence checklist',
+      'Arranging robot demo visits for portfolio companies',
+      'Market and competing-technology trend reports',
+    ],
   },
 ];
 
 export const consultingProcess = [
-  { step: '01', title: '진단', titleEn: 'Diagnosis', desc: '현재 이해도, 목표, 제약 조건을 함께 확인합니다.', descEn: 'Together we assess your current understanding, goals, and constraints.' },
-  { step: '02', title: '기회 분석', titleEn: 'Opportunity analysis', desc: '업종·상황에 맞는 피지컬 AI 활용 기회를 도출합니다.', descEn: 'We identify physical AI opportunities suited to your industry and situation.' },
-  { step: '03', title: 'Demo·PoC', titleEn: 'Demo · PoC', desc: '실물 로봇으로 소규모 개념 검증을 설계·실행합니다.', descEn: 'We design and run a small-scale proof of concept with a real robot.' },
-  { step: '04', title: '실행 로드맵', titleEn: 'Execution roadmap', desc: '도입·투자·창업 등 다음 단계를 위한 실행 계획을 제시합니다.', descEn: 'We lay out an execution plan for your next step — adoption, investment, or launching a company.' },
+  {
+    step: '01',
+    title: '진단',
+    titleEn: 'Diagnosis',
+    desc: '현재 이해도, 목표, 제약 조건을 함께 확인합니다.',
+    descEn: 'Together we assess your current understanding, goals, and constraints.',
+  },
+  {
+    step: '02',
+    title: '기회 분석',
+    titleEn: 'Opportunity analysis',
+    desc: '업종·상황에 맞는 피지컬 AI 활용 기회를 도출합니다.',
+    descEn: 'We identify physical AI opportunities suited to your industry and situation.',
+  },
+  {
+    step: '03',
+    title: 'Demo·PoC',
+    titleEn: 'Demo · PoC',
+    desc: '실물 로봇으로 소규모 개념 검증을 설계·실행합니다.',
+    descEn: 'We design and run a small-scale proof of concept with a real robot.',
+  },
+  {
+    step: '04',
+    title: '실행 로드맵',
+    titleEn: 'Execution roadmap',
+    desc: '도입·투자·창업 등 다음 단계를 위한 실행 계획을 제시합니다.',
+    descEn:
+      'We lay out an execution plan for your next step — adoption, investment, or launching a company.',
+  },
 ];
 
 export const consultingTopics = [
-  { title: '피지컬 AI 기술의 이해', titleEn: 'Understanding physical AI', desc: '인지-판단-제어(Sense-Decide-Act)와 VLA 구조 등 핵심 개념을 쉽게 설명합니다.', descEn: 'We explain core concepts like the Sense-Decide-Act loop and VLA architecture in plain terms.' },
-  { title: '업종별 활용 사례', titleEn: 'Use cases by industry', desc: '제조·물류·서비스·교육 등 분야별 도입 사례와 적용 가능성을 분석합니다.', descEn: 'We analyze adoption cases and applicability across manufacturing, logistics, service, education, and more.' },
-  { title: 'Build vs Buy vs Rent', titleEn: 'Build vs. Buy vs. Rent', desc: '자체 개발, 솔루션 구매, 로봇 대여 중 상황에 맞는 접근을 판단합니다.', descEn: 'We help you decide between building in-house, buying a solution, or renting a robot.' },
-  { title: 'Demo·PoC 설계', titleEn: 'Demo · PoC design', desc: '실물 로봇으로 소규모 개념 검증을 설계하고, 성공 기준을 함께 정의합니다.', descEn: 'We design a small-scale proof of concept with a real robot and define success criteria together.' },
-  { title: '투자·사업화 판단 자료', titleEn: 'Materials for investment & business decisions', desc: '기술 실사, 사업 타당성 검토에 필요한 근거 자료를 정리해 드립니다.', descEn: 'We compile the supporting materials you need for technical due diligence and feasibility review.' },
-  { title: '조직 준비 및 교육', titleEn: 'Organizational readiness & training', desc: '현업 인력이 피지컬 AI를 다룰 수 있도록 교육·운영 체계를 설계합니다.', descEn: 'We design training and operating structures so your staff can work with physical AI.' },
+  {
+    title: '피지컬 AI 기술의 이해',
+    titleEn: 'Understanding physical AI',
+    desc: '인지-판단-제어(Sense-Decide-Act)와 VLA 구조 등 핵심 개념을 쉽게 설명합니다.',
+    descEn:
+      'We explain core concepts like the Sense-Decide-Act loop and VLA architecture in plain terms.',
+  },
+  {
+    title: '업종별 활용 사례',
+    titleEn: 'Use cases by industry',
+    desc: '제조·물류·서비스·교육 등 분야별 도입 사례와 적용 가능성을 분석합니다.',
+    descEn:
+      'We analyze adoption cases and applicability across manufacturing, logistics, service, education, and more.',
+  },
+  {
+    title: 'Build vs Buy vs Rent',
+    titleEn: 'Build vs. Buy vs. Rent',
+    desc: '자체 개발, 솔루션 구매, 로봇 대여 중 상황에 맞는 접근을 판단합니다.',
+    descEn: 'We help you decide between building in-house, buying a solution, or renting a robot.',
+  },
+  {
+    title: 'Demo·PoC 설계',
+    titleEn: 'Demo · PoC design',
+    desc: '실물 로봇으로 소규모 개념 검증을 설계하고, 성공 기준을 함께 정의합니다.',
+    descEn:
+      'We design a small-scale proof of concept with a real robot and define success criteria together.',
+  },
+  {
+    title: '투자·사업화 판단 자료',
+    titleEn: 'Materials for investment & business decisions',
+    desc: '기술 실사, 사업 타당성 검토에 필요한 근거 자료를 정리해 드립니다.',
+    descEn:
+      'We compile the supporting materials you need for technical due diligence and feasibility review.',
+  },
+  {
+    title: '조직 준비 및 교육',
+    titleEn: 'Organizational readiness & training',
+    desc: '현업 인력이 피지컬 AI를 다룰 수 있도록 교육·운영 체계를 설계합니다.',
+    descEn: 'We design training and operating structures so your staff can work with physical AI.',
+  },
 ];
 
-export const customers = [
-  { type: '기업 경영진', path: ['로봇 체험', '직원 교육', '컨설팅', 'Demo·PoC', '운영 지원'] },
-  { type: '대학·학생', path: ['기술 입문', '로봇 체험', '학생 실습', '프로젝트·연구'] },
-  { type: '사업가·투자자', path: ['기술 브리핑', '기회 분석', '컨설팅', '사업·투자 검토'] },
-  { type: '행사·전시', path: ['로봇 대여', '쇼케이스', '관람객 체험', '브랜드 콘텐츠'] },
-];
-
-// ---------------------------------------------------------------------------
 // CS / AS page content — from the 2026.10.06 deck (slide 7, with slides 9–11).
 // The deck's notes say in-house repair, warranties and SLAs are not confirmed
 // and the scope is agreed per customer, so nothing here promises them.
 
 export const supportAreas = [
-  { title: '운영 안내와 기술 지원', titleEn: 'Operating guidance & technical support', desc: '장비 구성과 기본 운영 방법을 안내하고, 운영 중에 생기는 기술적인 질문에 답합니다.', descEn: 'We walk you through the setup and day-to-day operation, and answer technical questions as they come up.' },
-  { title: '사용 교육과 문제 대응', titleEn: 'User training & troubleshooting', desc: '현장 담당자가 직접 다룰 수 있도록 사용 교육을 진행하고, 문제가 생기면 원인을 함께 확인해 대응합니다.', descEn: 'We train your staff to run the robot themselves, and when something goes wrong we work out the cause with you.' },
-  { title: '유지관리 · 지원 연계', titleEn: 'Maintenance & support referrals', desc: '점검이나 유지관리가 필요할 때 알맞은 지원 경로로 연결해, 장비를 계속 쓸 수 있도록 돕습니다.', descEn: 'When inspection or maintenance is needed, we connect you to the right support path so the equipment stays in use.' },
+  {
+    title: '운영 안내와 기술 지원',
+    titleEn: 'Operating guidance & technical support',
+    desc: '장비 구성과 기본 운영 방법을 안내하고, 운영 중에 생기는 기술적인 질문에 답합니다.',
+    descEn:
+      'We walk you through the setup and day-to-day operation, and answer technical questions as they come up.',
+  },
+  {
+    title: '사용 교육과 문제 대응',
+    titleEn: 'User training & troubleshooting',
+    desc: '현장 담당자가 직접 다룰 수 있도록 사용 교육을 진행하고, 문제가 생기면 원인을 함께 확인해 대응합니다.',
+    descEn:
+      'We train your staff to run the robot themselves, and when something goes wrong we work out the cause with you.',
+  },
+  {
+    title: '유지관리 · 지원 연계',
+    titleEn: 'Maintenance & support referrals',
+    desc: '점검이나 유지관리가 필요할 때 알맞은 지원 경로로 연결해, 장비를 계속 쓸 수 있도록 돕습니다.',
+    descEn:
+      'When inspection or maintenance is needed, we connect you to the right support path so the equipment stays in use.',
+  },
 ];
 
 export const supportAudiences = [
-  { title: '기업', titleEn: 'Companies', desc: '로봇을 도입했거나 Demo·PoC를 마치고 실제 운영으로 넘어가는 기업', descEn: 'Companies that have brought in a robot, or are moving from a Demo/PoC into real operation' },
-  { title: '기관', titleEn: 'Institutions', desc: '대학·연구소처럼 여러 사람이 같은 장비를 함께 쓰는 기관', descEn: 'Universities, labs and other institutions where many people share the same equipment' },
-  { title: '운영 조직', titleEn: 'Operating teams', desc: '교육장·전시장 등에서 로봇을 매일 운영하는 현장 팀', descEn: 'On-site teams running robots every day in classrooms, showrooms and exhibitions' },
+  {
+    title: '기업',
+    titleEn: 'Companies',
+    desc: '로봇을 도입했거나 Demo·PoC를 마치고 실제 운영으로 넘어가는 기업',
+    descEn:
+      'Companies that have brought in a robot, or are moving from a Demo/PoC into real operation',
+  },
+  {
+    title: '기관',
+    titleEn: 'Institutions',
+    desc: '대학·연구소처럼 여러 사람이 같은 장비를 함께 쓰는 기관',
+    descEn: 'Universities, labs and other institutions where many people share the same equipment',
+  },
+  {
+    title: '운영 조직',
+    titleEn: 'Operating teams',
+    desc: '교육장·전시장 등에서 로봇을 매일 운영하는 현장 팀',
+    descEn: 'On-site teams running robots every day in classrooms, showrooms and exhibitions',
+  },
 ];
 
 export const supportProcess = [
-  { step: '01', title: '문의 접수', titleEn: 'Tell us', desc: '사용 중인 장비, 운영 환경, 겪고 있는 문제를 알려주세요.', descEn: 'Tell us about your equipment, how it is used, and the problem you are facing.' },
-  { step: '02', title: '상황 확인', titleEn: 'Review', desc: '현재 상태와 필요한 지원 내용을 함께 확인합니다.', descEn: 'Together we review the current state and the support you need.' },
-  { step: '03', title: '지원 범위 협의', titleEn: 'Agree the scope', desc: '장비와 운영 조건에 맞춰 지원 범위와 방식을 정합니다.', descEn: 'We agree the scope and form of support to fit your equipment and operating conditions.' },
-  { step: '04', title: '지원 진행', titleEn: 'Support', desc: '운영 안내·교육·문제 대응을 진행하고, 필요하면 유지관리 지원으로 연결합니다.', descEn: 'We provide guidance, training and troubleshooting, and connect you to maintenance support when needed.' },
+  {
+    step: '01',
+    title: '문의 접수',
+    titleEn: 'Tell us',
+    desc: '사용 중인 장비, 운영 환경, 겪고 있는 문제를 알려주세요.',
+    descEn: 'Tell us about your equipment, how it is used, and the problem you are facing.',
+  },
+  {
+    step: '02',
+    title: '상황 확인',
+    titleEn: 'Review',
+    desc: '현재 상태와 필요한 지원 내용을 함께 확인합니다.',
+    descEn: 'Together we review the current state and the support you need.',
+  },
+  {
+    step: '03',
+    title: '지원 범위 협의',
+    titleEn: 'Agree the scope',
+    desc: '장비와 운영 조건에 맞춰 지원 범위와 방식을 정합니다.',
+    descEn:
+      'We agree the scope and form of support to fit your equipment and operating conditions.',
+  },
+  {
+    step: '04',
+    title: '지원 진행',
+    titleEn: 'Support',
+    desc: '운영 안내·교육·문제 대응을 진행하고, 필요하면 유지관리 지원으로 연결합니다.',
+    descEn:
+      'We provide guidance, training and troubleshooting, and connect you to maintenance support when needed.',
+  },
 ];
 
 // Slide 9: the six-step path from first contact to ongoing use. CS/AS is the last step.
 export const supportJourney = [
   { title: '인식', titleEn: 'Awareness', desc: '피지컬 AI 세미나', descEn: 'Physical AI seminar' },
-  { title: '체험', titleEn: 'Experience', desc: '로봇 직접 보고 경험하기', descEn: 'See and try the robots' },
-  { title: '교육', titleEn: 'Education', desc: '학생·재직자 학습', descEn: 'Students and staff learn' },
-  { title: '컨설팅', titleEn: 'Consulting', desc: '산업·업무 연결', descEn: 'Connect it to your work' },
-  { title: 'Demo / PoC', titleEn: 'Demo / PoC', desc: '소규모 실증', descEn: 'Small-scale validation' },
-  { title: '도입 · 지원', titleEn: 'Adoption & support', desc: '교육·운영 지원', descEn: 'Training and operating support' },
+  {
+    title: '체험',
+    titleEn: 'Experience',
+    desc: '로봇 직접 보고 경험하기',
+    descEn: 'See and try the robots',
+  },
+  {
+    title: '교육',
+    titleEn: 'Education',
+    desc: '학생·재직자 학습',
+    descEn: 'Students and staff learn',
+  },
+  {
+    title: '컨설팅',
+    titleEn: 'Consulting',
+    desc: '산업·업무 연결',
+    descEn: 'Connect it to your work',
+  },
+  {
+    title: 'Demo / PoC',
+    titleEn: 'Demo / PoC',
+    desc: '소규모 실증',
+    descEn: 'Small-scale validation',
+  },
+  {
+    title: '도입 · 지원',
+    titleEn: 'Adoption & support',
+    desc: '교육·운영 지원',
+    descEn: 'Training and operating support',
+  },
 ];

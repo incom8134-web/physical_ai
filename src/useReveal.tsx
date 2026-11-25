@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-export function useReveal<T extends HTMLElement>(threshold = 0.16) {
+function useReveal<T extends HTMLElement>(threshold = 0.16) {
   const ref = useRef<T | null>(null);
   const [visible, setVisible] = useState(false);
 
@@ -13,8 +13,8 @@ export function useReveal<T extends HTMLElement>(threshold = 0.16) {
       return;
     }
     const io = new IntersectionObserver(
-      entries => {
-        entries.forEach(e => {
+      (entries) => {
+        entries.forEach((e) => {
           if (e.isIntersecting) {
             setVisible(true);
             io.unobserve(el);
@@ -31,22 +31,19 @@ export function useReveal<T extends HTMLElement>(threshold = 0.16) {
 }
 
 export function Reveal({
-  as: As = 'div',
   delay = 0,
   className,
   style,
   children,
 }: {
-  as?: keyof React.JSX.IntrinsicElements;
   delay?: number;
   className?: string;
   style?: React.CSSProperties;
   children: React.ReactNode;
 }) {
-  const { ref, visible } = useReveal<HTMLElement>();
-  const Tag = As as any;
+  const { ref, visible } = useReveal<HTMLDivElement>();
   return (
-    <Tag
+    <div
       ref={ref}
       className={className}
       style={{
@@ -58,6 +55,6 @@ export function Reveal({
       }}
     >
       {children}
-    </Tag>
+    </div>
   );
 }

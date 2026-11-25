@@ -1,0 +1,38 @@
+name: Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        manager: [npm, pnpm]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: pnpm/action-setup@v4
+        if: matrix.manager == 'pnpm'
+        with:
+          version: 10.34.3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: ${{ matrix.manager }}
+      - run: npm ci --no-audit --no-fund
+        if: matrix.manager == 'npm'
+      - run: pnpm install --frozen-lockfile
+        if: matrix.manager == 'pnpm'
+      - run: ${{ matrix.manager }} run check
+      - run: ${{ matrix.manager }} run check:attribution
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}

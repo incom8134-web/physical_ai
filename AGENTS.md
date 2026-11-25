@@ -2,6 +2,14 @@
 
 React + Vite + Tailwind CSS project running inside Figma Make.
 
+## Maintenance
+
+- Preserve the current Korean/English content, routing, media and Figma integrations.
+- Run `npm run check` before publishing changes. Use `npm run format` for formatting.
+- Use `incom8134-web <incom8134@gmail.com>` for repository maintenance commits.
+- Do not add automated-tool credits, co-author trailers or generation/session footers to commits or pull requests.
+- Keep npm and pnpm lockfiles synchronized when dependencies change.
+
 ## Development Server
 
 A Vite development server is **already running** on `$PORT` (default 8443). You don't need to start it manually.
