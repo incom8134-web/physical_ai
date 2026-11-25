@@ -1,24 +1,5 @@
-/**
- * Inquiry delivery.
- *
- * The site is a static build with no server of its own, so the browser cannot
- * open an SMTP connection and cannot deliver mail by itself. The form posts to
- * a small relay service instead, which forwards the submission to the inbox
- * registered with the access key — no mail client opens on the visitor's
- * machine.
- *
- * Setup (one time, ~2 minutes):
- *   1. Go to https://web3forms.com and enter incom2794@naver.com.
- *   2. The access key arrives at that address by email.
- *   3. Put it in `.env` at the project root:  VITE_WEB3FORMS_KEY=<the key>
- *      (copy `.env.example` to `.env`), then rebuild.
- *
- * The destination inbox is whatever address the key was registered to, so the
- * key must be created with incom2794@naver.com — it is not set from here.
- *
- * Until a key is configured, the form does not pretend to send: it says the
- * relay is not connected and offers the email address as a fallback.
- */
+// Web3Forms delivers to the inbox registered with VITE_WEB3FORMS_KEY.
+// Without a key, the contact form opens a prefilled mailto link.
 
 export const CONTACT_EMAIL = 'incom2794@naver.com';
 
@@ -42,7 +23,10 @@ export type InquiryResult =
   | { ok: true }
   | { ok: false; reason: 'not-configured' | 'rejected' | 'network'; detail?: string };
 
-export async function sendInquiry(payload: InquiryPayload, lang: 'ko' | 'en'): Promise<InquiryResult> {
+export async function sendInquiry(
+  payload: InquiryPayload,
+  lang: 'ko' | 'en',
+): Promise<InquiryResult> {
   // A bot filled the hidden field — accept silently, deliver nothing.
   if (payload.company) return { ok: true };
 
@@ -79,12 +63,19 @@ export async function sendInquiry(payload: InquiryPayload, lang: 'ko' | 'en'): P
       body: JSON.stringify(body),
     });
 
-    const data = (await res.json().catch(() => null)) as { success?: boolean; message?: string } | null;
+    const data = (await res.json().catch(() => null)) as {
+      success?: boolean;
+      message?: string;
+    } | null;
 
     if (res.ok && data?.success) return { ok: true };
     return { ok: false, reason: 'rejected', detail: data?.message ?? `HTTP ${res.status}` };
   } catch (err) {
-    return { ok: false, reason: 'network', detail: err instanceof Error ? err.message : String(err) };
+    return {
+      ok: false,
+      reason: 'network',
+      detail: err instanceof Error ? err.message : String(err),
+    };
   }
 }
 
@@ -94,9 +85,24 @@ export async function sendInquiry(payload: InquiryPayload, lang: 'ko' | 'en'): P
  */
 export function plainInquiry(payload: InquiryPayload, lang: 'ko' | 'en'): string {
   const isKo = lang === 'ko';
-  return (isKo
-    ? [`문의 유형: ${payload.type ?? '-'}`, `이름: ${payload.name}`, `소속·회사: ${payload.org || '-'}`, `이메일: ${payload.email}`, '', payload.message]
-    : [`Inquiry type: ${payload.type ?? '-'}`, `Name: ${payload.name}`, `Organization: ${payload.org || '-'}`, `Email: ${payload.email}`, '', payload.message]
+  return (
+    isKo
+      ? [
+          `문의 유형: ${payload.type ?? '-'}`,
+          `이름: ${payload.name}`,
+          `소속·회사: ${payload.org || '-'}`,
+          `이메일: ${payload.email}`,
+          '',
+          payload.message,
+        ]
+      : [
+          `Inquiry type: ${payload.type ?? '-'}`,
+          `Name: ${payload.name}`,
+          `Organization: ${payload.org || '-'}`,
+          `Email: ${payload.email}`,
+          '',
+          payload.message,
+        ]
   ).join('\n');
 }
 

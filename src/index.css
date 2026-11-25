@@ -45,11 +45,13 @@
   --dim: #283141;
   --faint: #3b4554;
   --grid: rgba(17, 24, 39, 0.045);
-  --shadow-card: 0 1px 2px rgba(17,24,39,0.05), 0 10px 30px -14px rgba(17,24,39,0.16);
-  --shadow-hover: 0 4px 12px rgba(17,24,39,0.08), 0 24px 48px -18px rgba(26,99,216,0.28);
+  --shadow-card: 0 1px 2px rgba(17, 24, 39, 0.05), 0 10px 30px -14px rgba(17, 24, 39, 0.16);
+  --shadow-hover: 0 4px 12px rgba(17, 24, 39, 0.08), 0 24px 48px -18px rgba(26, 99, 216, 0.28);
 }
 .theme-light,
-.theme-dark .card { color: var(--text); }
+.theme-dark .card {
+  color: var(--text);
+}
 
 /* Navy band. Everything inside reads the same tokens, re-toned for a dark ground. */
 .theme-dark {
@@ -73,26 +75,36 @@
   --dim: #edf1f8;
   --faint: #cdd7e8;
   --grid: rgba(255, 255, 255, 0.05);
-  --shadow-card: 0 1px 2px rgba(0,0,0,0.3), 0 12px 32px -12px rgba(0,0,0,0.45);
-  --shadow-hover: 0 4px 10px rgba(0,0,0,0.35), 0 24px 48px -16px rgba(59,130,246,0.35);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -12px rgba(0, 0, 0, 0.45);
+  --shadow-hover: 0 4px 10px rgba(0, 0, 0, 0.35), 0 24px 48px -16px rgba(59, 130, 246, 0.35);
   background-color: var(--void);
   color: var(--text);
 }
 
 /* The blue mark disappears on navy; show it white there, as the main site does. */
-.theme-dark .logo-mark { filter: brightness(0) invert(1); }
+.theme-dark .logo-mark {
+  filter: brightness(0) invert(1);
+}
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
 
-html { font-size: 16px; }
+html {
+  font-size: 16px;
+}
 
 body {
   margin: 0;
   line-height: 1.6;
   background-color: var(--void);
   color: var(--text);
-  font-family: 'Pretendard Variable', Pretendard, system-ui, -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  font-family:
+    'Pretendard Variable', Pretendard, system-ui, -apple-system, 'Apple SD Gothic Neo',
+    'Malgun Gothic', sans-serif;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   /* Break Korean between words, not inside them (keeps "지니에듀테크(주)는" whole). */
@@ -112,14 +124,33 @@ body {
   background-color: var(--soft-bg);
 }
 
-::selection { background: var(--beam); color: #ffffff; }
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: var(--deck); }
-::-webkit-scrollbar-thumb { background: var(--rail); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--beam); }
-:focus-visible { outline: 2px solid var(--beam); outline-offset: 2px; border-radius: 2px; }
+::selection {
+  background: var(--beam);
+  color: #ffffff;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--deck);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--rail);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--beam);
+}
+:focus-visible {
+  outline: 2px solid var(--beam);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
 
-a { color: inherit; }
+a {
+  color: inherit;
+}
 
 /* Elevation card — MUI-style resting/hover elevation, tuned for a light surface */
 .card {
@@ -127,7 +158,10 @@ a { color: inherit; }
   border: 1px solid var(--rail);
   border-radius: 16px;
   box-shadow: var(--shadow-card);
-  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1), border-color 0.35s ease;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease;
 }
 .card-hover:hover {
   transform: translateY(-4px);
@@ -137,27 +171,59 @@ a { color: inherit; }
 /* Service cards carry their own accent, so the hover border follows it. */
 .service-card.card-hover:hover {
   border-color: var(--accent, var(--beam));
-  box-shadow: 0 4px 12px rgba(17,24,39,0.08), 0 24px 48px -16px color-mix(in srgb, var(--accent, #1a63d8) 30%, transparent);
+  box-shadow:
+    0 4px 12px rgba(17, 24, 39, 0.08),
+    0 24px 48px -16px color-mix(in srgb, var(--accent, #1a63d8) 30%, transparent);
 }
 
 /* Hero link to the main website: the arrow nudges toward the exit on hover. */
-.main-site-arrow { transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); }
-.main-site-card:hover .main-site-arrow { transform: translate(2px, -2px); }
+.main-site-arrow {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.main-site-card:hover .main-site-arrow {
+  transform: translate(2px, -2px);
+}
 
 /* Intro video controls (sound on/off, play/pause) over the bottom-right corner. */
-.video-ctrls { position: absolute; right: 10px; bottom: 10px; display: flex; gap: 0.4rem; }
+.video-ctrls {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  gap: 0.4rem;
+}
 .video-ctrl {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  padding: 0.4rem 0.75rem; border-radius: 999px; cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.25); background: rgba(13, 27, 61, 0.8);
-  color: #ffffff; font-size: 0.78rem; font-weight: 700; backdrop-filter: blur(6px);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(13, 27, 61, 0.8);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  backdrop-filter: blur(6px);
   transition: background 0.2s ease;
 }
-.video-ctrl:hover { background: rgba(26, 99, 216, 0.92); }
+.video-ctrl:hover {
+  background: rgba(26, 99, 216, 0.92);
+}
 @media (min-width: 768px) {
-  .video-ctrls-lg { right: 18px; bottom: 18px; gap: 0.5rem; }
-  .video-ctrl-lg { padding: 0.7rem 1.15rem; font-size: 0.92rem; }
-  .video-ctrl-lg svg { width: 16px; height: 16px; }
+  .video-ctrls-lg {
+    right: 18px;
+    bottom: 18px;
+    gap: 0.5rem;
+  }
+  .video-ctrl-lg {
+    padding: 0.7rem 1.15rem;
+    font-size: 0.92rem;
+  }
+  .video-ctrl-lg svg {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 /* Poster carousel rail — a thin scrollbar that matches the light surface. */
@@ -166,11 +232,22 @@ a { color: inherit; }
   scrollbar-color: var(--rail) transparent;
   -webkit-overflow-scrolling: touch;
 }
-.poster-rail::-webkit-scrollbar { height: 6px; }
-.poster-rail::-webkit-scrollbar-track { background: transparent; }
-.poster-rail::-webkit-scrollbar-thumb { background: var(--rail); border-radius: 3px; }
-.poster-rail::-webkit-scrollbar-thumb:hover { background: var(--beam); }
-.poster-card:hover { border-color: var(--lock); }
+.poster-rail::-webkit-scrollbar {
+  height: 6px;
+}
+.poster-rail::-webkit-scrollbar-track {
+  background: transparent;
+}
+.poster-rail::-webkit-scrollbar-thumb {
+  background: var(--rail);
+  border-radius: 3px;
+}
+.poster-rail::-webkit-scrollbar-thumb:hover {
+  background: var(--beam);
+}
+.poster-card:hover {
+  border-color: var(--lock);
+}
 
 .link-underline {
   position: relative;
@@ -179,10 +256,12 @@ a { color: inherit; }
 .link-underline::after {
   content: '';
   position: absolute;
-  left: 0; right: 100%; bottom: -3px;
+  left: 0;
+  right: 100%;
+  bottom: -3px;
   height: 1.5px;
   background: var(--beam);
-  transition: right 0.3s cubic-bezier(0.16,1,0.3,1);
+  transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .link-underline:hover::after,
 .link-underline.active::after {
@@ -197,10 +276,16 @@ a { color: inherit; }
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
   text-decoration: none;
 }
-.btn:active { transform: scale(0.97); }
+.btn:active {
+  transform: scale(0.97);
+}
 .btn-primary {
   background: var(--btn-bg);
   color: #ffffff;
@@ -226,57 +311,122 @@ a { color: inherit; }
 /* The header CTA would crowd the logo on a phone; the drawer carries it there.
    A plain `hidden` utility loses to `.btn`'s own display rule, so scope it. */
 @media (max-width: 639px) {
-  .nav-cta { display: none; }
+  .nav-cta {
+    display: none;
+  }
 }
 
 .step-btn {
-  transition: background 0.3s cubic-bezier(0.16,1,0.3,1), color 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.16,1,0.3,1);
+  transition:
+    background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.step-btn:hover:not([aria-selected="true"]) {
+.step-btn:hover:not([aria-selected='true']) {
   border-color: var(--beam);
   transform: translateY(-2px);
 }
 
-::-moz-selection { background: var(--beam); color: #ffffff; }
+::-moz-selection {
+  background: var(--beam);
+  color: #ffffff;
+}
 
 @keyframes blip {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.35; transform: scale(0.82); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.82);
+  }
 }
-.blip { animation: blip 2.4s ease-in-out infinite; }
+.blip {
+  animation: blip 2.4s ease-in-out infinite;
+}
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
-.marquee-inner { animation: marquee 32s linear infinite; display: flex; width: max-content; }
+.marquee-inner {
+  animation: marquee 32s linear infinite;
+  display: flex;
+  width: max-content;
+}
 
 @keyframes latch {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.latch { animation: latch 0.35s cubic-bezier(0.16,1,0.3,1) both; }
+.latch {
+  animation: latch 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
 
 @keyframes sweep {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
-.sweep { animation: sweep 0.6s cubic-bezier(0.16,1,0.3,1) both; transform-origin: left; }
+.sweep {
+  animation: sweep 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transform-origin: left;
+}
 
 @keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-.spin-slow { animation: spin-slow 30s linear infinite; }
+.spin-slow {
+  animation: spin-slow 30s linear infinite;
+}
 
 @keyframes hero-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
 }
-.hero-float { animation: hero-float 5.5s ease-in-out infinite; }
+.hero-float {
+  animation: hero-float 5.5s ease-in-out infinite;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .marquee-inner, .blip, .latch, .sweep, .spin-slow, .hero-float { animation: none !important; }
-  * { transition-duration: 0.01ms !important; }
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-inner,
+  .blip,
+  .latch,
+  .sweep,
+  .spin-slow,
+  .hero-float {
+    animation: none !important;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+  }
 }

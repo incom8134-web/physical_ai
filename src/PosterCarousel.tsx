@@ -55,8 +55,12 @@ export default function PosterCarousel({
       <div className="flex items-center justify-between gap-4 mb-4">
         <span style={{ ...mono('0.78rem'), color: 'var(--faint)' }}>{labels.hint}</span>
         <div className="hidden md:flex items-center gap-2">
-          <button onClick={() => scrollBy(-1)} aria-label="Previous" style={arrowBtn}>←</button>
-          <button onClick={() => scrollBy(1)} aria-label="Next" style={arrowBtn}>→</button>
+          <button onClick={() => scrollBy(-1)} aria-label="Previous" style={arrowBtn}>
+            ←
+          </button>
+          <button onClick={() => scrollBy(1)} aria-label="Next" style={arrowBtn}>
+            →
+          </button>
         </div>
       </div>
 
@@ -65,10 +69,10 @@ export default function PosterCarousel({
         className="poster-rail flex gap-4 pb-3"
         style={{ overflowX: 'auto', scrollSnapType: 'x mandatory', scrollPaddingLeft: '0.25rem' }}
       >
-        {posterCards.map(card => (
+        {posterCards.map((card) => (
           <button
             key={card.key}
-            onClick={e => {
+            onClick={(e) => {
               lastTrigger.current = e.currentTarget;
               setActive(card);
             }}
@@ -85,18 +89,33 @@ export default function PosterCarousel({
               flexDirection: 'column',
             }}
           >
-            <div style={{ position: 'relative', aspectRatio: '3 / 4', overflow: 'hidden', background: 'var(--panel)' }}>
+            <div
+              style={{
+                position: 'relative',
+                aspectRatio: '3 / 4',
+                overflow: 'hidden',
+                background: 'var(--panel)',
+              }}
+            >
               <img
                 src={asset(card.image)}
                 alt=""
                 loading="lazy"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' }}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'top center',
+                  display: 'block',
+                }}
               />
               <span
                 aria-hidden
                 style={{
-                  position: 'absolute', inset: 0,
-                  background: 'linear-gradient(180deg, rgba(15,27,51,0) 55%, rgba(15,27,51,0.35) 100%)',
+                  position: 'absolute',
+                  inset: 0,
+                  background:
+                    'linear-gradient(180deg, rgba(15,27,51,0) 55%, rgba(15,27,51,0.35) 100%)',
                 }}
               />
             </div>
@@ -106,8 +125,11 @@ export default function PosterCarousel({
               </span>
               <div
                 style={{
-                  fontSize: '1rem', fontWeight: 700, lineHeight: 1.5,
-                  margin: '0.45rem 0 0.7rem', color: 'var(--text)',
+                  fontSize: '1rem',
+                  fontWeight: 700,
+                  lineHeight: 1.5,
+                  margin: '0.45rem 0 0.7rem',
+                  color: 'var(--text)',
                 }}
               >
                 {lang === 'ko' ? card.title : card.titleEn}
@@ -124,10 +146,14 @@ export default function PosterCarousel({
           aria-modal="true"
           aria-label={lang === 'ko' ? active.title : active.titleEn}
           style={{
-            position: 'fixed', inset: 0, zIndex: 120,
+            position: 'fixed',
+            inset: 0,
+            zIndex: 120,
             background: 'rgba(15,27,51,0.72)',
             backdropFilter: 'blur(4px)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             padding: '1.25rem',
             overflowY: 'auto',
           }}
@@ -140,25 +166,44 @@ export default function PosterCarousel({
             <div className="grid grid-cols-1 md:grid-cols-12">
               <div
                 className="md:col-span-6"
-                style={{ background: 'var(--panel)', padding: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                style={{
+                  background: 'var(--panel)',
+                  padding: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
               >
                 <img
                   src={asset(active.image)}
                   alt={lang === 'ko' ? active.title : active.titleEn}
-                  style={{ width: '100%', maxHeight: '62vh', objectFit: 'contain', display: 'block', borderRadius: 6 }}
+                  style={{
+                    width: '100%',
+                    maxHeight: '62vh',
+                    objectFit: 'contain',
+                    display: 'block',
+                    borderRadius: 6,
+                  }}
                 />
               </div>
               <div
                 className="md:col-span-6 p-6 md:p-8"
-                style={{ borderTop: '1px solid var(--rail)', display: 'flex', flexDirection: 'column' }}
+                style={{
+                  borderTop: '1px solid var(--rail)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
               >
                 <span style={{ ...mono('0.78rem'), color: 'var(--lock)' }}>
                   {lang === 'ko' ? active.category : active.categoryEn}
                 </span>
                 <h3
                   style={{
-                    fontSize: 'clamp(1.15rem, 2.4vw, 1.6rem)', fontWeight: 800,
-                    letterSpacing: '-0.015em', lineHeight: 1.35, margin: '0.5rem 0 1rem',
+                    fontSize: 'clamp(1.15rem, 2.4vw, 1.6rem)',
+                    fontWeight: 800,
+                    letterSpacing: '-0.015em',
+                    lineHeight: 1.35,
+                    margin: '0.5rem 0 1rem',
                   }}
                 >
                   {lang === 'ko' ? active.title : active.titleEn}
@@ -166,7 +211,13 @@ export default function PosterCarousel({
                 {(lang === 'ko' ? active.body : active.bodyEn).map((para, i) => (
                   <p
                     key={i}
-                    style={{ fontSize: '1rem', lineHeight: 1.85, color: 'var(--dim)', fontWeight: 500, margin: i ? '0.9rem 0 0' : 0 }}
+                    style={{
+                      fontSize: '1rem',
+                      lineHeight: 1.85,
+                      color: 'var(--dim)',
+                      fontWeight: 500,
+                      margin: i ? '0.9rem 0 0' : 0,
+                    }}
                   >
                     {para}
                   </p>
@@ -174,7 +225,12 @@ export default function PosterCarousel({
                 <button
                   onClick={close}
                   className="btn btn-ghost"
-                  style={{ marginTop: '1.8rem', padding: '0.7rem 1.3rem', fontSize: '0.92rem', alignSelf: 'flex-start' }}
+                  style={{
+                    marginTop: '1.8rem',
+                    padding: '0.7rem 1.3rem',
+                    fontSize: '0.92rem',
+                    alignSelf: 'flex-start',
+                  }}
                 >
                   {labels.close}
                 </button>
