@@ -30,6 +30,67 @@ export type UpdateEntry = {
 
 export const updates: UpdateEntry[] = [
   {
+    slug: 'pipa-pukyong-forum-d1-2026-11-26',
+    date: '2026-11-26',
+    tag: '행사·포럼',
+    tagEn: 'Forum',
+    title: '[PIPA × 국립부경대학교] 2026 조선·해양·플랜트 피지컬 AI 테크 포럼 (D-1)',
+    titleEn:
+      '[PIPA × Pukyong National University] 2026 Shipbuilding · Offshore · Plant Physical AI Tech Forum (D-1)',
+    body: [
+      'AI와 로봇이 만들어가는 조선·해양·플랜트 산업의 안전·자동화·생산성 혁신!',
+      '현장의 변화를 직접 확인하는 자리가 내일로 다가왔습니다.',
+      '■ 일시 2026년 11월 27일(금) 10:00 ~ 14:30',
+      '■ 장소 아쿠아팰리스호텔 3층 오리온홀(연회장)',
+      '■ 주최·주관 국립부경대학교 공과대학 · (사)부산정보기술협회(PIPA)',
+      '■ 주요 내용',
+      '- 피지컬 AI 기반 산업 적용 사례',
+      '- 실증(PoC) 및 현장도입 전략',
+      '- 로봇 시연 (사족보행 로봇 등)',
+      '이번 포럼을 시작으로 피지컬 AI 기반 초광역 산학협력을 확산해 인재양성·실증거점·지능형 자율공장 구축까지 현장에서 함께 뛰겠습니다.',
+      '문의: 010-4588-2794',
+      '아무것도 하지 않으면 아무 일도 일어나지 않는다.',
+      'MH정신, 이성웅 (010-4588-2794)',
+    ],
+    bodyEn: [
+      'AI and robots are reshaping safety, automation and productivity across the shipbuilding, offshore and plant industries.',
+      'The day to see those changes on site is now one day away.',
+      '■ Date Friday, November 27, 2026, 10:00–14:30',
+      '■ Venue Orion Hall (banquet hall), 3F, Aqua Palace Hotel',
+      '■ Hosts College of Engineering, Pukyong National University · Pusan IT Partners Association (PIPA)',
+      '■ Program',
+      '- Industrial applications of physical AI',
+      '- Proof of concept (PoC) and on-site deployment strategies',
+      '- Robot demonstrations, including quadruped robots',
+      'Starting with this forum, we will spread cross-regional industry–academia cooperation built on physical AI and keep working in the field to train talent, establish proof-of-concept sites and build intelligent autonomous factories.',
+      'Inquiries: 010-4588-2794',
+      'If you do nothing, nothing happens.',
+      'MH Spirit, Lee Seong-ung (010-4588-2794)',
+    ],
+    images: [
+      {
+        src: '/images/updates/pipa-pukyong-forum-d1-20261126-01.jpg',
+        alt: "'2026 조선·해양·플랜트 피지컬 AI 테크 포럼' 포스터 — 2026. 11. 27.(금) 10:00~14:30, 아쿠아팰리스호텔 연회장",
+        altEn:
+          'Poster for the 2026 Shipbuilding · Offshore · Plant Physical AI Tech Forum — Friday, November 27, 2026, 10:00–14:30, Aqua Palace Hotel banquet hall',
+        caption:
+          '포스터 — AI와 로봇이 만드는 조선·해양·플랜트의 안전·자동화·생산성 혁신. 피지컬 AI 기반 산업 적용 사례, 실증(PoC) 및 현장도입 전략, 사족보행 로봇 등 로봇 시연이 함께 다뤄집니다.',
+        captionEn:
+          'Poster — safety, automation and productivity innovation in shipbuilding, offshore and plant industries. The forum covers industrial applications of physical AI, proof-of-concept and on-site deployment strategies, and robot demonstrations including quadruped robots.',
+      },
+      {
+        src: '/images/updates/pipa-pukyong-forum-d1-20261126-02.jpg',
+        alt: '행사장 현수막 시안 — 2026 조선·해양·플랜트 피지컬 AI 테크 포럼, 2026. 11. 27.(금) 10:00~14:30 아쿠아팰리스 호텔 3층 오리온홀',
+        altEn:
+          'Banner design for the 2026 Shipbuilding · Offshore · Plant Physical AI Tech Forum — November 27, 2026, 10:00–14:30, Orion Hall 3F, Aqua Palace Hotel',
+        caption:
+          '행사장 현수막 시안 — 국립부경대학교 공과대학과 (사)부산정보기술협회(PIPA)가 함께 여는 포럼, 11월 27일(금) 10:00~14:30 아쿠아팰리스 호텔 3층 오리온홀.',
+        captionEn:
+          'Banner design for the forum — opened together by the College of Engineering at Pukyong National University and PIPA, Friday, November 27, 10:00–14:30, Orion Hall 3F, Aqua Palace Hotel.',
+      },
+    ],
+  },
+  {
     slug: 'pipa-busan-innovation-forum-2026-11-24',
     date: '2026-11-24',
     tag: '협회 활동',
