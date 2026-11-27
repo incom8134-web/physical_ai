@@ -30,6 +30,55 @@ export type UpdateEntry = {
 
 export const updates: UpdateEntry[] = [
   {
+    slug: 'dx-spark-2040-physical-ai-2026-11-27',
+    date: '2026-11-27',
+    tag: '교육·모집',
+    tagEn: 'Training',
+    title: '[전액 무료] DX-SPARK 2040 피지컬 AI 실무역량 강화 교육 (부산 재직자 20명 선착순)',
+    titleEn:
+      '[Free] DX-SPARK 2040 Physical AI Hands-On Training (20 Busan Employees, First Come, First Served)',
+    body: [
+      '화면 속 AI는 끝났습니다. 이제 로봇팔을 직접 움직이는 피지컬 AI 시대입니다.',
+      '지니에듀테크(주)가 부산과학기술대학교(BIST)·ANCHOR 사업단·부산앵커센터와 함께 현장형 프로젝트 수업을 엽니다.',
+      '로봇팔 제어부터 데이터 수집·모방학습·실제 물체 이송까지, 4일 만에 내 손으로 완성하세요.',
+      '📅 12.19(토) ~ 12.27(일) (총 4일 · 20시간)',
+      '📍 부산과학기술대학교 교육장',
+      '👥 부산 기업 재직자·관계자 20명',
+      '🎁 교육비·교재 전액 무료 · 유관 AI 자격증 · 유료 AI 계정 지원',
+      '📝 신청: 포스터 QR 스캔 또는 incom2794@naver.com',
+      '📞 문의: 010-4588-2794 (지니에듀테크 이성웅)',
+      '아무것도 하지 않으면 아무 일도 일어나지 않는다.',
+      'MH정신, 이성웅',
+      '#피지컬AI #지니에듀테크 #해봇 #HAEBOT #부산과학기술대학교 #DXSPARK2040 #무료교육',
+    ],
+    bodyEn: [
+      'AI on a screen is over. This is the era of physical AI, where you move a robot arm with your own hands.',
+      'Jini EduTech is opening a hands-on project course together with Busan Institute of Science and Technology (BIST), the ANCHOR Project Group and the Busan Anchor Center.',
+      'From controlling a robot arm to collecting data, imitation learning and moving real objects, you finish it by hand in four days.',
+      '📅 Dec 19 (Sat) – Dec 27 (Sun), 2026 (4 days · 20 hours)',
+      '📍 Training center, Busan Institute of Science and Technology',
+      '👥 20 employees and related staff of Busan companies',
+      '🎁 Tuition and materials free · related AI certificate · paid AI account provided',
+      '📝 Apply: scan the QR code on the poster or email incom2794@naver.com',
+      '📞 Inquiries: +82 10-4588-2794 (Lee Seong-ung, Jini EduTech)',
+      'If you do nothing, nothing happens.',
+      'MH Spirit, Lee Seong-ung',
+      '#PhysicalAI #JiniEduTech #HAEBOT #BIST #DXSPARK2040 #FreeTraining',
+    ],
+    images: [
+      {
+        src: '/images/updates/dx-spark-2040-20261127-01.jpg',
+        alt: 'DX-SPARK 2040 피지컬 AI 실무역량 강화 교육 포스터 — 2026. 12. 19.(토)~12. 27.(일), 총 4일·20시간, 부산과학기술대학교 교육장, 부산 기업 재직자 20명',
+        altEn:
+          'Poster for the DX-SPARK 2040 Physical AI Hands-On Training — December 19–27, 2026, four days and 20 hours, at the Busan Institute of Science and Technology training center, for 20 employees of Busan companies',
+        caption:
+          '포스터 — AI가 판단을 넘어 실제 동작으로. 로봇팔 조작과 데이터 수집·학습·적용을 다루는 현장 중심 피지컬 AI 프로젝트 수업입니다. 교육비·교재 전액 무료, 유관 AI 자격증과 유료 AI 계정을 지원합니다.',
+        captionEn:
+          'Poster — AI moving beyond judgement into real motion. A field-centered physical AI project course covering robot-arm operation and data collection, learning and deployment, with tuition and materials free of charge and a related AI certificate and paid AI account provided.',
+      },
+    ],
+  },
+  {
     slug: 'pipa-pukyong-forum-d1-2026-11-26',
     date: '2026-11-26',
     tag: '행사·포럼',
